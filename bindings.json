@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "resources": [
+    {
+      "resource": "asset",
+      "metadata": {
+        "folderPath": {
+          "defaultValue": "Shared",
+          "isExpression": false
+        },
+        "name": {
+          "defaultValue": "TenantID",
+          "isExpression": false
+        }
+      }
+    }
+  ]
+}
