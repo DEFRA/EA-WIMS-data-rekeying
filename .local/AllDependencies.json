@@ -26923,9 +26923,9 @@
     "restore": {
       "projectUniqueName": "WIMS data rekeying",
       "projectName": "WIMS data rekeying",
-      "projectPath": "C:\\Users\\rm000121\\OneDrive - Defra\\UiPath\\WIMS data rekeying\\.local",
+      "projectPath": "C:\\Users\\rm000121\\OneDrive - Defra\\UiPath\\EA-WIMS-data-rekeying\\.local",
       "packagesPath": "C:\\Users\\rm000121\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rm000121\\OneDrive - Defra\\UiPath\\WIMS data rekeying\\.local"
+      "outputPath": "C:\\Users\\rm000121\\OneDrive - Defra\\UiPath\\EA-WIMS-data-rekeying\\.local"
     },
     "frameworks": {
       "net8.0-windows7.0": {

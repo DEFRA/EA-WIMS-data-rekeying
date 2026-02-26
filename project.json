@@ -53,14 +53,14 @@
         "testCaseId": "071dabd0-fbf4-4893-a9dd-3b70afe2e710",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
-        "fileName": "tc01 Check if permit exists.xaml"
+        "fileName": "Process\\Process Subflows\\tc01 Check if permit exists.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "3b5cb42b-ba5b-4ade-b94a-4b94f5ce4283",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
-        "fileName": "tc01 Check if customer exists.xaml"
+        "fileName": "Process\\Process Subflows\\tc01 Check if customer exists.xaml"
       }
     ],
     "saveToCloud": false

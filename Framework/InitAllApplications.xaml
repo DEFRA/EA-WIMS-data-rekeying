@@ -105,8 +105,20 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="416,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="456.4,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI" sap:VirtualizedContainerService.HintSize="456.4,266.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OutUiElement="[g_browserPowerBi]" ScopeGuid="fe49f9a0-6f66-492e-a73b-a915d12ee75e" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-16, -16, 3872, 2312" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAJOgAACToAYJjBRwAAAJqSURBVDhPlZPZS1RRHMd9yJkKPGfeIiw1sxBJ0jIJySIi+gesDFvMLBER9yKVaJP23HDLMi2qV7fc0sZlHJcZNXGbcXRuPgQuo44K3nm63353Erk+pPWDD+fh8Pmccx6Oy79MT6qr0J2mRleqjAr6FDV0ya7C2vbWI4tTnzWY+sQhfOQSAV2iCmvbW48+WQXrBy7JTJbTWqFBR8J/BDrpNGsFh7Vcg8n3GkyUcbTHq/8eMOV7CaZ8T4zleWAs1wO/KgMxrw/FcBGXxkudoDVukxvI4srgOawMnMVy/xks953GkuEU+nIZzCXciTZ2k8Bozp4N4lLvCdh7QmDIpkCxBqYijpaYTQIjr91JPEliKOzdIbB3HcdiZzB6XjKMFnAM5zGp+ZYiYHl3TLCUBYNWIgiz2osQrUmw60nUB2NRF4SF9kB0P2cYyZMDHE3RGwNwTGUS6XD8vEOkwSGkYKHjKGxtAdJC22HMt/qj6ynDUA7HUDZHY5Qy8PYISbeJVBKT4LAm0A3iIYs27SHYvvvB1uILXZYbBl8x/HjB0HBdGSgNIDHRKTmscRAnYyFOxKyLc80HMdfkg46Hsswx8Iyh7poiMP7GH6uWWGnVEiOJEzchWm5AHI/E3LcDTnG2wRsz9V5ov8/QT8/oe8JQe0UZKPGjE6NJjCIiSb4M0RxB4j7M1ntipm4vZmrd0XrPDcYsBsNjhpoIZaDYl6SrTnHVFE5cIMIw/fWPOF2zG9PVu6DNcIPhEUPvA4bqS4qAucBHMBf6wFy4H+YC73WMmTthzNgBY/p2GO+q8SXMFVUkVoWrUHl+G31nF5ffw9bUgw7moFMAAAAASUVORK5CYII=" InformativeScreenshot="2664f3a3090fbdb36e42cc75efd2fb7b.jpg" Selector="&lt;html app='msedge.exe' title='WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" Title="WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI" Url="[g_Config(&quot;PowerBiUrl&quot;).ToString]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="456.4,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,317.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
