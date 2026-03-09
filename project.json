@@ -7,6 +7,7 @@
     "DRACOE.Logging.64": "[1.0.9]",
     "DRACOE.Microsoft.Graph.64": "[1.0.48]",
     "DRACOE.PopUps.64": "[1.0.9]",
+    "OfficeSamurai.FuzzyWuzzy.Activities": "[1.0.1]",
     "UiPath.Excel.Activities": "[2.23.5]",
     "UiPath.Mail.Activities": "[1.23.11]",
     "UiPath.System.Activities": "[24.10.4]",
