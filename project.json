@@ -62,6 +62,27 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Process\\Process Subflows\\tc01 Check if customer exists.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "dba3c812-2a6f-403d-b26e-6c5fcdc0d403",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\tc01 Process Transaction.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "b9ec49e4-ce1c-40a2-8334-f410b06563ce",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "tc01 Return to main page.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "1ad84de0-44a0-492f-9166-8a61587f0eb0",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Create new customer.xaml"
       }
     ],
     "saveToCloud": false

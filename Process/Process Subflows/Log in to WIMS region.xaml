@@ -46,6 +46,7 @@
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>DRACOE_PopUps_64</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -125,15 +126,16 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Log_in_to_WIMS_region" sap:VirtualizedContainerService.HintSize="1451.6000000000001,1848.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Log_in_to_WIMS_region" sap:VirtualizedContainerService.HintSize="1451.6000000000001,2012.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="If in dev" sap:VirtualizedContainerService.HintSize="502,361.6" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="If in dev" sap:VirtualizedContainerService.HintSize="502,420.4" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
@@ -152,7 +154,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,83.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -162,7 +164,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502,85.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,726.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
@@ -204,46 +206,44 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: FormsStart 12c WIMSMDP" sap:VirtualizedContainerService.HintSize="502,1406.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OutUiElement="[g_browserWIMS]" ScopeGuid="5c7d9a5f-ef06-4b2b-9fee-c24a56f22191" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: FormsStart 12c WIMSMDP" sap:VirtualizedContainerService.HintSize="502,470.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" OutUiElement="[g_browserWIMS]" ScopeGuid="5c7d9a5f-ef06-4b2b-9fee-c24a56f22191" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1165.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'text Username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="5c7d9a5f-ef06-4b2b-9fee-c24a56f22191" Text="[g_Config(&quot;WIMSusername&quot;).ToString]" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable CVScreenId="7e5e3b2d-af27-4e37-ada7-f03cddf84d88" CvElementArea="550, 774, 518, 57" CvType="InputBox" DesignTimeRectangle="556, 779, 510, 48" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text Username'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='Username' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='Username' role='text' /&gt;" Guid="bc8850eb-33c5-43e0-bad0-05750101a6c1" InformativeScreenshot="0c6c43d0ee2f0646e585ea88a31d5ce1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
-            <InvokeMethod DisplayName="Stop timer - password entry" sap:VirtualizedContainerService.HintSize="382,171.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Stop">
-              <InvokeMethod.TargetObject>
-                <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
-              </InvokeMethod.TargetObject>
-            </InvokeMethod>
-            <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" sap2010:Annotation.AnnotationText="WIMS has 8 different regions, with a username having a dedicated password for each. Seems better to get the user to input their relevant password rather than store 8 sets of credentials per user." DisplayName="WIMS login prompt" sap:VirtualizedContainerService.HintSize="382,515.2" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed during password entry." IN_PopupMessage="[&quot;&lt;p&gt;Please enter your &quot;+in_strRegion+&quot; WIMS password and click the 'Login' button, then dismiss this pop-up.&quot;]" IN_PopupTitle="Please enter password" IN_WidthHeight="[{500,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </d:Generic_PopUp>
-            <InvokeMethod DisplayName="Start timer - password entry" sap:VirtualizedContainerService.HintSize="382,164.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Start">
-              <InvokeMethod.TargetObject>
-                <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
-              </InvokeMethod.TargetObject>
-            </InvokeMethod>
-          </Sequence>
+          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'text Username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,220.8" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="5c7d9a5f-ef06-4b2b-9fee-c24a56f22191" Text="[g_Config(&quot;WIMSusername&quot;).ToString]" Version="V3">
+            <uix:NTypeInto.Target>
+              <uix:TargetAnchorable CVScreenId="7e5e3b2d-af27-4e37-ada7-f03cddf84d88" CvElementArea="550, 774, 518, 57" CvType="InputBox" DesignTimeRectangle="556, 779, 510, 48" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text Username'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='Username' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='Username' role='text' /&gt;" Guid="bc8850eb-33c5-43e0-bad0-05750101a6c1" InformativeScreenshot="0c6c43d0ee2f0646e585ea88a31d5ce1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+            </uix:NTypeInto.Target>
+          </uix:NTypeInto>
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
         <uix:TargetApp Area="0, 0, 3840, 2280" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAJOgAACToAYJjBRwAAAGBSURBVDhPjZFLSwJRGIb7CUHUOgiCokWSgUHRBaJVLSJ37VoY0SKoRbRxUbYIWpQUBP2GgpIWQmpEadEFxIWREgZ5Ce8WpsycN883M40zpvVszjfv8Tnfd45NaAQTaRGeHRATAarBmLRWqC8zgRYhconibjOKzhWUqnLO77J8upBOIGkbQcbais8zqySLf8miNO67fRWvcwa8WTpRCt1SpuxxamV5M39xjeDEIELmPsS3lyhjVSKnVpZHfjJb4DeO46G9G6mjE8qYoI7M0cjKyRm3D3ddo3jsGYPfNAkhV6C8+qU5WlmQ5MCiDV7DNK7ajIis71Cm78pRZfnUcrYA1/A83P2zcLYMIXcv/b/6+3J+ZGUz5gvCYVrAaccM/Gv7lDFRO66CKssjew9cOOxdxvHUBj7iWcqY7q4Kqiz/wLPnwtbAJjz2c/qu15WjeTBO+OYFmajUUf+6ejRyqVhGNJykulFHBZKVkeOxNBLRNNX17lmNLFONVCqPr0r3/wF8A+H5hbjZxT9pAAAAAElFTkSuQmCC" InformativeScreenshot="01639c0e604bd65e54ba2276e7429669.png" Selector="&lt;html app='msedge.exe' title='FormsStart 12c WIMS*' /&gt;" Title="FormsStart 12c WIMSMDP" Url="[g_Config(in_strRegion+&quot;URL&quot;).ToString]" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
+    <InvokeMethod DisplayName="Bring WIMS to foreground" sap:VirtualizedContainerService.HintSize="502,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="BringToForeground">
+      <InvokeMethod.TargetObject>
+        <InArgument x:TypeArguments="ui:UiElement">[g_browserWIMS]</InArgument>
+      </InvokeMethod.TargetObject>
+    </InvokeMethod>
+    <InvokeMethod DisplayName="Stop timer - password entry" sap:VirtualizedContainerService.HintSize="502,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Stop">
+      <InvokeMethod.TargetObject>
+        <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+      </InvokeMethod.TargetObject>
+    </InvokeMethod>
+    <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" sap2010:Annotation.AnnotationText="WIMS has 8 different regions, with a username having a dedicated password for each. Seems better to get the user to input their relevant password rather than store 8 sets of credentials per user." DisplayName="WIMS login prompt" sap:VirtualizedContainerService.HintSize="502,515.2" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed during password entry." IN_PopupMessage="[&quot;&lt;p&gt;Please enter your &quot;+in_strRegion+&quot; WIMS password and click the 'Login' button, then dismiss this pop-up.&quot;]" IN_PopupTitle="Please enter password" IN_WidthHeight="[{500,200}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </d:Generic_PopUp>
+    <InvokeMethod DisplayName="Start timer - password entry" sap:VirtualizedContainerService.HintSize="502,160" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Start">
+      <InvokeMethod.TargetObject>
+        <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+      </InvokeMethod.TargetObject>
+    </InvokeMethod>
   </Sequence>
 </Activity>
