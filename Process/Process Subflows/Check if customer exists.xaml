@@ -2,6 +2,7 @@
   <x:Members>
     <x:Property Name="in_strOrgName" Type="InArgument(x:String)" />
     <x:Property Name="in_strReportAddress" Type="InArgument(x:String)" />
+    <x:Property Name="out_uiMonitoring" Type="OutArgument(ui:UiElement)" />
   </x:Members>
   <this:Check_if_customer_exists.in_strOrgName>
     <InArgument x:TypeArguments="x:String" />
@@ -147,19 +148,19 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Check_if_customer_exists" sap:VirtualizedContainerService.HintSize="1172.8,5258.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Check_if_customer_exists" sap:VirtualizedContainerService.HintSize="1451.6000000000001,5289.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Check if customer exists" sap:VirtualizedContainerService.HintSize="592,5235.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="0cbc9a22-c8a1-449b-a970-f27b7e92131a" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Check if customer exists" sap:VirtualizedContainerService.HintSize="592,5266.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="0cbc9a22-c8a1-449b-a970-f27b7e92131a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,5074" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,5105.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strRecordCount" />
               <Variable x:TypeArguments="x:Int32" Name="intRecordCount" />
@@ -174,10 +175,15 @@
                 <uix:TargetAnchorable DesignTimeRectangle="28, 280, 154, 46" DesignTimeScaleFactor="1" FriendlyName="'Monitoring ALT M'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Monitoring ALT M' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Monitoring ALT M' role='menu item' check:text='Monitoring ALT M' /&gt;" Guid="59f4473c-7fb3-4fda-99cc-30c0cc006f34" ImageBase64="" InformativeScreenshot="e9856dc0da617dcdc9930f72ad893ae6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'reFerence ALT F'" sap:VirtualizedContainerService.HintSize="524,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0cbc9a22-c8a1-449b-a970-f27b7e92131a" Version="V3">
+            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Also output element as reference for this page" ClickType="Single" DisplayName="Click 'reFerence ALT F'" sap:VirtualizedContainerService.HintSize="524,221.2" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" OutUiElement="[out_uiMonitoring]" ScopeIdentifier="0cbc9a22-c8a1-449b-a970-f27b7e92131a" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="609, 280, 144, 46" DesignTimeScaleFactor="1" FriendlyName="'reFerence ALT F'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' check:text='reFerence ALT F' /&gt;" Guid="74b1e0fc-9cc1-48b1-81c6-c99c03fff105" ImageBase64="" InformativeScreenshot="4465f14d54f66087393142d9aff56f2c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'People mnemonic P'" sap:VirtualizedContainerService.HintSize="524,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0cbc9a22-c8a1-449b-a970-f27b7e92131a" Version="V3">
               <uix:NClick.Target>
