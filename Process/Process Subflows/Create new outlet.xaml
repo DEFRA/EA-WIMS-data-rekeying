@@ -1,0 +1,260 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Create_new_outlet" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:d="clr-namespace:DRACOE_PopUps_64;assembly=DRACOE.PopUps.64" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strReference" Type="InArgument(x:String)" />
+    <x:Property Name="in_strGridReference" Type="InArgument(x:String)" />
+    <x:Property Name="in_strEnvironmentCode" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Only required for Pause Point" Name="in_strTotalOutlets" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Create_new_outlet.in_strReference>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Create_new_outlet.in_strReference>
+  <this:Create_new_outlet.in_strGridReference>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Create_new_outlet.in_strGridReference>
+  <this:Create_new_outlet.in_strEnvironmentCode>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Create_new_outlet.in_strEnvironmentCode>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Create_new_outlet_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>DRACOE_PopUps_64</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>OS.Fuzzy.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>DRACOE.PopUps.64</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Create_new_outlet" sap:VirtualizedContainerService.HintSize="1451.6000000000001,3198.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new outlet" sap:VirtualizedContainerService.HintSize="518,3175.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Create new outlet" sap:VirtualizedContainerService.HintSize="484,3014" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Ref" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Text="[in_strReference]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="230, 989, 106, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'1'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='outlet reference number' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='outlet reference number' role='text' /&gt;" Guid="545dbb40-7e73-44c7-b570-837f2e2c3cf9" InformativeScreenshot="6280415609dfe5ba019b2a3f39922743.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.2" DisplayName="Press tab to Type" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="WindowMessages" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+              <uix:NKeyboardShortcuts.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NKeyboardShortcuts.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type 'Type'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Text="D" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="461, 989, 71, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'T'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Discharge type - List of Values available Required' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Discharge type - List of Values available Required' role='text' /&gt;" Guid="9e81129b-9fff-48cf-9100-54f1721e3b54" InformativeScreenshot="f2ae253a694aa487dc31cb93f33e597a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.2" DisplayName="Press tab to NGR" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="WindowMessages" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+              <uix:NKeyboardShortcuts.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NKeyboardShortcuts.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Grid Reference" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Text="[in_strGridReference]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1198, 973, 256, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'SO8230018200'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='The NGR of the Outlet Required' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='The NGR of the Outlet Required' role='text' /&gt;" Guid="93327183-8c8d-4970-91cf-3a3ec78fc8ed" InformativeScreenshot="8758bf232c141e47a7b2eb7c75e99ff8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <ui:RepeatNumberOfTimesX DisplayName="Repeat Number of Times - tab to Environment" sap:VirtualizedContainerService.HintSize="450,398.8" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_1" NumberOfTimes="3" StartAt="1">
+              <ui:RepeatNumberOfTimesX.Body>
+                <ActivityAction x:TypeArguments="x:Int32">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItem" />
+                  </ActivityAction.Argument>
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.2" DisplayName="Press tab to Environment" sap:VirtualizedContainerService.HintSize="334,199.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" InteractionMode="WindowMessages" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+                    <uix:NKeyboardShortcuts.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NKeyboardShortcuts.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NKeyboardShortcuts>
+                </ActivityAction>
+              </ui:RepeatNumberOfTimesX.Body>
+            </ui:RepeatNumberOfTimesX>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Environment code" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Text="[in_strEnvironmentCode]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1340, 1067, 71, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'01'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Nature of type of water - list of values available Required' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Nature of type of water - list of values available Required' role='text' /&gt;" Guid="a186d508-b138-4a8c-a211-f27bab26d22c" InformativeScreenshot="0601a7120e2f45a4ad267dcafa0e8763.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <If Condition="[CBool(g_Config(&quot;PausePoint8&quot;))]" DisplayName="Pause Point 8?" sap:VirtualizedContainerService.HintSize="450,1080" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,825.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <InvokeMethod DisplayName="Stop timer - PP8" sap:VirtualizedContainerService.HintSize="382,168.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Stop">
+                    <InvokeMethod.TargetObject>
+                      <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                    </InvokeMethod.TargetObject>
+                  </InvokeMethod>
+                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="PP8" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Pause Point 8" IN_PopupMessage="[&quot;&lt;h1&gt;New Outlet&lt;/h1&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;Please verify that the data entered for this new outlet record is correct.&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;&lt;/strong&gt;Reference:&lt;/strong&gt;&amp;ensp;&quot;+in_strReference+&quot; (of &quot;+in_strTotalOutlets+&quot;)&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;/strong&gt;Type:&lt;/strong&gt;&amp;ensp;D (user to correct later)&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;/strong&gt;NGR:&lt;/strong&gt;&amp;ensp;&quot;+in_strGridReference+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;/strong&gt;Environment Code::&lt;/strong&gt;&amp;ensp;&quot;+in_strEnvironmentCode+&quot;&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;If this data has been entered correctly, please click 'Continue'. Otherwise, please click 'Stop' and process the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Pause Point 8" IN_WidthHeight="[{500,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+                  <InvokeMethod DisplayName="Start timer - PP8" sap:VirtualizedContainerService.HintSize="382,159.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Start">
+                    <InvokeMethod.TargetObject>
+                      <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                    </InvokeMethod.TargetObject>
+                  </InvokeMethod>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

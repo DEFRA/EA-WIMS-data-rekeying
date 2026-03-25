@@ -154,19 +154,19 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_new_permit" sap:VirtualizedContainerService.HintSize="1451.6000000000001,6905.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_new_permit" sap:VirtualizedContainerService.HintSize="1451.6000000000001,6701.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new permit" sap:VirtualizedContainerService.HintSize="518,6882.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="d6fd1564-440a-4561-9bb0-b17f0d52db00" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new permit" sap:VirtualizedContainerService.HintSize="518,6678.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="d6fd1564-440a-4561-9bb0-b17f0d52db00" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,6721.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,6134" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -348,7 +348,7 @@
                       <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                     </InvokeMethod.TargetObject>
                   </InvokeMethod>
-                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="PP7" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Pause Point 7" IN_PopupMessage="[&quot;&lt;h1&gt;New Permit Created&lt;/h1&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;Please verify that the permit information has been entered correctly:&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;&lt;strong&gt;Permit type:&lt;/strong&gt;&amp;ensp;WQ&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Permit number:&lt;/strong&gt;&amp;ensp;&quot;+in_strPermitNumber+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Numeric/Descriptive:&lt;/strong&gt;&amp;ensp;&quot;+in_strNumericOrDescriptive+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;NGR:&lt;/strong&gt;&amp;ensp;&quot;+in_strGridReference+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Signed:&lt;/strong&gt;&amp;ensp;&quot;+in_strIssuedDate+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Issued:&lt;/strong&gt;&amp;ensp;&quot;+in_strIssuedDate+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Start:&lt;/strong&gt;&amp;ensp;&quot;+in_strEffectiveDate+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Receiving water:&lt;/strong&gt;&amp;ensp;&quot;+in_strReceivingWater+&quot;&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;If these details have been entered correctly, please click 'Continue'. Otherwise, please click 'Stop' and complete this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Pause Point 7" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="PP7" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Pause Point 7" IN_PopupMessage="[&quot;&lt;h1&gt;New Permit Created&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please verify that the permit information has been entered correctly:&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Permit type:&lt;/strong&gt;&amp;ensp;WQ&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Permit number:&lt;/strong&gt;&amp;ensp;&quot;+in_strPermitNumber+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Numeric/Descriptive:&lt;/strong&gt;&amp;ensp;&quot;+in_strNumericOrDescriptive+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;NGR:&lt;/strong&gt;&amp;ensp;&quot;+in_strGridReference+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Signed:&lt;/strong&gt;&amp;ensp;&quot;+in_strIssuedDate+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Issued:&lt;/strong&gt;&amp;ensp;&quot;+in_strIssuedDate+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Start:&lt;/strong&gt;&amp;ensp;&quot;+in_strEffectiveDate+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Receiving water:&lt;/strong&gt;&amp;ensp;&quot;+in_strReceivingWater+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;If these details have been entered correctly, please click 'Continue'. Otherwise, please click 'Stop' and complete this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Pause Point 7" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
                   <InvokeMethod DisplayName="Start timer - PP7" sap:VirtualizedContainerService.HintSize="382,159.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Start">
                     <InvokeMethod.TargetObject>
                       <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
@@ -366,7 +366,13 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="Is dev? - new permit" sap:VirtualizedContainerService.HintSize="450,633.6" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="Is dev? - new permit" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,228.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
