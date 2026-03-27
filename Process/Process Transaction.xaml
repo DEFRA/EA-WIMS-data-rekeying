@@ -50,6 +50,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -134,9 +135,20 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>OS.Fuzzy.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="1468.8000000000002,658.84" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="1468.8000000000002,395.30400000000003" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dictPermitDetails" />
       <Variable x:TypeArguments="ui:UiElement" Name="uiHomePage" />
@@ -150,6 +162,8 @@
       <Variable x:TypeArguments="sd:DataTable" Name="dtReleases" />
       <Variable x:TypeArguments="x:Int32" Name="intOutletIndex" />
       <Variable x:TypeArguments="x:Int32" Name="intReleaseIndex" />
+      <Variable x:TypeArguments="x:Int32" Name="intReleaseDetailIndex" />
+      <Variable x:TypeArguments="s:String[]" Name="arrDischargeAddress" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -171,7 +185,7 @@
           <av:Point x:Key="ShapeLocation">270,210</av:Point>
           <av:Size x:Key="ShapeSize">60,60</av:Size>
           <av:PointCollection x:Key="TrueConnector">270,240 240,240 240,285</av:PointCollection>
-          <av:PointCollection x:Key="FalseConnector">330,240 360,240 360,384.99999999999994 300,384.99999999999994 300,415</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">330,240 360,240 360,385 300,385 300,415</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
@@ -512,10 +526,7 @@
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:ForEach>
                                                 </Sequence>
-                                                <Sequence DisplayName="Discharge site" sap:VirtualizedContainerService.HintSize="604,1398.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                                                  <Sequence.Variables>
-                                                    <Variable x:TypeArguments="s:String[]" Name="arrDischargeAddress" />
-                                                  </Sequence.Variables>
+                                                <Sequence DisplayName="Discharge site" sap:VirtualizedContainerService.HintSize="604,1289.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -548,7 +559,7 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </Assign>
-                                                  <Assign sap2010:Annotation.AnnotationText="Also trim all values" DisplayName="Split address on comma and remove empty parts" sap:VirtualizedContainerService.HintSize="570,145.6" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                                  <Assign sap2010:Annotation.AnnotationText="Also trim all values" DisplayName="Split address on comma and remove empty parts" sap:VirtualizedContainerService.HintSize="570,114.4" sap2010:WorkflowViewState.IdRef="Assign_12">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="s:String[]">[arrAddressParts]</OutArgument>
                                                     </Assign.To>
@@ -570,7 +581,7 @@
                                                       <InArgument x:TypeArguments="s:String[]">[{"","","","",""}]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <ui:ForEach x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="This loop is to ensure that:&#xA;- For addresses &lt;5 lines, the final line will always be line 5 (potentially leaving lines 1, 2, 3 and/or 4 blank)&#xA;- For addresses &gt;5 lines, the final line will be a concatenation of everything beyond the 5th line" CurrentIndex="[intAddressPart]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="570,826.4" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[arrAddressParts]">
+                                                  <ui:ForEach x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="This loop is to ensure that:&#xA;- For addresses &lt;5 lines, the final line will always be line 5 (potentially leaving lines 1, 2, 3 and/or 4 blank)&#xA;- For addresses &gt;5 lines, the final line will be a concatenation of everything beyond the 5th line" CurrentIndex="[intAddressPart]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="570,748.8" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[arrAddressParts]">
                                                     <ui:ForEach.Body>
                                                       <ActivityAction x:TypeArguments="x:String">
                                                         <ActivityAction.Argument>
@@ -873,10 +884,7 @@
                                                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                                                   </ui:InvokeWorkflowFile>
                                                                                                   <FlowStep.Next>
-                                                                                                    <FlowDecision x:Name="__ReferenceID28" sap2010:Annotation.AnnotationText="If dev mode, exit &quot;create new permit&quot; and go to &quot;amend permit&quot;, find our dummy permit record and create outlets/releases from there." DisplayName="Is dev?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
-                                                                                                      <FlowDecision.Condition>
-                                                                                                        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="CBool(g_Config(&quot;IsDev&quot;))" />
-                                                                                                      </FlowDecision.Condition>
+                                                                                                    <FlowDecision x:Name="__ReferenceID28" sap2010:Annotation.AnnotationText="If dev mode, exit &quot;create new permit&quot; and go to &quot;amend permit&quot;, find our dummy permit record and create outlets/releases from there." Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="Is dev?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                                                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -926,7 +934,7 @@
                                                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                                               </ui:InvokeWorkflowFile>
                                                                                                               <FlowStep.Next>
-                                                                                                                <FlowStep x:Name="__ReferenceID0">
+                                                                                                                <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                                                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                       <av:Point x:Key="ShapeLocation">245,2855</av:Point>
@@ -940,7 +948,11 @@
                                                                                                                         <ActivityAction.Argument>
                                                                                                                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                                                                                                         </ActivityAction.Argument>
-                                                                                                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,525.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                                                                                        <Sequence DisplayName="Create outlet and associated releases+release details" sap:VirtualizedContainerService.HintSize="416,552.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                                                                                          <Sequence.Variables>
+                                                                                                                            <Variable x:TypeArguments="ui:UiElement" Name="uiOutlets" />
+                                                                                                                            <Variable x:TypeArguments="ui:UiElement" Name="uiReleases" />
+                                                                                                                          </Sequence.Variables>
                                                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -952,11 +964,88 @@
                                                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strGridReference">[CurrentRow("NGR").ToString]</InArgument>
                                                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strEnvironmentCode">[CurrentRow("EnvCode").ToString]</InArgument>
                                                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strTotalOutlets">[dtOutlets.RowCount.ToString]</InArgument>
+                                                                                                                              <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_uiOutletRef">[uiOutlets]</OutArgument>
                                                                                                                             </ui:InvokeWorkflowFile.Arguments>
                                                                                                                           </ui:InvokeWorkflowFile>
-                                                                                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Init next outlet or move to Releases" sap:VirtualizedContainerService.HintSize="382,257.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Process\Process Subflows\Next record or next block.xaml">
+                                                                                                                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intReleaseIndex]" DataTable="[dtReleases.Select(&quot;Name='&quot;+CurrentRow(&quot;Name&quot;).ToString+&quot;'&quot;).CopyToDataTable]" DisplayName="For Each Release" sap:VirtualizedContainerService.HintSize="382,85.2" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                                                                                                                            <ui:ForEachRow.Body>
+                                                                                                                              <ActivityAction x:TypeArguments="sd:DataRow">
+                                                                                                                                <ActivityAction.Argument>
+                                                                                                                                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                                                                                                                </ActivityAction.Argument>
+                                                                                                                                <Sequence DisplayName="Create new release and associated release details" sap:VirtualizedContainerService.HintSize="416,524" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                                                    </scg:Dictionary>
+                                                                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create new release - Invoke Workflow File (Process\Process Subflows\Create new release.xaml)" sap:VirtualizedContainerService.HintSize="382,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Process\Process Subflows\Create new release.xaml">
+                                                                                                                                    <ui:InvokeWorkflowFile.Arguments>
+                                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_strName">[CurrentRow("Name").ToString]</InArgument>
+                                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_strDischargeTypes">[dictPermitDetails("DischargeTypes").Replace("|","&lt;br&gt;")+"&lt;br&gt;"]</InArgument>
+                                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_strGridReference">[CurrentRow("NGR").ToString]</InArgument>
+                                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_strTreatmentType">[CurrentRow("TreatmentTypes").ToString]</InArgument>
+                                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_strFlowCode">[CurrentRow("FlowCode").ToString]</InArgument>
+                                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_strDescription">[if(String.IsNullOrEmpty(CurrentRow("ActivityDescription").ToString),CurrentRow("RegulatedActivitySubClass").ToString,CurrentRow("ActivityDescription").ToString)]</InArgument>
+                                                                                                                                      <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_uiReleases">[uiReleases]</OutArgument>
+                                                                                                                                    </ui:InvokeWorkflowFile.Arguments>
+                                                                                                                                  </ui:InvokeWorkflowFile>
+                                                                                                                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intReleaseDetailIndex]" DataTable="[dtReleaseDetails.Select(&quot;Name='&quot;+CurrentRow(&quot;Name&quot;).ToString+&quot;'&quot;).CopyToDataTable]" DisplayName="For Each Release Detail" sap:VirtualizedContainerService.HintSize="382,56.8" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                                                                                                                                    <ui:ForEachRow.Body>
+                                                                                                                                      <ActivityAction x:TypeArguments="sd:DataRow">
+                                                                                                                                        <ActivityAction.Argument>
+                                                                                                                                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                                                                                                                        </ActivityAction.Argument>
+                                                                                                                                        <Sequence DisplayName="Create new release detail" sap:VirtualizedContainerService.HintSize="416,259.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                                                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                                                            </scg:Dictionary>
+                                                                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create new release detail - Invoke Workflow File (Process\Process Subflows\Create new release detail.xaml)" sap:VirtualizedContainerService.HintSize="382,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="Process\Process Subflows\Create new release detail.xaml">
+                                                                                                                                            <ui:InvokeWorkflowFile.Arguments>
+                                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strParamCode">[CurrentRow("ParameterCode").ToString]</InArgument>
+                                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strCorA">[if(CurrentRow("CombinationType").ToString.Trim.ToLower="comparative","C","A")]</InArgument>
+                                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strStartDay">[CurrentRow("SeasonalityStartDay").ToString]</InArgument>
+                                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strStartMonth">[CurrentRow("SeasonalityStartMonth").ToString]</InArgument>
+                                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strEndDay">[CurrentRow("SeasonalityEndDay").ToString]</InArgument>
+                                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strEndMonth">[CurrentRow("SeasonalityEndMonth").ToString]</InArgument>
+                                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strLimitValue">[CurrentRow("LimitValue").ToString]</InArgument>
+                                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strIndex">[Math.Min(intReleaseDetailIndex+1,2).ToString]</InArgument>
+                                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strComplianceStatisticCode">[CurrentRow("ComplianceStatisticCode").ToString]</InArgument>
+                                                                                                                                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolLastReleaseDetail">[intReleaseDetailIndex=dtReleaseDetails.Select("Name='"+CurrentRow("Name").ToString+"'").Count-1]</InArgument>
+                                                                                                                                            </ui:InvokeWorkflowFile.Arguments>
+                                                                                                                                          </ui:InvokeWorkflowFile>
+                                                                                                                                        </Sequence>
+                                                                                                                                      </ActivityAction>
+                                                                                                                                    </ui:ForEachRow.Body>
+                                                                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                                                      </scg:Dictionary>
+                                                                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                                                                  </ui:ForEachRow>
+                                                                                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Init next release" sap:VirtualizedContainerService.HintSize="382,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="Process\Process Subflows\Previous block, next record.xaml">
+                                                                                                                                    <ui:InvokeWorkflowFile.Arguments>
+                                                                                                                                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                                                                                                                    </ui:InvokeWorkflowFile.Arguments>
+                                                                                                                                  </ui:InvokeWorkflowFile>
+                                                                                                                                </Sequence>
+                                                                                                                              </ActivityAction>
+                                                                                                                            </ui:ForEachRow.Body>
+                                                                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                                              </scg:Dictionary>
+                                                                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                                                                          </ui:ForEachRow>
+                                                                                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Init next outlet" sap:VirtualizedContainerService.HintSize="382,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Process\Process Subflows\Previous block, next record.xaml">
                                                                                                                             <ui:InvokeWorkflowFile.Arguments>
-                                                                                                                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolLastOutlet">[intOutletIndex=dtOutlets.RowCount-1]</InArgument>
+                                                                                                                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                                                                                                             </ui:InvokeWorkflowFile.Arguments>
                                                                                                                           </ui:InvokeWorkflowFile>
                                                                                                                         </Sequence>
@@ -969,44 +1058,23 @@
                                                                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                                                                   </ui:ForEachRow>
                                                                                                                   <FlowStep.Next>
-                                                                                                                    <FlowStep x:Name="__ReferenceID32">
+                                                                                                                    <FlowStep x:Name="__ReferenceID32" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                                                                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                           <av:Point x:Key="ShapeLocation">245,2945</av:Point>
                                                                                                                           <av:Size x:Key="ShapeSize">110,70</av:Size>
                                                                                                                         </scg:Dictionary>
                                                                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                                                                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intReleaseIndex]" DataTable="[dtReleases]" DisplayName="For Each Release" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
-                                                                                                                        <ui:ForEachRow.Body>
-                                                                                                                          <ActivityAction x:TypeArguments="sd:DataRow">
-                                                                                                                            <ActivityAction.Argument>
-                                                                                                                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                                                                                                                            </ActivityAction.Argument>
-                                                                                                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,467.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
-                                                                                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                                                </scg:Dictionary>
-                                                                                                                              </sap:WorkflowViewStateService.ViewState>
-                                                                                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create new release - Invoke Workflow File (Process\Process Subflows\Create new release.xaml)" sap:VirtualizedContainerService.HintSize="382,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Process\Process Subflows\Create new release.xaml">
-                                                                                                                                <ui:InvokeWorkflowFile.Arguments>
-                                                                                                                                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
-                                                                                                                                </ui:InvokeWorkflowFile.Arguments>
-                                                                                                                              </ui:InvokeWorkflowFile>
-                                                                                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Init next release or move to Release Details" sap:VirtualizedContainerService.HintSize="382,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Process\Process Subflows\Next record or next block.xaml">
-                                                                                                                                <ui:InvokeWorkflowFile.Arguments>
-                                                                                                                                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolLastRecord">[intReleaseIndex=dtReleases.RowCount-1]</InArgument>
-                                                                                                                                </ui:InvokeWorkflowFile.Arguments>
-                                                                                                                              </ui:InvokeWorkflowFile>
-                                                                                                                            </Sequence>
-                                                                                                                          </ActivityAction>
-                                                                                                                        </ui:ForEachRow.Body>
+                                                                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to earlier page - Invoke Workflow File (Process\Process Subflows\Return to earlier page.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
+                                                                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                                                                          <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiPermits]</InArgument>
+                                                                                                                        </ui:InvokeWorkflowFile.Arguments>
                                                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                                                           </scg:Dictionary>
                                                                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                                                                      </ui:ForEachRow>
+                                                                                                                      </ui:InvokeWorkflowFile>
                                                                                                                     </FlowStep>
                                                                                                                   </FlowStep.Next>
                                                                                                                 </FlowStep>
@@ -1016,7 +1084,7 @@
                                                                                                         </FlowStep>
                                                                                                       </FlowDecision.True>
                                                                                                       <FlowDecision.False>
-                                                                                                        <FlowStep x:Name="__ReferenceID31">
+                                                                                                        <FlowStep x:Name="__ReferenceID31" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                               <av:Point x:Key="ShapeLocation">305,2735</av:Point>
@@ -1058,7 +1126,14 @@
                                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create new discharge site - Invoke Workflow File (Process\Process Subflows\Create new discharge site.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Process\Process Subflows\Create new discharge site.xaml">
                                                                                             <ui:InvokeWorkflowFile.Arguments>
-                                                                                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strAssetPropertyCode">[dictPermitDetails("AssetPropertyCode")]</InArgument>
+                                                                                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolConfidential">[dictPermitDetails("Confidential").Trim.ToLower="yes"]</InArgument>
+                                                                                              <InArgument x:TypeArguments="s:String[]" x:Key="in_arrAddress">[arrDischargeAddress]</InArgument>
+                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strPostcode">[dictPermitDetails("DischargePostcode")]</InArgument>
+                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strAreaCode">[dictPermitDetails("AreaCode")]</InArgument>
+                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strSubAreaCode">[dictPermitDetails("SubAreaCode")]</InArgument>
+                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strLocalAuthorityCode">[dictPermitDetails("LocalAuthorityCode")]</InArgument>
+                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strGridReference">[dictPermitDetails("GridReference")]</InArgument>
                                                                                             </ui:InvokeWorkflowFile.Arguments>
                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
