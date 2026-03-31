@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Search_Permit" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Search_Permit_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Search_Permit" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Search_Permit_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -104,7 +104,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Search_Permit_in_Power_BI" sap:VirtualizedContainerService.HintSize="1451.6000000000001,2187.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Search_Permit_in_Power_BI" sap:VirtualizedContainerService.HintSize="1451.6000000000001,2534.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="EPR/JB3498VV" Name="strPermit" />
     </Sequence.Variables>
@@ -113,13 +113,18 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - search Power BI" sap:VirtualizedContainerService.HintSize="562,2164" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserPowerBi]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f979613c-66f3-4c66-b87b-904f5d7d62a8" Version="V2" WindowResize="Maximize">
+    <InvokeMethod DisplayName="BringToForeground - Power BI" sap:VirtualizedContainerService.HintSize="562,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="BringToForeground">
+      <InvokeMethod.TargetObject>
+        <InArgument x:TypeArguments="ui:UiElement">[g_browserPowerBi]</InArgument>
+      </InvokeMethod.TargetObject>
+    </InvokeMethod>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - search Power BI" sap:VirtualizedContainerService.HintSize="562,2342.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserPowerBi]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f979613c-66f3-4c66-b87b-904f5d7d62a8" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="528,2002.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Search Power BI" sap:VirtualizedContainerService.HintSize="528,2181.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strPermitVersion" />
             </Sequence.Variables>
@@ -128,6 +133,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message - searching permit" sap:VirtualizedContainerService.HintSize="494,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Searching report for permit: &quot;+g_TransactionItem(&quot;ReSP_ID&quot;).ToString]" />
             <Assign sap2010:Annotation.AnnotationText="Allows use in dynamic selector" DisplayName="Store permit number to variable" sap:VirtualizedContainerService.HintSize="494,146" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strPermit]</OutArgument>
@@ -198,7 +204,7 @@
                 <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/13.0.27792.40/cvSandboxPack.cshtml?locale=en-GB&amp;pbiglobals=1&amp;csp=ZGVmYXVsdC1zcmMgaHR0cHM6Ly9hcHAucG93ZXJiaS5jb20gZGF0YTogYmxvYjogJ3Vuc2FmZS1pbmxpbmUnICd1bnNhZmUtZXZhbCcgOw%3D%3D#669fde17-8849-4ebe-b7c6-661dac5ebc28" DesignTimeRectangle="3443, 617, 85, 85" DesignTimeScaleFactor="2.5" ElementType="Button" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl name='visual-sandbox' tag='IFRAME' /&gt;&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='visual-sandbox' tag='IFRAME' /&gt;&lt;webctrl tag='BUTTON' type='' class='c-glyph search-button border-on-focus' aaname='Search' check:innerText='Search' /&gt;" Guid="f8e2887b-7f3a-4e23-85ff-268960a791af" InformativeScreenshot="1563a1b01efdcc019b19424f336b72dd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NCheckState DisplayName="Check App State - permit number returned" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="494,420" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f979613c-66f3-4c66-b87b-904f5d7d62a8" Timeout="5" Version="V3">
+            <uix:NCheckState DisplayName="Check App State - permit number returned" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="494,421.6" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f979613c-66f3-4c66-b87b-904f5d7d62a8" Timeout="5" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
@@ -209,7 +215,7 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,176" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,177.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>

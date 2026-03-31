@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Go_to_outlets_reference_block" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Go_to_outlets_reference_block_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Go_to_outlets_reference_block" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Go_to_outlets_reference_block_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -90,24 +90,25 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Go_to_outlets_reference_block" sap:VirtualizedContainerService.HintSize="1451.6000000000001,998.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Go_to_outlets_reference_block" sap:VirtualizedContainerService.HintSize="1451.6000000000001,1174.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - go to outlets reference block" sap:VirtualizedContainerService.HintSize="450,975.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="05f47e5c-2994-4d57-8e1b-5fc81e26caa4" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - go to outlets reference block" sap:VirtualizedContainerService.HintSize="450,1151.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="05f47e5c-2994-4d57-8e1b-5fc81e26caa4" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="go to outlets reference block" sap:VirtualizedContainerService.HintSize="416,814.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="go to outlets reference block" sap:VirtualizedContainerService.HintSize="416,990" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message - navigating to outlets block" sap:VirtualizedContainerService.HintSize="382,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Navigating to Outlets reference block&quot;]" />
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Block' - new permit" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="05f47e5c-2994-4d57-8e1b-5fc81e26caa4" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="273, 287, 83, 46" DesignTimeScaleFactor="1" FriendlyName="'Block ALT B'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' check:text='Block ALT B' /&gt;" Guid="92ba9777-f0a0-4f4a-b363-7148592fb768" InformativeScreenshot="86ec292d1711359164438f5c0ba99506.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />

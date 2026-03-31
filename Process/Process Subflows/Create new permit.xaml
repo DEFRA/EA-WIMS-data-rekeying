@@ -154,24 +154,25 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_new_permit" sap:VirtualizedContainerService.HintSize="1451.6000000000001,6701.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_new_permit" sap:VirtualizedContainerService.HintSize="1451.6000000000001,6495.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new permit" sap:VirtualizedContainerService.HintSize="518,6678.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="d6fd1564-440a-4561-9bb0-b17f0d52db00" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new permit" sap:VirtualizedContainerService.HintSize="518,6472.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="d6fd1564-440a-4561-9bb0-b17f0d52db00" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,6134" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Create new permit record" sap:VirtualizedContainerService.HintSize="484,6311.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message - creating new permit" sap:VirtualizedContainerService.HintSize="450,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Creating new permit record for &quot;+in_strPermitNumber]" />
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Permit'" sap:VirtualizedContainerService.HintSize="450,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d6fd1564-440a-4561-9bb0-b17f0d52db00" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="484, 280, 96, 46" DesignTimeScaleFactor="1" FriendlyName="'Permit ALT P'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Permit ALT P' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Permit ALT P' role='menu' check:text='Permit ALT P' /&gt;" Guid="99c8c7e1-1f6f-43ee-997a-cdd70cc16b37" ImageBase64="" InformativeScreenshot="42622fe49a68ccc0e6a04954109f2885.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />

@@ -139,24 +139,25 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add_Responsibility" sap:VirtualizedContainerService.HintSize="1451.6000000000001,3757.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Add_Responsibility" sap:VirtualizedContainerService.HintSize="1451.6000000000001,3933.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - add responsibility" sap:VirtualizedContainerService.HintSize="518,3734.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="bf59a6f7-1b93-4b13-b2c4-3563c581a443" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - add responsibility" sap:VirtualizedContainerService.HintSize="518,3910" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="bf59a6f7-1b93-4b13-b2c4-3563c581a443" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="add responsibility" sap:VirtualizedContainerService.HintSize="484,3573.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="add responsibility" sap:VirtualizedContainerService.HintSize="484,3748.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message - adding responsibility" sap:VirtualizedContainerService.HintSize="450,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Adding Org ID and Party ID to responsibility record&quot;]" />
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'reFerence'" sap:VirtualizedContainerService.HintSize="450,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bf59a6f7-1b93-4b13-b2c4-3563c581a443" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="609, 280, 144, 46" DesignTimeScaleFactor="1" FriendlyName="'reFerence ALT F'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' check:text='reFerence ALT F' /&gt;" Guid="74b1e0fc-9cc1-48b1-81c6-c99c03fff105" ImageBase64="" InformativeScreenshot="4465f14d54f66087393142d9aff56f2c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -210,7 +211,7 @@
                       <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                     </InvokeMethod.TargetObject>
                   </InvokeMethod>
-                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="PP5" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Pause Point 5" IN_PopupMessage="[&quot;&lt;h1&gt;New Responsibility&lt;/h1&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;Please check that the following details have been entered correctly:&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;&lt;strong&gt;Personal Reference:&lt;/strong&gt;&amp;ensp;&quot;+in_strPartyID+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Organisation Reference:&lt;/strong&gt;&amp;ensp;&quot;+in_strOrgID+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Role:&lt;/strong&gt;&amp;ensp;&quot;+in_strRole+&quot;&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;If the information has been entered correctly, please click 'Continue'. Otherwise, please click 'Stop' and complete this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Pause Point 5" IN_WidthHeight="[{500,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="PP5" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Pause Point 5" IN_PopupMessage="[&quot;&lt;h1&gt;New Responsibility&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please check that the following details have been entered correctly:&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Personal Reference:&lt;/strong&gt;&amp;ensp;&quot;+in_strPartyID+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Organisation Reference:&lt;/strong&gt;&amp;ensp;&quot;+in_strOrgID+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Role:&lt;/strong&gt;&amp;ensp;&quot;+in_strRole+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;If the information has been entered correctly, please click 'Continue'. Otherwise, please click 'Stop' and complete this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Pause Point 5" IN_WidthHeight="[{500,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
                   <InvokeMethod DisplayName="Start timer - PP5" sap:VirtualizedContainerService.HintSize="382,159.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Start">
                     <InvokeMethod.TargetObject>
                       <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>

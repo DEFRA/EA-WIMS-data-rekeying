@@ -215,7 +215,7 @@
               <av:Point x:Key="AnnotationLocation">90,350</av:Point>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="If the transaction item is processed without any exception, its status is updated as Successful and the email is moved to the Success subfolder." DisplayName="Success" sap:VirtualizedContainerService.HintSize="570,1702.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence sap2010:Annotation.AnnotationText="If the transaction item is processed without any exception, its status is updated as Successful and the email is moved to the Success subfolder." DisplayName="Success" sap:VirtualizedContainerService.HintSize="484,923.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -223,38 +223,67 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="536,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Transaction Successful&quot;]" />
-            <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="536,835.6" sap2010:WorkflowViewState.IdRef="SequenceX_3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Transaction Successful&quot;]" />
+            <ueab:ExcelProcessScopeX LaunchTimeout="{x:Null}" DisplayAlerts="False" DisplayName="Excel Process Scope - set transaction status - write success" ExistingProcessAction="None" FileConflictResolution="ThrowException" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_3" LaunchMethod="Application" MacroSettings="DisableAll" ProcessMode="ReuseIfExists" ShowExcelWindow="False">
+              <ueab:ExcelProcessScopeX.Body>
+                <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                  </ActivityAction.Argument>
+                  <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File - write success" sap:VirtualizedContainerService.HintSize="570,1228.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ReadFormatting="RawValue" ResizeWindow="None" WorkbookPath="[g_Config(&quot;WorkListLocation&quot;).ToString]">
+                    <ueab:ExcelApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Write cells - completion" sap:VirtualizedContainerService.HintSize="536,950.8" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed" sap:VirtualizedContainerService.HintSize="502,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_7" Value="[&quot;Completed&quot;]" />
+                          <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="502,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_9" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
+                          <If Condition="[g_TransactionItem(&quot;UWWTR_Permit?&quot;).ToString=&quot;Y&quot;]" DisplayName="If UWWTR_Permit? = Y" sap:VirtualizedContainerService.HintSize="502,499.6" sap2010:WorkflowViewState.IdRef="If_12">
+                            <If.Then>
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,246.8" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;F&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - UWWTR_Permit" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_10" Value="[g_TransactionItem(&quot;UWWTR_Permit?&quot;).ToString]" />
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </ueab:ExcelApplicationCard.Body>
+                  </ueab:ExcelApplicationCard>
+                </ActivityAction>
+              </ueab:ExcelProcessScopeX.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="502,743.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="[g_Config(&quot;WorkListLocation&quot;).ToString]">
-                <ueab:ExcelApplicationCard.Body>
-                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                    </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,442.4" sap2010:WorkflowViewState.IdRef="Sequence_49">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_7" Value="[&quot;Completed&quot;]" />
-                      <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_9" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
-                    </Sequence>
-                  </ActivityAction>
-                </ueab:ExcelApplicationCard.Body>
-              </ueab:ExcelApplicationCard>
-            </ueab:SequenceX>
-            <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="536,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_8" MethodName="Stop">
+            </ueab:ExcelProcessScopeX>
+            <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="450,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_8" MethodName="Stop">
               <InvokeMethod.TargetObject>
                 <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
               </InvokeMethod.TargetObject>
             </InvokeMethod>
-            <d:LogTransaction sap:VirtualizedContainerService.HintSize="536,56.8" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="-1" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strOutcome="Success" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]" sap2010:WorkflowViewState.IdRef="LogTransaction_1">
+            <d:LogTransaction sap:VirtualizedContainerService.HintSize="450,56.8" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="-1" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strOutcome="Success" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]" sap2010:WorkflowViewState.IdRef="LogTransaction_1">
               <d:LogTransaction.IN_strMiscNotes>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" DisplayName="Literal&lt;String&gt;" Value="" />
@@ -266,7 +295,7 @@
                 </InArgument>
               </d:LogTransaction.IN_strOutcomeNotes>
             </d:LogTransaction>
-            <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="536,360.8" sap2010:WorkflowViewState.IdRef="If_7">
+            <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="450,360.8" sap2010:WorkflowViewState.IdRef="If_7">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_26">
                   <sap:WorkflowViewStateService.ViewState>
@@ -387,32 +416,34 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message (Business Exception)" sap:VirtualizedContainerService.HintSize="536,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Error" Message="[in_BusinessException.Message]" />
-                <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="536,1031.2" sap2010:WorkflowViewState.IdRef="SequenceX_1">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="502,939.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[g_Config(&quot;WorkListLocation&quot;).ToString]">
-                    <ueab:ExcelApplicationCard.Body>
-                      <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                        </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,638" sap2010:WorkflowViewState.IdRef="Sequence_47">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed (invalid)" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[&quot;Invalid&quot;]" />
-                          <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;E&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - exception reason" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[in_BusinessException.Message]" />
-                          <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
-                        </Sequence>
-                      </ActivityAction>
-                    </ueab:ExcelApplicationCard.Body>
-                  </ueab:ExcelApplicationCard>
-                </ueab:SequenceX>
+                <ueab:ExcelProcessScopeX LaunchTimeout="{x:Null}" DisplayAlerts="False" DisplayName="Excel Process Scope - set transaction status - write BRE" ExistingProcessAction="None" FileConflictResolution="ThrowException" sap:VirtualizedContainerService.HintSize="536,1034.8" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2" LaunchMethod="Application" MacroSettings="DisableAll" ProcessMode="ReuseIfExists" ShowExcelWindow="False">
+                  <ueab:ExcelProcessScopeX.Body>
+                    <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                      </ActivityAction.Argument>
+                      <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File - write BRE" sap:VirtualizedContainerService.HintSize="502,916" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadFormatting="RawValue" ResizeWindow="None" WorkbookPath="[g_Config(&quot;WorkListLocation&quot;).ToString]">
+                        <ueab:ExcelApplicationCard.Body>
+                          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Write cells - BRE" sap:VirtualizedContainerService.HintSize="468,638" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed (invalid)" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[&quot;Invalid&quot;]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;E&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - exception reason" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[in_BusinessException.Message]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
+                            </Sequence>
+                          </ActivityAction>
+                        </ueab:ExcelApplicationCard.Body>
+                      </ueab:ExcelApplicationCard>
+                    </ActivityAction>
+                  </ueab:ExcelProcessScopeX.Body>
+                </ueab:ExcelProcessScopeX>
                 <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="536,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_7" MethodName="Stop">
                   <InvokeMethod.TargetObject>
                     <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
@@ -529,32 +560,34 @@
                     </Catch>
                   </TryCatch.Catches>
                 </TryCatch>
-                <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="536,1031.2" sap2010:WorkflowViewState.IdRef="SequenceX_2">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="502,939.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="[g_Config(&quot;WorkListLocation&quot;).ToString]">
-                    <ueab:ExcelApplicationCard.Body>
-                      <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                        </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,638" sap2010:WorkflowViewState.IdRef="Sequence_48">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed (invalid)" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_4" Value="[&quot;Incomplete&quot;]" />
-                          <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;E&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - exception reason" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_5" Value="[&quot;System Exception - clear fields to retry&quot;]" />
-                          <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_6" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
-                        </Sequence>
-                      </ActivityAction>
-                    </ueab:ExcelApplicationCard.Body>
-                  </ueab:ExcelApplicationCard>
-                </ueab:SequenceX>
+                <ueab:ExcelProcessScopeX LaunchTimeout="{x:Null}" DisplayAlerts="False" DisplayName="Excel Process Scope - set transaction status - write SE" ExistingProcessAction="None" FileConflictResolution="ThrowException" sap:VirtualizedContainerService.HintSize="536,1034.8" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" LaunchMethod="Application" MacroSettings="DisableAll" ProcessMode="ReuseIfExists" ShowExcelWindow="False">
+                  <ueab:ExcelProcessScopeX.Body>
+                    <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                      </ActivityAction.Argument>
+                      <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File - write SE" sap:VirtualizedContainerService.HintSize="502,916" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ReadFormatting="RawValue" ResizeWindow="None" WorkbookPath="[g_Config(&quot;WorkListLocation&quot;).ToString]">
+                        <ueab:ExcelApplicationCard.Body>
+                          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Write cells - SE" sap:VirtualizedContainerService.HintSize="468,638" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed (invalid)" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_4" Value="[&quot;Incomplete&quot;]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;E&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - exception reason" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_5" Value="[&quot;System Exception - clear fields to retry&quot;]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_6" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
+                            </Sequence>
+                          </ActivityAction>
+                        </ueab:ExcelApplicationCard.Body>
+                      </ueab:ExcelApplicationCard>
+                    </ActivityAction>
+                  </ueab:ExcelProcessScopeX.Body>
+                </ueab:ExcelProcessScopeX>
                 <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="536,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_6" MethodName="Stop">
                   <InvokeMethod.TargetObject>
                     <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
