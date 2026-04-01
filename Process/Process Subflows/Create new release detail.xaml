@@ -157,21 +157,25 @@
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_new_release_detail" sap:VirtualizedContainerService.HintSize="1451.6000000000001,5699.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_new_release_detail" sap:VirtualizedContainerService.HintSize="1451.6000000000001,5892.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new release detail" sap:VirtualizedContainerService.HintSize="518,5676" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="e3fea92c-d747-483f-9a4c-5855d7399a83" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new release detail" sap:VirtualizedContainerService.HintSize="518,5869.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="e3fea92c-d747-483f-9a4c-5855d7399a83" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Create new release detail" sap:VirtualizedContainerService.HintSize="484,5514.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Create new release detail" sap:VirtualizedContainerService.HintSize="484,5708.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -310,7 +314,7 @@
                       <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                     </InvokeMethod.TargetObject>
                   </InvokeMethod>
-                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="PP10" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\FULLCSS.css&quot;]" IN_ErrorMessage="The stop button was pressed at Pause Point 10" IN_PopupMessage="[&quot;&lt;h1&gt;New Release Detail&lt;/h1&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;Please verify that the data for this Release Detail has been entered correctly:&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;&lt;strong&gt;Dete:&lt;/strong&gt;&amp;ensp;&quot;+in_strParamCode+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;C/A:&lt;/strong&gt;&amp;ensp;&quot;+in_strCorA+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Start Day:&lt;/strong&gt;&amp;ensp;&quot;+in_strStartDay+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Start Month:&lt;/strong&gt;&amp;ensp;&quot;+in_strStartMonth+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;End Day:&lt;/strong&gt;&amp;ensp;&quot;+in_strEndDay+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;End Month:&lt;/strong&gt;&amp;ensp;&quot;+in_strEndMonth+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Limit Value:&lt;/strong&gt;&amp;ensp;&quot;+in_strLimitValue+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Compliance Statistic Code:&lt;/strong&gt;&amp;ensp;&quot;+in_strComplianceStatisticCode+&quot;&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;If this data has been entered correctly, please click 'Continue'. Otherwise, please click 'Stop' and process the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Pause Point 10" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="PP10" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Pause Point 10" IN_PopupMessage="[&quot;&lt;h1&gt;New Release Detail&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please verify that the data for this Release Detail has been entered correctly:&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Dete:&lt;/strong&gt;&amp;ensp;&quot;+in_strParamCode+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;C/A:&lt;/strong&gt;&amp;ensp;&quot;+in_strCorA+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Start Day:&lt;/strong&gt;&amp;ensp;&quot;+in_strStartDay+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Start Month:&lt;/strong&gt;&amp;ensp;&quot;+in_strStartMonth+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;End Day:&lt;/strong&gt;&amp;ensp;&quot;+in_strEndDay+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;End Month:&lt;/strong&gt;&amp;ensp;&quot;+in_strEndMonth+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Limit Value:&lt;/strong&gt;&amp;ensp;&quot;+in_strLimitValue+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Compliance Statistic Code:&lt;/strong&gt;&amp;ensp;&quot;+in_strComplianceStatisticCode+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;If this data has been entered correctly, please click 'Continue'. Otherwise, please click 'Stop' and process the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Pause Point 10" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
                   <InvokeMethod DisplayName="Start timer - PP10" sap:VirtualizedContainerService.HintSize="382,159.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Start">
                     <InvokeMethod.TargetObject>
                       <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
@@ -328,7 +332,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[in_boolLastReleaseDetail]" DisplayName="Last release detail?" sap:VirtualizedContainerService.HintSize="450,495.6" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[in_boolLastReleaseDetail]" DisplayName="Last release detail?" sap:VirtualizedContainerService.HintSize="450,687.6" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,241.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
@@ -344,12 +348,22 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,282.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.2" DisplayName="Press down to new record" sap:VirtualizedContainerService.HintSize="382,222.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_9" InteractionMode="WindowMessages" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Shortcuts="[d(hk)][k(Down)][u(hk)]" Version="V3">
+                    <uix:NKeyboardShortcuts.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NKeyboardShortcuts.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NKeyboardShortcuts>
                 </Sequence>
               </If.Else>
             </If>

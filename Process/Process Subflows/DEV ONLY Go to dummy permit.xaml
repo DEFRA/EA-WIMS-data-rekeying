@@ -97,19 +97,19 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DEV_ONLY_Go_to_dummy_permit" sap:VirtualizedContainerService.HintSize="1451.6000000000001,1250" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DEV_ONLY_Go_to_dummy_permit" sap:VirtualizedContainerService.HintSize="1451.6000000000001,1631.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - go to dummy permit" sap:VirtualizedContainerService.HintSize="450,1226.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="72cca9fb-8eaf-49dd-976b-b9a8902ef2f7" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - go to dummy permit" sap:VirtualizedContainerService.HintSize="450,1608.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="72cca9fb-8eaf-49dd-976b-b9a8902ef2f7" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Go to dummy permit" sap:VirtualizedContainerService.HintSize="416,1065.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Go to dummy permit" sap:VirtualizedContainerService.HintSize="416,1447.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -135,9 +135,19 @@
                 <uix:TargetAnchorable DesignTimeRectangle="65, 705, 377, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text WIMS'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='WIMS permit reference number Required' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='WIMS permit reference number Required' role='text' /&gt;" Guid="cd29a7e6-696c-46ef-a817-321b6bd6f870" InformativeScreenshot="68dad17550204c9f76391bc4604cd0d1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Execute query'" sap:VirtualizedContainerService.HintSize="382,181.2" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="72cca9fb-8eaf-49dd-976b-b9a8902ef2f7" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Execute query'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="72cca9fb-8eaf-49dd-976b-b9a8902ef2f7" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="415, 404, 57, 57" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Execute a'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Execute a query in the current section.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Execute a query in the current section.' role='push button' check:text='Execute a query in the current section.' /&gt;" Guid="704d66d3-fecb-4e96-b606-08b08de25385" InformativeScreenshot="b2fafca4911461dfbe9d90f53f0b6ea6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Block' - outlets" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="72cca9fb-8eaf-49dd-976b-b9a8902ef2f7" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="273, 287, 83, 46" DesignTimeScaleFactor="1" FriendlyName="'Block ALT B'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' check:text='Block ALT B' /&gt;" Guid="92ba9777-f0a0-4f4a-b363-7148592fb768" InformativeScreenshot="86ec292d1711359164438f5c0ba99506.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next' to Reference block" sap:VirtualizedContainerService.HintSize="382,182.8" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="72cca9fb-8eaf-49dd-976b-b9a8902ef2f7" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="276, 377, 124, 42" DesignTimeScaleFactor="1" FriendlyName="'Next mnemonic N'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' /&gt;&lt;java name='Next mnemonic N' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' /&gt;&lt;java name='Next mnemonic N' role='menu item' check:text='Next mnemonic N' /&gt;" Guid="39e7fad0-7f6e-4ff0-9cc4-95fcee853937" InformativeScreenshot="bc83e8e25254455a89680ebd69daa88a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
           </Sequence>

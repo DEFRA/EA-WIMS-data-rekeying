@@ -51,6 +51,7 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Globalization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -363,10 +364,10 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="Org/Personnel" sap:VirtualizedContainerService.HintSize="604,56.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                        <Sequence DisplayName="Org/Personnel" sap:VirtualizedContainerService.HintSize="604,1298.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
@@ -396,7 +397,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </Assign>
-                                          <Assign sap2010:Annotation.AnnotationText="Also trim all values" DisplayName="Split address on comma and remove empty parts" sap:VirtualizedContainerService.HintSize="570,145.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                          <Assign sap2010:Annotation.AnnotationText="Also trim all values" DisplayName="Split address on comma and remove empty parts" sap:VirtualizedContainerService.HintSize="570,114.4" sap2010:WorkflowViewState.IdRef="Assign_6">
                                             <Assign.To>
                                               <OutArgument x:TypeArguments="s:String[]">[arrAddressParts]</OutArgument>
                                             </Assign.To>
@@ -418,7 +419,7 @@
                                               <InArgument x:TypeArguments="s:String[]">[{"","","",""}]</InArgument>
                                             </Assign.Value>
                                           </Assign>
-                                          <ui:ForEach x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="This loop is to ensure that:&#xA;- For addresses &lt;4 lines, the final line will always be line 4 (potentially leaving lines 1, 2 and/or 3 blank)&#xA;- For addresses &gt;4 lines, the final line will be a concatenation of everything beyond the 4th line" CurrentIndex="[intAddressPart]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="570,826.4" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrAddressParts]">
+                                          <ui:ForEach x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="This loop is to ensure that:&#xA;- For addresses &lt;4 lines, the final line will always be line 4 (potentially leaving lines 1, 2 and/or 3 blank)&#xA;- For addresses &gt;4 lines, the final line will be a concatenation of everything beyond the 4th line" CurrentIndex="[intAddressPart]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="570,748.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrAddressParts]">
                                             <ui:ForEach.Body>
                                               <ActivityAction x:TypeArguments="x:String">
                                                 <ActivityAction.Argument>
@@ -443,7 +444,7 @@
                                                             <OutArgument x:TypeArguments="x:String">[arrOrgAddress(3)]</OutArgument>
                                                           </Assign.To>
                                                           <Assign.Value>
-                                                            <InArgument x:TypeArguments="x:String">[Strings.Join(arrAddressParts.Skip(intAddressPart-1).ToArray,", ")]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String">[Strings.Join(arrAddressParts.Skip(intAddressPart).ToArray,", ")]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
                                                         <ui:Break sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="Break_1" />
@@ -557,7 +558,7 @@
                                                             <OutArgument x:TypeArguments="x:String">[arrDischargeAddress(4)]</OutArgument>
                                                           </Assign.To>
                                                           <Assign.Value>
-                                                            <InArgument x:TypeArguments="x:String">[Strings.Join(arrAddressParts.Skip(intAddressPart-1).ToArray,", ")]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String">[Strings.Join(arrAddressParts.Skip(intAddressPart).ToArray,", ")]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
                                                         <ui:Break sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="Break_2" />
@@ -605,7 +606,7 @@
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_strPhoneNumber">[dictPermitDetails("PhoneNumber")]</InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_strCompanyNumber">[dictPermitDetails("CompanyNumber")]</InArgument>
-                                              <OutArgument x:TypeArguments="x:String" x:Key="out_strOrgID">[dictPermitDetails("WIMSOrgID")]</OutArgument>
+                                              <OutArgument x:TypeArguments="x:String" x:Key="out_strOrgID">[dictPermitDetails("OrgID")]</OutArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_strOrgName">[dictPermitDetails("OrgName")]</InArgument>
                                               <InArgument x:TypeArguments="s:String[]" x:Key="in_arrAddress">[arrOrgAddress]</InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_strPostcode">[dictPermitDetails("OrgPostcode")]</InArgument>
@@ -821,10 +822,10 @@
                                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create new permit - Invoke Workflow File (Process\Process Subflows\Create new permit.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Process\Process Subflows\Create new permit.xaml">
                                                                                             <ui:InvokeWorkflowFile.Arguments>
-                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strPermitNumber">[g_TransactionItem("ReSP_ID").ToString]</InArgument>
-                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strGridReference">[dictPermitDetails("GridReference")]</InArgument>
-                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strIssuedDate">[dictPermitDetails("IssueDate")]</InArgument>
-                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strEffectiveDate">[dictPermitDetails("EffectiveDate")]</InArgument>
+                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strPermitNumber">[Regex.Replace(g_TransactionItem("ReSP_ID").ToString,"[^A-Za-z0-9]","")]</InArgument>
+                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strGridReference">[dictPermitDetails("GridReference").Replace(" ","")]</InArgument>
+                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strIssuedDate">[Date.ParseExact(dictPermitDetails("IssueDate"),"d MMMM, yyyy",System.Globalization.CultureInfo.CurrentCulture).ToString("dd-MMM-yyyy")]</InArgument>
+                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strEffectiveDate">[Date.ParseExact(dictPermitDetails("EffectiveDate"),"d MMMM, yyyy",System.Globalization.CultureInfo.CurrentCulture).ToString("dd-MMM-yyyy")]</InArgument>
                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strReceivingWater">[dictPermitDetails("ReceivingEnvironmentDescription")]</InArgument>
                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strNumericOrDescriptive">[dictPermitDetails("NumericOrDescriptive")]</InArgument>
                                                                                             </ui:InvokeWorkflowFile.Arguments>
@@ -912,8 +913,8 @@
                                                                                                                   <ui:LogMessage DisplayName="Log Message - creating outlet" sap:VirtualizedContainerService.HintSize="518,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Creating outlet &quot;+(intOutletIndex+1).ToString+&quot; of &quot;+dtOutlets.RowCount.ToString]" />
                                                                                                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create new outlet - Invoke Workflow File (Process\Process Subflows\Create new outlet.xaml)" sap:VirtualizedContainerService.HintSize="518,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="Process\Process Subflows\Create new outlet.xaml">
                                                                                                                     <ui:InvokeWorkflowFile.Arguments>
-                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_strReference">[CurrentRow("Name").ToString]</InArgument>
-                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_strGridReference">[CurrentRow("NGR").ToString]</InArgument>
+                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_strReference">[Regex.Replace(CurrentRow("Name").ToString,"[^0-9]","")]</InArgument>
+                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_strGridReference">[CurrentRow("NGR").ToString.Replace(" ","")]</InArgument>
                                                                                                                       <InArgument x:TypeArguments="x:String" x:Key="in_strEnvironmentCode">[CurrentRow("EnvCode").ToString]</InArgument>
                                                                                                                       <InArgument x:TypeArguments="x:String" x:Key="in_strTotalOutlets">[dtOutlets.RowCount.ToString]</InArgument>
                                                                                                                       <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_uiOutletRef">[uiOutlets]</OutArgument>
@@ -935,9 +936,9 @@
                                                                                                                           <ui:LogMessage DisplayName="Log Message - creating release" sap:VirtualizedContainerService.HintSize="450,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Creating release &quot;+(intReleaseIndex+1).ToString+&quot; of &quot;+dtReleases.Select(&quot;Name='&quot;+CurrentRow(&quot;Name&quot;).ToString+&quot;'&quot;).Count.ToString +&quot; under outlet &quot;+(intOutletIndex+1).ToString]" />
                                                                                                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create new release - Invoke Workflow File (Process\Process Subflows\Create new release.xaml)" sap:VirtualizedContainerService.HintSize="450,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Process\Process Subflows\Create new release.xaml">
                                                                                                                             <ui:InvokeWorkflowFile.Arguments>
-                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strName">[CurrentRow("Name").ToString]</InArgument>
+                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strName">[Regex.Replace(CurrentRow("Name").ToString,"[^0-9]","")]</InArgument>
                                                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strDischargeTypes">[dictPermitDetails("DischargeTypes").Replace("|","&lt;br&gt;")+"&lt;br&gt;"]</InArgument>
-                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strGridReference">[CurrentRow("NGR").ToString]</InArgument>
+                                                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strGridReference">[CurrentRow("NGR").ToString.Replace(" ","")]</InArgument>
                                                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strTreatmentType">[CurrentRow("TreatmentTypes").ToString]</InArgument>
                                                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strFlowCode">[CurrentRow("FlowCode").ToString]</InArgument>
                                                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strDescription">[if(String.IsNullOrEmpty(CurrentRow("ActivityDescription").ToString),CurrentRow("RegulatedActivitySubClass").ToString,CurrentRow("ActivityDescription").ToString)]</InArgument>
@@ -1044,6 +1045,7 @@
                                                                                                                       <InArgument x:TypeArguments="x:String" x:Key="in_strOrgID">[dictPermitDetails("OrgID")]</InArgument>
                                                                                                                       <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolConfidential">[dictPermitDetails("Confidential").Trim.ToLower="yes"]</InArgument>
                                                                                                                       <InArgument x:TypeArguments="x:String" x:Key="in_strPartyID">[dictPermitDetails("PartyID")]</InArgument>
+                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_strOrgName">[dictPermitDetails("OrgName")]</InArgument>
                                                                                                                     </ui:InvokeWorkflowFile.Arguments>
                                                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">

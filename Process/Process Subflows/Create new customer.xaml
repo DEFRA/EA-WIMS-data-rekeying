@@ -151,27 +151,19 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Create_new_customer" sap:VirtualizedContainerService.HintSize="1451.6000000000001,7331.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="4" Name="strAddressLine" />
-    </Sequence.Variables>
+  <Sequence DisplayName="Create_new_customer" sap:VirtualizedContainerService.HintSize="1451.6000000000001,8014.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Create new customer in WIMS" sap:VirtualizedContainerService.HintSize="586,7308" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="f9cd9324-825a-41ea-af75-ffff561f675d" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Create new customer in WIMS" sap:VirtualizedContainerService.HintSize="586,7991.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="f9cd9324-825a-41ea-af75-ffff561f675d" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Create new customer in WIMS" sap:VirtualizedContainerService.HintSize="552,7146.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="s:String[]" Name="arrAddressParts" />
-              <Variable x:TypeArguments="x:String" Name="strPostcode" />
-              <Variable x:TypeArguments="x:Int32" Name="intAddressPartIndex" />
-            </Sequence.Variables>
+          <Sequence DisplayName="Create new customer in WIMS" sap:VirtualizedContainerService.HintSize="552,7830.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -185,31 +177,78 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.2" DisplayName="Press tab to Company Number" sap:VirtualizedContainerService.HintSize="518,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" InteractionMode="WindowMessages" ScopeIdentifier="f9cd9324-825a-41ea-af75-ffff561f675d" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
-              <uix:NKeyboardShortcuts.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NKeyboardShortcuts.Target>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'reFerence'" sap:VirtualizedContainerService.HintSize="518,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f9cd9324-825a-41ea-af75-ffff561f675d" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="609, 280, 144, 46" DesignTimeScaleFactor="1" FriendlyName="'reFerence ALT F'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' check:text='reFerence ALT F' /&gt;" Guid="74b1e0fc-9cc1-48b1-81c6-c99c03fff105" ImageBase64="" InformativeScreenshot="4465f14d54f66087393142d9aff56f2c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-            </uix:NKeyboardShortcuts>
-            <If Condition="[not String.IsNullOrEmpty(in_strCompanyNumber)]" DisplayName="If company number provided" sap:VirtualizedContainerService.HintSize="518,369.6" sap2010:WorkflowViewState.IdRef="If_8">
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'People'" sap:VirtualizedContainerService.HintSize="518,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f9cd9324-825a-41ea-af75-ffff561f675d" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="612, 412, 211, 42" DesignTimeScaleFactor="1" FriendlyName="'People mnemonic P'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;&lt;java name='People mnemonic P' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;&lt;java name='People mnemonic P' role='menu' check:text='People mnemonic P' /&gt;" Guid="28e42b92-7575-4645-96fe-464d602e8207" ImageBase64="" InformativeScreenshot="e5f51d18350e1c1a982129436a26801f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Organisations'" sap:VirtualizedContainerService.HintSize="518,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f9cd9324-825a-41ea-af75-ffff561f675d" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="821, 583, 217, 42" DesignTimeScaleFactor="1" FriendlyName="'Organisations mnemonic O'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;&lt;java name='People mnemonic P' role='menu' /&gt;&lt;java name='Organisations mnemonic O' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;&lt;java name='People mnemonic P' role='menu' /&gt;&lt;java name='Organisations mnemonic O' role='menu item' check:text='Organisations mnemonic O' /&gt;" Guid="76a00ce3-adf0-4ec0-8a75-a776522e7cb2" ImageBase64="" InformativeScreenshot="6d2445cd0da4bba94e3f3dd73c61430c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="518,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.2" DisplayName="Press tab to Company Number" sap:VirtualizedContainerService.HintSize="518,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" InteractionMode="WindowMessages" ScopeIdentifier="f9cd9324-825a-41ea-af75-ffff561f675d" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+                    <uix:NKeyboardShortcuts.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NKeyboardShortcuts.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NKeyboardShortcuts>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <If Condition="[not String.IsNullOrEmpty(in_strCompanyNumber)]" DisplayName="If company number provided" sap:VirtualizedContainerService.HintSize="518,398" sap2010:WorkflowViewState.IdRef="If_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,136.4" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Company Reg No'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="f9cd9324-825a-41ea-af75-ffff561f675d" Text="[in_strCompanyNumber]" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Company Reg No'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,76.4" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="f9cd9324-825a-41ea-af75-ffff561f675d" Text="[in_strCompanyNumber]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="1573, 658, 189, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text Company'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN ORGANISATIONS' role='internal frame' /&gt;&lt;java name='Company registration Number' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN ORGANISATIONS' role='internal frame' /&gt;&lt;java name='Company registration Number' role='text' /&gt;" Guid="d817999d-25cd-468e-9eb5-1466f7a27b23" ImageBase64="" InformativeScreenshot="c164c7e6d5fe6182bf63f3e77fabb36a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NTypeInto.Target>
@@ -396,10 +435,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Postcode'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,56.8" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="f9cd9324-825a-41ea-af75-ffff561f675d" Text="[strPostcode]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Postcode'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="f9cd9324-825a-41ea-af75-ffff561f675d" Text="[in_strPostcode]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="1525, 989, 237, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text Column'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN ORGANISATIONS' role='internal frame' /&gt;&lt;java name='Column Definition Derived From Attribute Postcode' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN ORGANISATIONS' role='internal frame' /&gt;&lt;java name='Column Definition Derived From Attribute Postcode' role='text' /&gt;" Guid="6ee5f552-a3b2-4f40-8048-168de31b5940" ImageBase64="" InformativeScreenshot="f3a9d9e7714e8636f80c678234c9f017.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
             <If Condition="[not String.IsNullOrEmpty(in_strPhoneNumber)]" DisplayName="If telephone number provided" sap:VirtualizedContainerService.HintSize="518,535.2" sap2010:WorkflowViewState.IdRef="If_3">
               <sap:WorkflowViewStateService.ViewState>
@@ -442,7 +486,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[CBool(g_Config(&quot;PausePoint3&quot;))]" DisplayName="Pause Point 3?" sap:VirtualizedContainerService.HintSize="518,1021.6" sap2010:WorkflowViewState.IdRef="If_5">
+            <If Condition="[CBool(g_Config(&quot;PausePoint3&quot;))]" DisplayName="Pause Point 3?" sap:VirtualizedContainerService.HintSize="518,1080.4" sap2010:WorkflowViewState.IdRef="If_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -486,7 +530,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,83.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -495,7 +539,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If sap2010:Annotation.AnnotationText="Don't save record if in dev due to use of production site/data" Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="Is Dev? - new customer" sap:VirtualizedContainerService.HintSize="518,1518.4" sap2010:WorkflowViewState.IdRef="If_6">
+            <If sap2010:Annotation.AnnotationText="Don't save record if in dev due to use of production site/data" Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="Is Dev? - new customer" sap:VirtualizedContainerService.HintSize="518,1521.6" sap2010:WorkflowViewState.IdRef="If_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -503,14 +547,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,341.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,342.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message - is dev (new customer)" sap:VirtualizedContainerService.HintSize="434,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Dev mode - not saving new customer record&quot;]">
+                  <ui:LogMessage DisplayName="Log Message - is dev (new customer)" sap:VirtualizedContainerService.HintSize="434,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Dev mode - not saving new customer record&quot;]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">True</x:Boolean>

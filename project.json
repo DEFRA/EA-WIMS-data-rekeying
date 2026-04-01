@@ -83,6 +83,48 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Process\\Process Subflows\\tc01 Return to main page.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "94257262-4665-4d20-a238-30dcfc8740da",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Extract Permit Info.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "1f30763e-4bbb-4e31-8a5b-9a231b803b51",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Log in to WIMS region.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "dbae350c-c82f-4d4b-9db7-62d1ca4752c0",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Update Party Name Sheet.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "afa6575c-e65b-4dca-9abc-af3c692634b9",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 DEV ONLY Go to dummy permit.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "68e925b6-d120-46c9-8110-0be4bf39e43b",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Create new outlet.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "2b879c50-09a3-447c-932c-0421ed06a748",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc02 Create new outlet.xaml"
       }
     ],
     "saveToCloud": false
