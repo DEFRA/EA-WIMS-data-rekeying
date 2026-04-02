@@ -49,6 +49,8 @@
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -117,19 +119,19 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Check if permit exists" sap:VirtualizedContainerService.HintSize="1451.6000000000001,2471.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Check if permit exists" sap:VirtualizedContainerService.HintSize="1451.6000000000001,2913.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Check if permit exists" sap:VirtualizedContainerService.HintSize="518,2448.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="8724687f-189a-496c-964e-3bf5636dea45" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Check if permit exists" sap:VirtualizedContainerService.HintSize="518,2890" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="8724687f-189a-496c-964e-3bf5636dea45" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Search permit number" sap:VirtualizedContainerService.HintSize="484,2287.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Search permit number" sap:VirtualizedContainerService.HintSize="484,2728.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strRecordCount" />
               <Variable x:TypeArguments="x:Int32" Name="intRecordCount" />
@@ -140,7 +142,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Log Message - does permit already exist" sap:VirtualizedContainerService.HintSize="450,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Searching for pre-existing record of permit &quot;+in_strPermitNumber]" />
-            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Also store this element as signature of home page" ClickType="Single" DisplayName="Click 'Permits'" sap:VirtualizedContainerService.HintSize="450,221.2" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" OutUiElement="[out_uiHomePage]" ScopeIdentifier="8724687f-189a-496c-964e-3bf5636dea45" Version="V3">
+            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Also store this element as signature of home page. Otherwise we use keyboard shortcuts for menu navigation." ClickType="Single" DisplayName="Click 'Permits'" sap:VirtualizedContainerService.HintSize="450,251.2" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" OutUiElement="[out_uiHomePage]" ScopeIdentifier="8724687f-189a-496c-964e-3bf5636dea45" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="182, 280, 115, 46" DesignTimeScaleFactor="1" FriendlyName="'Permits ALT P'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Permits ALT P' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Permits ALT P' role='menu item' check:text='Permits ALT P' /&gt;" Guid="ecb02836-6748-4318-94f3-0605322bdec9" ImageBase64="" InformativeScreenshot="bd1273afb53ae414d59f8ab5198828fb.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -150,7 +152,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Also store this element as signature of permits page" ClickType="Single" DisplayName="Click 'Permit'" sap:VirtualizedContainerService.HintSize="450,221.2" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" OutUiElement="[out_uiPermits]" ScopeIdentifier="8724687f-189a-496c-964e-3bf5636dea45" Version="V3">
+            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Also store this element as signature of permits page. Otherwise we use keyboard shortcuts for menu navigation." ClickType="Single" DisplayName="Click 'Permit'" sap:VirtualizedContainerService.HintSize="450,251.2" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" OutUiElement="[out_uiPermits]" ScopeIdentifier="8724687f-189a-496c-964e-3bf5636dea45" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="484, 280, 96, 46" DesignTimeScaleFactor="1" FriendlyName="'Permit ALT P'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Permit ALT P' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Permit ALT P' role='menu' check:text='Permit ALT P' /&gt;" Guid="99c8c7e1-1f6f-43ee-997a-cdd70cc16b37" ImageBase64="" InformativeScreenshot="42622fe49a68ccc0e6a04954109f2885.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -193,7 +195,7 @@
                 <InArgument x:TypeArguments="x:Int32">[CInt(Regex.Match(strRecordCount,"(?&lt;=retrieve )[0-9]*").Value.Trim)]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[intRecordCount&gt;0]" DisplayName="If record count is non-zero" sap:VirtualizedContainerService.HintSize="450,428.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[intRecordCount&gt;0]" DisplayName="If record count is non-zero" sap:VirtualizedContainerService.HintSize="450,436" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -220,6 +222,16 @@
                 </Sequence>
               </If.Else>
             </If>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close' to clear" sap:VirtualizedContainerService.HintSize="450,190" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8724687f-189a-496c-964e-3bf5636dea45" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="44, 404, 58, 58" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Close the'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Close the current screen.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Close the current screen.' role='push button' check:text='Close the current screen.' /&gt;" Guid="118a1e57-d67d-48cf-9a42-a96306ce81ec" InformativeScreenshot="f0d019d4865f50775bd991629e347e73.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close' to quit" sap:VirtualizedContainerService.HintSize="450,182.8" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8724687f-189a-496c-964e-3bf5636dea45" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="44, 404, 58, 58" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Close the'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Close the current screen.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Close the current screen.' role='push button' check:text='Close the current screen.' /&gt;" Guid="118a1e57-d67d-48cf-9a42-a96306ce81ec" InformativeScreenshot="f0d019d4865f50775bd991629e347e73.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

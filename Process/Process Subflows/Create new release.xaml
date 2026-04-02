@@ -156,19 +156,19 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_new_release" sap:VirtualizedContainerService.HintSize="1451.6000000000001,7782.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_new_release" sap:VirtualizedContainerService.HintSize="1451.6000000000001,7940" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new release" sap:VirtualizedContainerService.HintSize="518,7759.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="9fa83ed0-bddd-4386-8a7c-9a7b62b6cae2" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new release" sap:VirtualizedContainerService.HintSize="518,7916.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="9fa83ed0-bddd-4386-8a7c-9a7b62b6cae2" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Create new release" sap:VirtualizedContainerService.HintSize="484,7598" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Create new release" sap:VirtualizedContainerService.HintSize="484,7755.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="boolDismissed" />
               <Variable x:TypeArguments="x:String" Name="strButtonSelected" />
@@ -267,7 +267,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.2" DisplayName="Press Ctrl+L for discharge type lookup" sap:VirtualizedContainerService.HintSize="450,266.8" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="WindowMessages" ScopeIdentifier="9fa83ed0-bddd-4386-8a7c-9a7b62b6cae2" Shortcuts="[d(hk)][d(ctrl)]l[u(ctrl)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.2" DisplayName="Press Ctrl+L for discharge type lookup" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="WindowMessages" ScopeIdentifier="9fa83ed0-bddd-4386-8a7c-9a7b62b6cae2" Shortcuts="[d(hk)][d(ctrl)]l[u(ctrl)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>
@@ -282,7 +282,7 @@
                 <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
               </InvokeMethod.TargetObject>
             </InvokeMethod>
-            <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="User Prompt - Select discharge type" sap:VirtualizedContainerService.HintSize="450,434.8" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Discharge Type selection." IN_PopupMessage="[&quot;&lt;h1&gt;Select Discharge Type&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;The following discharge types were extracted from the report:&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&quot;+in_strDischargeTypes+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;Please select the most appropriate discharge type code from the lookup menu in WIMS.&lt;br&gt;&quot;+ &#xA;&quot;Once you have determined this, please click 'OK' on the lookup window and then click 'Continue' on this pop-up.&lt;br&gt;&quot;+&#xA;&quot;Please &lt;strong&gt;do not&lt;/strong&gt; tab through to other fields in the Releases form as this can disrupt the robot's data entry.&lt;br&gt;&quot;+&#xA;&quot;If you are unsure or if there is another issue, please click 'Stop' on this pop-up and process the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Select discharge type" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+            <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="User Prompt - Select discharge type" sap:VirtualizedContainerService.HintSize="450,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Discharge Type selection." IN_PopupMessage="[&quot;&lt;h1&gt;Select Discharge Type&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;The following discharge types were extracted from the report:&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&quot;+in_strDischargeTypes+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;Please select the most appropriate discharge type code from the lookup menu in WIMS.&lt;br&gt;&quot;+ &#xA;&quot;Once you have determined this, please click 'OK' on the lookup window and then click 'Continue' on this pop-up.&lt;br&gt;&quot;+&#xA;&quot;Please &lt;strong&gt;do not&lt;/strong&gt; tab through to other fields in the Releases form as this can disrupt the robot's data entry.&lt;br&gt;&quot;+&#xA;&quot;If you are unsure or if there is another issue, please click 'Stop' on this pop-up and process the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Select discharge type" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
             <InvokeMethod DisplayName="Start timer - discharge type selection" sap:VirtualizedContainerService.HintSize="450,171.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="Start">
               <InvokeMethod.TargetObject>
                 <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
@@ -389,13 +389,13 @@
                 <uix:TargetAnchorable DesignTimeRectangle="240, 1142, 1535, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'ST and'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='The description of the release site.' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='The description of the release site.' role='text' /&gt;" Guid="614b10cb-0007-4380-96e0-764f9b7d823e" InformativeScreenshot="b122a07ff9c0ae5bd234aa728604790a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <ui:RepeatNumberOfTimesX DisplayName="Repeat Number of Times - tab to Requirements" sap:VirtualizedContainerService.HintSize="450,398.4" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_2" NumberOfTimes="5" StartAt="1">
+            <ui:RepeatNumberOfTimesX DisplayName="Repeat Number of Times - tab to Requirements" sap:VirtualizedContainerService.HintSize="450,398.8" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_2" NumberOfTimes="5" StartAt="1">
               <ui:RepeatNumberOfTimesX.Body>
                 <ActivityAction x:TypeArguments="x:Int32">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItem" />
                   </ActivityAction.Argument>
-                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.2" DisplayName="Press tab to Requirements" sap:VirtualizedContainerService.HintSize="334,198.8" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_9" InteractionMode="WindowMessages" ScopeIdentifier="9fa83ed0-bddd-4386-8a7c-9a7b62b6cae2" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.2" DisplayName="Press tab to Requirements" sap:VirtualizedContainerService.HintSize="334,199.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_9" InteractionMode="WindowMessages" ScopeIdentifier="9fa83ed0-bddd-4386-8a7c-9a7b62b6cae2" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
                     <uix:NKeyboardShortcuts.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NKeyboardShortcuts.Target>
@@ -447,6 +447,11 @@
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save' - new release" sap:VirtualizedContainerService.HintSize="450,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9fa83ed0-bddd-4386-8a7c-9a7b62b6cae2" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="109, 388, 57, 58" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Save any'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Save any pending changes permanently in the database.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Save any pending changes permanently in the database.' role='push button' check:text='Save any pending changes permanently in the database.' /&gt;" Guid="51a9e5e5-9502-4482-9e6f-6832a8178365" InformativeScreenshot="c1fc292cbeff64bbd5dab26dee3e93a5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK' - transaction complete pop-up" sap:VirtualizedContainerService.HintSize="450,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9fa83ed0-bddd-4386-8a7c-9a7b62b6cae2" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1829, 1288, 82, 50" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'OK ALT O'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Info Transaction complete - record(s) applied and saved' role='internal frame' /&gt;&lt;java name='Transaction complete - record(s) applied and saved' role='option pane' /&gt;&lt;java name='OK ALT O' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Info Transaction complete - record(s) applied and saved' role='internal frame' /&gt;&lt;java name='Transaction complete - record(s) applied and saved' role='option pane' /&gt;&lt;java name='OK ALT O' role='push button' check:text='OK ALT O' /&gt;" Guid="85519f8e-0d83-4ff0-9cda-3d131a939796" InformativeScreenshot="980438926bb2d1e41ac9a8ca808e2697.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Block' - to release details" sap:VirtualizedContainerService.HintSize="450,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9fa83ed0-bddd-4386-8a7c-9a7b62b6cae2" Version="V3">

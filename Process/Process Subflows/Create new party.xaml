@@ -145,31 +145,36 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_new_party" sap:VirtualizedContainerService.HintSize="1451.6000000000001,6732.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_new_party" sap:VirtualizedContainerService.HintSize="1451.6000000000001,6599.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new party" sap:VirtualizedContainerService.HintSize="518,6709.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="f1d3be45-4d97-4ee6-8504-079b172eb555" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new party" sap:VirtualizedContainerService.HintSize="518,6576.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="f1d3be45-4d97-4ee6-8504-079b172eb555" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="create new party" sap:VirtualizedContainerService.HintSize="484,6548" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="create new party" sap:VirtualizedContainerService.HintSize="484,6415.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Log Message - creating new party" sap:VirtualizedContainerService.HintSize="450,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Creating new party record for '&quot;+in_strPartyName+&quot;'&quot;]" />
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press keyboard shortcuts to Parties" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_8" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="" ShortcutsArgument="%[d(hk)][d(alt)]fpp[u(alt)][u(hk)]" Version="V3">
+              <uix:NKeyboardShortcuts.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NKeyboardShortcuts.Target>
+            </uix:NKeyboardShortcuts>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type 'Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Text="[in_strPartyName]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable CVScreenId="d8778895-45b6-4114-8b73-444d4598fd58" CvElementArea="210, 731, 764, 54" CvType="InputBox" DesignTimeRectangle="216, 736, 756, 48" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text The'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='The name of the person Required' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='The name of the person Required' role='text' /&gt;" Guid="ade324ac-e489-411b-ac78-b36d5aa03bd3" InformativeScreenshot="97034c6e308088a0155f9c0c7e264e31.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press 'Tab' to ID" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DisplayName="Press 'Tab' to ID" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="81a261fd-1c87-438d-af77-e193673cb1c3" ImageBase64="" InformativeScreenshot="1914fc5bfb600a2876111d7eeecb2ed1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>
@@ -179,7 +184,7 @@
                 <uix:TargetAnchorable DesignTimeRectangle="216, 831, 189, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text Unique'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Unique reference number to identify a person. Required' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Unique reference number to identify a person. Required' role='text' /&gt;" Guid="3572b2ac-be79-4149-8594-5d828778d51c" ImageBase64="" InformativeScreenshot="078543c23b69d9e62d67e9e109fd7f86.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press 'Tab' to Address Line 1" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DisplayName="Press 'Tab' to Address Line 1" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="81a261fd-1c87-438d-af77-e193673cb1c3" ImageBase64="" InformativeScreenshot="1914fc5bfb600a2876111d7eeecb2ed1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>
@@ -189,7 +194,7 @@
                 <uix:TargetAnchorable DesignTimeRectangle="216, 925, 756, 48" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text Address line 1'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Address line 1' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Address line 1' role='text' /&gt;" Guid="18436aa8-79d5-451a-9fbf-d98e43a13936" ImageBase64="" InformativeScreenshot="28bbe21ea9c69de2c06f57f46ddf72f9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press 'Tab' to Telephone" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DisplayName="Press 'Tab' to Telephone" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="81a261fd-1c87-438d-af77-e193673cb1c3" ImageBase64="" InformativeScreenshot="1914fc5bfb600a2876111d7eeecb2ed1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>
@@ -220,7 +225,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press 'Tab' to Address Line 2" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DisplayName="Press 'Tab' to Address Line 2" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="81a261fd-1c87-438d-af77-e193673cb1c3" ImageBase64="" InformativeScreenshot="1914fc5bfb600a2876111d7eeecb2ed1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>
@@ -251,7 +256,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press 'Tab' to Address Line 3" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DisplayName="Press 'Tab' to Address Line 3" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="81a261fd-1c87-438d-af77-e193673cb1c3" ImageBase64="" InformativeScreenshot="1914fc5bfb600a2876111d7eeecb2ed1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>
@@ -282,7 +287,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press 'Tab' to Postcode" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DisplayName="Press 'Tab' to Postcode" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="81a261fd-1c87-438d-af77-e193673cb1c3" ImageBase64="" InformativeScreenshot="1914fc5bfb600a2876111d7eeecb2ed1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>
@@ -292,7 +297,7 @@
                 <uix:TargetAnchorable DesignTimeRectangle="1303, 1020, 236, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text Column'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Column Definition Derived From Attribute Postcode' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Column Definition Derived From Attribute Postcode' role='text' /&gt;" Guid="33dbca7c-912e-4d1c-9eb5-c48878214b1e" ImageBase64="" InformativeScreenshot="4cd01f5f84512fde4a9174fe74190f92.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press 'Tab' to Address Line 4" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DisplayName="Press 'Tab' to Address Line 4" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" InteractionMode="WindowMessages" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="81a261fd-1c87-438d-af77-e193673cb1c3" ImageBase64="" InformativeScreenshot="1914fc5bfb600a2876111d7eeecb2ed1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>
@@ -320,7 +325,7 @@
                       <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                     </InvokeMethod.TargetObject>
                   </InvokeMethod>
-                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="PP4" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Pause Point 4" IN_PopupMessage="[&quot;&lt;h1&gt;New Party Created&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please review the following information entered before the robot commits it to WIMS.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Name:&lt;/strong&gt;&amp;ensp;&quot;+in_strPartyName+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;ID:&lt;/strong&gt;&amp;ensp;&quot;+in_strPartyID+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Address Line 1:&lt;/strong&gt;&amp;ensp;&quot;+in_arrAddress(0)+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Address Line 2:&lt;/strong&gt;&amp;ensp;&quot;+in_arrAddress(1)+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Address Line 3:&lt;/strong&gt;&amp;ensp;&quot;+in_arrAddress(2)+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Address Line 4:&lt;/strong&gt;&amp;ensp;&quot;+in_arrAddress(3)+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Postcode:&lt;/strong&gt;&amp;ensp;&quot;+in_strPostcode+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Telephone:&lt;/strong&gt;&amp;ensp;&quot;+in_strTelephone+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;If the details have been entered correctly, please click 'Continue'. Otherwise, please click 'Stop' and complete this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Pause Point 4" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="PP4" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Pause Point 4" IN_PopupMessage="[&quot;&lt;h1&gt;New Party Created&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please review the following information entered before the robot commits it to WIMS.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Name:&lt;/strong&gt;&amp;ensp;&quot;+in_strPartyName+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;ID:&lt;/strong&gt;&amp;ensp;&quot;+in_strPartyID+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Address Line 1:&lt;/strong&gt;&amp;ensp;&quot;+in_arrAddress(0)+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Address Line 2:&lt;/strong&gt;&amp;ensp;&quot;+in_arrAddress(1)+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Address Line 3:&lt;/strong&gt;&amp;ensp;&quot;+in_arrAddress(2)+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Address Line 4:&lt;/strong&gt;&amp;ensp;&quot;+in_arrAddress(3)+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Postcode:&lt;/strong&gt;&amp;ensp;&quot;+in_strPostcode+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Telephone:&lt;/strong&gt;&amp;ensp;&quot;+in_strTelephone+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;If the details have been entered correctly, please click 'Continue'. Otherwise, please click 'Stop' and complete this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Pause Point 4" IN_WidthHeight="[{500,600}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
                   <InvokeMethod DisplayName="Start timer - PP4" sap:VirtualizedContainerService.HintSize="382,159.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Start">
                     <InvokeMethod.TargetObject>
                       <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
@@ -338,7 +343,13 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="Is Dev? - new party" sap:VirtualizedContainerService.HintSize="450,633.6" sap2010:WorkflowViewState.IdRef="If_6">
+            <If Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="Is Dev? - new party" sap:VirtualizedContainerService.HintSize="450,85.2" sap2010:WorkflowViewState.IdRef="If_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,228.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
@@ -375,6 +386,11 @@
                 </Sequence>
               </If.Else>
             </If>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close' - clear/exit parties" sap:VirtualizedContainerService.HintSize="450,182.8" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1d3be45-4d97-4ee6-8504-079b172eb555" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="44, 404, 58, 58" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Close the'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Close the current screen.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Close the current screen.' role='push button' check:text='Close the current screen.' /&gt;" Guid="4c35c267-6ce0-48fa-8d1c-3862a36a62b3" InformativeScreenshot="6be1b32e921f17da1a0de57319d3c948.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

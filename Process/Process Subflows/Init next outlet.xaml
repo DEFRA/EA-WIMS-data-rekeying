@@ -1,4 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Previous_block__next_record" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Previous_block__next_record_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Previous_block__next_record" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_boolMoreRecords" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <this:Previous_block__next_record.in_boolMoreRecords>
+    <InArgument x:TypeArguments="x:Boolean" />
+  </this:Previous_block__next_record.in_boolMoreRecords>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Previous_block__next_record_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -34,6 +44,8 @@
       <x:String>System.Linq.Expressions</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -88,46 +100,73 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Previous_block__next_record" sap:VirtualizedContainerService.HintSize="1451.6000000000001,998.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="init next outlet" sap:VirtualizedContainerService.HintSize="1451.6000000000001,1310" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - previous block, next record" sap:VirtualizedContainerService.HintSize="450,975.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="c902a8ec-aa2f-4751-a810-ca420b67b38c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - init next outlet" sap:VirtualizedContainerService.HintSize="518,1286.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="c902a8ec-aa2f-4751-a810-ca420b67b38c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Previous block, next record" sap:VirtualizedContainerService.HintSize="416,814.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Previous block, next record" sap:VirtualizedContainerService.HintSize="484,1125.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Block'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c902a8ec-aa2f-4751-a810-ca420b67b38c" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Block'" sap:VirtualizedContainerService.HintSize="450,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c902a8ec-aa2f-4751-a810-ca420b67b38c" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="273, 287, 83, 46" DesignTimeScaleFactor="1" FriendlyName="'Block ALT B'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' check:text='Block ALT B' /&gt;" Guid="92ba9777-f0a0-4f4a-b363-7148592fb768" InformativeScreenshot="86ec292d1711359164438f5c0ba99506.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Previous'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c902a8ec-aa2f-4751-a810-ca420b67b38c" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Previous'" sap:VirtualizedContainerService.HintSize="450,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c902a8ec-aa2f-4751-a810-ca420b67b38c" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="276, 351, 124, 42" DesignTimeScaleFactor="1" FriendlyName="'Previous mnemonic P'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' /&gt;&lt;java name='Previous mnemonic P' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' /&gt;&lt;java name='Previous mnemonic P' role='menu item' check:text='Previous mnemonic P' /&gt;" Guid="05e11b32-cf73-49e3-82fb-a2aa6e4acf1a" InformativeScreenshot="e1b29384e41ac879ffbcbd38157f2d1c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Record'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c902a8ec-aa2f-4751-a810-ca420b67b38c" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="356, 303, 106, 46" DesignTimeScaleFactor="1" FriendlyName="'Record ALT R'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Record ALT R' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Record ALT R' role='menu' check:text='Record ALT R' /&gt;" Guid="d8d140d6-c881-476b-bf3d-3e7724ea5035" InformativeScreenshot="f27f24780039ed96139a859db0b03ead.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="382,182.8" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c902a8ec-aa2f-4751-a810-ca420b67b38c" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="359, 393, 167, 42" DesignTimeScaleFactor="1" FriendlyName="'Next mnemonic N'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Record ALT R' role='menu' /&gt;&lt;java name='Next mnemonic N' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Record ALT R' role='menu' /&gt;&lt;java name='Next mnemonic N' role='menu item' check:text='Next mnemonic N' /&gt;" Guid="e102281f-58af-4d1c-994f-ec647f684f44" InformativeScreenshot="003628168168453dc160600d22f7be50.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
+            <If Condition="[in_boolMoreRecords]" DisplayName="More records?" sap:VirtualizedContainerService.HintSize="450,684" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,431.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Record'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c902a8ec-aa2f-4751-a810-ca420b67b38c" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="356, 303, 106, 46" DesignTimeScaleFactor="1" FriendlyName="'Record ALT R'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Record ALT R' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Record ALT R' role='menu' check:text='Record ALT R' /&gt;" Guid="d8d140d6-c881-476b-bf3d-3e7724ea5035" InformativeScreenshot="f27f24780039ed96139a859db0b03ead.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="382,181.2" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c902a8ec-aa2f-4751-a810-ca420b67b38c" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="359, 393, 167, 42" DesignTimeScaleFactor="1" FriendlyName="'Next mnemonic N'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Record ALT R' role='menu' /&gt;&lt;java name='Next mnemonic N' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Record ALT R' role='menu' /&gt;&lt;java name='Next mnemonic N' role='menu item' check:text='Next mnemonic N' /&gt;" Guid="e102281f-58af-4d1c-994f-ec647f684f44" InformativeScreenshot="003628168168453dc160600d22f7be50.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

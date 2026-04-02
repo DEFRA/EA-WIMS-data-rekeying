@@ -142,19 +142,19 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Check_if_party_name_exists" sap:VirtualizedContainerService.HintSize="1451.6000000000001,5832.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Check_if_party_name_exists" sap:VirtualizedContainerService.HintSize="1451.6000000000001,4294" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Check if party name exists" sap:VirtualizedContainerService.HintSize="715.6,5809.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Check if party name exists" sap:VirtualizedContainerService.HintSize="645.2,4270.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Check if party name exists" sap:VirtualizedContainerService.HintSize="681.6,5648.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Check if party name exists" sap:VirtualizedContainerService.HintSize="611.2,4109.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strRecordCount" />
               <Variable x:TypeArguments="x:Int32" Name="intRecordCount" />
@@ -164,43 +164,65 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message - does party name exist in WIMS" sap:VirtualizedContainerService.HintSize="647.6,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Searching WIMS for pre-existing party record of '&quot;+in_strOrgName+&quot;'&quot;]" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'reFerence'" sap:VirtualizedContainerService.HintSize="647.6,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="609, 280, 144, 46" DesignTimeScaleFactor="1" FriendlyName="'reFerence ALT F'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' check:text='reFerence ALT F' /&gt;" Guid="74b1e0fc-9cc1-48b1-81c6-c99c03fff105" ImageBase64="" InformativeScreenshot="4465f14d54f66087393142d9aff56f2c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'People'" sap:VirtualizedContainerService.HintSize="647.6,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="612, 412, 211, 42" DesignTimeScaleFactor="1" FriendlyName="'People mnemonic P'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;&lt;java name='People mnemonic P' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;&lt;java name='People mnemonic P' role='menu' check:text='People mnemonic P' /&gt;" Guid="28e42b92-7575-4645-96fe-464d602e8207" ImageBase64="" InformativeScreenshot="e5f51d18350e1c1a982129436a26801f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Parties'" sap:VirtualizedContainerService.HintSize="647.6,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="821, 480, 217, 42" DesignTimeScaleFactor="1" FriendlyName="'Parties mnemonic P'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;&lt;java name='People mnemonic P' role='menu' /&gt;&lt;java name='Parties mnemonic P' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;&lt;java name='People mnemonic P' role='menu' /&gt;&lt;java name='Parties mnemonic P' role='menu item' check:text='Parties mnemonic P' /&gt;" Guid="7f7050a9-3b69-4283-bb54-ad84c5c5fdfa" ImageBase64="" InformativeScreenshot="96094f4c8ce6959ac0035c32cdd218a8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Enter Query'" sap:VirtualizedContainerService.HintSize="647.6,190" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
+            <ui:LogMessage DisplayName="Log Message - does party name exist in WIMS" sap:VirtualizedContainerService.HintSize="577.2,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Searching WIMS for pre-existing party record of '&quot;+in_strOrgName+&quot;'&quot;]" />
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press keyboard shortcuts to Parties" sap:VirtualizedContainerService.HintSize="577.2,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="WindowMessages" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Shortcuts="" ShortcutsArgument="%[d(hk)][d(alt)]fpp[u(alt)][u(hk)]" Version="V3">
+              <uix:NKeyboardShortcuts.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NKeyboardShortcuts.Target>
+            </uix:NKeyboardShortcuts>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="577.2,85.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,621.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'reFerence'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="609, 280, 144, 46" DesignTimeScaleFactor="1" FriendlyName="'reFerence ALT F'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' check:text='reFerence ALT F' /&gt;" Guid="74b1e0fc-9cc1-48b1-81c6-c99c03fff105" ImageBase64="" InformativeScreenshot="4465f14d54f66087393142d9aff56f2c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'People'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="612, 412, 211, 42" DesignTimeScaleFactor="1" FriendlyName="'People mnemonic P'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;&lt;java name='People mnemonic P' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;&lt;java name='People mnemonic P' role='menu' check:text='People mnemonic P' /&gt;" Guid="28e42b92-7575-4645-96fe-464d602e8207" ImageBase64="" InformativeScreenshot="e5f51d18350e1c1a982129436a26801f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Parties'" sap:VirtualizedContainerService.HintSize="382,181.2" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="821, 480, 217, 42" DesignTimeScaleFactor="1" FriendlyName="'Parties mnemonic P'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;&lt;java name='People mnemonic P' role='menu' /&gt;&lt;java name='Parties mnemonic P' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='reFerence ALT F' role='menu' /&gt;&lt;java name='People mnemonic P' role='menu' /&gt;&lt;java name='Parties mnemonic P' role='menu item' check:text='Parties mnemonic P' /&gt;" Guid="7f7050a9-3b69-4283-bb54-ad84c5c5fdfa" ImageBase64="" InformativeScreenshot="96094f4c8ce6959ac0035c32cdd218a8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Enter Query'" sap:VirtualizedContainerService.HintSize="577.2,190" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="338, 404, 58, 57" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Switch to'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Switch to Enter Query mode on the current section.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Switch to Enter Query mode on the current section.' role='push button' check:text='Switch to Enter Query mode on the current section.' /&gt;" Guid="3762d529-2c10-47f5-8517-b37bf39ef900" ImageBase64="" InformativeScreenshot="d25597dec1874c49edcd4080bc97801f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="647.6,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Text="[&quot;%&quot;+in_strOrgName+&quot;%&quot;]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="577.2,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Text="[&quot;%&quot;+in_strOrgName+&quot;%&quot;]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="216, 752, 756, 48" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text The'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='The name of the person Required' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='The name of the person Required' role='text' /&gt;" Guid="eb708172-47f7-4f74-b27c-37389e6d3370" ImageBase64="" InformativeScreenshot="a974305ebe5ea1fc584bd7074154ca84.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Count number'" sap:VirtualizedContainerService.HintSize="647.6,190" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Count number'" sap:VirtualizedContainerService.HintSize="577.2,190" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="567, 388, 58, 57" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Count number'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Count number of records that will be returned by query.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Count number of records that will be returned by query.' role='push button' check:text='Count number of records that will be returned by query.' /&gt;" Guid="47f7f4c9-20bc-41e0-a663-166ade63d981" InformativeScreenshot="f202bc18c903992bdbd025e9371dca88.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="name" DisplayName="Get number of records returned - parties" sap:VirtualizedContainerService.HintSize="647.6,241.2" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[strRecordCount]" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
+            <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="name" DisplayName="Get number of records returned - parties" sap:VirtualizedContainerService.HintSize="577.2,241.2" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[strRecordCount]" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
               <uix:NGetAttributeGeneric.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 2211, 3676, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'FRM-40355: Query'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='*Query will retrieve*' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='FRM-40355: Query will retrieve 15435 records.' role='label' check:text='FRM-40355: Query will retrieve 15435 records.' /&gt;" Guid="1a67f8f4-0c76-4087-802c-76f636f7542a" ImageBase64="" InformativeScreenshot="46ee60e59e2c18d63cb9e725b15acab0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NGetAttributeGeneric.Target>
             </uix:NGetAttributeGeneric>
-            <Assign DisplayName="Extract actual record count from text - parties" sap:VirtualizedContainerService.HintSize="647.6,114.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign DisplayName="Extract actual record count from text - parties" sap:VirtualizedContainerService.HintSize="577.2,114.8" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[intRecordCount]</OutArgument>
               </Assign.To>
@@ -208,18 +230,18 @@
                 <InArgument x:TypeArguments="x:Int32">[CInt(Regex.Match(strRecordCount,"(?&lt;=retrieve )[0-9]*").Value.Trim)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Switch x:TypeArguments="x:Int32" DisplayName="Party exists?" Expression="[intRecordCount]" sap:VirtualizedContainerService.HintSize="647.6,3850.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+            <Switch x:TypeArguments="x:Int32" DisplayName="Party exists?" Expression="[intRecordCount]" sap:VirtualizedContainerService.HintSize="577.2,2382.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
               <Switch.Default>
-                <Sequence DisplayName="Multiple records returned - parties" sap:VirtualizedContainerService.HintSize="539.6,2138" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Multiple records returned - parties" sap:VirtualizedContainerService.HintSize="539.6,2139.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message - multiple party records returned" sap:VirtualizedContainerService.HintSize="505.6,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Multiple records returned for party '&quot;+in_strOrgName+&quot;'&quot;]" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Execute Query'" sap:VirtualizedContainerService.HintSize="505.6,190" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Execute Query'" sap:VirtualizedContainerService.HintSize="505.6,190" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
                     <uix:NClick.Target>
-                      <uix:TargetAnchorable CVScreenId="2297ed08-d582-496c-b7c0-7988d0a093ba" CvElementArea="408, 398, 66, 64" CvTextArea="425, 412, 25, 27" CvTextArgument="te" CvType="Button" DesignTimeRectangle="415, 404, 57, 57" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Execute a'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN ORGANISATIONS' role='internal frame' /&gt;&lt;java name='Execute a query in the current section.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN ORGANISATIONS' role='internal frame' /&gt;&lt;java name='Execute a query in the current section.' role='push button' check:text='Execute a query in the current section.' /&gt;" Guid="eb88c7a5-af37-46a5-928e-567185e979f1" InformativeScreenshot="7bc4b2e29678a16d3489b81bbfa56dec.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      <uix:TargetAnchorable DesignTimeRectangle="415, 404, 57, 57" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Execute a'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Execute a query in the current section.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Execute a query in the current section.' role='push button' check:text='Execute a query in the current section.' /&gt;" Guid="f85aed56-19d9-4523-a7e0-11d5e4a854a6" InformativeScreenshot="9da1e1aede9b878d5567900aeccc745d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
                   <InvokeMethod DisplayName="Stop timer - multiple customer parties returned" sap:VirtualizedContainerService.HintSize="505.6,171.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Stop">
@@ -235,7 +257,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Multiple party records found" sap:VirtualizedContainerService.HintSize="434,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="No record found." IN_PopupMessage="[&quot;&lt;h1&gt;Multiple Personnel Records Returned&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;&quot;+intRecordCount.ToString+&quot; records have been found with the organisation name &lt;strong&gt;&quot;+in_strOrgName+&quot;&lt;/strong&gt;&lt;br&gt;&quot;+&#xA;&quot;Please review these records and compare their addresses against that provided in the Report.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Report address:&lt;/strong&gt;&lt;br&gt;&quot;+&#xA;in_strReportAddress+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;Did you find a matching address? If so, please remain on this record and then click 'Yes' on this pop-up so that the robot can retrieve the ID.&lt;br&gt;&quot;+&#xA;&quot;If you did NOT find a matching address, please click 'No'; the robot will create a new Personnel record for this customer.&lt;/p&gt;&quot;]" IN_PopupTitle="Multiple Personnel records found" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+                        <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Multiple party records found" sap:VirtualizedContainerService.HintSize="434,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="No record found." IN_PopupMessage="[&quot;&lt;h1&gt;Multiple Personnel Records Returned&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;&quot;+intRecordCount.ToString+&quot; records have been found with the organisation name &lt;strong&gt;&quot;+in_strOrgName+&quot;&lt;/strong&gt;&lt;br&gt;&quot;+&#xA;&quot;Please review these records and compare their addresses against that provided in the Report.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Report address:&lt;/strong&gt;&lt;br&gt;&quot;+&#xA;in_strReportAddress+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;Did you find a matching address? If so, please remain on this record and then click 'Yes' on this pop-up so that the robot can retrieve the ID.&lt;br&gt;&quot;+&#xA;&quot;If you did NOT find a matching address, please click 'No'; the robot will create a new Personnel record for this customer.&lt;/p&gt;&quot;]" IN_PopupTitle="Multiple Personnel records found" IN_WidthHeight="[{500,600}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
                         <Assign DisplayName="Existing record" sap:VirtualizedContainerService.HintSize="434,107.6" sap2010:WorkflowViewState.IdRef="Assign_3">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">[out_boolPartyRecordFound]</OutArgument>
@@ -318,7 +340,7 @@
                   </Assign.Value>
                 </Assign>
               </Sequence>
-              <Sequence x:Key="1" DisplayName="One record returned - check address" sap:VirtualizedContainerService.HintSize="607.6,3612.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence x:Key="1" DisplayName="One record returned - check address" sap:VirtualizedContainerService.HintSize="607.6,3500" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="s:String[]" Default="[{&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;}]" Name="arrExistingAddress" />
                   <Variable x:TypeArguments="x:Int32" Name="intMatchScore" />
@@ -332,7 +354,7 @@
                 <ui:LogMessage DisplayName="Log Message - single party record returned" sap:VirtualizedContainerService.HintSize="573.6,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Single party record returned for '&quot;+in_strOrgName+&quot;'&quot;]" />
                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Execute Query'" sap:VirtualizedContainerService.HintSize="573.6,190" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
                   <uix:NClick.Target>
-                    <uix:TargetAnchorable CVScreenId="2297ed08-d582-496c-b7c0-7988d0a093ba" CvElementArea="408, 398, 66, 64" CvTextArea="425, 412, 25, 27" CvTextArgument="te" CvType="Button" DesignTimeRectangle="415, 404, 57, 57" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Execute a'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN ORGANISATIONS' role='internal frame' /&gt;&lt;java name='Execute a query in the current section.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN ORGANISATIONS' role='internal frame' /&gt;&lt;java name='Execute a query in the current section.' role='push button' check:text='Execute a query in the current section.' /&gt;" Guid="eb88c7a5-af37-46a5-928e-567185e979f1" InformativeScreenshot="7bc4b2e29678a16d3489b81bbfa56dec.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    <uix:TargetAnchorable DesignTimeRectangle="415, 404, 57, 57" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Execute a'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Execute a query in the current section.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Execute a query in the current section.' role='push button' check:text='Execute a query in the current section.' /&gt;" Guid="f85aed56-19d9-4523-a7e0-11d5e4a854a6" InformativeScreenshot="9da1e1aede9b878d5567900aeccc745d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                   </uix:NClick.Target>
                 </uix:NClick>
                 <uix:NGetText DisplayName="Get Text - Address Line 1" sap:VirtualizedContainerService.HintSize="573.6,190" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" TextString="[arrExistingAddress(0)]" Version="V3">
@@ -361,9 +383,9 @@
                   </uix:NGetText.Target>
                 </uix:NGetText>
                 <ofa:Score ContinueOnError="{x:Null}" DisplayName="Score fuzzy match on addresses" EvaluatedScore="[intMatchScore]" FirstInputString="[in_strReportAddress]" sap:VirtualizedContainerService.HintSize="573.6,168" sap2010:WorkflowViewState.IdRef="Score_1" Preprocess="True" ScoreAlgorithm="Ratio" SecondInputString="[String.Join(&quot;, &quot;,arrExistingAddress.Where(function(x) not String.IsNullOrEmpty(x.Trim)).ToArray)]" />
-                <If Condition="[intMatchScore&gt;=80]" DisplayName="If match score &gt;=80%" sap:VirtualizedContainerService.HintSize="573.6,2067.6" sap2010:WorkflowViewState.IdRef="If_1">
+                <If Condition="[intMatchScore&gt;=80]" DisplayName="If match score &gt;=80%" sap:VirtualizedContainerService.HintSize="573.6,1953.2" sap2010:WorkflowViewState.IdRef="If_1">
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="539.6,1560.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="539.6,1446.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -374,16 +396,16 @@
                           <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                         </InvokeMethod.TargetObject>
                       </InvokeMethod>
-                      <TryCatch DisplayName="Try Catch - personnel address fuzzy match - single record returned" sap:VirtualizedContainerService.HintSize="505.6,868.4" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                      <TryCatch DisplayName="Try Catch - personnel address fuzzy match - single record returned" sap:VirtualizedContainerService.HintSize="505.6,1218" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                         <TryCatch.Try>
-                          <Sequence DisplayName="Prompt user to confirm matching address" sap:VirtualizedContainerService.HintSize="468,603.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <Sequence DisplayName="Prompt user to confirm matching address" sap:VirtualizedContainerService.HintSize="468,961.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Customer address fuzzy match - parties" sap:VirtualizedContainerService.HintSize="434,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\YesNo.css&quot;]" IN_ErrorMessage="User determined customer name/address already recorded in WIMS." IN_PopupMessage="[&quot;&lt;h1&gt;Personnel Address Potential Match&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;A singular record has been found under Personnel with the organisation name &lt;strong&gt;&quot;+in_strOrgName+&quot;&lt;/strong&gt;&lt;br&gt;&quot;+&#xA;&quot;The robot has compared the addresses provided in WIMS and Power BI and has calculated a match of &quot;+intMatchScore.ToString+&quot;%.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;WIMS address:&lt;/strong&gt;&lt;br&gt;&quot;+&#xA;String.Join(&quot;, &quot;,arrExistingAddress)+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Report address:&lt;/strong&gt;&lt;br&gt;&quot;+&#xA;in_strReportAddress+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;Do these addresses match? If so, please click 'Yes' and the robot will extract the ID from this record.&lt;br&gt;&quot;+&#xA;&quot;If these addresses DO NOT match, please click 'No'; the robot will create a Personnel record in WIMS for this Organisation.&lt;/p&gt;&quot;]" IN_PopupTitle="Customer address potential match" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_2" />
-                            <Assign DisplayName="Existing record - single match returned" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Customer address fuzzy match - parties" sap:VirtualizedContainerService.HintSize="434,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\YesNo.css&quot;]" IN_ErrorMessage="User determined customer name/address already recorded in WIMS." IN_PopupMessage="[&quot;&lt;h1&gt;Personnel Address Potential Match&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;A singular record has been found under Personnel with the organisation name &lt;strong&gt;&quot;+in_strOrgName+&quot;&lt;/strong&gt;&lt;br&gt;&quot;+&#xA;&quot;The robot has compared the addresses provided in WIMS and Power BI and has calculated a match of &quot;+intMatchScore.ToString+&quot;%.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;WIMS address:&lt;/strong&gt;&lt;br&gt;&quot;+&#xA;String.Join(&quot;, &quot;,arrExistingAddress)+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Report address:&lt;/strong&gt;&lt;br&gt;&quot;+&#xA;in_strReportAddress+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;Do these addresses match? If so, please click 'Yes' and the robot will extract the ID from this record.&lt;br&gt;&quot;+&#xA;&quot;If these addresses DO NOT match, please click 'No'; the robot will create a Personnel record in WIMS for this Organisation.&lt;/p&gt;&quot;]" IN_PopupTitle="Customer address potential match" IN_WidthHeight="[{500,600}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_2" />
+                            <Assign DisplayName="Existing record - single match returned" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_5">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Boolean">[out_boolPartyRecordFound]</OutArgument>
                               </Assign.To>
@@ -391,6 +413,16 @@
                                 <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                               </Assign.Value>
                             </Assign>
+                            <uix:NGetText DisplayName="Get Text - party ID" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" TextString="[out_strPartyID]" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable CVScreenId="5e5b0dd7-3c5f-4868-bdcf-4d9593c95bcf" CvElementArea="212, 826, 196, 53" CvType="InputBox" DesignTimeRectangle="216, 831, 189, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text Unique'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Unique reference number to identify a person. Required' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Unique reference number to identify a person. Required' role='text' /&gt;" Guid="8ec1802d-fdde-4e41-b03a-1f1591e95b88" ImageBase64="" InformativeScreenshot="60742d63f0007c183fe0d9a0d9b2ab2c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+                              </uix:NGetText.Target>
+                            </uix:NGetText>
+                            <InvokeMethod DisplayName="Start timer - personnel address fuzzy match" sap:VirtualizedContainerService.HintSize="434,159.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="Start">
+                              <InvokeMethod.TargetObject>
+                                <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                              </InvokeMethod.TargetObject>
+                            </InvokeMethod>
                           </Sequence>
                         </TryCatch.Try>
                         <TryCatch.Catches>
@@ -417,24 +449,6 @@
                           </Catch>
                         </TryCatch.Catches>
                       </TryCatch>
-                      <InvokeMethod DisplayName="Start timer - personnel address fuzzy match" sap:VirtualizedContainerService.HintSize="505.6,168.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="Start">
-                        <InvokeMethod.TargetObject>
-                          <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
-                        </InvokeMethod.TargetObject>
-                      </InvokeMethod>
-                      <Assign DisplayName="Party record found" sap:VirtualizedContainerService.HintSize="505.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_7">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:Boolean">[out_boolPartyRecordFound]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <uix:NGetText DisplayName="Get Text - party ID" sap:VirtualizedContainerService.HintSize="505.6,181.2" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" TextString="[out_strPartyID]" Version="V3">
-                        <uix:NGetText.Target>
-                          <uix:TargetAnchorable CVScreenId="5e5b0dd7-3c5f-4868-bdcf-4d9593c95bcf" CvElementArea="212, 826, 196, 53" CvType="InputBox" DesignTimeRectangle="216, 831, 189, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text Unique'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Unique reference number to identify a person. Required' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Unique reference number to identify a person. Required' role='text' /&gt;" Guid="8ec1802d-fdde-4e41-b03a-1f1591e95b88" ImageBase64="" InformativeScreenshot="60742d63f0007c183fe0d9a0d9b2ab2c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
-                        </uix:NGetText.Target>
-                      </uix:NGetText>
                     </Sequence>
                   </If.Then>
                   <If.Else>
@@ -445,7 +459,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:LogMessage DisplayName="Log Message - assuming no match" sap:VirtualizedContainerService.HintSize="434,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Address fuzzy match score &quot;+intMatchScore.ToString+&quot;%. Assuming not a match.&quot;]" />
-                      <Assign DisplayName="Party record not found" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_8">
+                      <Assign DisplayName="Party record not found" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_8">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Boolean">[out_boolPartyRecordFound]</OutArgument>
                         </Assign.To>
@@ -458,6 +472,11 @@
                 </If>
               </Sequence>
             </Switch>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close' - clear/exit parties" sap:VirtualizedContainerService.HintSize="577.2,182.8" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a776202-1f7e-4ef6-bb7f-831ab9012328" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="44, 404, 58, 58" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Close the'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Close the current screen.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN PARTY' role='internal frame' /&gt;&lt;java name='Close the current screen.' role='push button' check:text='Close the current screen.' /&gt;" Guid="4c35c267-6ce0-48fa-8d1c-3862a36a62b3" InformativeScreenshot="6be1b32e921f17da1a0de57319d3c948.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

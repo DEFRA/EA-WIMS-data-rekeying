@@ -151,7 +151,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State - already on target page?" EnableIfNotExists="False" Exists="[boolTargetPage]" sap:VirtualizedContainerService.HintSize="518,436.4" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="5451ec3b-1f5b-41ea-ae06-3471b89d4642" Timeout="0.3" Version="V3">
+            <uix:NCheckState DisplayName="Check App State - already on target page?" EnableIfNotExists="False" Exists="[boolTargetPage]" sap:VirtualizedContainerService.HintSize="518,436.4" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="5451ec3b-1f5b-41ea-ae06-3471b89d4642" Timeout="0.1" Version="V3">
               <uix:NCheckState.IfExists>
                 <ui:LogMessage DisplayName="LogMessage - already on target page" sap:VirtualizedContainerService.HintSize="334,145.2" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;WIMS is already on target page&quot;]" />
               </uix:NCheckState.IfExists>
@@ -167,11 +167,6 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DisplayName="Keyboard Shortcuts - Esc" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="SameAsCard" ScopeIdentifier="5451ec3b-1f5b-41ea-ae06-3471b89d4642" Shortcuts="[d(hk)][k(Esc)][u(hk)]" Version="V3">
-                    <uix:NKeyboardShortcuts.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" FullSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;&lt;wnd cls='SunAwtFrame' /&gt;" Guid="8ab49969-ef5f-44e5-b241-87ac1bc8d075" SearchSteps="Selector" />
-                    </uix:NKeyboardShortcuts.Target>
-                  </uix:NKeyboardShortcuts>
                   <If Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="If dev mode and pop-up appears" sap:VirtualizedContainerService.HintSize="450,584.8" sap2010:WorkflowViewState.IdRef="If_4">
                     <If.Then>
                       <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,388.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
@@ -180,7 +175,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NCheckState DisplayName="Check for pop-ups" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="382,328.8" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="5451ec3b-1f5b-41ea-ae06-3471b89d4642" Timeout="0.3" Version="V3">
+                        <uix:NCheckState DelayBefore="0" DisplayName="Check for pop-ups" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="382,328.8" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="5451ec3b-1f5b-41ea-ae06-3471b89d4642" Timeout="0.2" Version="V3">
                           <uix:NCheckState.IfExists>
                             <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Buttons="Ok" DisplayName="MessageBox - dismiss pop-up" sap:VirtualizedContainerService.HintSize="334,86.4" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;DEV MODE - please dismiss pop-up&quot;]" />
                           </uix:NCheckState.IfExists>
@@ -201,7 +196,12 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <uix:NCheckState DisplayName="Check App State - target page?" EnableIfNotExists="False" Exists="[boolTargetPage]" sap:VirtualizedContainerService.HintSize="450,387.6" sap2010:WorkflowViewState.IdRef="NCheckState_8" ScopeIdentifier="5451ec3b-1f5b-41ea-ae06-3471b89d4642" Timeout="0.3" Version="V3">
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DisplayName="Keyboard Shortcuts - Esc" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="SameAsCard" ScopeIdentifier="5451ec3b-1f5b-41ea-ae06-3471b89d4642" Shortcuts="[d(hk)][k(Esc)][u(hk)]" Version="V3">
+                    <uix:NKeyboardShortcuts.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" FullSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;&lt;wnd cls='SunAwtFrame' /&gt;" Guid="8ab49969-ef5f-44e5-b241-87ac1bc8d075" SearchSteps="Selector" />
+                    </uix:NKeyboardShortcuts.Target>
+                  </uix:NKeyboardShortcuts>
+                  <uix:NCheckState DelayBefore="0" DisplayName="Check App State - target page?" EnableIfNotExists="False" Exists="[boolTargetPage]" sap:VirtualizedContainerService.HintSize="450,387.6" sap2010:WorkflowViewState.IdRef="NCheckState_8" ScopeIdentifier="5451ec3b-1f5b-41ea-ae06-3471b89d4642" Timeout="0.2" Version="V3">
                     <uix:NCheckState.IfExists>
                       <ui:LogMessage DisplayName="LogMessage - target page found" sap:VirtualizedContainerService.HintSize="334,145.2" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Returned to target page successfully&quot;]" />
                     </uix:NCheckState.IfExists>
