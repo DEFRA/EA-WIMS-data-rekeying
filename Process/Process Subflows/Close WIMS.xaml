@@ -96,7 +96,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Parallel sap2010:Annotation.AnnotationText="Quirk of the Use App activity means that UiPath can't find the Leave Page pop-up when it's within the same scope. Hence, we attach a separate IE window.&#xD;&#xA;If you do these sequentially, it takes around 16 seconds. Not sure why there's a long gap between leaving the Edge scope and moving to the IE scope but parallelism seems to solve the issue. &#xD;&#xA;" DisplayName="Close WIMS tab and dismiss warning." sap:VirtualizedContainerService.HintSize="1042,645.6" sap2010:WorkflowViewState.IdRef="Parallel_2">
+    <Parallel sap2010:Annotation.AnnotationText="Quirk of the Use App activity means that UiPath can't find the Leave Page pop-up when it's within the same scope. Hence, we attach a separate IE window.&#xA;If you do these sequentially, it takes around 16 seconds. Not sure why there's a long gap between leaving the Edge scope and moving to the IE scope but parallelism seems to solve the issue. &#xA;" DisplayName="Close WIMS tab and dismiss warning." sap:VirtualizedContainerService.HintSize="1042,645.6" sap2010:WorkflowViewState.IdRef="Parallel_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -126,7 +126,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="18e5b487-adb0-498b-8f51-2fdcdbc73529" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Leave" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="18e5b487-adb0-498b-8f51-2fdcdbc73529" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="146, 404, 728, 74" DesignTimeScaleFactor="2.5" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd aaname='Windows Internet Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Leave this page' cls='Button' title='&amp;amp;Leave this page' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Windows Internet Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Leave this page' cls='Button' title='&amp;amp;Leave this page' check:text='unchecked' /&gt;" Guid="2924de8c-0093-4c4e-8efc-b7db55145729" InformativeScreenshot="4d911bba74de3fafa3682816937ff34c.png" ScopeSelectorArgument="&lt;wnd app='iexplore.exe' cls='#32770' title='Windows Internet Explorer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>

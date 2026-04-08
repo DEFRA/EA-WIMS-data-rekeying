@@ -104,7 +104,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Search_Permit_in_Power_BI" sap:VirtualizedContainerService.HintSize="1451.6000000000001,2534.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Search_Permit_in_Power_BI" sap:VirtualizedContainerService.HintSize="1451.6000000000001,2536.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="EPR/JB3498VV" Name="strPermit" />
     </Sequence.Variables>
@@ -118,13 +118,13 @@
         <InArgument x:TypeArguments="ui:UiElement">[g_browserPowerBi]</InArgument>
       </InvokeMethod.TargetObject>
     </InvokeMethod>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - search Power BI" sap:VirtualizedContainerService.HintSize="562,2342.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserPowerBi]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f979613c-66f3-4c66-b87b-904f5d7d62a8" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - search Power BI" sap:VirtualizedContainerService.HintSize="562,2344.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserPowerBi]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f979613c-66f3-4c66-b87b-904f5d7d62a8" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Search Power BI" sap:VirtualizedContainerService.HintSize="528,2181.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Search Power BI" sap:VirtualizedContainerService.HintSize="528,2183.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strPermitVersion" />
             </Sequence.Variables>

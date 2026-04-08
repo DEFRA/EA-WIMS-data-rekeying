@@ -180,7 +180,7 @@
         "testCaseId": "b96ae4ac-2d6c-4e21-a641-6d462c183894",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
-        "fileName": "tc01 Close WIMS.xaml"
+        "fileName": "Process\\Process Subflows\\tc01 Close WIMS.xaml"
       }
     ],
     "saveToCloud": false
