@@ -1,0 +1,56 @@
+<!-- saved from url=(0014)about:internet -->
+<!-- Author: Mohammed Ali -->
+<!DOCTYPE html>
+<html>
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+
+<link rel="stylesheet" href="C:\Users\rm000121\OneDrive - Defra\UiPath\EA-WIMS-data-rekeying\Assets\Generic\Editable Standard Template.css">
+
+<body>
+
+<h1>Release Details</h1><p>Please clarify that the relevant information has been extracted correctly from the Release Details page of the report.</p><p><strong>NumericOrDescriptive:</strong>&ensp;N</p><p>If this is correct, please click 'Continue'. Otherwise, please click 'Stop' and process this transaction manually.</p>
+<div class="Table_Container" >
+<table><thead><tr><th>Name</th><th>ParameterCode</th><th>SeasonalityStartday</th><th>SeasonalityStartMonth</th><th>SeasonalityEndDay</th><th>SeasonalityEndMonth</th><th>LimitValue</th><th>CombinationType</th><th>ComplianceStatisticCode</th></tr></thead><tbody><tr><td><input id = 'Name' value = 'Outlet 1' readonly ></td><td><input id = 'ParameterCode' value = '0664' readonly ></td><td><input id = 'SeasonalityStartday' value = '01' readonly ></td><td><input id = 'SeasonalityStartMonth' value = '01' readonly ></td><td><input id = 'SeasonalityEndDay' value = '31' readonly ></td><td><input id = 'SeasonalityEndMonth' value = '12' readonly ></td><td><input id = 'LimitValue' value = '0.50' readonly ></td><td><input id = 'CombinationType' value = 'Standard' readonly ></td><td><input id = 'ComplianceStatisticCode' value = '1' readonly ></td></tr><tr><td><input id = 'Name' value = 'Outlet 1' readonly ></td><td><input id = 'ParameterCode' value = '6425' readonly ></td><td><input id = 'SeasonalityStartday' value = '01' readonly ></td><td><input id = 'SeasonalityStartMonth' value = '01' readonly ></td><td><input id = 'SeasonalityEndDay' value = '31' readonly ></td><td><input id = 'SeasonalityEndMonth' value = '12' readonly ></td><td><input id = 'LimitValue' value = '1.05' readonly ></td><td><input id = 'CombinationType' value = 'Standard' readonly ></td><td><input id = 'ComplianceStatisticCode' value = '1' readonly ></td></tr><tr><td><input id = 'Name' value = 'Outlet 1' readonly ></td><td><input id = 'ParameterCode' value = '7444' readonly ></td><td><input id = 'SeasonalityStartday' value = '01' readonly ></td><td><input id = 'SeasonalityStartMonth' value = '01' readonly ></td><td><input id = 'SeasonalityEndDay' value = '31' readonly ></td><td><input id = 'SeasonalityEndMonth' value = '12' readonly ></td><td><input id = 'LimitValue' value = '0.50' readonly ></td><td><input id = 'CombinationType' value = 'Standard' readonly ></td><td><input id = 'ComplianceStatisticCode' value = '3' readonly ></td></tr></tbody></table>
+</div>
+
+<br>
+
+<div class="Button_Container">
+<input type="submit"  value="Stop" id="StopButton">
+<input type="submit"  value="Continue" id="ContinueButton">
+</div>
+
+<script>
+document.getElementById("ContinueButton").onclick = function() {
+
+var elements = document.getElementsByTagName("input");
+var JSONObj = {};
+var JSONarr = [];
+var colName = elements[0].id;
+
+for(var i = 0;i < elements.length -2; i++) {
+	var x = elements[i].id;
+
+	if (colName == x && i !=0) {
+		JSONarr.push(JSONObj);
+		JSONObj = {};
+	};
+    
+	JSONObj[x] = elements[i].value;
+};
+
+JSONarr.push(JSONObj);
+
+window.external.setResult(JSON.stringify(JSONarr));
+
+};
+
+
+document.getElementById("StopButton").onclick = function() {
+window.external.setResult("stop");
+};
+</script>
+
+</body>
+</html>

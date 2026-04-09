@@ -7,6 +7,7 @@
     "DRACOE.Logging.64": "[1.0.9]",
     "DRACOE.Microsoft.Graph.64": "[1.0.48]",
     "DRACOE.PopUps.64": "[1.0.9]",
+    "OfficeSamurai.FuzzyWuzzy.Activities": "[1.0.1]",
     "UiPath.Excel.Activities": "[2.23.5]",
     "UiPath.Mail.Activities": "[1.23.11]",
     "UiPath.System.Activities": "[24.10.4]",
@@ -18,7 +19,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "24.10.15.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -53,14 +54,133 @@
         "testCaseId": "071dabd0-fbf4-4893-a9dd-3b70afe2e710",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
-        "fileName": "tc01 Check if permit exists.xaml"
+        "fileName": "Process\\Process Subflows\\tc01 Check if permit exists.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "3b5cb42b-ba5b-4ade-b94a-4b94f5ce4283",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
-        "fileName": "tc01 Check if customer exists.xaml"
+        "fileName": "Process\\Process Subflows\\tc01 Check if customer exists.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "dba3c812-2a6f-403d-b26e-6c5fcdc0d403",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\tc01 Process Transaction.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "1ad84de0-44a0-492f-9166-8a61587f0eb0",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Create new customer.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "b9ec49e4-ce1c-40a2-8334-f410b06563ce",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Return to main page.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "94257262-4665-4d20-a238-30dcfc8740da",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Extract Permit Info.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "1f30763e-4bbb-4e31-8a5b-9a231b803b51",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Log in to WIMS region.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "dbae350c-c82f-4d4b-9db7-62d1ca4752c0",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Update Party Name Sheet.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "afa6575c-e65b-4dca-9abc-af3c692634b9",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 DEV ONLY Go to dummy permit.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "68e925b6-d120-46c9-8110-0be4bf39e43b",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Create new outlet.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "2b879c50-09a3-447c-932c-0421ed06a748",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc02 Create new outlet.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "edcf0e20-6045-4393-beee-2c56133dd7b9",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Init next release.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "9aac63e5-b3ff-49a2-b043-a87ca3d8980d",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Check if party name exists.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "98b8f052-550d-458c-8aff-4f1cb11c5882",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Create new party.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "ab48d436-a97d-45a5-aa69-ae68d296e77d",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Add Responsibilities.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "5f437a30-e806-491b-9eab-9d18b286871b",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Check if NGR exists.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "c93d9b81-8347-423f-a54d-a8eee084dfff",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Create new discharge site.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "e004e010-6127-4011-b614-31503ef4cb4d",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Amend Permit.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "b96ae4ac-2d6c-4e21-a641-6d462c183894",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Close WIMS.xaml"
       }
     ],
     "saveToCloud": false

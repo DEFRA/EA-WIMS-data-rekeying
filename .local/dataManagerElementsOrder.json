@@ -3,7 +3,16 @@
     {
       "Path": null,
       "SortBy": 0,
-      "VariablesSectionElementsOrder": null,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&",
+        "g_Config&",
+        "g_swProcessingTimer&",
+        "g_intExitPoint&",
+        "g_BearerToken&",
+        "g_TransactionItem&",
+        "g_browserWIMS&",
+        "g_browserPowerBi&"
+      ],
       "ArgumentsSectionElementsOrder": null,
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -12,13 +21,6 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "g_arrCaseID&b4e20139-85f3-46fb-b723-168a63ffb9d8",
-        "g_Config&b4e20139-85f3-46fb-b723-168a63ffb9d8",
-        "g_swProcessingTimer&b4e20139-85f3-46fb-b723-168a63ffb9d8",
-        "g_intExitPoint&b4e20139-85f3-46fb-b723-168a63ffb9d8",
-        "g_BearerToken&b4e20139-85f3-46fb-b723-168a63ffb9d8",
-        "g_TransactionItem&b4e20139-85f3-46fb-b723-168a63ffb9d8",
-        "g_browserWIMS&b4e20139-85f3-46fb-b723-168a63ffb9d8",
         "SystemException&StateMachine_1",
         "BusinessException&StateMachine_1",
         "TransactionNumber&StateMachine_1",
@@ -32,6 +34,8 @@
         "boolSkipEndConfirmation&StateMachine_1",
         "strProcessType&StateMachine_1",
         "intConSysEx&StateMachine_1",
+        "dtLookups&StateMachine_1",
+        "strLookups&Sequence_17",
         "strUserFolder&Sequence_38",
         "listConfigFilepaths&Sequence_40",
         "arrFilePath&Sequence_40",
@@ -40,12 +44,14 @@
         "boolShouldStop&Sequence_25",
         "dateCaseStartTime&State_3",
         "strCaseIDText&Sequence_28",
-        "g_arrCaseID&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_Config&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_swProcessingTimer&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_intExitPoint&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_BearerToken&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_TransactionItem&b2f1b345-de57-4e1f-8ce4-9f0b747897b6"
+        "g_arrCaseID&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_Config&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_swProcessingTimer&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_intExitPoint&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_BearerToken&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_TransactionItem&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserWIMS&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserPowerBi&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_boolUnattended"
@@ -54,16 +60,21 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Log in to WIMS region.xaml",
+      "Path": "Process/Process Subflows/Log in to WIMS region.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "g_browserWIMS&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_arrCaseID&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_Config&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_swProcessingTimer&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_intExitPoint&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_BearerToken&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_TransactionItem&b2f1b345-de57-4e1f-8ce4-9f0b747897b6"
+        "boolCloseExistingWIMS&Sequence_1",
+        "boolOpenNewWIMS&Sequence_1",
+        "strURL&Sequence_1",
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "strRegionSuffix&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_strRegion"
@@ -75,85 +86,1146 @@
       "Path": "Framework/InitAllApplications.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "g_arrCaseID&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_Config&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_swProcessingTimer&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_intExitPoint&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_BearerToken&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_TransactionItem&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_browserWIMS&b2f1b345-de57-4e1f-8ce4-9f0b747897b6"
+        "g_arrCaseID&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_Config&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_swProcessingTimer&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_intExitPoint&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_BearerToken&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_TransactionItem&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserWIMS&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserPowerBi&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
     {
-      "Path": "Check if permit exists.xaml",
+      "Path": "Process/Process Subflows/Check if permit exists.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
         "intRecordCount&Sequence_2",
-        "strRecordCount&Sequence_2",
-        "g_arrCaseID&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_Config&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_swProcessingTimer&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_intExitPoint&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_BearerToken&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_TransactionItem&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_browserWIMS&b2f1b345-de57-4e1f-8ce4-9f0b747897b6"
+        "strRecordCount&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
+        "out_uiPermits",
+        "out_uiHomePage",
         "in_strPermitNumber"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
     {
-      "Path": "tc01 Check if permit exists.xaml",
+      "Path": "Process/Process Subflows/tc01 Check if permit exists.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "g_arrCaseID&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_Config&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_swProcessingTimer&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_intExitPoint&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_BearerToken&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_TransactionItem&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_browserWIMS&b2f1b345-de57-4e1f-8ce4-9f0b747897b6"
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
     {
-      "Path": "Check if customer exists.xaml",
+      "Path": "Process/Process Subflows/Check if customer exists.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "g_arrCaseID&b4e20139-85f3-46fb-b723-168a63ffb9d8",
-        "g_Config&b4e20139-85f3-46fb-b723-168a63ffb9d8",
-        "g_swProcessingTimer&b4e20139-85f3-46fb-b723-168a63ffb9d8",
-        "g_intExitPoint&b4e20139-85f3-46fb-b723-168a63ffb9d8",
-        "g_BearerToken&b4e20139-85f3-46fb-b723-168a63ffb9d8",
-        "g_TransactionItem&b4e20139-85f3-46fb-b723-168a63ffb9d8",
-        "g_browserWIMS&b4e20139-85f3-46fb-b723-168a63ffb9d8",
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
         "strRecordCount&Sequence_2",
-        "intRecordCount&Sequence_2"
+        "intRecordCount&Sequence_2",
+        "arrExistingAddress&Sequence_9",
+        "intMatchScore&Sequence_9",
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
       ],
       "ArgumentsSectionElementsOrder": [
+        "in_strOrgName",
+        "in_strReportAddress",
+        "out_uiMonitoring"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Check if customer exists.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_Config&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_swProcessingTimer&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_intExitPoint&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_BearerToken&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_TransactionItem&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserWIMS&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserPowerBi&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "intIndex&Sequence_1",
+        "credNetworkCredentials&Sequence_18",
+        "rowCurrent&Sequence_18",
+        "dtInProgress&Sequence_18",
+        "rowInProgress&Sequence_18",
+        "intTransactionRow&Sequence_18",
+        "dtTransactionData&Sequence_1",
+        "dtToProcess&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "out_boolLastTransaction",
+        "in_strProcessType",
+        "in_boolContinue"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Search Permit in Power BI.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strPermit&Sequence_1",
+        "strPermitVersion&Sequence_2",
+        "g_arrCaseID&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_Config&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_swProcessingTimer&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_intExitPoint&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_BearerToken&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_TransactionItem&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserWIMS&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserPowerBi&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/SetTransactionStatus.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_Config&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_swProcessingTimer&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_intExitPoint&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_BearerToken&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_TransactionItem&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserWIMS&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserPowerBi&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "strLogNote&Flowchart_2",
+        "QueueRetry&Sequence_17",
+        "ScreenshotPath&Sequence_17"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BusinessException",
+        "in_dateCaseStartTime",
+        "in_strWorkLogFilepath",
+        "in_SystemException",
+        "io_intConSysEx",
+        "io_RetryNumber",
+        "io_TransactionNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Transaction.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dictPermitDetails&Flowchart_1",
+        "uiHomePage&Flowchart_1",
+        "uiMonitoring&Flowchart_1",
+        "boolPartyRecordFound&Flowchart_1",
+        "arrOrgAddress&Flowchart_1",
+        "boolNGRFound&Flowchart_1",
+        "uiPermits&Flowchart_1",
+        "dtReleaseDetails&Flowchart_1",
+        "dtOutlets&Flowchart_1",
+        "dtReleases&Flowchart_1",
+        "intOutletIndex&Flowchart_1",
+        "intReleaseIndex&Flowchart_1",
+        "intReleaseDetailIndex&Flowchart_1",
+        "arrDischargeAddress&Flowchart_1",
+        "strButton&Flowchart_1",
+        "strAddressWithoutPostcode&Sequence_5",
+        "arrAddressParts&Sequence_5",
+        "intAddressPart&Sequence_5",
+        "uiOutlets&Sequence_15",
+        "uiReleases&Sequence_15",
+        "g_arrCaseID&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_Config&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_swProcessingTimer&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_intExitPoint&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_BearerToken&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_TransactionItem&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserWIMS&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserPowerBi&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dtLookups"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Extract Permit Info.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_Config&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_swProcessingTimer&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_intExitPoint&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_BearerToken&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_TransactionItem&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserWIMS&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserPowerBi&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "boolDismissed&Sequence_92",
+        "strButtonSelected&Sequence_92",
+        "strButtonSelected&Sequence_3",
+        "boolDismissed&Sequence_3",
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "intOffset&Sequence_88",
+        "arrReleaseDetail&Sequence_88",
+        "strComboType&Sequence_88",
+        "strComplianceStatCode&Sequence_88",
+        "strLimitValue&Sequence_88",
+        "strEndMonth&Sequence_88",
+        "strEndDay&Sequence_88",
+        "strStartMonth&Sequence_88",
+        "strStartDay&Sequence_88",
+        "strParamCode&Sequence_88",
+        "strName&Sequence_88",
+        "dtReleaseDetailsExtract&Sequence_32",
+        "dtOrgDetails&Sequence_1",
+        "strRegionPP&Sequence_1",
+        "intSubStringStart&Sequence_1",
+        "strResponsibilitiesPP&Sequence_1",
+        "strOrgDetailsPP&Sequence_1",
+        "strCreatePermitPP&Sequence_1",
+        "strDischargeSitesPP&Sequence_1",
+        "boolRowsRemaining&Sequence_2",
+        "intRowIndex&Sequence_2",
+        "strRowIndexAdjusted&Sequence_2",
+        "strRegion&Sequence_27",
+        "dtOrgDetailsFiltered&Flowchart_1",
+        "dtPhoneAndCompany&Sequence_15",
+        "rowsNonEmpty&Sequence_15",
+        "strRowText&Sequence_17",
+        "arrCellValues&Sequence_17",
+        "strAddressSelected&Sequence_10",
+        "boolDismissed&Sequence_10",
+        "strButtonSelected&Sequence_10",
+        "strRole&Sequence_28",
+        "strGridRef&Sequence_29",
+        "strConfidential&Sequence_29",
+        "strAssetPropertyCode&Sequence_29",
+        "strDischargeAddress&Sequence_29",
+        "strAreaCode&Sequence_29",
+        "strLocalAuthority&Sequence_29",
+        "arrAreaCodes&Sequence_29",
+        "strIssueDate&Sequence_30",
+        "strEffectiveDate&Sequence_30",
+        "strReceivingEnvironment&Sequence_30",
+        "arrReceivingEnvironment&Sequence_30",
+        "strOutlet&Sequence_36",
+        "strName&Sequence_39",
+        "arrOutlets&Sequence_39",
+        "arrEnvCodes&Sequence_49",
+        "strEnvCode&Sequence_50",
+        "boolDismissed&Sequence_50",
+        "strButtonSelected&Sequence_50",
+        "strOutletsPP&Sequence_78",
+        "dtDischargeTypes&Sequence_40",
+        "strReleaseDetail&TryCatch_4",
+        "strParamCode&Sequence_41",
+        "strLimitValue&Sequence_41",
+        "arrReleaseDetail&Sequence_41",
+        "strComplianceStatCode&Sequence_41",
+        "arrReleases&Sequence_41",
+        "strRelease&Sequence_41",
+        "strName&Sequence_41",
+        "strNGR&Sequence_41",
+        "strActivityDescription&Sequence_41",
+        "strRegulatedActivitySubClass&Sequence_41",
+        "strTreatmentTypes&Sequence_41",
+        "strFlowCode&Sequence_41",
+        "strOutletsPP&Sequence_82",
+        "strReleasesPP&Sequence_82",
+        "strReleaseDetail&TryCatch_2",
+        "strParamCode&Sequence_34",
+        "strLimitValue&Sequence_34",
+        "arrReleaseDetail&Sequence_34",
+        "strComplianceStatCode&Sequence_34",
+        "strStartDay&Sequence_34",
+        "strStartMonth&Sequence_34",
+        "strEndDay&Sequence_34",
+        "strEndMonth&Sequence_34",
+        "strComboType&Sequence_34",
+        "strName&Sequence_34",
+        "arrParamCodes&Sequence_46",
+        "arrLeftoverCodes&Sequence_46",
+        "boolCombo&Sequence_46",
+        "strOutletsPP&Sequence_83",
+        "strReleaseDetailsPP&Sequence_83",
+        "boolRowsPresent&Sequence_45"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dtLookups",
+        "out_dtReleases",
+        "out_dtOutlets",
+        "out_dtReleaseDetails",
+        "out_dictPermitDetails"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Create new customer.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strPhoneNumber",
+        "in_strCompanyNumber",
+        "out_strOrgID",
+        "in_strOrgName",
+        "in_arrAddress",
+        "in_strPostcode"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Check if party name exists.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "strRecordCount&Sequence_2",
+        "intRecordCount&Sequence_2",
+        "arrExistingAddress&Sequence_3",
+        "intMatchScore&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_strPartyID",
+        "out_boolPartyRecordFound",
+        "in_strReportAddress",
         "in_strOrgName"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
     {
-      "Path": "tc01 Check if customer exists.xaml",
+      "Path": "Process/tc01 Process Transaction.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "g_arrCaseID&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_Config&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_swProcessingTimer&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_intExitPoint&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_BearerToken&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_TransactionItem&b2f1b345-de57-4e1f-8ce4-9f0b747897b6",
-        "g_browserWIMS&b2f1b345-de57-4e1f-8ce4-9f0b747897b6"
+        "g_arrCaseID&21d0e817-c69d-4a34-a22a-dd703bc2acf6",
+        "g_Config&21d0e817-c69d-4a34-a22a-dd703bc2acf6",
+        "g_swProcessingTimer&21d0e817-c69d-4a34-a22a-dd703bc2acf6",
+        "g_intExitPoint&21d0e817-c69d-4a34-a22a-dd703bc2acf6",
+        "g_BearerToken&21d0e817-c69d-4a34-a22a-dd703bc2acf6",
+        "g_TransactionItem&21d0e817-c69d-4a34-a22a-dd703bc2acf6",
+        "g_browserWIMS&21d0e817-c69d-4a34-a22a-dd703bc2acf6",
+        "g_browserPowerBi&21d0e817-c69d-4a34-a22a-dd703bc2acf6",
+        "dtTransactionData&Sequence_2",
+        "g_arrCaseID&57cee8f0-8f47-43f7-ad09-78999416d989",
+        "g_Config&57cee8f0-8f47-43f7-ad09-78999416d989",
+        "g_swProcessingTimer&57cee8f0-8f47-43f7-ad09-78999416d989",
+        "g_intExitPoint&57cee8f0-8f47-43f7-ad09-78999416d989",
+        "g_BearerToken&57cee8f0-8f47-43f7-ad09-78999416d989",
+        "g_TransactionItem&57cee8f0-8f47-43f7-ad09-78999416d989",
+        "g_browserWIMS&57cee8f0-8f47-43f7-ad09-78999416d989",
+        "g_browserPowerBi&57cee8f0-8f47-43f7-ad09-78999416d989"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Return to earlier page.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "boolTargetPage&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_uiPage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Return to main page.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "timeNow&Sequence_1",
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "boolExists&Sequence_5",
+        "uiHome&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Create new customer.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "uiMonitoringPage&Sequence_1",
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Update Party Name Sheet.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrEmptyRows&Sequence_1",
+        "g_arrCaseID&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_Config&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_swProcessingTimer&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_intExitPoint&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_BearerToken&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_TransactionItem&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserWIMS&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserPowerBi&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "intIndex&Sequence_1",
+        "strRowRef&Sequence_1",
+        "dtPTK&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_strPTK",
+        "in_strRegion",
+        "in_strOrgName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Create new party.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strPartyName",
+        "in_strPartyID",
+        "in_strPostcode",
+        "in_strTelephone",
+        "in_arrAddress"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Add Responsibility.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strRole",
+        "in_strPartyID",
+        "in_strOrgID"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Check if NGR exists.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "intRecordCount&Sequence_2",
+        "strRecordCount&Sequence_2",
+        "arrExistingAddress&Sequence_3",
+        "intMatchScore&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strReportAddress",
+        "out_boolNGRfound",
+        "in_strGridReference"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Create new discharge site.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "strShortName&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strAssetPropertyCode",
+        "in_boolConfidential",
+        "in_arrAddress",
+        "in_strPostcode",
+        "in_strAreaCode",
+        "in_strSubAreaCode",
+        "in_strLocalAuthorityCode",
+        "in_strGridReference"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Create new permit.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strNumericOrDescriptive",
+        "in_strReceivingWater",
+        "in_strEffectiveDate",
+        "in_strIssuedDate",
+        "in_strGridReference",
+        "in_strPermitNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Create new outlet.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strReference",
+        "in_strGridReference",
+        "in_strEnvironmentCode",
+        "in_strTotalOutlets",
+        "out_uiOutletRef"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/DEV ONLY Go to dummy permit.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Go to outlets reference block.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Next record or next block.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_Config&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_swProcessingTimer&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_intExitPoint&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_BearerToken&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_TransactionItem&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserWIMS&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserPowerBi&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_arrCaseID&f9da5f3b-c92d-47ab-8fe6-d9c04278a7dc",
+        "g_Config&f9da5f3b-c92d-47ab-8fe6-d9c04278a7dc",
+        "g_swProcessingTimer&f9da5f3b-c92d-47ab-8fe6-d9c04278a7dc",
+        "g_intExitPoint&f9da5f3b-c92d-47ab-8fe6-d9c04278a7dc",
+        "g_BearerToken&f9da5f3b-c92d-47ab-8fe6-d9c04278a7dc",
+        "g_TransactionItem&f9da5f3b-c92d-47ab-8fe6-d9c04278a7dc",
+        "g_browserWIMS&f9da5f3b-c92d-47ab-8fe6-d9c04278a7dc",
+        "g_browserPowerBi&f9da5f3b-c92d-47ab-8fe6-d9c04278a7dc"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_boolLastRecord"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Create new release.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "boolDismissed&Sequence_2",
+        "strButtonSelected&Sequence_2",
+        "strDischargeType&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strName",
+        "in_strDischargeTypes",
+        "in_strTreatmentType",
+        "in_strFlowCode",
+        "in_strDescription",
+        "out_uiReleases",
+        "in_strReference",
+        "in_strEnvironmentCode",
+        "in_strTotalOutlets",
+        "out_uiOutletRef",
+        "in_strGridReference"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Select discharge, treatment and flow code.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strButtonSelected&Sequence_1",
+        "boolDismissed&Sequence_1",
+        "g_arrCaseID&fef31220-dbbf-433b-b4b3-5e2aa79e79bb",
+        "g_Config&fef31220-dbbf-433b-b4b3-5e2aa79e79bb",
+        "g_swProcessingTimer&fef31220-dbbf-433b-b4b3-5e2aa79e79bb",
+        "g_intExitPoint&fef31220-dbbf-433b-b4b3-5e2aa79e79bb",
+        "g_BearerToken&fef31220-dbbf-433b-b4b3-5e2aa79e79bb",
+        "g_TransactionItem&fef31220-dbbf-433b-b4b3-5e2aa79e79bb",
+        "g_browserWIMS&fef31220-dbbf-433b-b4b3-5e2aa79e79bb",
+        "g_browserPowerBi&fef31220-dbbf-433b-b4b3-5e2aa79e79bb"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_strTreatmentCode",
+        "out_strFlowCode",
+        "out_strDischargeCode"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Create new release detail.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_boolLastReleaseDetail",
+        "in_strComplianceStatisticCode",
+        "in_strIndex",
+        "in_strLimitValue",
+        "in_strEndMonth",
+        "in_strEndDay",
+        "in_strStartMonth",
+        "in_strStartDay",
+        "in_strCorA",
+        "in_strParamCode"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Init next release.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_boolMoreRecords"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Amend Permit.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "strRowPartyID&Sequence_25",
+        "strRow&Sequence_25",
+        "strCurrentPartyID&Sequence_25"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strOrgName",
+        "in_strPartyID",
+        "in_boolConfidential",
+        "in_strOrgID",
+        "in_strPermitNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_Config&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_swProcessingTimer&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_intExitPoint&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_BearerToken&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_TransactionItem&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserWIMS&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserPowerBi&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Extract Permit Info.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dtTest&Sequence_2",
+        "dtLookups&Sequence_1",
+        "g_arrCaseID&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_Config&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_swProcessingTimer&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_intExitPoint&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_BearerToken&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_TransactionItem&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserWIMS&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserPowerBi&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Log in to WIMS region.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strRegion&Sequence_1",
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Update Party Name Sheet.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dtTest&Sequence_2",
+        "strPTK&Sequence_3",
+        "g_arrCaseID&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_Config&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_swProcessingTimer&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_intExitPoint&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_BearerToken&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_TransactionItem&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserWIMS&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserPowerBi&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 DEV ONLY Go to dummy permit.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_Config&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_swProcessingTimer&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_intExitPoint&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_BearerToken&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_TransactionItem&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserWIMS&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserPowerBi&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Create new outlet.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_Config&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_swProcessingTimer&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_intExitPoint&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_BearerToken&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_TransactionItem&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserWIMS&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserPowerBi&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc02 Create new outlet.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_Config&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_swProcessingTimer&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_intExitPoint&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_BearerToken&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_TransactionItem&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserWIMS&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a",
+        "g_browserPowerBi&38fd5ce9-3a4d-4079-b57e-c87fcbc19f5a"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Init next outlet.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_boolMoreRecords"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Init next release.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&94b171fa-ec93-4d46-8d1c-18b7e79eca32",
+        "g_Config&94b171fa-ec93-4d46-8d1c-18b7e79eca32",
+        "g_swProcessingTimer&94b171fa-ec93-4d46-8d1c-18b7e79eca32",
+        "g_intExitPoint&94b171fa-ec93-4d46-8d1c-18b7e79eca32",
+        "g_BearerToken&94b171fa-ec93-4d46-8d1c-18b7e79eca32",
+        "g_TransactionItem&94b171fa-ec93-4d46-8d1c-18b7e79eca32",
+        "g_browserWIMS&94b171fa-ec93-4d46-8d1c-18b7e79eca32",
+        "g_browserPowerBi&94b171fa-ec93-4d46-8d1c-18b7e79eca32"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Check if party name exists.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "boolRecordFound&Sequence_3",
+        "strPartyID&Sequence_3",
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Create new party.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Add Responsibilities.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Check if NGR exists.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "boolNGRFound&Sequence_3",
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Create new discharge site.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Amend Permit.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/Close WIMS.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_Config&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_swProcessingTimer&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_intExitPoint&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_BearerToken&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_TransactionItem&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserWIMS&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a",
+        "g_browserPowerBi&a7bcf3f7-c06c-4fe3-852f-3a5565beed5a"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/tc01 Close WIMS.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_Config&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_swProcessingTimer&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_intExitPoint&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_BearerToken&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_TransactionItem&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserWIMS&6a11ee4d-4fd9-446a-b870-47a53c532522",
+        "g_browserPowerBi&6a11ee4d-4fd9-446a-b870-47a53c532522"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/KillAllProcesses.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_Config&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_swProcessingTimer&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_intExitPoint&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_BearerToken&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_TransactionItem&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserWIMS&b3583756-851c-4f7d-8ba1-d7f0cd159b5b",
+        "g_browserPowerBi&b3583756-851c-4f7d-8ba1-d7f0cd159b5b"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
