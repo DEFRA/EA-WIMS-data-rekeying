@@ -223,8 +223,8 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Transaction Successful&quot;]" />
-            <ueab:ExcelProcessScopeX LaunchTimeout="{x:Null}" DisplayAlerts="False" DisplayName="Excel Process Scope - set transaction status - write success" ExistingProcessAction="None" FileConflictResolution="ThrowException" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_3" LaunchMethod="Application" MacroSettings="DisableAll" ProcessMode="ReuseIfExists" ShowExcelWindow="False">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Transaction Successful&quot;]" />
+            <ueab:ExcelProcessScopeX LaunchTimeout="{x:Null}" DisplayAlerts="False" DisplayName="Excel Process Scope - set transaction status - write success" ExistingProcessAction="None" FileConflictResolution="ThrowException" sap:VirtualizedContainerService.HintSize="604,1387.6" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_3" LaunchMethod="Application" MacroSettings="DisableAll" ProcessMode="ReuseIfExists" ShowExcelWindow="False">
               <ueab:ExcelProcessScopeX.Body>
                 <ActivityAction x:TypeArguments="ui:IExcelProcess">
                   <ActivityAction.Argument>
@@ -242,8 +242,8 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed" sap:VirtualizedContainerService.HintSize="502,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_7" Value="[&quot;Completed&quot;]" />
-                          <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="502,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_9" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
+                          <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed" sap:VirtualizedContainerService.HintSize="502,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_7" Value="[&quot;Completed&quot;]" />
+                          <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="502,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_9" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
                           <If Condition="[g_TransactionItem(&quot;UWWTR_Permit?&quot;).ToString=&quot;Y&quot;]" DisplayName="If UWWTR_Permit? = Y" sap:VirtualizedContainerService.HintSize="502,499.6" sap2010:WorkflowViewState.IdRef="If_12">
                             <If.Then>
                               <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,246.8" sap2010:WorkflowViewState.IdRef="Sequence_50">
@@ -252,7 +252,7 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;F&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - UWWTR_Permit" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_10" Value="[g_TransactionItem(&quot;UWWTR_Permit?&quot;).ToString]" />
+                                <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;F&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - UWWTR_Permit" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_10" Value="[g_TransactionItem(&quot;UWWTR_Permit?&quot;).ToString]" />
                               </Sequence>
                             </If.Then>
                             <If.Else>
@@ -273,17 +273,17 @@
               </ueab:ExcelProcessScopeX.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ueab:ExcelProcessScopeX>
-            <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="450,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_8" MethodName="Stop">
+            <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="604,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_8" MethodName="Stop">
               <InvokeMethod.TargetObject>
                 <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
               </InvokeMethod.TargetObject>
             </InvokeMethod>
-            <d:LogTransaction sap:VirtualizedContainerService.HintSize="450,56.8" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="-1" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strOutcome="Success" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]" sap2010:WorkflowViewState.IdRef="LogTransaction_1">
+            <d:LogTransaction IN_boolUnattended="{x:Null}" sap:VirtualizedContainerService.HintSize="604,56.8" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="-1" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strOutcome="Success" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]" sap2010:WorkflowViewState.IdRef="LogTransaction_1">
               <d:LogTransaction.IN_strMiscNotes>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" DisplayName="Literal&lt;String&gt;" Value="" />
@@ -295,7 +295,7 @@
                 </InArgument>
               </d:LogTransaction.IN_strOutcomeNotes>
             </d:LogTransaction>
-            <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="450,360.8" sap2010:WorkflowViewState.IdRef="If_7">
+            <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="604,360.8" sap2010:WorkflowViewState.IdRef="If_7">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_26">
                   <sap:WorkflowViewStateService.ViewState>
@@ -434,9 +434,9 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed (invalid)" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[&quot;Invalid&quot;]" />
-                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;E&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - exception reason" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[in_BusinessException.Message]" />
-                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed (invalid)" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[&quot;Invalid&quot;]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;E&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - exception reason" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[in_BusinessException.Message]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
                             </Sequence>
                           </ActivityAction>
                         </ueab:ExcelApplicationCard.Body>
@@ -449,7 +449,7 @@
                     <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                   </InvokeMethod.TargetObject>
                 </InvokeMethod>
-                <d:LogTransaction sap:VirtualizedContainerService.HintSize="536,56.8" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="[g_intExitPoint]" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strOutcome="Business Exception" IN_strOutcomeNotes="[in_BusinessException.Message]" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]" sap2010:WorkflowViewState.IdRef="LogTransaction_2">
+                <d:LogTransaction IN_boolUnattended="{x:Null}" sap:VirtualizedContainerService.HintSize="536,56.8" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="[g_intExitPoint]" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strOutcome="Business Exception" IN_strOutcomeNotes="[in_BusinessException.Message]" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]" sap2010:WorkflowViewState.IdRef="LogTransaction_2">
                   <d:LogTransaction.IN_strMiscNotes>
                     <InArgument x:TypeArguments="x:String">
                       <Literal x:TypeArguments="x:String" DisplayName="Literal&lt;String&gt;" Value="" />
@@ -578,9 +578,9 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed (invalid)" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_4" Value="[&quot;Incomplete&quot;]" />
-                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;E&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - exception reason" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_5" Value="[&quot;System Exception - clear fields to retry&quot;]" />
-                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Worklist&quot;).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_6" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed (invalid)" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_4" Value="[&quot;Incomplete&quot;]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;E&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - exception reason" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_5" Value="[&quot;System Exception - clear fields to retry&quot;]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_6" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
                             </Sequence>
                           </ActivityAction>
                         </ueab:ExcelApplicationCard.Body>
@@ -593,7 +593,7 @@
                     <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                   </InvokeMethod.TargetObject>
                 </InvokeMethod>
-                <d:LogTransaction sap:VirtualizedContainerService.HintSize="536,56.8" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="[g_intExitPoint]" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strMiscNotes="[strLogNote]" IN_strOutcome="System Exception" IN_strOutcomeNotes="[in_SystemException.Message]" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]" sap2010:WorkflowViewState.IdRef="LogTransaction_3" />
+                <d:LogTransaction IN_boolUnattended="{x:Null}" sap:VirtualizedContainerService.HintSize="536,56.8" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="[g_intExitPoint]" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strMiscNotes="[strLogNote]" IN_strOutcome="System Exception" IN_strOutcomeNotes="[in_SystemException.Message]" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]" sap2010:WorkflowViewState.IdRef="LogTransaction_3" />
                 <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="536,807.2" sap2010:WorkflowViewState.IdRef="If_10">
                   <If.Then>
                     <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_35">

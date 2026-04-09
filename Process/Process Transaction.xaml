@@ -247,7 +247,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID41">
+                <FlowStep x:Name="__ReferenceID41" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">245,505</av:Point>
@@ -255,7 +255,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">300,575 300,605</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log in to WIMS region - Invoke Workflow File (Process\Process Subflows\Log in to WIMS region.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_49" UnSafe="False" WorkflowFileName="Process\Process Subflows\Log in to WIMS region.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log in to WIMS region STORED CREDS - Invoke Workflow File (Process\Process Subflows\Log in to WIMS region STORED CREDS.xaml)" sap:VirtualizedContainerService.HintSize="336.8,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_51" UnSafe="False" WorkflowFileName="Process\Process Subflows\Log in to WIMS region STORED CREDS.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_strRegion">[dictPermitDetails("Region")]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
@@ -1088,7 +1088,7 @@
                                                                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                                                               </ui:LogMessage>
                                                                                                                               <FlowStep.Next>
-                                                                                                                                <FlowStep x:Name="__ReferenceID0">
+                                                                                                                                <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                                                                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                                       <av:Point x:Key="ShapeLocation">205,3405</av:Point>
@@ -1483,7 +1483,25 @@
     <x:Reference>__ReferenceID38</x:Reference>
     <x:Reference>__ReferenceID39</x:Reference>
     <x:Reference>__ReferenceID40</x:Reference>
-    <x:Reference>__ReferenceID41</x:Reference>
+    <FlowStep sap2010:WorkflowViewState.IdRef="FlowStep_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">405,505</av:Point>
+          <av:Size x:Key="ShapeSize">110,70</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log in to WIMS region - Invoke Workflow File (Process\Process Subflows\Log in to WIMS region.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_49" UnSafe="False" WorkflowFileName="Process\Process Subflows\Log in to WIMS region.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strRegion">[dictPermitDetails("Region")]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+    </FlowStep>
     <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID41</x:Reference>
   </Flowchart>
 </Activity>

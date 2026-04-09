@@ -4,7 +4,8 @@
   "description": "Enter data into WIMS regional databases from Power BI.",
   "main": "Main.xaml",
   "dependencies": {
-    "DRACOE.Logging.64": "[1.0.9]",
+    "DRACOE.Credentials.64": "[1.0.2]",
+    "DRACOE.Logging.64": "[1.0.17]",
     "DRACOE.Microsoft.Graph.64": "[1.0.48]",
     "DRACOE.PopUps.64": "[1.0.9]",
     "OfficeSamurai.FuzzyWuzzy.Activities": "[1.0.1]",
@@ -19,7 +20,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "24.10.15.0",
-  "projectVersion": "1.0.1",
+  "projectVersion": "1.0.2-alpha.2",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -181,6 +182,20 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Process\\Process Subflows\\tc01 Close WIMS.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "01b51f63-7595-4961-952e-409a54480763",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Log in to WIMS region STORED CREDS.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "b309d84d-bd4a-4cdb-a97e-c9c7d4fffc97",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Framework\\tc01 GetTransactionData.xaml"
       }
     ],
     "saveToCloud": false

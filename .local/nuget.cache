@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "a/R+AEjssm+j5X7gB1AvKY7OcXMU8F4luiI4aGctQPQMZCelZtSPLe60DH+EVo1Figp3Es8EjebGGcBjtm0HwQ==",
+  "dgSpecHash": "qSS+LB+XRriKY007cUY9lDXje1a6zYpS+XZGdhZ5dBBGl+X3MxWIDF/GaKQDQwuNH9bqqvqjAE568smWEr5VnQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\rm000121\\OneDrive - Defra\\UiPath\\EA-WIMS-data-rekeying\\.local\\",
   "expectedPackageFiles": [
@@ -14,7 +14,7 @@
     "C:\\Users\\rm000121\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",
     "C:\\Users\\rm000121\\.nuget\\packages\\documentformat.openxml\\2.16.0\\documentformat.openxml.2.16.0.nupkg.sha512",
     "C:\\Users\\rm000121\\.nuget\\packages\\dracoe.credentials.64\\1.0.2\\dracoe.credentials.64.1.0.2.nupkg.sha512",
-    "C:\\Users\\rm000121\\.nuget\\packages\\dracoe.logging.64\\1.0.9\\dracoe.logging.64.1.0.9.nupkg.sha512",
+    "C:\\Users\\rm000121\\.nuget\\packages\\dracoe.logging.64\\1.0.17\\dracoe.logging.64.1.0.17.nupkg.sha512",
     "C:\\Users\\rm000121\\.nuget\\packages\\dracoe.microsoft.graph.64\\1.0.48\\dracoe.microsoft.graph.64.1.0.48.nupkg.sha512",
     "C:\\Users\\rm000121\\.nuget\\packages\\dracoe.popups.64\\1.0.9\\dracoe.popups.64.1.0.9.nupkg.sha512",
     "C:\\Users\\rm000121\\.nuget\\packages\\excelnumberformat\\1.1.0\\excelnumberformat.1.1.0.nupkg.sha512",
@@ -326,7 +326,7 @@
       "level": "Warning",
       "warningLevel": 1,
       "filePath": "C:\\Users\\rm000121\\OneDrive - Defra\\UiPath\\EA-WIMS-data-rekeying\\.local",
-      "message": "Detected package version outside of dependency constraint: DRACOE.Logging.64 1.0.9 requires UiPath.Excel.Activities (= 2.22.3) but version UiPath.Excel.Activities 2.23.5 was resolved.",
+      "message": "Detected package version outside of dependency constraint: DRACOE.Logging.64 1.0.17 requires UiPath.Excel.Activities (= 2.22.3) but version UiPath.Excel.Activities 2.23.5 was resolved.",
       "libraryId": "UiPath.Excel.Activities",
       "targetGraphs": [
         "net8.0-windows7.0",
@@ -338,7 +338,7 @@
       "level": "Warning",
       "warningLevel": 1,
       "filePath": "C:\\Users\\rm000121\\OneDrive - Defra\\UiPath\\EA-WIMS-data-rekeying\\.local",
-      "message": "Detected package version outside of dependency constraint: DRACOE.Logging.64 1.0.9 requires UiPath.System.Activities (= 23.10.6) but version UiPath.System.Activities 24.10.4 was resolved.",
+      "message": "Detected package version outside of dependency constraint: DRACOE.Logging.64 1.0.17 requires UiPath.System.Activities (= 23.10.6) but version UiPath.System.Activities 24.10.4 was resolved.",
       "libraryId": "UiPath.System.Activities",
       "targetGraphs": [
         "net8.0-windows7.0",

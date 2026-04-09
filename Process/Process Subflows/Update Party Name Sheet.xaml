@@ -147,7 +147,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                 </ActivityAction.Argument>
-                <ueab:ReadRangeX sap2010:Annotation.AnnotationText="Finite rows for speed" DisplayName="Read Range - ptk" sap:VirtualizedContainerService.HintSize="444,204.8" sap2010:WorkflowViewState.IdRef="ReadRangeX_3" Range="[Excel.Sheet(&quot;PTK_Spreadsheet&quot;).Range(&quot;A1:E450&quot;)]" SaveTo="[dtPTK]" VisibleOnly="False">
+                <ueab:ReadRangeX sap2010:Annotation.AnnotationText="Finite rows for speed" DisplayName="Read Range - ptk" sap:VirtualizedContainerService.HintSize="444,204.8" sap2010:WorkflowViewState.IdRef="ReadRangeX_3" Range="[Excel.Sheet(g_Config(&quot;PTKSheetName&quot;).ToString).Range(&quot;A1:E450&quot;)]" SaveTo="[dtPTK]" VisibleOnly="False">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -298,7 +298,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                 </ActivityAction.Argument>
-                <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;PTK_Spreadsheet&quot;).Range(&quot;A&quot;+strRowRef+&quot;:I&quot;+strRowRef)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="434,163.6" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False" Source="[dtPTK.Rows(0).Table]" />
+                <ueab:WriteRangeX Destination="[Excel.Sheet(g_Config(&quot;PTKSheetName&quot;).ToString).Range(&quot;A&quot;+strRowRef+&quot;:I&quot;+strRowRef)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="434,163.6" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False" Source="[dtPTK.Rows(0).Table]" />
               </ActivityAction>
             </ueab:ExcelApplicationCard.Body>
           </ueab:ExcelApplicationCard>
