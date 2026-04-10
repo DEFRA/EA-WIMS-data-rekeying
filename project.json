@@ -196,6 +196,20 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Framework\\tc01 GetTransactionData.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "f38272bb-15e9-4c83-b37b-9471a890e341",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Create New Permit.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "74f8efcd-61cc-41c8-826d-79f172d3f8b5",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Init next outlet.xaml"
       }
     ],
     "saveToCloud": false

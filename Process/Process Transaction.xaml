@@ -255,7 +255,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">300,575 300,605</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log in to WIMS region STORED CREDS - Invoke Workflow File (Process\Process Subflows\Log in to WIMS region STORED CREDS.xaml)" sap:VirtualizedContainerService.HintSize="336.8,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_51" UnSafe="False" WorkflowFileName="Process\Process Subflows\Log in to WIMS region STORED CREDS.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log in to WIMS region STORED CREDS - Invoke Workflow File (Process\Process Subflows\Log in to WIMS region STORED CREDS.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_51" UnSafe="False" WorkflowFileName="Process\Process Subflows\Log in to WIMS region STORED CREDS.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_strRegion">[dictPermitDetails("Region")]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
@@ -295,17 +295,23 @@
                               <av:PointCollection x:Key="ConnectorLocation">300,765 300,785</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="This workflow is littered throughout, but it's mostly as a safety check, especially in Dev mode. It proved faster to hard-code the specific exit steps in a lot of the workflows but this will account for random pop-ups or inconsistent exiting behaviour." DisplayName="Return to home page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
-                            <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiHomePage]</InArgument>
-                            </ui:InvokeWorkflowFile.Arguments>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:InvokeWorkflowFile>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="This workflow is littered throughout, but it's mostly as a safety check, especially in Dev mode. It proved faster to hard-code the specific exit steps in a lot of the workflows but this will account for random pop-ups or inconsistent exiting behaviour." DisplayName="Return to home page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiHomePage]</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:InvokeWorkflowFile>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
                           <FlowStep.Next>
                             <FlowStep x:Name="__ReferenceID9" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                               <sap:WorkflowViewStateService.ViewState>
@@ -336,16 +342,22 @@
                                       <av:PointCollection x:Key="ConnectorLocation">300,945 300,965</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to Monitoring page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_42" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
-                                    <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiMonitoring]</InArgument>
-                                    </ui:InvokeWorkflowFile.Arguments>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:InvokeWorkflowFile>
+                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                                    <ui:CommentOut.Body>
+                                      <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to Monitoring page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_52" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
+                                          <ui:InvokeWorkflowFile.Arguments>
+                                            <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiMonitoring]</InArgument>
+                                          </ui:InvokeWorkflowFile.Arguments>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:InvokeWorkflowFile>
+                                      </Sequence>
+                                    </ui:CommentOut.Body>
+                                  </ui:CommentOut>
                                   <FlowStep.Next>
                                     <FlowStep x:Name="__ReferenceID19" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                                       <sap:WorkflowViewStateService.ViewState>
@@ -628,16 +640,22 @@
                                                   <av:PointCollection x:Key="ConnectorLocation">300,1215 300,1235</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to Monitoring page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
-                                                <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiMonitoring]</InArgument>
-                                                </ui:InvokeWorkflowFile.Arguments>
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                              </ui:InvokeWorkflowFile>
+                                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                                <ui:CommentOut.Body>
+                                                  <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to Monitoring page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
+                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                        <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiMonitoring]</InArgument>
+                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </ui:InvokeWorkflowFile>
+                                                  </Sequence>
+                                                </ui:CommentOut.Body>
+                                              </ui:CommentOut>
                                               <FlowStep.Next>
                                                 <FlowStep x:Name="__ReferenceID14" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -696,16 +714,22 @@
                                                                   <av:PointCollection x:Key="ConnectorLocation">300,1775 300,1795</av:PointCollection>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to monitoring page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
-                                                                <ui:InvokeWorkflowFile.Arguments>
-                                                                  <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiMonitoring]</InArgument>
-                                                                </ui:InvokeWorkflowFile.Arguments>
-                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                  </scg:Dictionary>
-                                                                </sap:WorkflowViewStateService.ViewState>
-                                                              </ui:InvokeWorkflowFile>
+                                                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+                                                                <ui:CommentOut.Body>
+                                                                  <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to monitoring page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
+                                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                                        <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiMonitoring]</InArgument>
+                                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </ui:InvokeWorkflowFile>
+                                                                  </Sequence>
+                                                                </ui:CommentOut.Body>
+                                                              </ui:CommentOut>
                                                               <FlowStep.Next>
                                                                 <FlowStep x:Name="__ReferenceID20" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                                                                   <sap:WorkflowViewStateService.ViewState>
@@ -736,16 +760,27 @@
                                                                           <av:PointCollection x:Key="ConnectorLocation">300,1955 300,1975</av:PointCollection>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to home page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
-                                                                        <ui:InvokeWorkflowFile.Arguments>
-                                                                          <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiHomePage]</InArgument>
-                                                                        </ui:InvokeWorkflowFile.Arguments>
-                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                          </scg:Dictionary>
-                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                      </ui:InvokeWorkflowFile>
+                                                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                                                                        <ui:CommentOut.Body>
+                                                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,259.2" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                              </scg:Dictionary>
+                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to home page" sap:VirtualizedContainerService.HintSize="382,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
+                                                                              <ui:InvokeWorkflowFile.Arguments>
+                                                                                <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiHomePage]</InArgument>
+                                                                              </ui:InvokeWorkflowFile.Arguments>
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                            </ui:InvokeWorkflowFile>
+                                                                          </Sequence>
+                                                                        </ui:CommentOut.Body>
+                                                                      </ui:CommentOut>
                                                                       <FlowStep.Next>
                                                                         <FlowStep x:Name="__ReferenceID22" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                                                                           <sap:WorkflowViewStateService.ViewState>
@@ -803,16 +838,22 @@
                                                                                           <av:PointCollection x:Key="ConnectorLocation">300,2445 300,2465</av:PointCollection>
                                                                                         </scg:Dictionary>
                                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to permits page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
-                                                                                        <ui:InvokeWorkflowFile.Arguments>
-                                                                                          <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiPermits]</InArgument>
-                                                                                        </ui:InvokeWorkflowFile.Arguments>
-                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                          </scg:Dictionary>
-                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                      </ui:InvokeWorkflowFile>
+                                                                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                                                                                        <ui:CommentOut.Body>
+                                                                                          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                                                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to permits page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
+                                                                                              <ui:InvokeWorkflowFile.Arguments>
+                                                                                                <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiPermits]</InArgument>
+                                                                                              </ui:InvokeWorkflowFile.Arguments>
+                                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                </scg:Dictionary>
+                                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                                            </ui:InvokeWorkflowFile>
+                                                                                          </Sequence>
+                                                                                        </ui:CommentOut.Body>
+                                                                                      </ui:CommentOut>
                                                                                       <FlowStep.Next>
                                                                                         <FlowStep x:Name="__ReferenceID26" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                                                                                           <sap:WorkflowViewStateService.ViewState>
@@ -858,16 +899,22 @@
                                                                                                       <av:PointCollection x:Key="ConnectorLocation">240,2715 240,2735</av:PointCollection>
                                                                                                     </scg:Dictionary>
                                                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to permits page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
-                                                                                                    <ui:InvokeWorkflowFile.Arguments>
-                                                                                                      <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiPermits]</InArgument>
-                                                                                                    </ui:InvokeWorkflowFile.Arguments>
-                                                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                      </scg:Dictionary>
-                                                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                                                  </ui:InvokeWorkflowFile>
+                                                                                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+                                                                                                    <ui:CommentOut.Body>
+                                                                                                      <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to permits page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
+                                                                                                          <ui:InvokeWorkflowFile.Arguments>
+                                                                                                            <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiPermits]</InArgument>
+                                                                                                          </ui:InvokeWorkflowFile.Arguments>
+                                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                            </scg:Dictionary>
+                                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                                        </ui:InvokeWorkflowFile>
+                                                                                                      </Sequence>
+                                                                                                    </ui:CommentOut.Body>
+                                                                                                  </ui:CommentOut>
                                                                                                   <FlowStep.Next>
                                                                                                     <FlowStep x:Name="__ReferenceID29" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                                                                                                       <sap:WorkflowViewStateService.ViewState>
@@ -902,7 +949,7 @@
                                                                                                                 <ActivityAction.Argument>
                                                                                                                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                                                                                                 </ActivityAction.Argument>
-                                                                                                                <Sequence DisplayName="Create outlet and associated releases+release details" sap:VirtualizedContainerService.HintSize="552,2117.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                                                                                <Sequence DisplayName="Create outlet and associated releases+release details" sap:VirtualizedContainerService.HintSize="484,1540.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                                                                                                   <Sequence.Variables>
                                                                                                                     <Variable x:TypeArguments="ui:UiElement" Name="uiOutlets" />
                                                                                                                     <Variable x:TypeArguments="ui:UiElement" Name="uiReleases" />
@@ -912,8 +959,8 @@
                                                                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                                                     </scg:Dictionary>
                                                                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                                                                  <ui:LogMessage DisplayName="Log Message - creating outlet" sap:VirtualizedContainerService.HintSize="518,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Creating outlet &quot;+(intOutletIndex+1).ToString+&quot; of &quot;+dtOutlets.RowCount.ToString]" />
-                                                                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create new outlet - Invoke Workflow File (Process\Process Subflows\Create new outlet.xaml)" sap:VirtualizedContainerService.HintSize="518,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="Process\Process Subflows\Create new outlet.xaml">
+                                                                                                                  <ui:LogMessage DisplayName="Log Message - creating outlet" sap:VirtualizedContainerService.HintSize="450,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Creating outlet &quot;+(intOutletIndex+1).ToString+&quot; of &quot;+dtOutlets.RowCount.ToString]" />
+                                                                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create new outlet - Invoke Workflow File (Process\Process Subflows\Create new outlet.xaml)" sap:VirtualizedContainerService.HintSize="450,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="Process\Process Subflows\Create new outlet.xaml">
                                                                                                                     <ui:InvokeWorkflowFile.Arguments>
                                                                                                                       <InArgument x:TypeArguments="x:String" x:Key="in_strReference">[Regex.Replace(CurrentRow("Name").ToString,"[^0-9]","")]</InArgument>
                                                                                                                       <InArgument x:TypeArguments="x:String" x:Key="in_strGridReference">[CurrentRow("NGR").ToString]</InArgument>
@@ -922,21 +969,21 @@
                                                                                                                       <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_uiOutletRef">[uiOutlets]</OutArgument>
                                                                                                                     </ui:InvokeWorkflowFile.Arguments>
                                                                                                                   </ui:InvokeWorkflowFile>
-                                                                                                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intReleaseIndex]" DataTable="[dtReleases.Select(&quot;Name='&quot;+CurrentRow(&quot;Name&quot;).ToString+&quot;'&quot;).CopyToDataTable]" DisplayName="For Each Release" sap:VirtualizedContainerService.HintSize="518,1474.4" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                                                                                                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intReleaseIndex]" DataTable="[dtReleases.Select(&quot;Name='&quot;+CurrentRow(&quot;Name&quot;).ToString+&quot;'&quot;).CopyToDataTable]" DisplayName="For Each Release" sap:VirtualizedContainerService.HintSize="450,898" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
                                                                                                                     <ui:ForEachRow.Body>
                                                                                                                       <ActivityAction x:TypeArguments="sd:DataRow">
                                                                                                                         <ActivityAction.Argument>
                                                                                                                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                                                                                                         </ActivityAction.Argument>
-                                                                                                                        <Sequence DisplayName="Create new release and associated release details" sap:VirtualizedContainerService.HintSize="484,1276" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                                                                                        <Sequence DisplayName="Create new release and associated release details" sap:VirtualizedContainerService.HintSize="416,699.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                                                                             </scg:Dictionary>
                                                                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                                                                          <ui:LogMessage DisplayName="Log Message - creating release" sap:VirtualizedContainerService.HintSize="450,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Creating release &quot;+(intReleaseIndex+1).ToString+&quot; of &quot;+dtReleases.Select(&quot;Name='&quot;+CurrentRow(&quot;Name&quot;).ToString+&quot;'&quot;).Count.ToString +&quot; under outlet &quot;+(intOutletIndex+1).ToString]" />
-                                                                                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create new release - Invoke Workflow File (Process\Process Subflows\Create new release.xaml)" sap:VirtualizedContainerService.HintSize="450,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Process\Process Subflows\Create new release.xaml">
+                                                                                                                          <ui:LogMessage DisplayName="Log Message - creating release" sap:VirtualizedContainerService.HintSize="382,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Creating release &quot;+(intReleaseIndex+1).ToString+&quot; of &quot;+dtReleases.Select(&quot;Name='&quot;+CurrentRow(&quot;Name&quot;).ToString+&quot;'&quot;).Count.ToString +&quot; under outlet &quot;+(intOutletIndex+1).ToString]" />
+                                                                                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create new release - Invoke Workflow File (Process\Process Subflows\Create new release.xaml)" sap:VirtualizedContainerService.HintSize="382,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Process\Process Subflows\Create new release.xaml">
                                                                                                                             <ui:InvokeWorkflowFile.Arguments>
                                                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strName">[Regex.Replace(CurrentRow("Name").ToString,"[^0-9]","")]</InArgument>
                                                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strDischargeTypes">[dictPermitDetails("DischargeTypes").Replace("|","&lt;br&gt;")+"&lt;br&gt;"]</InArgument>
@@ -947,7 +994,7 @@
                                                                                                                               <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_uiReleases">[uiReleases]</OutArgument>
                                                                                                                             </ui:InvokeWorkflowFile.Arguments>
                                                                                                                           </ui:InvokeWorkflowFile>
-                                                                                                                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intReleaseDetailIndex]" DataTable="[dtReleaseDetails.Select(&quot;Name='&quot;+CurrentRow(&quot;Name&quot;).ToString+&quot;'&quot;).CopyToDataTable]" DisplayName="For Each Release Detail" sap:VirtualizedContainerService.HintSize="450,633.2" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                                                                                                                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intReleaseDetailIndex]" DataTable="[dtReleaseDetails.Select(&quot;Name='&quot;+CurrentRow(&quot;Name&quot;).ToString+&quot;'&quot;).CopyToDataTable]" DisplayName="For Each Release Detail" sap:VirtualizedContainerService.HintSize="382,56.8" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
                                                                                                                             <ui:ForEachRow.Body>
                                                                                                                               <ActivityAction x:TypeArguments="sd:DataRow">
                                                                                                                                 <ActivityAction.Argument>
@@ -980,12 +1027,12 @@
                                                                                                                             </ui:ForEachRow.Body>
                                                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                                                                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                                                                               </scg:Dictionary>
                                                                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                                                                           </ui:ForEachRow>
-                                                                                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Init next release" sap:VirtualizedContainerService.HintSize="450,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="Process\Process Subflows\Init next release.xaml">
+                                                                                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Init next release" sap:VirtualizedContainerService.HintSize="382,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="Process\Process Subflows\Init next release.xaml">
                                                                                                                             <ui:InvokeWorkflowFile.Arguments>
                                                                                                                               <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolMoreRecords">[intReleaseIndex&lt;dtReleases.RowCount-1]</InArgument>
                                                                                                                             </ui:InvokeWorkflowFile.Arguments>
@@ -1000,7 +1047,7 @@
                                                                                                                       </scg:Dictionary>
                                                                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                                                                   </ui:ForEachRow>
-                                                                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Init next outlet" sap:VirtualizedContainerService.HintSize="518,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Process\Process Subflows\Init next outlet.xaml">
+                                                                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Init next outlet" sap:VirtualizedContainerService.HintSize="450,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Process\Process Subflows\Init next outlet.xaml">
                                                                                                                     <ui:InvokeWorkflowFile.Arguments>
                                                                                                                       <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolMoreRecords">[intOutletIndex&lt;dtOutlets.RowCount-1]</InArgument>
                                                                                                                     </ui:InvokeWorkflowFile.Arguments>
@@ -1020,37 +1067,43 @@
                                                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                   <av:Point x:Key="ShapeLocation">245,2955</av:Point>
                                                                                                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                                                                                  <av:PointCollection x:Key="ConnectorLocation">300,3025 300,3050</av:PointCollection>
+                                                                                                                  <av:PointCollection x:Key="ConnectorLocation">300,3025 300,3060</av:PointCollection>
                                                                                                                 </scg:Dictionary>
                                                                                                               </sap:WorkflowViewStateService.ViewState>
-                                                                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to permits page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
-                                                                                                                <ui:InvokeWorkflowFile.Arguments>
-                                                                                                                  <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiPermits]</InArgument>
-                                                                                                                </ui:InvokeWorkflowFile.Arguments>
-                                                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                                  </scg:Dictionary>
-                                                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                                              </ui:InvokeWorkflowFile>
+                                                                                                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+                                                                                                                <ui:CommentOut.Body>
+                                                                                                                  <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                                                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to permits page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
+                                                                                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                                                                                        <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiPermits]</InArgument>
+                                                                                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                        </scg:Dictionary>
+                                                                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                                                                    </ui:InvokeWorkflowFile>
+                                                                                                                  </Sequence>
+                                                                                                                </ui:CommentOut.Body>
+                                                                                                              </ui:CommentOut>
                                                                                                               <FlowStep.Next>
                                                                                                                 <FlowDecision x:Name="__ReferenceID33" Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="Dev mode?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
                                                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                                      <av:Point x:Key="ShapeLocation">270,3050</av:Point>
+                                                                                                                      <av:Point x:Key="ShapeLocation">270,3060</av:Point>
                                                                                                                       <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                                                                                                      <av:PointCollection x:Key="TrueConnector">270,3080 260,3080 260,3125</av:PointCollection>
-                                                                                                                      <av:PointCollection x:Key="FalseConnector">330,3080 340,3080 340,3295</av:PointCollection>
+                                                                                                                      <av:PointCollection x:Key="TrueConnector">270,3090 260,3090 260,3135</av:PointCollection>
+                                                                                                                      <av:PointCollection x:Key="FalseConnector">330,3090 340,3090 340,3305</av:PointCollection>
                                                                                                                     </scg:Dictionary>
                                                                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                                                                   <FlowDecision.True>
                                                                                                                     <FlowStep x:Name="__ReferenceID34" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                                                                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                          <av:Point x:Key="ShapeLocation">205,3125</av:Point>
+                                                                                                                          <av:Point x:Key="ShapeLocation">205,3135</av:Point>
                                                                                                                           <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                                                                                          <av:PointCollection x:Key="ConnectorLocation">260,3195 260,3230</av:PointCollection>
+                                                                                                                          <av:PointCollection x:Key="ConnectorLocation">260,3205 260,3240</av:PointCollection>
                                                                                                                         </scg:Dictionary>
                                                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                                                       <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="YesNo" Caption="Amend Permit has defaulted values for Dev Mode, so should not vary between test data. Click 'Yes' to skip or 'No' to run." ChosenButton="[strButton]" DisplayName="Prompt dev to skip Amend Permit" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;DEV MODE - Skip Amend Permit?&quot;]">
@@ -1065,19 +1118,19 @@
                                                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                                              <av:Point x:Key="ShapeLocation">230,3230</av:Point>
+                                                                                                                              <av:Point x:Key="ShapeLocation">230,3240</av:Point>
                                                                                                                               <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                                                                                                              <av:PointCollection x:Key="TrueConnector">230,3260 180,3260 180,3295</av:PointCollection>
-                                                                                                                              <av:PointCollection x:Key="FalseConnector">290,3260 340,3260 340,3295</av:PointCollection>
+                                                                                                                              <av:PointCollection x:Key="TrueConnector">230,3270 180,3270 180,3305</av:PointCollection>
+                                                                                                                              <av:PointCollection x:Key="FalseConnector">290,3270 340,3270 340,3305</av:PointCollection>
                                                                                                                             </scg:Dictionary>
                                                                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                                                                           <FlowDecision.True>
                                                                                                                             <FlowStep x:Name="__ReferenceID36" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                                                                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                                  <av:Point x:Key="ShapeLocation">125,3295</av:Point>
+                                                                                                                                  <av:Point x:Key="ShapeLocation">125,3305</av:Point>
                                                                                                                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                                                                                                  <av:PointCollection x:Key="ConnectorLocation">180,3365 180,3395 260,3395 260,3405</av:PointCollection>
+                                                                                                                                  <av:PointCollection x:Key="ConnectorLocation">180,3375 180,3405 260,3405 260,3415</av:PointCollection>
                                                                                                                                 </scg:Dictionary>
                                                                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                                                                               <ui:LogMessage DisplayName="Log Message - skipping amend permit in dev mode" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Skipping Amend Permit in dev mode.&quot;]">
@@ -1091,22 +1144,28 @@
                                                                                                                                 <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                                                                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                                      <av:Point x:Key="ShapeLocation">205,3405</av:Point>
+                                                                                                                                      <av:Point x:Key="ShapeLocation">205,3415</av:Point>
                                                                                                                                       <av:Size x:Key="ShapeSize">110,70</av:Size>
                                                                                                                                       <av:PointCollection x:Key="ConnectorLocation">383,1975.76 383,1995.76</av:PointCollection>
                                                                                                                                     </scg:Dictionary>
                                                                                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Init for next transaction." DisplayName="Return to home page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_50" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
-                                                                                                                                    <ui:InvokeWorkflowFile.Arguments>
-                                                                                                                                      <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiHomePage]</InArgument>
-                                                                                                                                    </ui:InvokeWorkflowFile.Arguments>
-                                                                                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                                                        <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
-                                                                                                                                      </scg:Dictionary>
-                                                                                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                                                                                  </ui:InvokeWorkflowFile>
+                                                                                                                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+                                                                                                                                    <ui:CommentOut.Body>
+                                                                                                                                      <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                                                                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Init for next transaction." DisplayName="Return to home page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_50" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
+                                                                                                                                          <ui:InvokeWorkflowFile.Arguments>
+                                                                                                                                            <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiHomePage]</InArgument>
+                                                                                                                                          </ui:InvokeWorkflowFile.Arguments>
+                                                                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                                              <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                                                                                                                                            </scg:Dictionary>
+                                                                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                                                                        </ui:InvokeWorkflowFile>
+                                                                                                                                      </Sequence>
+                                                                                                                                    </ui:CommentOut.Body>
+                                                                                                                                  </ui:CommentOut>
                                                                                                                                 </FlowStep>
                                                                                                                               </FlowStep.Next>
                                                                                                                             </FlowStep>
@@ -1115,9 +1174,9 @@
                                                                                                                             <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                                                                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                                  <av:Point x:Key="ShapeLocation">285,3295</av:Point>
+                                                                                                                                  <av:Point x:Key="ShapeLocation">285,3305</av:Point>
                                                                                                                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                                                                                                  <av:PointCollection x:Key="ConnectorLocation">340,3365 340,3395 260,3395 260,3405</av:PointCollection>
+                                                                                                                                  <av:PointCollection x:Key="ConnectorLocation">340,3375 340,3405 260,3405 260,3415</av:PointCollection>
                                                                                                                                 </scg:Dictionary>
                                                                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                                                                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Amend Permit - Invoke Workflow File (Process\Process Subflows\Amend Permit.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Process\Process Subflows\Amend Permit.xaml">
@@ -1176,16 +1235,22 @@
                                                                                       <av:PointCollection x:Key="ConnectorLocation">360,2235 360,2255</av:PointCollection>
                                                                                     </scg:Dictionary>
                                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to permits page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_44" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
-                                                                                    <ui:InvokeWorkflowFile.Arguments>
-                                                                                      <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiPermits]</InArgument>
-                                                                                    </ui:InvokeWorkflowFile.Arguments>
-                                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                      </scg:Dictionary>
-                                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                                  </ui:InvokeWorkflowFile>
+                                                                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+                                                                                    <ui:CommentOut.Body>
+                                                                                      <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to permits page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_44" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
+                                                                                          <ui:InvokeWorkflowFile.Arguments>
+                                                                                            <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiPermits]</InArgument>
+                                                                                          </ui:InvokeWorkflowFile.Arguments>
+                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                            </scg:Dictionary>
+                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                        </ui:InvokeWorkflowFile>
+                                                                                      </Sequence>
+                                                                                    </ui:CommentOut.Body>
+                                                                                  </ui:CommentOut>
                                                                                   <FlowStep.Next>
                                                                                     <FlowStep x:Name="__ReferenceID25" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                                                                                       <sap:WorkflowViewStateService.ViewState>
@@ -1261,16 +1326,22 @@
                                                                   <av:PointCollection x:Key="ConnectorLocation">390,1565 390,1585</av:PointCollection>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to Monitoring page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
-                                                                <ui:InvokeWorkflowFile.Arguments>
-                                                                  <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiMonitoring]</InArgument>
-                                                                </ui:InvokeWorkflowFile.Arguments>
-                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                  </scg:Dictionary>
-                                                                </sap:WorkflowViewStateService.ViewState>
-                                                              </ui:InvokeWorkflowFile>
+                                                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                                                                <ui:CommentOut.Body>
+                                                                  <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Return to Monitoring page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="Process\Process Subflows\Return to earlier page.xaml">
+                                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                                        <InArgument x:TypeArguments="ui:UiElement" x:Key="in_uiPage">[uiMonitoring]</InArgument>
+                                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </ui:InvokeWorkflowFile>
+                                                                  </Sequence>
+                                                                </ui:CommentOut.Body>
+                                                              </ui:CommentOut>
                                                               <FlowStep.Next>
                                                                 <FlowStep x:Name="__ReferenceID18" sap2010:WorkflowViewState.IdRef="FlowStep_7">
                                                                   <sap:WorkflowViewStateService.ViewState>

@@ -170,7 +170,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check if party name exists - Invoke Workflow File (Process\Process Subflows\Check if party name exists.xaml)" sap:VirtualizedContainerService.HintSize="416,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Process Subflows\Check if party name exists.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strOrgName">%</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strOrgName">AERGAERH</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_strReportAddress">1 test street aa11 1aa</InArgument>
           <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolPartyRecordFound">[boolRecordFound]</OutArgument>
           <OutArgument x:TypeArguments="x:String" x:Key="out_strPartyID">[strPartyID]</OutArgument>

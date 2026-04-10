@@ -152,7 +152,7 @@
                 <OutArgument x:TypeArguments="x:Object">[g_Config("IsDev")]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:Object">[True]</InArgument>
+                <InArgument x:TypeArguments="x:Object">[False]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>
