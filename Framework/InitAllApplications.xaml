@@ -35,6 +35,9 @@
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -96,29 +99,115 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1468.8000000000002,658.84" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1451.6000000000001,1854" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="boolLoaded" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="437.6,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI" sap:VirtualizedContainerService.HintSize="437.6,266.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" OutUiElement="[g_browserPowerBi]" ScopeGuid="fe49f9a0-6f66-492e-a73b-a915d12ee75e" Version="V2" WindowResize="Maximize">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-16, -16, 3872, 2312" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAJOgAACToAYJjBRwAAAJqSURBVDhPlZPZS1RRHMd9yJkKPGfeIiw1sxBJ0jIJySIi+gesDFvMLBER9yKVaJP23HDLMi2qV7fc0sZlHJcZNXGbcXRuPgQuo44K3nm63353Erk+pPWDD+fh8Pmccx6Oy79MT6qr0J2mRleqjAr6FDV0ya7C2vbWI4tTnzWY+sQhfOQSAV2iCmvbW48+WQXrBy7JTJbTWqFBR8J/BDrpNGsFh7Vcg8n3GkyUcbTHq/8eMOV7CaZ8T4zleWAs1wO/KgMxrw/FcBGXxkudoDVukxvI4srgOawMnMVy/xks953GkuEU+nIZzCXciTZ2k8Bozp4N4lLvCdh7QmDIpkCxBqYijpaYTQIjr91JPEliKOzdIbB3HcdiZzB6XjKMFnAM5zGp+ZYiYHl3TLCUBYNWIgiz2osQrUmw60nUB2NRF4SF9kB0P2cYyZMDHE3RGwNwTGUS6XD8vEOkwSGkYKHjKGxtAdJC22HMt/qj6ynDUA7HUDZHY5Qy8PYISbeJVBKT4LAm0A3iIYs27SHYvvvB1uILXZYbBl8x/HjB0HBdGSgNIDHRKTmscRAnYyFOxKyLc80HMdfkg46Hsswx8Iyh7poiMP7GH6uWWGnVEiOJEzchWm5AHI/E3LcDTnG2wRsz9V5ov8/QT8/oe8JQe0UZKPGjE6NJjCIiSb4M0RxB4j7M1ntipm4vZmrd0XrPDcYsBsNjhpoIZaDYl6SrTnHVFE5cIMIw/fWPOF2zG9PVu6DNcIPhEUPvA4bqS4qAucBHMBf6wFy4H+YC73WMmTthzNgBY/p2GO+q8SXMFVUkVoWrUHl+G31nF5ffw9bUgw7moFMAAAAASUVORK5CYII=" InformativeScreenshot="2664f3a3090fbdb36e42cc75efd2fb7b.jpg" Selector="&lt;html app='msedge.exe' title='WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" Title="WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI" Url="[g_Config(&quot;PowerBi_URL&quot;).ToString]" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="437.6,76.4" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="553.6,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Max 3 iterations" Condition="[not boolLoaded]" DisplayName="Do While - open PBI" sap:VirtualizedContainerService.HintSize="553.6,1111.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="3">
+      <ui:InterruptibleDoWhile.Body>
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI" sap:VirtualizedContainerService.HintSize="519.6,911.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" OutUiElement="[g_browserPowerBi]" ScopeGuid="fe49f9a0-6f66-492e-a73b-a915d12ee75e" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Check page loaded within 10 seconds" sap:VirtualizedContainerService.HintSize="484,693.2" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NCheckState DisplayName="Check App State 'PermitNo'" EnableIfExists="False" EnableIfNotExists="False" Exists="[boolLoaded]" sap:VirtualizedContainerService.HintSize="450,211.2" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="fe49f9a0-6f66-492e-a73b-a915d12ee75e" Timeout="10" Version="V3">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </uix:NCheckState.IfExists>
+                  <uix:NCheckState.IfNotExists>
+                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </uix:NCheckState.IfNotExists>
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/b262acce69085b620cc3?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="3122, 556, 487, 44" DesignTimeScaleFactor="2.5" ElementType="Text" FriendlyName="'PermitNo'" FullSelectorArgument="&lt;webctrl tag='H3' visibleinnertext='PermitNo' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' visibleinnertext='PermitNo' type='' class='preTextWithEllipsis ng-star-inserted' aaname='PermitNo' check:text='PermitNo' /&gt;" Guid="e5fde712-2bda-4dde-acaa-286a4ba66023" InformativeScreenshot="4bc16f8af87f638dfbdf6d8ef83e39bb.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NCheckState.Target>
+                </uix:NCheckState>
+                <If Condition="[not boolLoaded]" DisplayName="If page not loaded" sap:VirtualizedContainerService.HintSize="450,420.4" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab - PBI" sap:VirtualizedContainerService.HintSize="382,106" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_2" Version="V3" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-16, -16, 3872, 2312" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAJOgAACToAYJjBRwAAAJqSURBVDhPlZPZS1RRHMd9yJkKPGfeIiw1sxBJ0jIJySIi+gesDFvMLBER9yKVaJP23HDLMi2qV7fc0sZlHJcZNXGbcXRuPgQuo44K3nm63353Erk+pPWDD+fh8Pmccx6Oy79MT6qr0J2mRleqjAr6FDV0ya7C2vbWI4tTnzWY+sQhfOQSAV2iCmvbW48+WQXrBy7JTJbTWqFBR8J/BDrpNGsFh7Vcg8n3GkyUcbTHq/8eMOV7CaZ8T4zleWAs1wO/KgMxrw/FcBGXxkudoDVukxvI4srgOawMnMVy/xks953GkuEU+nIZzCXciTZ2k8Bozp4N4lLvCdh7QmDIpkCxBqYijpaYTQIjr91JPEliKOzdIbB3HcdiZzB6XjKMFnAM5zGp+ZYiYHl3TLCUBYNWIgiz2osQrUmw60nUB2NRF4SF9kB0P2cYyZMDHE3RGwNwTGUS6XD8vEOkwSGkYKHjKGxtAdJC22HMt/qj6ynDUA7HUDZHY5Qy8PYISbeJVBKT4LAm0A3iIYs27SHYvvvB1uILXZYbBl8x/HjB0HBdGSgNIDHRKTmscRAnYyFOxKyLc80HMdfkg46Hsswx8Iyh7poiMP7GH6uWWGnVEiOJEzchWm5AHI/E3LcDTnG2wRsz9V5ov8/QT8/oe8JQe0UZKPGjE6NJjCIiSb4M0RxB4j7M1ntipm4vZmrd0XrPDcYsBsNjhpoIZaDYl6SrTnHVFE5cIMIw/fWPOF2zG9PVu6DNcIPhEUPvA4bqS4qAucBHMBf6wFy4H+YC73WMmTthzNgBY/p2GO+q8SXMFVUkVoWrUHl+G31nF5ffw9bUgw7moFMAAAAASUVORK5CYII=" InformativeScreenshot="2664f3a3090fbdb36e42cc75efd2fb7b.jpg" Selector="&lt;html app='msedge.exe' title='WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" Title="WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI" Url="[g_Config(&quot;PowerBi_URL&quot;).ToString]" />
+          </uix:NApplicationCard.TargetApp>
+        </uix:NApplicationCard>
+      </ui:InterruptibleDoWhile.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InterruptibleDoWhile>
+    <If Condition="[not boolLoaded]" DisplayName="If PBI not loaded after max attempts" sap:VirtualizedContainerService.HintSize="553.6,436" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw DisplayName="Throw SE - PBI not loading" Exception="[new System.Exception(&quot;Power BI report not loading in acceptable time after 3 attempts.&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="553.6,76.4" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,317.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>

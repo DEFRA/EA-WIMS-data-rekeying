@@ -292,6 +292,7 @@
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolLastTransaction">[boolLastTransaction]</OutArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_strProcessType">[strProcessType]</InArgument>
                       <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolContinue">[boolContinue]</InArgument>
+                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtPTK">[dtPTK]</OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </TryCatch.Try>
@@ -463,9 +464,9 @@
           </sap:WorkflowViewStateService.ViewState>
           <Transition.Condition>[g_TransactionItem IsNot Nothing]</Transition.Condition>
           <Transition.To>
-            <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: &#xA;&#xA;1) Success&#xA;2) Business Exception&#xA;3) System Exception&#xA;4) Last Transaction&#xA;&#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="541.6,1274.4" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: &#xA;&#xA;1) Success&#xA;2) Business Exception&#xA;3) System Exception&#xA;4) Last Transaction&#xA;&#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="585.2,2189.6" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="496,666" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="539.6,1581.2" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -546,12 +547,13 @@
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process Transaction workflow" sap:VirtualizedContainerService.HintSize="468,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Process\Process Transaction.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtLookups">[dtLookups]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtPTK">[dtPTK]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="462,23.6" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="505.6,23.6" sap2010:WorkflowViewState.IdRef="Catch`1_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -572,7 +574,7 @@
                         </Assign>
                       </ActivityAction>
                     </Catch>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="462,23.6" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="505.6,23.6" sap2010:WorkflowViewState.IdRef="Catch`1_10">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1768,6 +1770,7 @@
       <Variable x:TypeArguments="x:String" Name="strProcessType" />
       <Variable x:TypeArguments="x:Int32" Name="intConSysEx" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtLookups" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtPTK" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

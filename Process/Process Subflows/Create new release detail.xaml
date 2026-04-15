@@ -163,19 +163,19 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_new_release_detail" sap:VirtualizedContainerService.HintSize="1451.6000000000001,5892.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_new_release_detail" sap:VirtualizedContainerService.HintSize="1451.6000000000001,7268.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new release detail" sap:VirtualizedContainerService.HintSize="518,5869.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="e3fea92c-d747-483f-9a4c-5855d7399a83" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new release detail" sap:VirtualizedContainerService.HintSize="518,7245.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="e3fea92c-d747-483f-9a4c-5855d7399a83" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Create new release detail" sap:VirtualizedContainerService.HintSize="484,5708.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Create new release detail" sap:VirtualizedContainerService.HintSize="484,7084.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -221,11 +221,36 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type start day" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Text="[in_strStartDay]" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="1384, 963, 71, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'01'" FullSelectorArgument="[string.Format(&quot;&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java name='*Day/Month From' role='text' idx='{0}' /&gt;&quot;, in_strIndex)]" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java name='*Day/Month From' role='text' /&gt;" Guid="6b79e5dc-aae8-4c67-a6fd-6917fabfe2db" InformativeScreenshot="266b899bcd6160442863b1232700623d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
+            <If sap2010:Annotation.AnnotationText="Defaults to 01 so save time by not typing it" Condition="[in_strStartDay.Trim&lt;&gt;&quot;01&quot;]" DisplayName="If start day is not 01" sap:VirtualizedContainerService.HintSize="450,596.8" sap2010:WorkflowViewState.IdRef="If_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type start day" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,244" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Text="[in_strStartDay]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="1384, 963, 71, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'01'" FullSelectorArgument="[string.Format(&quot;&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java name='*Day/Month From' role='text' idx='{0}' /&gt;&quot;, in_strIndex)]" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java name='*Day/Month From' role='text' /&gt;" Guid="6b79e5dc-aae8-4c67-a6fd-6917fabfe2db" InformativeScreenshot="266b899bcd6160442863b1232700623d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press tab to Month Start" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" InteractionMode="WindowMessages" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -236,11 +261,36 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type start month" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Text="[in_strStartMonth]" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="1455, 1171, 71, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'01'" FullSelectorArgument="[string.Format(&quot;&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java idx='{0}' name='Enter value for From - list of values available Required' role='text' /&gt;&quot;, in_strIndex)]" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java name='Enter value for From - list of values available Required' role='text' /&gt;" Guid="548454a1-fc41-45f6-8b8e-b522429ea51a" InformativeScreenshot="e31594c7335df20b9a57beb086b8a018.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
+            <If sap2010:Annotation.AnnotationText="Defaults to 01 so save time by not typing it" Condition="[in_strStartMonth.Trim&lt;&gt;&quot;01&quot;]" DisplayName="If start month is not 01" sap:VirtualizedContainerService.HintSize="450,596.8" sap2010:WorkflowViewState.IdRef="If_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type start month" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,244" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Text="[in_strStartMonth]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="1455, 1171, 71, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'01'" FullSelectorArgument="[string.Format(&quot;&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java idx='{0}' name='Enter value for From - list of values available Required' role='text' /&gt;&quot;, in_strIndex)]" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java name='Enter value for From - list of values available Required' role='text' /&gt;" Guid="548454a1-fc41-45f6-8b8e-b522429ea51a" InformativeScreenshot="e31594c7335df20b9a57beb086b8a018.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press tab to Day End" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" InteractionMode="WindowMessages" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -251,11 +301,36 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type end day" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Text="[in_strEndDay]" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="1621, 1171, 70, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'31'" FullSelectorArgument="[string.Format(&quot;&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java idx='{0}' name='*To' role='text' /&gt;&quot;, in_strIndex)]" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java name='*To' role='text' /&gt;" Guid="c30554a7-c6fb-4564-b1c0-486f8585d22e" InformativeScreenshot="72b953c2549015f82df77b438b4891ec.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
+            <If sap2010:Annotation.AnnotationText="Default is 31 so save time by not typing it" Condition="[in_strEndDay.Trim&lt;&gt;&quot;31&quot;]" DisplayName="If end day is not 31" sap:VirtualizedContainerService.HintSize="450,596.8" sap2010:WorkflowViewState.IdRef="If_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type end day" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,244" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Text="[in_strEndDay]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="1621, 1171, 70, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'31'" FullSelectorArgument="[string.Format(&quot;&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java idx='{0}' name='*To' role='text' /&gt;&quot;, in_strIndex)]" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java name='*To' role='text' /&gt;" Guid="c30554a7-c6fb-4564-b1c0-486f8585d22e" InformativeScreenshot="72b953c2549015f82df77b438b4891ec.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press tab to Month End" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" InteractionMode="WindowMessages" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -266,11 +341,36 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type end month" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Text="[in_strEndMonth]" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="1692, 1171, 70, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'12'" FullSelectorArgument="[string.Format(&quot;&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java idx='{0}' name='Enter value for To - list of values available' role='text' /&gt;&quot;, in_strIndex)]" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java name='Enter value for To - list of values available' role='text' /&gt;" Guid="01028985-11b4-4ff7-9a3b-f40e575f71cd" InformativeScreenshot="e78e0bed5dcf9287a0cc5e3ad36dba8d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
+            <If sap2010:Annotation.AnnotationText="Default is 12 so save time by not typing it" Condition="[in_strEndMonth.Trim&lt;&gt;&quot;12&quot;]" DisplayName="If end month is not 12" sap:VirtualizedContainerService.HintSize="450,596.8" sap2010:WorkflowViewState.IdRef="If_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type end month" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,244" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Text="[in_strEndMonth]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="1692, 1171, 70, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'12'" FullSelectorArgument="[string.Format(&quot;&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java idx='{0}' name='Enter value for To - list of values available' role='text' /&gt;&quot;, in_strIndex)]" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Release Details' role='internal frame' /&gt;&lt;java name='Enter value for To - list of values available' role='text' /&gt;" Guid="01028985-11b4-4ff7-9a3b-f40e575f71cd" InformativeScreenshot="e78e0bed5dcf9287a0cc5e3ad36dba8d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press tab to Value" sap:VirtualizedContainerService.HintSize="450,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" InteractionMode="WindowMessages" ScopeIdentifier="e3fea92c-d747-483f-9a4c-5855d7399a83" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />

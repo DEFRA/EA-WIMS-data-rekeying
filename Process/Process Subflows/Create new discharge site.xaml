@@ -8,6 +8,7 @@
     <x:Property Name="in_strSubAreaCode" Type="InArgument(x:String)" />
     <x:Property Name="in_strLocalAuthorityCode" Type="InArgument(x:String)" />
     <x:Property Name="in_strGridReference" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Only used as reference for manual area/sub-area code lookups." Name="in_strRegion" Type="InArgument(x:String)" />
   </x:Members>
   <this:Create_new_discharge_site.in_strAssetPropertyCode>
     <InArgument x:TypeArguments="x:String" />
@@ -30,6 +31,9 @@
   <this:Create_new_discharge_site.in_strGridReference>
     <InArgument x:TypeArguments="x:String" />
   </this:Create_new_discharge_site.in_strGridReference>
+  <this:Create_new_discharge_site.in_strRegion>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Create_new_discharge_site.in_strRegion>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -158,21 +162,22 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_new_discharge_site" sap:VirtualizedContainerService.HintSize="1451.6000000000001,11364" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_new_discharge_site" sap:VirtualizedContainerService.HintSize="1451.6000000000001,14137.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new discharge site" sap:VirtualizedContainerService.HintSize="547.6,11340.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new discharge site" sap:VirtualizedContainerService.HintSize="547.6,14114.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="create new discharge site" sap:VirtualizedContainerService.HintSize="513.6,11179.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="create new discharge site" sap:VirtualizedContainerService.HintSize="513.6,13953.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strShortName" />
             </Sequence.Variables>
@@ -187,7 +192,7 @@
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>
             </uix:NKeyboardShortcuts>
-            <uix:NCheckState sap2010:Annotation.AnnotationText="Enters in query mode (sometimes?) so we check if query mode is on and exit it so we can create a new record." DisplayName="Check App State - query mode?" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="479.6,454" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Timeout="3" Version="V3">
+            <uix:NCheckState sap2010:Annotation.AnnotationText="Enters in query mode (sometimes?) so we check if query mode is on and exit it so we can create a new record." DisplayName="Check App State - query mode?" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="479.6,494" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Timeout="3" Version="V3">
               <uix:NCheckState.IfExists>
                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Cancel Query" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Version="V3">
                   <uix:NClick.Target>
@@ -239,7 +244,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <If Condition="[in_boolConfidential]" DisplayName="If Confidential" sap:VirtualizedContainerService.HintSize="479.6,558.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[in_boolConfidential]" DisplayName="If Confidential" sap:VirtualizedContainerService.HintSize="479.6,500" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
@@ -255,7 +260,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,83.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -480,11 +485,62 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type 'Area code'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="479.6,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Text="[in_strAreaCode]" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="275, 1114, 35, 48" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text Area/Sub*'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN DISCHARGE SITES' role='internal frame' /&gt;&lt;java name='Area/Sub*' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN DISCHARGE SITES' role='internal frame' /&gt;&lt;java name='Area/Sub*' role='text' /&gt;" Guid="6b064b87-2ae3-451b-b05f-b036e186cf1c" InformativeScreenshot="636c09860e4f722a9b2bb94684333e6c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
+            <If Condition="[in_strAreaCode=&quot;Not Mapped&quot;]" DisplayName="If Area Code &quot;Not Mapped&quot;" sap:VirtualizedContainerService.HintSize="479.6,1532" sap2010:WorkflowViewState.IdRef="If_8">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,1056.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press Ctrl+L for area code lookup" sap:VirtualizedContainerService.HintSize="382,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_15" InteractionMode="WindowMessages" ScopeIdentifier="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Shortcuts="[d(hk)][d(ctrl)]l[u(ctrl)][u(hk)]" Version="V3">
+                    <uix:NKeyboardShortcuts.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NKeyboardShortcuts.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NKeyboardShortcuts>
+                  <InvokeMethod DisplayName="Stop timer - area code not mapped" sap:VirtualizedContainerService.HintSize="382,168.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="Stop">
+                    <InvokeMethod.TargetObject>
+                      <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                    </InvokeMethod.TargetObject>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </InvokeMethod>
+                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="User prompt area code lookup" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Area Code selection." IN_PopupMessage="[&quot;&lt;h1&gt;Area Code Not Mapped&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;The report returned the area code for this discharge site as 'Not Mapped'.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Region:&lt;/strong&gt;&amp;ensp;&quot;+in_strRegion+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Address:&lt;/strong&gt;&amp;ensp;&quot;+Strings.Join(in_arrAddress,&quot;, &quot;)+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;Please select a suitable Area Code in the WIMS lookup, then click 'OK' in the WIMS lookup and click 'Continue' on this pop-up.&lt;br&gt;&quot;+&#xA;&quot;Otherwise, please click 'Stop' and process the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Area Code Not Mapped" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_2" />
+                  <InvokeMethod DisplayName="Start timer - area code not mapped" sap:VirtualizedContainerService.HintSize="382,159.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="Start">
+                    <InvokeMethod.TargetObject>
+                      <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                    </InvokeMethod.TargetObject>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </InvokeMethod>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type 'Area code'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,244" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Text="[in_strAreaCode]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="275, 1114, 35, 48" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text Area/Sub*'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN DISCHARGE SITES' role='internal frame' /&gt;&lt;java name='Area/Sub*' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN DISCHARGE SITES' role='internal frame' /&gt;&lt;java name='Area/Sub*' role='text' /&gt;" Guid="6b064b87-2ae3-451b-b05f-b036e186cf1c" InformativeScreenshot="636c09860e4f722a9b2bb94684333e6c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Else>
+            </If>
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press tab to 'Sub-area code'" sap:VirtualizedContainerService.HintSize="479.6,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_11" InteractionMode="WindowMessages" ScopeIdentifier="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -495,16 +551,67 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="This selector is bad lol" ClickBeforeMode="None" DisplayName="Type 'Sub-area code'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="479.6,284" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Text="[in_strSubAreaCode]" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="322, 1114, 35, 48" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text *'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN DISCHARGE SITES' role='internal frame' /&gt;&lt;java idx='19' name='*' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN DISCHARGE SITES' role='internal frame' /&gt;&lt;java name='*' role='text' /&gt;" Guid="ad0401ac-9359-490d-9401-82551f8adf3d" InformativeScreenshot="8c4b4cca299a994818ef2c1e07fc5430.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </uix:NTypeInto>
+            <If Condition="[in_strSubAreaCode=&quot;Not Mapped&quot;]" DisplayName="If sub-area Code &quot;Not Mapped&quot;" sap:VirtualizedContainerService.HintSize="479.6,1563.2" sap2010:WorkflowViewState.IdRef="If_9">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,1056.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press Ctrl+L for sub-area code lookup" sap:VirtualizedContainerService.HintSize="382,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_16" InteractionMode="WindowMessages" ScopeIdentifier="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Shortcuts="[d(hk)][d(ctrl)]l[u(ctrl)][u(hk)]" Version="V3">
+                    <uix:NKeyboardShortcuts.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NKeyboardShortcuts.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NKeyboardShortcuts>
+                  <InvokeMethod DisplayName="Stop timer - sub-area code not mapped" sap:VirtualizedContainerService.HintSize="382,168.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_5" MethodName="Stop">
+                    <InvokeMethod.TargetObject>
+                      <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                    </InvokeMethod.TargetObject>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </InvokeMethod>
+                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="User prompt sub-area code lookup" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Sub-Area Code selection." IN_PopupMessage="[&quot;&lt;h1&gt;Sub-Area Code Not Mapped&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;The report returned the sub-area code for this discharge site as 'Not Mapped'.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Region:&lt;/strong&gt;&amp;ensp;&quot;+in_strRegion+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Address:&lt;/strong&gt;&amp;ensp;&quot;+Strings.Join(in_arrAddress,&quot;, &quot;)+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;Please select a suitable Sub-Area Code in the WIMS lookup, then click 'OK' in the WIMS lookup and click 'Continue' on this pop-up.&lt;br&gt;&quot;+&#xA;&quot;Otherwise, please click 'Stop' and process the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Area Code Not Mapped" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_3" />
+                  <InvokeMethod DisplayName="Start timer - sub-area code not mapped" sap:VirtualizedContainerService.HintSize="382,159.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_6" MethodName="Start">
+                    <InvokeMethod.TargetObject>
+                      <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                    </InvokeMethod.TargetObject>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </InvokeMethod>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,335.2" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="This selector is bad lol" ClickBeforeMode="None" DisplayName="Type 'Sub-area code'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,275.2" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Text="[in_strSubAreaCode]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="322, 1114, 35, 48" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text *'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN DISCHARGE SITES' role='internal frame' /&gt;&lt;java idx='19' name='*' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN DISCHARGE SITES' role='internal frame' /&gt;&lt;java name='*' role='text' /&gt;" Guid="ad0401ac-9359-490d-9401-82551f8adf3d" InformativeScreenshot="8c4b4cca299a994818ef2c1e07fc5430.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Else>
+            </If>
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press tab to 'Country'" sap:VirtualizedContainerService.HintSize="479.6,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_12" InteractionMode="WindowMessages" ScopeIdentifier="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -535,6 +642,17 @@
                 <uix:TargetAnchorable DesignTimeRectangle="1394, 1114, 70, 48" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'text L/A*'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN DISCHARGE SITES' role='internal frame' /&gt;&lt;java name='L/A*' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='MAINTAIN DISCHARGE SITES' role='internal frame' /&gt;&lt;java name='L/A*' role='text' /&gt;" Guid="79d638da-970d-412b-8ca3-036fe3299a3b" InformativeScreenshot="70ca877f88c44b89b1f7e76e8c9ebb56.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
+            <uix:NKeyboardShortcuts ActivateBefore="True" sap2010:Annotation.AnnotationText="Ensures autofill of LA code description" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press tab to 'Comments'" sap:VirtualizedContainerService.HintSize="479.6,262.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_17" InteractionMode="WindowMessages" ScopeIdentifier="0020effd-0d5a-44f1-803b-bbb5b4f87d5c" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
+              <uix:NKeyboardShortcuts.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NKeyboardShortcuts.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
             <If Condition="[CBool(g_Config(&quot;PausePoint6&quot;))]" DisplayName="Pause Point 6?" sap:VirtualizedContainerService.HintSize="479.6,1087.2" sap2010:WorkflowViewState.IdRef="If_5">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,825.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
@@ -566,7 +684,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="Is dev? - new discharge site" sap:VirtualizedContainerService.HintSize="479.6,85.2" sap2010:WorkflowViewState.IdRef="If_6">
+            <If Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="Is dev? - new discharge site" sap:VirtualizedContainerService.HintSize="479.6,56.8" sap2010:WorkflowViewState.IdRef="If_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>

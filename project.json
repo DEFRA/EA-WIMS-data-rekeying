@@ -210,6 +210,13 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Process\\Process Subflows\\tc01 Init next outlet.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "863b03cf-67b5-4bd5-8ba9-89a8945d01ae",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Framework\\tc01 InitAllApplications.xaml"
       }
     ],
     "saveToCloud": false

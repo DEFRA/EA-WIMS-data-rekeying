@@ -4,6 +4,7 @@
     <x:Property Name="out_boolLastTransaction" Type="OutArgument(x:Boolean)" />
     <x:Property Name="in_strProcessType" Type="InArgument(x:String)" />
     <x:Property Name="in_boolContinue" Type="InArgument(x:Boolean)" />
+    <x:Property Name="out_dtPTK" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -170,7 +171,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;This framework is setup by default to look for an Outlook MailMessage from a config-specified mailbox, this should be changed on a work package basis with out_TransactionItem being set to a single transaction from whatever source is required.&#xA;&#xA;If there are no transaction items remaining, out_TransactionItem should be set to Nothing, which leads to the End Process state. &#xA;&#xA;out_boolLastTransaction should be set to True where it is possible to determine that a transaction is the last in the batch. If this is not possible to derive then changes will need to be made to the &quot;Final Transaction&quot; transition at the framework's parent level. " DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="1451.6000000000001,4828.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;This framework is setup by default to look for an Outlook MailMessage from a config-specified mailbox, this should be changed on a work package basis with out_TransactionItem being set to a single transaction from whatever source is required.&#xA;&#xA;If there are no transaction items remaining, out_TransactionItem should be set to Nothing, which leads to the End Process state. &#xA;&#xA;out_boolLastTransaction should be set to True where it is possible to determine that a transaction is the last in the batch. If this is not possible to derive then changes will need to be made to the &quot;Final Transaction&quot; transition at the framework's parent level. " DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="1451.6000000000001,4151.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtToProcess" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtTransactionData" />
@@ -182,22 +183,37 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:RetryScope sap2010:Annotation.AnnotationText="Can be prone to timeouts on first run" DisplayName="Retry Scope - read worklist" sap:VirtualizedContainerService.HintSize="604,779.2" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+    <ui:RetryScope sap2010:Annotation.AnnotationText="Can be prone to timeouts on first run" DisplayName="Retry Scope - read worklist" sap:VirtualizedContainerService.HintSize="604,101.6" sap2010:WorkflowViewState.IdRef="RetryScope_1">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <ueab:ExcelProcessScopeX DisplayAlerts="False" DisplayName="Excel Process Scope - get transaction data - read range" ExistingProcessAction="None" FileConflictResolution="ThrowException" sap:VirtualizedContainerService.HintSize="512,538.4" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2" LaunchMethod="Application" LaunchTimeout="10" MacroSettings="DisableAll" ProcessMode="ReuseIfExists" ShowExcelWindow="False">
+          <ueab:ExcelProcessScopeX DisplayAlerts="False" DisplayName="Excel Process Scope - get transaction data - read range" ExistingProcessAction="None" FileConflictResolution="ThrowException" sap:VirtualizedContainerService.HintSize="546,903.2" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2" LaunchMethod="Application" LaunchTimeout="10" MacroSettings="DisableAll" ProcessMode="ReuseIfExists" ShowExcelWindow="False">
             <ueab:ExcelProcessScopeX.Body>
               <ActivityAction x:TypeArguments="ui:IExcelProcess">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
                 </ActivityAction.Argument>
-                <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File - worklist - get transaction data - read range" sap:VirtualizedContainerService.HintSize="478,451.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadFormatting="RawValue" ResizeWindow="None" WorkbookPath="[g_Config(&quot;WorkListLocation&quot;).ToString]">
+                <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File - worklist - get transaction data - read range" sap:VirtualizedContainerService.HintSize="512,816.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadFormatting="RawValue" ResizeWindow="None" WorkbookPath="[g_Config(&quot;WorkListLocation&quot;).ToString]">
                   <ueab:ExcelApplicationCard.Body>
                     <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                       </ActivityAction.Argument>
-                      <ueab:ReadRangeX DisplayName="Read Range - worklist" sap:VirtualizedContainerService.HintSize="444,173.6" sap2010:WorkflowViewState.IdRef="ReadRangeX_3" Range="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString)]" ReadFormatting="RawValue" SaveTo="[dtTransactionData]" VisibleOnly="False" />
+                      <Sequence sap2010:Annotation.AnnotationText="PTK is used in Process Transaction but isn't technically transaction data. We read here for speed." DisplayName="Read worklist and PTK" sap:VirtualizedContainerService.HintSize="478,538.4" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ueab:ReadRangeX DisplayName="Read Range - worklist" sap:VirtualizedContainerService.HintSize="444,205.6" sap2010:WorkflowViewState.IdRef="ReadRangeX_3" Range="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString)]" ReadFormatting="RawValue" SaveTo="[dtTransactionData]" VisibleOnly="False" />
+                        <ueab:ReadRangeX sap2010:Annotation.AnnotationText="Finite rows for speed" DisplayName="Read Range - ptk" sap:VirtualizedContainerService.HintSize="444,228" sap2010:WorkflowViewState.IdRef="ReadRangeX_4" Range="[Excel.Sheet(g_Config(&quot;PTKSheetName&quot;).ToString).Range(&quot;A1:E450&quot;)]" SaveTo="[out_dtPTK]" VisibleOnly="False">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ueab:ReadRangeX>
+                      </Sequence>
                     </ActivityAction>
                   </ueab:ExcelApplicationCard.Body>
                   <sap:WorkflowViewStateService.ViewState>
@@ -218,6 +234,8 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
@@ -423,6 +441,12 @@
                 </ueab:ExcelApplicationCard>
               </ActivityAction>
             </ueab:ExcelProcessScopeX.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ueab:ExcelProcessScopeX>
           <Assign DisplayName="Assign current mail message in progress" sap:VirtualizedContainerService.HintSize="536,105.6" sap2010:WorkflowViewState.IdRef="Assign_17">
             <Assign.To>
