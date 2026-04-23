@@ -123,6 +123,10 @@ input {
 	
 }
 
+.address {
+	width: 50%;
+}
+
 #UserComment {
 width: 100%;
 font-family:"Times New Roman", Times, serif; 
