@@ -71,20 +71,90 @@ namespace WIMSdatarekeying
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Init next release.xaml
+        /// Invokes the Process/Process Subflows/tc02 Create new outlet.xaml
         /// </summary>
-        public void tc01_Init_next_release()
+        public void tc02_Create_new_outlet()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Init next release.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc02 Create new outlet.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Init next release.xaml
+        /// Invokes the Process/Process Subflows/tc02 Create new outlet.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Init_next_release(System.Boolean isolated)
+        public void tc02_Create_new_outlet(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Init next release.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc02 Create new outlet.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Amend Permit.xaml
+        /// </summary>
+        public void Amend_Permit(string in_strPermitNumber, bool in_boolConfidential, System.Data.DataTable in_dtOrgDetails)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Amend Permit.xaml", new Dictionary<string, object>{{"in_strPermitNumber", in_strPermitNumber}, {"in_boolConfidential", in_boolConfidential}, {"in_dtOrgDetails", in_dtOrgDetails}}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Amend Permit.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void Amend_Permit(string in_strPermitNumber, bool in_boolConfidential, System.Data.DataTable in_dtOrgDetails, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Amend Permit.xaml", new Dictionary<string, object>{{"in_strPermitNumber", in_strPermitNumber}, {"in_boolConfidential", in_boolConfidential}, {"in_dtOrgDetails", in_dtOrgDetails}}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Create new party.xaml
+        /// </summary>
+        public void tc01_Create_new_party()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create new party.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Create new party.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void tc01_Create_new_party(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create new party.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Check if party name exists.xaml
+        /// </summary>
+        public (bool out_boolPartyRecordFound, string out_strPartyID) Check_if_party_name_exists(string in_strOrgName, string in_strReportAddress)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if party name exists.xaml", new Dictionary<string, object>{{"in_strOrgName", in_strOrgName}, {"in_strReportAddress", in_strReportAddress}}, default, default, default, GetAssemblyName());
+            return ((bool)result["out_boolPartyRecordFound"], (string)result["out_strPartyID"]);
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Check if party name exists.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public (bool out_boolPartyRecordFound, string out_strPartyID) Check_if_party_name_exists(string in_strOrgName, string in_strReportAddress, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if party name exists.xaml", new Dictionary<string, object>{{"in_strOrgName", in_strOrgName}, {"in_strReportAddress", in_strReportAddress}}, default, isolated, default, GetAssemblyName());
+            return ((bool)result["out_boolPartyRecordFound"], (string)result["out_strPartyID"]);
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Create new outlet.xaml
+        /// </summary>
+        public void tc01_Create_new_outlet()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create new outlet.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Create new outlet.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void tc01_Create_new_outlet(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create new outlet.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -107,88 +177,20 @@ namespace WIMSdatarekeying
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Return to main page.xaml
+        /// Invokes the Process/Process Subflows/tc01 Create new customer.xaml
         /// </summary>
-        public void tc01_Return_to_main_page()
+        public void tc01_Create_new_customer()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Return to main page.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create new customer.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Return to main page.xaml
+        /// Invokes the Process/Process Subflows/tc01 Create new customer.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Return_to_main_page(System.Boolean isolated)
+        public void tc01_Create_new_customer(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Return to main page.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Check if permit exists.xaml
-        /// </summary>
-        public void tc01_Check_if_permit_exists()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if permit exists.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Check if permit exists.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Check_if_permit_exists(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if permit exists.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Amend Permit.xaml
-        /// </summary>
-        public void Amend_Permit(string in_strPermitNumber, bool in_boolConfidential, System.Data.DataTable in_dtOrgDetails)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Amend Permit.xaml", new Dictionary<string, object>{{"in_strPermitNumber", in_strPermitNumber}, {"in_boolConfidential", in_boolConfidential}, {"in_dtOrgDetails", in_dtOrgDetails}}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Amend Permit.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void Amend_Permit(string in_strPermitNumber, bool in_boolConfidential, System.Data.DataTable in_dtOrgDetails, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Amend Permit.xaml", new Dictionary<string, object>{{"in_strPermitNumber", in_strPermitNumber}, {"in_boolConfidential", in_boolConfidential}, {"in_dtOrgDetails", in_dtOrgDetails}}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Update Party Name Sheet.xaml
-        /// </summary>
-        public void tc01_Update_Party_Name_Sheet()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Update Party Name Sheet.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Update Party Name Sheet.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Update_Party_Name_Sheet(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Update Party Name Sheet.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Check if party name exists.xaml
-        /// </summary>
-        public void tc01_Check_if_party_name_exists()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if party name exists.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Check if party name exists.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Check_if_party_name_exists(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if party name exists.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create new customer.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -211,56 +213,39 @@ namespace WIMSdatarekeying
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Init next outlet.xaml
+        /// Invokes the Process/Process Subflows/tc01 Check if NGR exists.xaml
         /// </summary>
-        public void tc01_Init_next_outlet()
+        public void tc01_Check_if_NGR_exists()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Init next outlet.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if NGR exists.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Init next outlet.xaml
+        /// Invokes the Process/Process Subflows/tc01 Check if NGR exists.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Init_next_outlet(System.Boolean isolated)
+        public void tc01_Check_if_NGR_exists(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Init next outlet.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if NGR exists.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Check if customer exists.xaml
+        /// Invokes the Process/Process Subflows/Check if NGR exists.xaml
         /// </summary>
-        public void tc01_Check_if_customer_exists()
+        public bool Check_if_NGR_exists(string in_strGridReference, string in_strReportAddress)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if customer exists.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if NGR exists.xaml", new Dictionary<string, object>{{"in_strGridReference", in_strGridReference}, {"in_strReportAddress", in_strReportAddress}}, default, default, default, GetAssemblyName());
+            return (bool)result["out_boolNGRfound"];
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Check if customer exists.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Check_if_customer_exists(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if customer exists.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Check if party name exists.xaml
-        /// </summary>
-        public (bool out_boolPartyRecordFound, string out_strPartyID) Check_if_party_name_exists(string in_strOrgName, string in_strReportAddress)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if party name exists.xaml", new Dictionary<string, object>{{"in_strOrgName", in_strOrgName}, {"in_strReportAddress", in_strReportAddress}}, default, default, default, GetAssemblyName());
-            return ((bool)result["out_boolPartyRecordFound"], (string)result["out_strPartyID"]);
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Check if party name exists.xaml
+        /// Invokes the Process/Process Subflows/Check if NGR exists.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public (bool out_boolPartyRecordFound, string out_strPartyID) Check_if_party_name_exists(string in_strOrgName, string in_strReportAddress, System.Boolean isolated)
+        public bool Check_if_NGR_exists(string in_strGridReference, string in_strReportAddress, System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if party name exists.xaml", new Dictionary<string, object>{{"in_strOrgName", in_strOrgName}, {"in_strReportAddress", in_strReportAddress}}, default, isolated, default, GetAssemblyName());
-            return ((bool)result["out_boolPartyRecordFound"], (string)result["out_strPartyID"]);
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if NGR exists.xaml", new Dictionary<string, object>{{"in_strGridReference", in_strGridReference}, {"in_strReportAddress", in_strReportAddress}}, default, isolated, default, GetAssemblyName());
+            return (bool)result["out_boolNGRfound"];
         }
 
         /// <summary>
@@ -319,20 +304,20 @@ namespace WIMSdatarekeying
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Create new customer.xaml
+        /// Invokes the Process/Process Subflows/tc01 Log in to WIMS region.xaml
         /// </summary>
-        public void tc01_Create_new_customer()
+        public void tc01_Log_in_to_WIMS_region()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create new customer.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Log in to WIMS region.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Create new customer.xaml
+        /// Invokes the Process/Process Subflows/tc01 Log in to WIMS region.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Create_new_customer(System.Boolean isolated)
+        public void tc01_Log_in_to_WIMS_region(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create new customer.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Log in to WIMS region.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -350,237 +335,6 @@ namespace WIMSdatarekeying
         public void Search_Permit_in_Power_BI(System.Boolean isolated)
         {
             var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Search Permit in Power BI.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Check if customer exists.xaml
-        /// </summary>
-        public UiPath.Core.UiElement Check_if_customer_exists(string in_strOrgName, string in_strReportAddress)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if customer exists.xaml", new Dictionary<string, object>{{"in_strOrgName", in_strOrgName}, {"in_strReportAddress", in_strReportAddress}}, default, default, default, GetAssemblyName());
-            return (UiPath.Core.UiElement)result["out_uiMonitoring"];
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Check if customer exists.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public UiPath.Core.UiElement Check_if_customer_exists(string in_strOrgName, string in_strReportAddress, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if customer exists.xaml", new Dictionary<string, object>{{"in_strOrgName", in_strOrgName}, {"in_strReportAddress", in_strReportAddress}}, default, isolated, default, GetAssemblyName());
-            return (UiPath.Core.UiElement)result["out_uiMonitoring"];
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Create new party.xaml
-        /// </summary>
-        public void tc01_Create_new_party()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create new party.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Create new party.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Create_new_party(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create new party.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Return to earlier page.xaml
-        /// </summary>
-        public void Return_to_earlier_page(UiPath.Core.UiElement in_uiPage)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Return to earlier page.xaml", new Dictionary<string, object>{{"in_uiPage", in_uiPage}}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Return to earlier page.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void Return_to_earlier_page(UiPath.Core.UiElement in_uiPage, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Return to earlier page.xaml", new Dictionary<string, object>{{"in_uiPage", in_uiPage}}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Check if NGR exists.xaml
-        /// </summary>
-        public bool Check_if_NGR_exists(string in_strGridReference, string in_strReportAddress)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if NGR exists.xaml", new Dictionary<string, object>{{"in_strGridReference", in_strGridReference}, {"in_strReportAddress", in_strReportAddress}}, default, default, default, GetAssemblyName());
-            return (bool)result["out_boolNGRfound"];
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Check if NGR exists.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public bool Check_if_NGR_exists(string in_strGridReference, string in_strReportAddress, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if NGR exists.xaml", new Dictionary<string, object>{{"in_strGridReference", in_strGridReference}, {"in_strReportAddress", in_strReportAddress}}, default, isolated, default, GetAssemblyName());
-            return (bool)result["out_boolNGRfound"];
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Create New Permit.xaml
-        /// </summary>
-        public void tc01_Create_New_Permit()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create New Permit.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Create New Permit.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Create_New_Permit(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create New Permit.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Next record or next block.xaml
-        /// </summary>
-        public void Next_record_or_next_block(bool in_boolLastRecord)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Next record or next block.xaml", new Dictionary<string, object>{{"in_boolLastRecord", in_boolLastRecord}}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Next record or next block.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void Next_record_or_next_block(bool in_boolLastRecord, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Next record or next block.xaml", new Dictionary<string, object>{{"in_boolLastRecord", in_boolLastRecord}}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the GlobalExceptionHandler.xaml
-        /// </summary>
-        public UiPath.Activities.Contracts.ErrorAction GlobalExceptionHandler(UiPath.Activities.Contracts.ExceptionHandlerArgs errorInfo)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"GlobalExceptionHandler.xaml", new Dictionary<string, object>{{"errorInfo", errorInfo}}, default, default, default, GetAssemblyName());
-            return (UiPath.Activities.Contracts.ErrorAction)result["result"];
-        }
-
-        /// <summary>
-        /// Invokes the GlobalExceptionHandler.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public UiPath.Activities.Contracts.ErrorAction GlobalExceptionHandler(UiPath.Activities.Contracts.ExceptionHandlerArgs errorInfo, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"GlobalExceptionHandler.xaml", new Dictionary<string, object>{{"errorInfo", errorInfo}}, default, isolated, default, GetAssemblyName());
-            return (UiPath.Activities.Contracts.ErrorAction)result["result"];
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Log in to WIMS region.xaml
-        /// </summary>
-        public void Log_in_to_WIMS_region(string in_strRegion)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Log in to WIMS region.xaml", new Dictionary<string, object>{{"in_strRegion", in_strRegion}}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Log in to WIMS region.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void Log_in_to_WIMS_region(string in_strRegion, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Log in to WIMS region.xaml", new Dictionary<string, object>{{"in_strRegion", in_strRegion}}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Check if permit exists.xaml
-        /// </summary>
-        public (UiPath.Core.UiElement out_uiHomePage, UiPath.Core.UiElement out_uiPermits) Check_if_permit_exists(string in_strPermitNumber)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if permit exists.xaml", new Dictionary<string, object>{{"in_strPermitNumber", in_strPermitNumber}}, default, default, default, GetAssemblyName());
-            return ((UiPath.Core.UiElement)result["out_uiHomePage"], (UiPath.Core.UiElement)result["out_uiPermits"]);
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Check if permit exists.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public (UiPath.Core.UiElement out_uiHomePage, UiPath.Core.UiElement out_uiPermits) Check_if_permit_exists(string in_strPermitNumber, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if permit exists.xaml", new Dictionary<string, object>{{"in_strPermitNumber", in_strPermitNumber}}, default, isolated, default, GetAssemblyName());
-            return ((UiPath.Core.UiElement)result["out_uiHomePage"], (UiPath.Core.UiElement)result["out_uiPermits"]);
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Log in to WIMS region STORED CREDS.xaml
-        /// </summary>
-        public void Log_in_to_WIMS_region_STORED_CREDS(string in_strRegion)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Log in to WIMS region STORED CREDS.xaml", new Dictionary<string, object>{{"in_strRegion", in_strRegion}}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Log in to WIMS region STORED CREDS.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void Log_in_to_WIMS_region_STORED_CREDS(string in_strRegion, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Log in to WIMS region STORED CREDS.xaml", new Dictionary<string, object>{{"in_strRegion", in_strRegion}}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Framework/RetryCurrentTransaction.xaml
-        /// </summary>
-        public (int io_RetryNumber, int io_TransactionNumber) RetryCurrentTransaction(System.Exception in_SystemException, bool in_QueueRetry, int io_RetryNumber, int io_TransactionNumber)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\RetryCurrentTransaction.xaml", new Dictionary<string, object>{{"in_SystemException", in_SystemException}, {"in_QueueRetry", in_QueueRetry}, {"io_RetryNumber", io_RetryNumber}, {"io_TransactionNumber", io_TransactionNumber}}, default, default, default, GetAssemblyName());
-            return ((int)result["io_RetryNumber"], (int)result["io_TransactionNumber"]);
-        }
-
-        /// <summary>
-        /// Invokes the Framework/RetryCurrentTransaction.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public (int io_RetryNumber, int io_TransactionNumber) RetryCurrentTransaction(System.Exception in_SystemException, bool in_QueueRetry, int io_RetryNumber, int io_TransactionNumber, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\RetryCurrentTransaction.xaml", new Dictionary<string, object>{{"in_SystemException", in_SystemException}, {"in_QueueRetry", in_QueueRetry}, {"io_RetryNumber", io_RetryNumber}, {"io_TransactionNumber", io_TransactionNumber}}, default, isolated, default, GetAssemblyName());
-            return ((int)result["io_RetryNumber"], (int)result["io_TransactionNumber"]);
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 DEV ONLY Go to dummy permit.xaml
-        /// </summary>
-        public void tc01_DEV_ONLY_Go_to_dummy_permit()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 DEV ONLY Go to dummy permit.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 DEV ONLY Go to dummy permit.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_DEV_ONLY_Go_to_dummy_permit(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 DEV ONLY Go to dummy permit.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Init next release.xaml
-        /// </summary>
-        public void Init_next_release(bool in_boolMoreRecords)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Init next release.xaml", new Dictionary<string, object>{{"in_boolMoreRecords", in_boolMoreRecords}}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Init next release.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void Init_next_release(bool in_boolMoreRecords, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Init next release.xaml", new Dictionary<string, object>{{"in_boolMoreRecords", in_boolMoreRecords}}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -620,37 +374,179 @@ namespace WIMSdatarekeying
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Check if NGR exists.xaml
+        /// Invokes the Process/Process Subflows/tc01 Close WIMS.xaml
         /// </summary>
-        public void tc01_Check_if_NGR_exists()
+        public void tc01_Close_WIMS()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if NGR exists.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Close WIMS.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Check if NGR exists.xaml
+        /// Invokes the Process/Process Subflows/tc01 Close WIMS.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Check_if_NGR_exists(System.Boolean isolated)
+        public void tc01_Close_WIMS(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if NGR exists.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Close WIMS.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/Init next outlet.xaml
+        /// Invokes the Process/Process Subflows/Return to earlier page.xaml
         /// </summary>
-        public void Init_next_outlet(bool in_boolMoreRecords)
+        public void Return_to_earlier_page(UiPath.Core.UiElement in_uiPage)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Init next outlet.xaml", new Dictionary<string, object>{{"in_boolMoreRecords", in_boolMoreRecords}}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Return to earlier page.xaml", new Dictionary<string, object>{{"in_uiPage", in_uiPage}}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/Init next outlet.xaml
+        /// Invokes the Process/Process Subflows/Return to earlier page.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void Init_next_outlet(bool in_boolMoreRecords, System.Boolean isolated)
+        public void Return_to_earlier_page(UiPath.Core.UiElement in_uiPage, System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Init next outlet.xaml", new Dictionary<string, object>{{"in_boolMoreRecords", in_boolMoreRecords}}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Return to earlier page.xaml", new Dictionary<string, object>{{"in_uiPage", in_uiPage}}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Check if customer exists.xaml
+        /// </summary>
+        public UiPath.Core.UiElement Check_if_customer_exists(string in_strOrgName, string in_strReportAddress)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if customer exists.xaml", new Dictionary<string, object>{{"in_strOrgName", in_strOrgName}, {"in_strReportAddress", in_strReportAddress}}, default, default, default, GetAssemblyName());
+            return (UiPath.Core.UiElement)result["out_uiMonitoring"];
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Check if customer exists.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public UiPath.Core.UiElement Check_if_customer_exists(string in_strOrgName, string in_strReportAddress, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if customer exists.xaml", new Dictionary<string, object>{{"in_strOrgName", in_strOrgName}, {"in_strReportAddress", in_strReportAddress}}, default, isolated, default, GetAssemblyName());
+            return (UiPath.Core.UiElement)result["out_uiMonitoring"];
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Return to main page.xaml
+        /// </summary>
+        public void tc01_Return_to_main_page()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Return to main page.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Return to main page.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void tc01_Return_to_main_page(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Return to main page.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Log in to WIMS region.xaml
+        /// </summary>
+        public void Log_in_to_WIMS_region(string in_strRegion)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Log in to WIMS region.xaml", new Dictionary<string, object>{{"in_strRegion", in_strRegion}}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Log in to WIMS region.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void Log_in_to_WIMS_region(string in_strRegion, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Log in to WIMS region.xaml", new Dictionary<string, object>{{"in_strRegion", in_strRegion}}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Framework/RetryCurrentTransaction.xaml
+        /// </summary>
+        public (int io_RetryNumber, int io_TransactionNumber) RetryCurrentTransaction(System.Exception in_SystemException, bool in_QueueRetry, int io_RetryNumber, int io_TransactionNumber)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\RetryCurrentTransaction.xaml", new Dictionary<string, object>{{"in_SystemException", in_SystemException}, {"in_QueueRetry", in_QueueRetry}, {"io_RetryNumber", io_RetryNumber}, {"io_TransactionNumber", io_TransactionNumber}}, default, default, default, GetAssemblyName());
+            return ((int)result["io_RetryNumber"], (int)result["io_TransactionNumber"]);
+        }
+
+        /// <summary>
+        /// Invokes the Framework/RetryCurrentTransaction.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public (int io_RetryNumber, int io_TransactionNumber) RetryCurrentTransaction(System.Exception in_SystemException, bool in_QueueRetry, int io_RetryNumber, int io_TransactionNumber, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\RetryCurrentTransaction.xaml", new Dictionary<string, object>{{"in_SystemException", in_SystemException}, {"in_QueueRetry", in_QueueRetry}, {"io_RetryNumber", io_RetryNumber}, {"io_TransactionNumber", io_TransactionNumber}}, default, isolated, default, GetAssemblyName());
+            return ((int)result["io_RetryNumber"], (int)result["io_TransactionNumber"]);
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Log in to WIMS region STORED CREDS.xaml
+        /// </summary>
+        public void Log_in_to_WIMS_region_STORED_CREDS(string in_strRegion)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Log in to WIMS region STORED CREDS.xaml", new Dictionary<string, object>{{"in_strRegion", in_strRegion}}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Log in to WIMS region STORED CREDS.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void Log_in_to_WIMS_region_STORED_CREDS(string in_strRegion, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Log in to WIMS region STORED CREDS.xaml", new Dictionary<string, object>{{"in_strRegion", in_strRegion}}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the GlobalExceptionHandler.xaml
+        /// </summary>
+        public UiPath.Activities.Contracts.ErrorAction GlobalExceptionHandler(UiPath.Activities.Contracts.ExceptionHandlerArgs errorInfo)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"GlobalExceptionHandler.xaml", new Dictionary<string, object>{{"errorInfo", errorInfo}}, default, default, default, GetAssemblyName());
+            return (UiPath.Activities.Contracts.ErrorAction)result["result"];
+        }
+
+        /// <summary>
+        /// Invokes the GlobalExceptionHandler.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public UiPath.Activities.Contracts.ErrorAction GlobalExceptionHandler(UiPath.Activities.Contracts.ExceptionHandlerArgs errorInfo, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"GlobalExceptionHandler.xaml", new Dictionary<string, object>{{"errorInfo", errorInfo}}, default, isolated, default, GetAssemblyName());
+            return (UiPath.Activities.Contracts.ErrorAction)result["result"];
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Amend Permit.xaml
+        /// </summary>
+        public void tc01_Amend_Permit()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Amend Permit.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Amend Permit.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void tc01_Amend_Permit(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Amend Permit.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Init next release.xaml
+        /// </summary>
+        public void Init_next_release(bool in_boolMoreRecords)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Init next release.xaml", new Dictionary<string, object>{{"in_boolMoreRecords", in_boolMoreRecords}}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Init next release.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void Init_next_release(bool in_boolMoreRecords, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Init next release.xaml", new Dictionary<string, object>{{"in_boolMoreRecords", in_boolMoreRecords}}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -671,37 +567,90 @@ namespace WIMSdatarekeying
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc02 Create new outlet.xaml
+        /// Invokes the Process/Process Subflows/tc01 Check if permit exists.xaml
         /// </summary>
-        public void tc02_Create_new_outlet()
+        public void tc01_Check_if_permit_exists()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc02 Create new outlet.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if permit exists.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc02 Create new outlet.xaml
+        /// Invokes the Process/Process Subflows/tc01 Check if permit exists.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc02_Create_new_outlet(System.Boolean isolated)
+        public void tc01_Check_if_permit_exists(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc02 Create new outlet.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if permit exists.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Amend Permit.xaml
+        /// Invokes the Process/Process Subflows/Init next outlet.xaml
         /// </summary>
-        public void tc01_Amend_Permit()
+        public void Init_next_outlet(bool in_boolMoreRecords)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Amend Permit.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Init next outlet.xaml", new Dictionary<string, object>{{"in_boolMoreRecords", in_boolMoreRecords}}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Amend Permit.xaml
+        /// Invokes the Process/Process Subflows/Init next outlet.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Amend_Permit(System.Boolean isolated)
+        public void Init_next_outlet(bool in_boolMoreRecords, System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Amend Permit.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Init next outlet.xaml", new Dictionary<string, object>{{"in_boolMoreRecords", in_boolMoreRecords}}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Check if permit exists.xaml
+        /// </summary>
+        public (UiPath.Core.UiElement out_uiHomePage, UiPath.Core.UiElement out_uiPermits) Check_if_permit_exists(string in_strPermitNumber)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if permit exists.xaml", new Dictionary<string, object>{{"in_strPermitNumber", in_strPermitNumber}}, default, default, default, GetAssemblyName());
+            return ((UiPath.Core.UiElement)result["out_uiHomePage"], (UiPath.Core.UiElement)result["out_uiPermits"]);
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Check if permit exists.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public (UiPath.Core.UiElement out_uiHomePage, UiPath.Core.UiElement out_uiPermits) Check_if_permit_exists(string in_strPermitNumber, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check if permit exists.xaml", new Dictionary<string, object>{{"in_strPermitNumber", in_strPermitNumber}}, default, isolated, default, GetAssemblyName());
+            return ((UiPath.Core.UiElement)result["out_uiHomePage"], (UiPath.Core.UiElement)result["out_uiPermits"]);
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Init next outlet.xaml
+        /// </summary>
+        public void tc01_Init_next_outlet()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Init next outlet.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Init next outlet.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void tc01_Init_next_outlet(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Init next outlet.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Add Responsibilities.xaml
+        /// </summary>
+        public void tc01_Add_Responsibilities()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Add Responsibilities.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Add Responsibilities.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void tc01_Add_Responsibilities(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Add Responsibilities.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -760,6 +709,91 @@ namespace WIMSdatarekeying
         }
 
         /// <summary>
+        /// Invokes the Process/tc01 Process Transaction.xaml
+        /// </summary>
+        public void tc01_Process_Transaction()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\tc01 Process Transaction.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/tc01 Process Transaction.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void tc01_Process_Transaction(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\tc01 Process Transaction.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Log in to WIMS region STORED CREDS.xaml
+        /// </summary>
+        public void tc01_Log_in_to_WIMS_region_STORED_CREDS()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Log in to WIMS region STORED CREDS.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Log in to WIMS region STORED CREDS.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void tc01_Log_in_to_WIMS_region_STORED_CREDS(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Log in to WIMS region STORED CREDS.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Check if party name exists.xaml
+        /// </summary>
+        public void tc01_Check_if_party_name_exists()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if party name exists.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Check if party name exists.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void tc01_Check_if_party_name_exists(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if party name exists.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Next record or next block.xaml
+        /// </summary>
+        public void Next_record_or_next_block(bool in_boolLastRecord)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Next record or next block.xaml", new Dictionary<string, object>{{"in_boolLastRecord", in_boolLastRecord}}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Next record or next block.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void Next_record_or_next_block(bool in_boolLastRecord, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Next record or next block.xaml", new Dictionary<string, object>{{"in_boolLastRecord", in_boolLastRecord}}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/DEV ONLY Go to dummy permit.xaml
+        /// </summary>
+        public void DEV_ONLY_Go_to_dummy_permit()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\DEV ONLY Go to dummy permit.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/DEV ONLY Go to dummy permit.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void DEV_ONLY_Go_to_dummy_permit(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\DEV ONLY Go to dummy permit.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
         /// Invokes the Framework/NetworkConnectivityTool.xaml
         /// </summary>
         public void NetworkConnectivityTool()
@@ -774,6 +808,76 @@ namespace WIMSdatarekeying
         public void NetworkConnectivityTool(System.Boolean isolated)
         {
             var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\NetworkConnectivityTool.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Update Party Name Sheet.xaml
+        /// </summary>
+        public void tc01_Update_Party_Name_Sheet()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Update Party Name Sheet.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Update Party Name Sheet.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void tc01_Update_Party_Name_Sheet(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Update Party Name Sheet.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Create new release.xaml
+        /// </summary>
+        public UiPath.Core.UiElement Create_new_release(string in_strName, string in_strDischargeTypes, string in_strGridReference, string in_strTreatmentType, string in_strFlowCode, string in_strDescription)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Create new release.xaml", new Dictionary<string, object>{{"in_strName", in_strName}, {"in_strDischargeTypes", in_strDischargeTypes}, {"in_strGridReference", in_strGridReference}, {"in_strTreatmentType", in_strTreatmentType}, {"in_strFlowCode", in_strFlowCode}, {"in_strDescription", in_strDescription}}, default, default, default, GetAssemblyName());
+            return (UiPath.Core.UiElement)result["out_uiReleases"];
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Create new release.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public UiPath.Core.UiElement Create_new_release(string in_strName, string in_strDischargeTypes, string in_strGridReference, string in_strTreatmentType, string in_strFlowCode, string in_strDescription, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Create new release.xaml", new Dictionary<string, object>{{"in_strName", in_strName}, {"in_strDischargeTypes", in_strDischargeTypes}, {"in_strGridReference", in_strGridReference}, {"in_strTreatmentType", in_strTreatmentType}, {"in_strFlowCode", in_strFlowCode}, {"in_strDescription", in_strDescription}}, default, isolated, default, GetAssemblyName());
+            return (UiPath.Core.UiElement)result["out_uiReleases"];
+        }
+
+        /// <summary>
+        /// Invokes the Framework/KillAllProcesses.xaml
+        /// </summary>
+        public void KillAllProcesses()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\KillAllProcesses.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Framework/KillAllProcesses.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void KillAllProcesses(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\KillAllProcesses.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Create New Permit.xaml
+        /// </summary>
+        public void tc01_Create_New_Permit()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create New Permit.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Create New Permit.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void tc01_Create_New_Permit(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create New Permit.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -794,54 +898,37 @@ namespace WIMSdatarekeying
         }
 
         /// <summary>
-        /// Invokes the Process/tc01 Process Transaction.xaml
+        /// Invokes the Framework/InitAllApplications.xaml
         /// </summary>
-        public void tc01_Process_Transaction()
+        public void InitAllApplications()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\tc01 Process Transaction.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\InitAllApplications.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/tc01 Process Transaction.xaml
+        /// Invokes the Framework/InitAllApplications.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Process_Transaction(System.Boolean isolated)
+        public void InitAllApplications(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\tc01 Process Transaction.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\InitAllApplications.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Log in to WIMS region.xaml
+        /// Invokes the Process/Process Subflows/tc01 DEV ONLY Go to dummy permit.xaml
         /// </summary>
-        public void tc01_Log_in_to_WIMS_region()
+        public void tc01_DEV_ONLY_Go_to_dummy_permit()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Log in to WIMS region.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 DEV ONLY Go to dummy permit.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Log in to WIMS region.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Log_in_to_WIMS_region(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Log in to WIMS region.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Close WIMS.xaml
-        /// </summary>
-        public void tc01_Close_WIMS()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Close WIMS.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Close WIMS.xaml
+        /// Invokes the Process/Process Subflows/tc01 DEV ONLY Go to dummy permit.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Close_WIMS(System.Boolean isolated)
+        public void tc01_DEV_ONLY_Go_to_dummy_permit(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Close WIMS.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 DEV ONLY Go to dummy permit.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -862,20 +949,20 @@ namespace WIMSdatarekeying
         }
 
         /// <summary>
-        /// Invokes the Framework/InitAllApplications.xaml
+        /// Invokes the Framework/tc01 GetTransactionData.xaml
         /// </summary>
-        public void InitAllApplications()
+        public void tc01_GetTransactionData()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\InitAllApplications.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\tc01 GetTransactionData.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Framework/InitAllApplications.xaml
+        /// Invokes the Framework/tc01 GetTransactionData.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void InitAllApplications(System.Boolean isolated)
+        public void tc01_GetTransactionData(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\InitAllApplications.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\tc01 GetTransactionData.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -930,59 +1017,6 @@ namespace WIMSdatarekeying
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Log in to WIMS region STORED CREDS.xaml
-        /// </summary>
-        public void tc01_Log_in_to_WIMS_region_STORED_CREDS()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Log in to WIMS region STORED CREDS.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Log in to WIMS region STORED CREDS.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Log_in_to_WIMS_region_STORED_CREDS(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Log in to WIMS region STORED CREDS.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Create new outlet.xaml
-        /// </summary>
-        public UiPath.Core.UiElement Create_new_outlet(string in_strReference, string in_strGridReference, string in_strEnvironmentCode, string in_strTotalOutlets)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Create new outlet.xaml", new Dictionary<string, object>{{"in_strReference", in_strReference}, {"in_strGridReference", in_strGridReference}, {"in_strEnvironmentCode", in_strEnvironmentCode}, {"in_strTotalOutlets", in_strTotalOutlets}}, default, default, default, GetAssemblyName());
-            return (UiPath.Core.UiElement)result["out_uiOutletRef"];
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Create new outlet.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public UiPath.Core.UiElement Create_new_outlet(string in_strReference, string in_strGridReference, string in_strEnvironmentCode, string in_strTotalOutlets, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Create new outlet.xaml", new Dictionary<string, object>{{"in_strReference", in_strReference}, {"in_strGridReference", in_strGridReference}, {"in_strEnvironmentCode", in_strEnvironmentCode}, {"in_strTotalOutlets", in_strTotalOutlets}}, default, isolated, default, GetAssemblyName());
-            return (UiPath.Core.UiElement)result["out_uiOutletRef"];
-        }
-
-        /// <summary>
-        /// Invokes the Framework/KillAllProcesses.xaml
-        /// </summary>
-        public void KillAllProcesses()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\KillAllProcesses.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Framework/KillAllProcesses.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void KillAllProcesses(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\KillAllProcesses.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
         /// Invokes the Process/Process Subflows/Create new discharge site.xaml
         /// </summary>
         public void Create_new_discharge_site(string in_strAssetPropertyCode, bool in_boolConfidential, string[] in_arrAddress, string in_strPostcode, string in_strAreaCode, string in_strSubAreaCode, string in_strLocalAuthorityCode, string in_strGridReference, string in_strRegion)
@@ -1017,22 +1051,56 @@ namespace WIMSdatarekeying
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/Create new release.xaml
+        /// Invokes the Process/Process Subflows/tc01 Init next release.xaml
         /// </summary>
-        public UiPath.Core.UiElement Create_new_release(string in_strName, string in_strDischargeTypes, string in_strGridReference, string in_strTreatmentType, string in_strFlowCode, string in_strDescription)
+        public void tc01_Init_next_release()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Create new release.xaml", new Dictionary<string, object>{{"in_strName", in_strName}, {"in_strDischargeTypes", in_strDischargeTypes}, {"in_strGridReference", in_strGridReference}, {"in_strTreatmentType", in_strTreatmentType}, {"in_strFlowCode", in_strFlowCode}, {"in_strDescription", in_strDescription}}, default, default, default, GetAssemblyName());
-            return (UiPath.Core.UiElement)result["out_uiReleases"];
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Init next release.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Process/Process Subflows/Create new release.xaml
+        /// Invokes the Process/Process Subflows/tc01 Init next release.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public UiPath.Core.UiElement Create_new_release(string in_strName, string in_strDischargeTypes, string in_strGridReference, string in_strTreatmentType, string in_strFlowCode, string in_strDescription, System.Boolean isolated)
+        public void tc01_Init_next_release(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Create new release.xaml", new Dictionary<string, object>{{"in_strName", in_strName}, {"in_strDischargeTypes", in_strDischargeTypes}, {"in_strGridReference", in_strGridReference}, {"in_strTreatmentType", in_strTreatmentType}, {"in_strFlowCode", in_strFlowCode}, {"in_strDescription", in_strDescription}}, default, isolated, default, GetAssemblyName());
-            return (UiPath.Core.UiElement)result["out_uiReleases"];
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Init next release.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Check if customer exists.xaml
+        /// </summary>
+        public void tc01_Check_if_customer_exists()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if customer exists.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/tc01 Check if customer exists.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void tc01_Check_if_customer_exists(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Check if customer exists.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Create new outlet.xaml
+        /// </summary>
+        public UiPath.Core.UiElement Create_new_outlet(string in_strReference, string in_strGridReference, string in_strEnvironmentCode, string in_strTotalOutlets)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Create new outlet.xaml", new Dictionary<string, object>{{"in_strReference", in_strReference}, {"in_strGridReference", in_strGridReference}, {"in_strEnvironmentCode", in_strEnvironmentCode}, {"in_strTotalOutlets", in_strTotalOutlets}}, default, default, default, GetAssemblyName());
+            return (UiPath.Core.UiElement)result["out_uiOutletRef"];
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Create new outlet.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public UiPath.Core.UiElement Create_new_outlet(string in_strReference, string in_strGridReference, string in_strEnvironmentCode, string in_strTotalOutlets, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Create new outlet.xaml", new Dictionary<string, object>{{"in_strReference", in_strReference}, {"in_strGridReference", in_strGridReference}, {"in_strEnvironmentCode", in_strEnvironmentCode}, {"in_strTotalOutlets", in_strTotalOutlets}}, default, isolated, default, GetAssemblyName());
+            return (UiPath.Core.UiElement)result["out_uiOutletRef"];
         }
 
         /// <summary>
@@ -1050,74 +1118,6 @@ namespace WIMSdatarekeying
         public void CloseAllApplications(System.Boolean isolated)
         {
             var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\CloseAllApplications.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Create new outlet.xaml
-        /// </summary>
-        public void tc01_Create_new_outlet()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create new outlet.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Create new outlet.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Create_new_outlet(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Create new outlet.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Add Responsibilities.xaml
-        /// </summary>
-        public void tc01_Add_Responsibilities()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Add Responsibilities.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/tc01 Add Responsibilities.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_Add_Responsibilities(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\tc01 Add Responsibilities.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/DEV ONLY Go to dummy permit.xaml
-        /// </summary>
-        public void DEV_ONLY_Go_to_dummy_permit()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\DEV ONLY Go to dummy permit.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/DEV ONLY Go to dummy permit.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void DEV_ONLY_Go_to_dummy_permit(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\DEV ONLY Go to dummy permit.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Framework/tc01 GetTransactionData.xaml
-        /// </summary>
-        public void tc01_GetTransactionData()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\tc01 GetTransactionData.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Framework/tc01 GetTransactionData.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void tc01_GetTransactionData(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\tc01 GetTransactionData.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         private string GetAssemblyName()
