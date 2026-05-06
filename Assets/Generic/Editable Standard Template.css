@@ -127,6 +127,10 @@ input {
 	width: 50%;
 }
 
+.hidden {
+	display: none;
+}
+
 #UserComment {
 width: 100%;
 font-family:"Times New Roman", Times, serif; 

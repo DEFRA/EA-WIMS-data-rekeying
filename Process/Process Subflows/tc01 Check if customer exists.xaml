@@ -32,6 +32,7 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Reflection</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -94,21 +95,27 @@
       <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="tc01_Check_if_customer_exists" sap:VirtualizedContainerService.HintSize="1451.6000000000001,967.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="tc01_Check_if_customer_exists" sap:VirtualizedContainerService.HintSize="1451.6000000000001,1302.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="484,539.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="513.6,751.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="450,114.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap:VirtualizedContainerService.HintSize="479.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</OutArgument>
         </Assign.To>
@@ -116,7 +123,37 @@
           <InArgument x:TypeArguments="sd:Stopwatch">[new Stopwatch]</InArgument>
         </Assign.Value>
       </Assign>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: FormsStart 12c WIMSMDP" sap:VirtualizedContainerService.HintSize="450,333.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OutUiElement="[g_browserWIMS]" ScopeGuid="2e0acb47-9569-433d-93e7-394e98b3c090" Version="V2">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.6,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[g_Config]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[new Dictionary(of String, Object)]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Object">[g_Config("CheckFuzzyMatches")]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Object">[False]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Object">[g_Config("FuzzyMatchThreshold")]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Object">[80]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: FormsStart 12c WIMSMDP" sap:VirtualizedContainerService.HintSize="479.6,333.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OutUiElement="[g_browserWIMS]" ScopeGuid="2e0acb47-9569-433d-93e7-394e98b3c090" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -136,21 +173,28 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="484,291.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="513.6,414.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="boolCustomerRecordFound" />
+        <Variable x:TypeArguments="x:String" Name="strOrgID" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check if customer exists - Invoke Workflow File (Check if customer exists.xaml)" sap:VirtualizedContainerService.HintSize="416,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Process Subflows\Check if customer exists.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check if customer exists - Invoke Workflow File (Check if customer exists.xaml)" sap:VirtualizedContainerService.HintSize="416,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Process Subflows\Check if customer exists.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strOrgName">Rob</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strReportAddress">1,TEST STREET,AA11 1AA</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strOrgName">HAHAHAHAHAHA</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strReportAddress">SQUIDDLY DIDDLY</InArgument>
           <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_uiMonitoring" />
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolCustomerRecordFound">[boolCustomerRecordFound]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_strOrgID">[strOrgID]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
+      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,114.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Record exists: &quot;+boolCustomerRecordFound.ToString+Environment.NewLine+&quot;Org ID: &quot;+strOrgID]" />
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="484,113.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="513.6,113.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

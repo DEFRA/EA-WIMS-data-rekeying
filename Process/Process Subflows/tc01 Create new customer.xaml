@@ -178,6 +178,9 @@
       </uix:NApplicationCard>
     </Sequence>
     <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="513.6,291.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="strOrgID" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -187,8 +190,8 @@
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_strPhoneNumber">1234</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_strCompanyNumber">5678</InArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="out_strOrgID" />
-          <InArgument x:TypeArguments="x:String" x:Key="in_strOrgName">ZZ TEST IGNORE 2</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_strOrgID">[strOrgID]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strOrgName">ZZ TEST IGNORE</InArgument>
           <InArgument x:TypeArguments="s:String[]" x:Key="in_arrAddress">[{"line1","line2","line3","line4"}]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_strPostcode">AA11 1AA</InArgument>
         </ui:InvokeWorkflowFile.Arguments>

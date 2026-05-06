@@ -123,7 +123,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Reading of PTK sheet happens during GetTransactionData for speed (less idling when transaction is already in progress)." DisplayName="Update_Party_Name_Sheet" sap:VirtualizedContainerService.HintSize="1451.6000000000001,2924.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Reading of PTK sheet happens during GetTransactionData for speed (less idling when transaction is already in progress)." DisplayName="Update_Party_Name_Sheet" sap:VirtualizedContainerService.HintSize="1451.6000000000001,3435.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strRowRef" />
       <Variable x:TypeArguments="x:Int32" Name="intIndex" />
@@ -178,14 +178,40 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="rowID" DataTable="[in_dtPTK]" DisplayName="Add Data Column - rowID" sap:VirtualizedContainerService.HintSize="544,222" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intIndex]" DataTable="[in_dtPTK]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="544,334" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <If sap2010:Annotation.AnnotationText="Not sure how, but for multiple orgs we can still have a rowID column after the first iteration even though we remove it again in this workflow. We put this here as a safety measure." Condition="[not in_dtPTK.Columns.Contains(&quot;rowID&quot;)]" DisplayName="If rowID column not added yet" sap:VirtualizedContainerService.HintSize="544,732.4" sap2010:WorkflowViewState.IdRef="If_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,273.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="rowID" DataTable="[in_dtPTK]" DisplayName="Add Data Column - rowID" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,226.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message - already has rowID column" sap:VirtualizedContainerService.HintSize="382,166.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Parties data table already has a rowID column.&quot;]" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intIndex]" DataTable="[in_dtPTK]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="544,334" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Assign sap2010:Annotation.AnnotationText="Add 2 to account for Excel non-zero indexing and header row" DisplayName="Assign row id" sap:VirtualizedContainerService.HintSize="434,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign sap2010:Annotation.AnnotationText="Add 2 to account for Excel non-zero indexing and header row" DisplayName="Assign row id" sap:VirtualizedContainerService.HintSize="434,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Object">[CurrentRow("rowID")]</OutArgument>
             </Assign.To>

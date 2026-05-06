@@ -217,6 +217,13 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Framework\\tc01 InitAllApplications.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "afac2961-d70f-4889-8c86-0a3efc0992a7",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Format release details table.xaml"
       }
     ],
     "saveToCloud": false

@@ -159,7 +159,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Extract_Permit_Info" sap:VirtualizedContainerService.HintSize="1032.8,2567.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extract_Permit_Info" sap:VirtualizedContainerService.HintSize="1451.6000000000001,1783.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtOrgAddressDetails" />
       <Variable x:TypeArguments="x:String" Name="strRegionPP" />
@@ -174,12 +174,12 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <InvokeMethod DisplayName="Bring PowerBI to foreground" sap:VirtualizedContainerService.HintSize="649.6,56.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="BringToForeground">
+    <InvokeMethod DisplayName="Bring PowerBI to foreground" sap:VirtualizedContainerService.HintSize="552,56.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="BringToForeground">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="ui:UiElement">[g_browserPowerBi]</InArgument>
       </InvokeMethod.TargetObject>
     </InvokeMethod>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - extract power bi info" sap:VirtualizedContainerService.HintSize="649.6,2487.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserPowerBi]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - extract power bi info" sap:VirtualizedContainerService.HintSize="552,1622.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserPowerBi]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -190,7 +190,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Extract power bi info" sap:VirtualizedContainerService.HintSize="615.6,2326" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Extract power bi info" sap:VirtualizedContainerService.HintSize="518,1484.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="boolRowsRemaining" />
               <Variable x:TypeArguments="x:Int32" Name="intRowIndex" />
@@ -199,17 +199,17 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message - extracting report info" sap:VirtualizedContainerService.HintSize="581.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Extracting report info for permit &quot;+g_TransactionItem(&quot;ReSP_ID&quot;).ToString]">
+            <ui:LogMessage DisplayName="Log Message - extracting report info" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Extracting report info for permit &quot;+g_TransactionItem(&quot;ReSP_ID&quot;).ToString]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <Assign DisplayName="Initialise output dictionary" sap:VirtualizedContainerService.HintSize="581.6,56.8" sap2010:WorkflowViewState.IdRef="Assign_21">
+            <Assign DisplayName="Initialise output dictionary" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Assign_21">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[out_dictPermitDetails]</OutArgument>
               </Assign.To>
@@ -217,7 +217,7 @@
                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[new Dictionary(of String, String)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Sequence DisplayName="Summary page" sap:VirtualizedContainerService.HintSize="581.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_27">
+            <Sequence DisplayName="Summary page" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_27">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strRegion" />
               </Sequence.Variables>
@@ -514,7 +514,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Org Details" sap:VirtualizedContainerService.HintSize="581.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_120">
+            <Sequence DisplayName="Org Details" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_120">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtOrgAddressDetailsFiltered" />
                 <Variable x:TypeArguments="sd:DataRow[]" Name="arrRegisteredAddresses" />
@@ -535,7 +535,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <Sequence DisplayName="Get top table" sap:VirtualizedContainerService.HintSize="450,374.8" sap2010:WorkflowViewState.IdRef="Sequence_123">
+              <Sequence DisplayName="Get top table" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="Sequence_123">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="sd:EnumerableRowCollection(sd:DataRow)" Name="rowsNonEmpty" />
                 </Sequence.Variables>
@@ -545,7 +545,7 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:BuildDataTable sap2010:Annotation.AnnotationText="also include Address column that we add to later in this workflow, as well as OrgID and PartyID columns that we add to later in process." DataTable="[out_dtOrgDetails]" DisplayName="Init Org Details output table" sap:VirtualizedContainerService.HintSize="416,153.2" sap2010:WorkflowViewState.IdRef="BuildDataTable_6" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;PhoneNumber&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CompanyNumber&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;OrgID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;PartyID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+                <ui:BuildDataTable sap2010:Annotation.AnnotationText="also include Address column that we add to later in this workflow, as well as OrgID and PartyID columns that we add to later in process." DataTable="[out_dtOrgDetails]" DisplayName="Init Org Details output table" sap:VirtualizedContainerService.HintSize="416,150.8" sap2010:WorkflowViewState.IdRef="BuildDataTable_6" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;PhoneNumber&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CompanyNumber&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;OrgID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;PartyID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -1230,14 +1230,14 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
-              <If Condition="[CBool(g_Config(&quot;PausePoint2&quot;))]" DisplayName="Pause Point 2? - org details" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="If_37">
+              <If Condition="[CBool(g_Config(&quot;PausePoint2&quot;))]" DisplayName="Pause Point 2? - org details" sap:VirtualizedContainerService.HintSize="450,188.8" sap2010:WorkflowViewState.IdRef="If_37">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,1159.2" sap2010:WorkflowViewState.IdRef="Sequence_135">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,992.8" sap2010:WorkflowViewState.IdRef="Sequence_135">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="dtOrgDetailsPP2" />
                     </Sequence.Variables>
@@ -1256,7 +1256,7 @@
                       </Assign.Value>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
@@ -1269,11 +1269,11 @@
                       </Assign.Value>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
-                    <InvokeMethod DisplayName="Stop timer - PP2 org detals" sap:VirtualizedContainerService.HintSize="434,168.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_34" MethodName="Stop">
+                    <InvokeMethod DisplayName="Stop timer - PP2 org detals" sap:VirtualizedContainerService.HintSize="434,85.2" sap2010:WorkflowViewState.IdRef="InvokeMethod_34" MethodName="Stop">
                       <InvokeMethod.TargetObject>
                         <InArgument x:TypeArguments="sd1:Stopwatch">[g_swProcessingTimer]</InArgument>
                       </InvokeMethod.TargetObject>
@@ -1286,11 +1286,11 @@
                     <d:Editable_DataTable out_TableHTML="{x:Null}" DisplayName="PP2 - org details" sap:VirtualizedContainerService.HintSize="434,542.4" sap2010:WorkflowViewState.IdRef="Editable_DataTable_4" in_Body="[&quot;&lt;h1&gt;Organisation Details&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please clarify that the relevant information has been extracted correctly from the Organisation Details page of the report.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;If this is correct, please click 'Continue'. Otherwise, please click 'Stop' and process this transaction manually.&lt;/p&gt;&quot;]" in_CSS_Path="[Directory.GetCurrentDirectory + &quot;\Assets\Generic\Editable Standard Template.css&quot;]" in_FormHTMLPath="[Directory.GetCurrentDirectory + &quot;\Assets\Generic\FormRenderOrgDetails.html&quot;]" in_FullReadOnly="True" in_ShowForm="True" in_TemplatePath="[Directory.GetCurrentDirectory + &quot;\Assets\Generic\FormCreatorTemplate.html&quot;]" in_WidthHeight="[{1200,700}]" io_Table="[dtOrgDetailsPP2]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </d:Editable_DataTable>
-                    <InvokeMethod DisplayName="Start timer - PP2 outlets" sap:VirtualizedContainerService.HintSize="434,159.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_35" MethodName="Start">
+                    <InvokeMethod DisplayName="Start timer - PP2 outlets" sap:VirtualizedContainerService.HintSize="434,76.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_35" MethodName="Start">
                       <InvokeMethod.TargetObject>
                         <InArgument x:TypeArguments="sd1:Stopwatch">[g_swProcessingTimer]</InArgument>
                       </InvokeMethod.TargetObject>
@@ -1298,7 +1298,7 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_136">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_136">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1308,7 +1308,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="581.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_5">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_107">
                   <Flowchart DisplayName="Org Details OLD" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Flowchart_2">
@@ -1953,7 +1953,7 @@
                 </Sequence>
               </ui:CommentOut.Body>
             </ui:CommentOut>
-            <Sequence DisplayName="Responsibilities" sap:VirtualizedContainerService.HintSize="581.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
+            <Sequence DisplayName="Responsibilities" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strRole" />
               </Sequence.Variables>
@@ -2046,7 +2046,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Maintain discharge sites" sap:VirtualizedContainerService.HintSize="581.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <Sequence DisplayName="Maintain discharge sites" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strGridRef" />
                 <Variable x:TypeArguments="x:String" Name="strConfidential" />
@@ -2477,7 +2477,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Create Permit" sap:VirtualizedContainerService.HintSize="581.6,1646.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
+            <Sequence DisplayName="Create Permit" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strIssueDate" />
                 <Variable x:TypeArguments="x:String" Name="strEffectiveDate" />
@@ -2817,7 +2817,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Outlets" sap:VirtualizedContainerService.HintSize="581.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
+            <Sequence DisplayName="Outlets" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strOutlet" />
               </Sequence.Variables>
@@ -2832,7 +2832,7 @@
                   <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/958e70993482cf0dfefc?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="196, 1176, 162, 65" DesignTimeScaleFactor="2.5" ElementType="Text" FriendlyName="'Outlets'" FullSelectorArgument="&lt;webctrl aaname='Outlets' class='itemName' parentid='content' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Outlets' class='itemName' parentid='content' tag='SPAN' type='' check:innerText='Outlets' /&gt;" Guid="388f57c5-9faf-456b-b176-1402903a1cf4" InformativeScreenshot="518cd1efa917e13289dc6c9fd9b86f02.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Responsibilities - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <ui:BuildDataTable DataTable="[out_dtOutlets]" DisplayName="Init outlets datatable" sap:VirtualizedContainerService.HintSize="573.6,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NGR&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ReceivingEnvironment&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;DischargeType&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;EnvCode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+              <ui:BuildDataTable DataTable="[out_dtOutlets]" DisplayName="Init outlets datatable" sap:VirtualizedContainerService.HintSize="573.6,56.8" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NGR&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ReceivingEnvironment&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;DischargeType&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;EnvCode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -2863,16 +2863,16 @@
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
-              <ui:InterruptibleDoWhile Condition="[boolRowsRemaining]" CurrentIndex="[intRowIndex]" DisplayName="Do While - outlet rows remaining" sap:VirtualizedContainerService.HintSize="573.6,1160.4" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
+              <ui:InterruptibleDoWhile Condition="[boolRowsRemaining]" CurrentIndex="[intRowIndex]" DisplayName="Do While - outlet rows remaining" sap:VirtualizedContainerService.HintSize="450,140" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
                 <ui:InterruptibleDoWhile.Body>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539.6,1013.2" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,209.6" sap2010:WorkflowViewState.IdRef="Sequence_37">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap2010:Annotation.AnnotationText="For idx value of dynamic selector" DisplayName="Calculate adjusted row index" sap:VirtualizedContainerService.HintSize="505.6,101.6" sap2010:WorkflowViewState.IdRef="Assign_29">
+                    <Assign sap2010:Annotation.AnnotationText="For idx value of dynamic selector" DisplayName="Calculate adjusted row index" sap:VirtualizedContainerService.HintSize="382,101.6" sap2010:WorkflowViewState.IdRef="Assign_29">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[strRowIndexAdjusted]</OutArgument>
                       </Assign.To>
@@ -2886,7 +2886,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
-                    <TryCatch DisplayName="Try Catch - get outlet" sap:VirtualizedContainerService.HintSize="505.6,851.6" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                    <TryCatch DisplayName="Try Catch - get outlet" sap:VirtualizedContainerService.HintSize="453.6,293.2" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -2945,7 +2945,7 @@
                         </Sequence>
                       </TryCatch.Try>
                       <TryCatch.Catches>
-                        <Catch x:TypeArguments="uue:NodeNotFoundException" sap:VirtualizedContainerService.HintSize="471.6,23.6" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                        <Catch x:TypeArguments="uue:NodeNotFoundException" sap:VirtualizedContainerService.HintSize="419.6,23.6" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -3296,7 +3296,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Releases" sap:VirtualizedContainerService.HintSize="581.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_40">
+            <Sequence DisplayName="Releases" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_40">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtDischargeTypes" />
               </Sequence.Variables>
@@ -3348,7 +3348,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <ui:BuildDataTable DataTable="[out_dtReleases]" DisplayName="Init releases table" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NGR&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ActivityDescription&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;RegulatedActivitySubClass&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TreatmentTypes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;FlowCode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+              <ui:BuildDataTable DataTable="[out_dtReleases]" DisplayName="Init releases table" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NGR&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ActivityDescription&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;RegulatedActivitySubClass&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TreatmentTypes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;FlowCode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -3655,289 +3655,35 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Release details" sap:VirtualizedContainerService.HintSize="581.6,1800.4" sap2010:WorkflowViewState.IdRef="Sequence_32">
+            <Sequence DisplayName="Release details" sap:VirtualizedContainerService.HintSize="484,805.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtReleaseDetailsExtract" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Release Details'" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Release Details'" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/958e70993482cf0dfefc?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="196, 1376, 280, 65" DesignTimeScaleFactor="2.5" ElementType="Text" FriendlyName="'Release Details'" FullSelectorArgument="&lt;webctrl aaname='Release Details' class='itemName' parentid='content' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Release Details' class='itemName' parentid='content' tag='SPAN' type='' check:innerText='Release Details' /&gt;" Guid="30ef9c9d-ab75-4975-ae27-66914506f2c5" InformativeScreenshot="4e35174a10c68e07f148a0b08773cf0a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Responsibilities - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <ui:BuildDataTable DataTable="[out_dtReleaseDetails]" DisplayName="Init release details table" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ParameterCode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SeasonalityStartday&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SeasonalityStartMonth&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SeasonalityEndDay&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SeasonalityEndMonth&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;LimitValue&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CombinationType&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ComplianceStatisticCode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:BuildDataTable>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_8">
                 <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_87">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:MultipleAssign DisplayName="Reset row indices" sap:VirtualizedContainerService.HintSize="619.2,180.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
-                      <ui:MultipleAssign.AssignOperations>
-                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:Int32">[intRowIndex]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_35">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[strRowIndexAdjusted]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">
-                                <Literal x:TypeArguments="x:String" Value="" />
-                              </InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                        </scg:List>
-                      </ui:MultipleAssign.AssignOperations>
+                  <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_158">
+                    <ui:BuildDataTable DataTable="[out_dtReleaseDetails]" DisplayName="Init release details table" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ParameterCode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SeasonalityStartday&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SeasonalityStartMonth&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SeasonalityEndDay&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SeasonalityEndMonth&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;LimitValue&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CombinationType&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ComplianceStatisticCode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:MultipleAssign>
-                    <ui:InterruptibleDoWhile sap2010:Annotation.AnnotationText="Might seem excessive but table extraction doesn't seem to like this table." Condition="[boolRowsRemaining]" CurrentIndex="[intRowIndex]" DisplayName="Do While - release details rows remaining" sap:VirtualizedContainerService.HintSize="619.2,1646.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
-                      <ui:InterruptibleDoWhile.Body>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="585.2,1477.2" sap2010:WorkflowViewState.IdRef="Sequence_33">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap2010:Annotation.AnnotationText="For idx value of dynamic selector" DisplayName="Calculate adjusted row index" sap:VirtualizedContainerService.HintSize="551.2,101.6" sap2010:WorkflowViewState.IdRef="Assign_24">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[strRowIndexAdjusted]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">[(intRowIndex+2).ToString]</InArgument>
-                            </Assign.Value>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </Assign>
-                          <TryCatch DisplayName="Try Catch - get release details row" sap:VirtualizedContainerService.HintSize="551.2,1315.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-                            <TryCatch.Variables>
-                              <Variable x:TypeArguments="x:String" Name="strReleaseDetail" />
-                            </TryCatch.Variables>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <TryCatch.Try>
-                              <Sequence DisplayName="Get next available row and set rows remaining to true" sap:VirtualizedContainerService.HintSize="513.6,955.2" sap2010:WorkflowViewState.IdRef="Sequence_34">
-                                <Sequence.Variables>
-                                  <Variable x:TypeArguments="x:String" Name="strParamCode" />
-                                  <Variable x:TypeArguments="x:String" Name="strLimitValue" />
-                                  <Variable x:TypeArguments="s:String[]" Name="arrReleaseDetail" />
-                                  <Variable x:TypeArguments="x:String" Name="strComplianceStatCode" />
-                                  <Variable x:TypeArguments="x:String" Name="strStartDay" />
-                                  <Variable x:TypeArguments="x:String" Name="strStartMonth" />
-                                  <Variable x:TypeArguments="x:String" Name="strEndDay" />
-                                  <Variable x:TypeArguments="x:String" Name="strEndMonth" />
-                                  <Variable x:TypeArguments="x:String" Name="strComboType" />
-                                  <Variable x:TypeArguments="x:String" Name="strName" />
-                                </Sequence.Variables>
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <uix:NGetAttributeGeneric x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Higher timeout on first iteration to allow for page load. Subsequent timeout is v short as all rows load at once." Attribute="visibleInnerText" DisplayName="Get next release details row" sap:VirtualizedContainerService.HintSize="479.6,302.4" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_14" Result="[strReleaseDetail]" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Timeout="[if(intRowIndex=0,10,0.5)]" Version="V3">
-                                  <uix:NGetAttributeGeneric.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/2588804704978fcb7922?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="770, 1033, 2822, 49" DesignTimeScaleFactor="2.5" ElementType="Text" FriendlyName="'Select RowOutlet'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='grid' tag='DIV' visibleinnertext='Row Selection*Name*WQ Monitored.EffluentMonitoringPointId*Parameter Code*Parameter*Seasonality Start Day*Seasonality Start Month*Seasonality End Day*Seasonality End Month*Limit value*Compliance Statistic*' /&gt;&lt;webctrl aria-role='row' tag='DIV' idx='{0}' /&gt;&quot;, strRowIndexAdjusted)]" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='DIV' visibleinnertext='Row Selection*Name*WQ Monitored.EffluentMonitoringPointId*Parameter Code*Parameter*Seasonality Start Day*Seasonality Start Month*Seasonality End Day*Seasonality End Month*Limit value*Compliance Statistic*' /&gt;&lt;webctrl aria-role='row' tag='DIV' type='' class='row ' aaname='' check:text='Select RowOutlet 1 DET 0135Solids, Suspended at 105 C    100.00Maximum' /&gt;" Guid="81ad34e7-ba4d-4573-b71f-6bcc59e04435" InformativeScreenshot="aa1b5d74e0d7a7601b94636c87c79ae8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Release Details - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                  </uix:NGetAttributeGeneric.Target>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </uix:NGetAttributeGeneric>
-                                <Assign DisplayName="Set rows remaining" sap:VirtualizedContainerService.HintSize="479.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_23">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Boolean">[boolRowsRemaining]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                  </Assign.Value>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </Assign>
-                                <ui:MultipleAssign DisplayName="Extract relevant cells" sap:VirtualizedContainerService.HintSize="479.6,430.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
-                                  <ui:MultipleAssign.AssignOperations>
-                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
-                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
-                                        <ui:AssignOperation.To>
-                                          <OutArgument x:TypeArguments="s:String[]">[arrReleaseDetail]</OutArgument>
-                                        </ui:AssignOperation.To>
-                                        <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="s:String[]">[Regex.Split(strReleaseDetail,"(?m)^")]</InArgument>
-                                        </ui:AssignOperation.Value>
-                                      </ui:AssignOperation>
-                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_42">
-                                        <ui:AssignOperation.To>
-                                          <OutArgument x:TypeArguments="x:String">[strName]</OutArgument>
-                                        </ui:AssignOperation.To>
-                                        <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="x:String">[arrReleaseDetail(2).Trim]</InArgument>
-                                        </ui:AssignOperation.Value>
-                                      </ui:AssignOperation>
-                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_37">
-                                        <ui:AssignOperation.To>
-                                          <OutArgument x:TypeArguments="x:String">[strParamCode]</OutArgument>
-                                        </ui:AssignOperation.To>
-                                        <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="x:String">[arrReleaseDetail(4).Trim]</InArgument>
-                                        </ui:AssignOperation.Value>
-                                      </ui:AssignOperation>
-                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_36">
-                                        <ui:AssignOperation.To>
-                                          <OutArgument x:TypeArguments="x:String">[strStartDay]</OutArgument>
-                                        </ui:AssignOperation.To>
-                                        <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(arrReleaseDetail(6).Trim),"01",arrReleaseDetail(6).Trim)]</InArgument>
-                                        </ui:AssignOperation.Value>
-                                      </ui:AssignOperation>
-                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
-                                        <ui:AssignOperation.To>
-                                          <OutArgument x:TypeArguments="x:String">[strStartMonth]</OutArgument>
-                                        </ui:AssignOperation.To>
-                                        <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(arrReleaseDetail(7).Trim),"01",arrReleaseDetail(7).Trim)]</InArgument>
-                                        </ui:AssignOperation.Value>
-                                      </ui:AssignOperation>
-                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_39">
-                                        <ui:AssignOperation.To>
-                                          <OutArgument x:TypeArguments="x:String">[strEndDay]</OutArgument>
-                                        </ui:AssignOperation.To>
-                                        <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(arrReleaseDetail(8).Trim),"31",arrReleaseDetail(8).Trim)]</InArgument>
-                                        </ui:AssignOperation.Value>
-                                      </ui:AssignOperation>
-                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_40">
-                                        <ui:AssignOperation.To>
-                                          <OutArgument x:TypeArguments="x:String">[strEndMonth]</OutArgument>
-                                        </ui:AssignOperation.To>
-                                        <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(arrReleaseDetail(9).Trim),"12",arrReleaseDetail(9).Trim)]</InArgument>
-                                        </ui:AssignOperation.Value>
-                                      </ui:AssignOperation>
-                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
-                                        <ui:AssignOperation.To>
-                                          <OutArgument x:TypeArguments="x:String">[strLimitValue]</OutArgument>
-                                        </ui:AssignOperation.To>
-                                        <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="x:String">[arrReleaseDetail(9).Trim]</InArgument>
-                                        </ui:AssignOperation.Value>
-                                      </ui:AssignOperation>
-                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
-                                        <ui:AssignOperation.To>
-                                          <OutArgument x:TypeArguments="x:String">[strComplianceStatCode]</OutArgument>
-                                        </ui:AssignOperation.To>
-                                        <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="x:String">[arrReleaseDetail(11).Trim]</InArgument>
-                                        </ui:AssignOperation.Value>
-                                      </ui:AssignOperation>
-                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_41">
-                                        <ui:AssignOperation.To>
-                                          <OutArgument x:TypeArguments="x:String">[strComboType]</OutArgument>
-                                        </ui:AssignOperation.To>
-                                        <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="x:String">[arrReleaseDetail(12).Trim]</InArgument>
-                                        </ui:AssignOperation.Value>
-                                      </ui:AssignOperation>
-                                    </scg:List>
-                                  </ui:MultipleAssign.AssignOperations>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </ui:MultipleAssign>
-                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{strName,strParamCode,strStartDay,strStartMonth,strEndDay,strEndMonth,strLimitValue,strComplianceStatCode,strComboType}]" DataTable="[out_dtReleaseDetails]" DisplayName="Add Data Row to release details table" sap:VirtualizedContainerService.HintSize="479.6,48" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
-                              </Sequence>
-                            </TryCatch.Try>
-                            <TryCatch.Catches>
-                              <Catch x:TypeArguments="uue:NodeNotFoundException" sap:VirtualizedContainerService.HintSize="517.2,23.6" sap2010:WorkflowViewState.IdRef="Catch`1_3">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ActivityAction x:TypeArguments="uue:NodeNotFoundException">
-                                  <ActivityAction.Argument>
-                                    <DelegateInArgument x:TypeArguments="uue:NodeNotFoundException" Name="exception" />
-                                  </ActivityAction.Argument>
-                                  <Sequence DisplayName="No release details rows remaining" sap:VirtualizedContainerService.HintSize="416,57.6" sap2010:WorkflowViewState.IdRef="Sequence_35">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage DisplayName="Log Message - no release details rows remaining" sap:VirtualizedContainerService.HintSize="434,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;No rows remaining in Release Details table. &quot;+out_dtReleaseDetails.RowCount.ToString+&quot; rows extracted.&quot;]" />
-                                    <Assign DisplayName="Set no rows remaining" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_25">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Boolean">[boolRowsRemaining]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                  </Sequence>
-                                </ActivityAction>
-                              </Catch>
-                            </TryCatch.Catches>
-                          </TryCatch>
-                        </Sequence>
-                      </ui:InterruptibleDoWhile.Body>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                    </ui:InterruptibleDoWhile>
+                    </ui:BuildDataTable>
                   </Sequence>
                 </ui:CommentOut.Body>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Right click table" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Right" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Right click table" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Right" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/2588804704978fcb7922?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="826, 972, 2706, 1139" DesignTimeScaleFactor="2.5" FriendlyName="'Row SelectionName WQ'" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='DIV' visibleinnertext='*Name*WQ Monitored.EffluentMonitoringPointId*' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='DIV' visibleinnertext='*Name*WQ Monitored.EffluentMonitoringPointId*' type='' class='interactive-grid innerContainer' aaname='                                                                                                ' check:text='Row SelectionName WQ Monitored.EffluentMonitoringPointId Parameter Code Parameter Seasonality Start' /&gt;" Guid="b16cddba-5b3e-414b-b655-6f4f82a0219b" InformativeScreenshot="7305caa1fe45752687e621952c1ed35c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Release Details - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
@@ -3947,7 +3693,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Show as a table'" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Show as a table'" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/2588804704978fcb7922?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="1763, 1536, 206, 40" DesignTimeScaleFactor="2.5" ElementType="Text" FriendlyName="'Show as a table'" FullSelectorArgument="&lt;webctrl visibleInnerText='Show as a table' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='7' tag='SPAN' type='' class='' aaname='Show as a table' check:innerText='Show as a table' /&gt;" Guid="73a11f64-9fa2-4a59-b394-b516a22b6dab" ImageBase64="" InformativeScreenshot="52a9beed7f524761c81b365d2c4754c4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Release Details - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
@@ -3957,7 +3703,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtReleaseDetailsExtract]" DisplayName="Extract release details table unformatted" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='ReleaseDetails'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="NExtractData_6" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
+              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtReleaseDetailsExtract]" DisplayName="Extract release details table unformatted" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='ReleaseDetails'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="NExtractData_6" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
                 <uix:NExtractData.Target>
                   <uix:TargetAnchorable DesignTimeRectangle="512, 1557, 2813, 135" DesignTimeScaleFactor="2.5" FriendlyName="'Outlet 1,'" FullSelectorArgument="&lt;html app='msedge.exe' title='WIMS ReKey Report v0.4 prd - Power BI' /&gt;&lt;webctrl aria-role='grid' tag='DIV' visibleinnertext='Name, WQ Monitored.EffluentMonitoringPointId*' /&gt;&lt;webctrl aria-role='presentation' tag='DIV' parentclass='mid-viewport' /&gt;" Guid="d544aec2-7f5d-48e2-8183-9799010bee2b" InformativeScreenshot="38c697065bcacb5f5c1f4c6e9ca6dfea.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                 </uix:NExtractData.Target>
@@ -3967,7 +3713,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NExtractData>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Back to report'" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Back to report'" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/2588804704978fcb7922?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="527, 601, 272, 90" DesignTimeScaleFactor="2.5" ElementType="Text" FriendlyName="'Back to report'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='button' visibleinnertext='Back to report' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' visibleinnertext='Back to report' class='ng-star-inserted' aaname='Back to report' check:text='Back to report' /&gt;" Guid="d26c056e-58a3-446d-9eac-3ffc0dd4f092" InformativeScreenshot="c5080253180b99945380ae69d171ecb9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
@@ -3977,150 +3723,177 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtReleaseDetailsExtract]" DisplayName="For Each Row in Data Table - release details extract unformatted" sap:VirtualizedContainerService.HintSize="547.6,994.4" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
-                <ui:ForEachRow.Body>
-                  <ActivityAction x:TypeArguments="sd:DataRow">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                    </ActivityAction.Argument>
-                    <Sequence DisplayName="Format cells into output table" sap:VirtualizedContainerService.HintSize="513.6,796" sap2010:WorkflowViewState.IdRef="Sequence_88">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="s:String[]" Name="arrReleaseDetail" />
-                        <Variable x:TypeArguments="x:String" Name="strName" />
-                        <Variable x:TypeArguments="x:String" Name="strParamCode" />
-                        <Variable x:TypeArguments="x:String" Name="strStartDay" />
-                        <Variable x:TypeArguments="x:String" Name="strStartMonth" />
-                        <Variable x:TypeArguments="x:String" Name="strEndDay" />
-                        <Variable x:TypeArguments="x:String" Name="strEndMonth" />
-                        <Variable x:TypeArguments="x:String" Name="strLimitValue" />
-                        <Variable x:TypeArguments="x:String" Name="strComplianceStatCode" />
-                        <Variable x:TypeArguments="x:String" Name="strComboType" />
-                        <Variable x:TypeArguments="x:Int32" Name="intOffset" />
-                      </Sequence.Variables>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:MultipleAssign sap2010:Annotation.AnnotationText="There is an annoying column that may have commas in it, throwing off the separation. We calculate an offset to account for that in extracting the subsequent columns (there are 12 expected columns)." DisplayName="Extract relevant cells" sap:VirtualizedContainerService.HintSize="479.6,522.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_32">
-                        <ui:MultipleAssign.AssignOperations>
-                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_81">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="s:String[]">[arrReleaseDetail]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="s:String[]">[Strings.Split(CurrentRow(0).ToString,",")]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_91">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:Int32">[intOffset]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:Int32">[arrReleaseDetail.Length-12]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_82">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:String">[strName]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">[arrReleaseDetail(0).Trim]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_83">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:String">[strParamCode]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">[arrReleaseDetail(2).Replace("DET","").Trim]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_84">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:String">[strStartDay]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(arrReleaseDetail(4+intOffset).Trim),"01",CInt(arrReleaseDetail(4+intOffset).Trim).ToString("D2"))]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_85">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:String">[strStartMonth]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(arrReleaseDetail(5+intOffset).Trim),"01",CInt(arrReleaseDetail(5+intOffset).Trim).ToString("D2"))]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_86">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:String">[strEndDay]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(arrReleaseDetail(6+intOffset).Trim),"31",CInt(arrReleaseDetail(6+intOffset).Trim).ToString("D2"))]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_87">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:String">[strEndMonth]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(arrReleaseDetail(7+intOffset).Trim),"12",CInt(arrReleaseDetail(7+intOffset).Trim).ToString("D2"))]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_88">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:String">[strLimitValue]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">[arrReleaseDetail(8+intOffset).Trim]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_90">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:String">[strComboType]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">[arrReleaseDetail(10+intOffset).Trim]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_89">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:String">[strComplianceStatCode]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">[arrReleaseDetail(11+intOffset).Trim]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                          </scg:List>
-                        </ui:MultipleAssign.AssignOperations>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:MultipleAssign>
-                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{strName,strParamCode,strStartDay,strStartMonth,strEndDay,strEndMonth,strLimitValue,strComboType,strComplianceStatCode}]" DataTable="[out_dtReleaseDetails]" DisplayName="Add Data Row to Release Details output" sap:VirtualizedContainerService.HintSize="479.6,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_7">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:AddDataRow>
-                    </Sequence>
-                  </ActivityAction>
-                </ui:ForEachRow.Body>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Format release details table - Invoke Workflow File (Process\Process Subflows\Format release details table.xaml)" sap:VirtualizedContainerService.HintSize="450,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Process Subflows\Format release details table.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtReleaseDetailsExtract">[dtReleaseDetailsExtract]</InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtReleaseDetails">[out_dtReleaseDetails]</OutArgument>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtLookups">[in_dtLookups]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-              </ui:ForEachRow>
-              <Sequence DisplayName="Numeric/Descriptive" sap:VirtualizedContainerService.HintSize="547.6,101.6" sap2010:WorkflowViewState.IdRef="Sequence_46">
+              </ui:InvokeWorkflowFile>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_159">
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtReleaseDetailsExtract]" DisplayName="For Each Row in Data Table - release details extract unformatted" sap:VirtualizedContainerService.HintSize="547.6,1025.6" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Format cells into output table" sap:VirtualizedContainerService.HintSize="513.6,827.2" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="s:String[]" Name="arrReleaseDetail" />
+                              <Variable x:TypeArguments="x:String" Name="strName" />
+                              <Variable x:TypeArguments="x:String" Name="strParamCode" />
+                              <Variable x:TypeArguments="x:String" Name="strStartDay" />
+                              <Variable x:TypeArguments="x:String" Name="strStartMonth" />
+                              <Variable x:TypeArguments="x:String" Name="strEndDay" />
+                              <Variable x:TypeArguments="x:String" Name="strEndMonth" />
+                              <Variable x:TypeArguments="x:String" Name="strLimitValue" />
+                              <Variable x:TypeArguments="x:String" Name="strComplianceStatCode" />
+                              <Variable x:TypeArguments="x:String" Name="strComboType" />
+                              <Variable x:TypeArguments="x:Int32" Name="intParameterOffset" />
+                              <Variable x:TypeArguments="x:Int32" Name="intLimitValueOffset" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:MultipleAssign sap2010:Annotation.AnnotationText="There is an annoying column that may have commas in it, throwing off the separation. We calculate an offset to account for that in extracting the subsequent columns (there are 12 expected columns)." DisplayName="Extract relevant cells" sap:VirtualizedContainerService.HintSize="479.6,554" sap2010:WorkflowViewState.IdRef="MultipleAssign_32">
+                              <ui:MultipleAssign.AssignOperations>
+                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_81">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="s:String[]">[arrReleaseDetail]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="s:String[]">[Strings.Split(CurrentRow(0).ToString,",")]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_91">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:Int32">[intParameterOffset]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:Int32">[arrReleaseDetail.Length-12]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_129">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:Int32">[intLimitValueOffset]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:Int32">[arrReleaseDetail.Length-12]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_82">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[strName]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[arrReleaseDetail(0).Trim]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_83">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[strParamCode]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[arrReleaseDetail(2).Replace("DET","").Trim]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_84">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[strStartDay]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(arrReleaseDetail(4+intParameterOffset).Trim),"01",CInt(arrReleaseDetail(4+intParameterOffset).Trim).ToString("D2"))]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_85">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[strStartMonth]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(arrReleaseDetail(5+intParameterOffset).Trim),"01",CInt(arrReleaseDetail(5+intParameterOffset).Trim).ToString("D2"))]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_86">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[strEndDay]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(arrReleaseDetail(6+intParameterOffset).Trim),"31",CInt(arrReleaseDetail(6+intParameterOffset).Trim).ToString("D2"))]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_87">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[strEndMonth]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[if(String.IsNullOrEmpty(arrReleaseDetail(7+intParameterOffset).Trim),"12",CInt(arrReleaseDetail(7+intParameterOffset).Trim).ToString("D2"))]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_88">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[strLimitValue]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[arrReleaseDetail(8+intParameterOffset).Trim]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_90">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[strComboType]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[arrReleaseDetail(10+intParameterOffset).Trim]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_89">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[strComplianceStatCode]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[arrReleaseDetail(11+intParameterOffset).Trim]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                </scg:List>
+                              </ui:MultipleAssign.AssignOperations>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:MultipleAssign>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{strName,strParamCode,strStartDay,strStartMonth,strEndDay,strEndMonth,strLimitValue,strComboType,strComplianceStatCode}]" DataTable="[out_dtReleaseDetails]" DisplayName="Add Data Row to Release Details output" sap:VirtualizedContainerService.HintSize="479.6,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:AddDataRow>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEachRow>
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+              <Sequence DisplayName="Numeric/Descriptive" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="Sequence_46">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="s:String[]" Name="arrParamCodes" />
                   <Variable x:TypeArguments="s:String[]" Name="arrLeftoverCodes" />
@@ -4132,7 +3905,7 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Get array of param codes from table" sap:VirtualizedContainerService.HintSize="502,114.4" sap2010:WorkflowViewState.IdRef="Assign_36">
+                <Assign DisplayName="Get array of param codes from table" sap:VirtualizedContainerService.HintSize="450,85.2" sap2010:WorkflowViewState.IdRef="Assign_36">
                   <Assign.To>
                     <OutArgument x:TypeArguments="s:String[]">[arrParamCodes]</OutArgument>
                   </Assign.To>
@@ -4145,7 +3918,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <Assign DisplayName="Store any codes not in storage table" sap:VirtualizedContainerService.HintSize="502,114.4" sap2010:WorkflowViewState.IdRef="Assign_38">
+                <Assign DisplayName="Store any codes not in storage table" sap:VirtualizedContainerService.HintSize="450,85.2" sap2010:WorkflowViewState.IdRef="Assign_38">
                   <Assign.To>
                     <OutArgument x:TypeArguments="s:String[]">[arrLeftoverCodes]</OutArgument>
                   </Assign.To>
@@ -4158,7 +3931,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <Assign sap2010:Annotation.AnnotationText="param code, limit val, compliant stat code&#xA;0085   40    1&#xA;6425   20    1&#xA;7444   0.5   3" DisplayName="Also check for specific combo" sap:VirtualizedContainerService.HintSize="502,193.2" sap2010:WorkflowViewState.IdRef="Assign_41">
+                <Assign sap2010:Annotation.AnnotationText="param code, limit val, compliant stat code&#xA;0085   40    1&#xA;6425   20    1&#xA;7444   0.5   3" DisplayName="Also check for specific combo" sap:VirtualizedContainerService.HintSize="450,179.2" sap2010:WorkflowViewState.IdRef="Assign_41">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[boolCombo]</OutArgument>
                   </Assign.To>
@@ -4175,7 +3948,7 @@ out_dtReleaseDetails.Select("[ParameterCode]='7444' AND [LimitValue]='0.5' AND [
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <If Condition="[arrLeftoverCodes.Count=0 or boolCombo]" DisplayName="All codes in table or combo?" sap:VirtualizedContainerService.HintSize="502,502.4" sap2010:WorkflowViewState.IdRef="If_10">
+                <If Condition="[arrLeftoverCodes.Count=0 or boolCombo]" DisplayName="All codes in table or combo?" sap:VirtualizedContainerService.HintSize="450,85.2" sap2010:WorkflowViewState.IdRef="If_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -4229,7 +4002,7 @@ out_dtReleaseDetails.Select("[ParameterCode]='7444' AND [LimitValue]='0.5' AND [
                     </Sequence>
                   </If.Else>
                 </If>
-                <If Condition="[out_dictPermitDetails(&quot;NumericOrDescriptive&quot;)=&quot;D&quot; and out_dtReleaseDetails.Select(&quot;ParameterCode='7444'&quot;).Count=0]" DisplayName="If descriptive and no 7444 included" sap:VirtualizedContainerService.HintSize="502,462" sap2010:WorkflowViewState.IdRef="If_15">
+                <If Condition="[out_dictPermitDetails(&quot;NumericOrDescriptive&quot;)=&quot;D&quot; and out_dtReleaseDetails.Select(&quot;ParameterCode='7444'&quot;).Count=0]" DisplayName="If descriptive and no 7444 included" sap:VirtualizedContainerService.HintSize="450,460.4" sap2010:WorkflowViewState.IdRef="If_15">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -4263,14 +4036,15 @@ out_dtReleaseDetails.Select("[ParameterCode]='7444' AND [LimitValue]='0.5' AND [
                   </If.Else>
                 </If>
               </Sequence>
-              <If Condition="[CBool(g_Config(&quot;PausePoint2&quot;))]" DisplayName="Pause Point 2 - release details?" sap:VirtualizedContainerService.HintSize="547.6,48" sap2010:WorkflowViewState.IdRef="If_23">
+              <If Condition="[CBool(g_Config(&quot;PausePoint2&quot;))]" DisplayName="Pause Point 2 - release details?" sap:VirtualizedContainerService.HintSize="450,49.6" sap2010:WorkflowViewState.IdRef="If_23">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,392" sap2010:WorkflowViewState.IdRef="Sequence_83">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,278.4" sap2010:WorkflowViewState.IdRef="Sequence_83">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="strOutletsPP" />
                       <Variable x:TypeArguments="x:String" Name="strReleaseDetailsPP" />
@@ -4278,10 +4052,10 @@ out_dtReleaseDetails.Select("[ParameterCode]='7444' AND [LimitValue]='0.5' AND [
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MultipleAssign DisplayName="Release details pause point string" sap:VirtualizedContainerService.HintSize="434,85.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_29">
+                    <ui:MultipleAssign DisplayName="Release details pause point string" sap:VirtualizedContainerService.HintSize="382,56.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_29">
                       <ui:MultipleAssign.AssignOperations>
                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_65">
@@ -4309,19 +4083,19 @@ out_dtReleaseDetails.Select("[ParameterCode]='7444' AND [LimitValue]='0.5' AND [
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:MultipleAssign>
-                    <InvokeMethod DisplayName="Stop timer - PP2 release details" sap:VirtualizedContainerService.HintSize="434,85.2" sap2010:WorkflowViewState.IdRef="InvokeMethod_20" MethodName="Stop">
+                    <InvokeMethod DisplayName="Stop timer - PP2 release details" sap:VirtualizedContainerService.HintSize="382,56.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_20" MethodName="Stop">
                       <InvokeMethod.TargetObject>
                         <InArgument x:TypeArguments="sd1:Stopwatch">[g_swProcessingTimer]</InArgument>
                       </InvokeMethod.TargetObject>
                     </InvokeMethod>
-                    <d:Editable_DataTable out_TableHTML="{x:Null}" DisplayName="PP2 - release details" sap:VirtualizedContainerService.HintSize="434,85.2" sap2010:WorkflowViewState.IdRef="Editable_DataTable_3" in_Body="[&quot;&lt;h1&gt;Release Details&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please clarify that the relevant information has been extracted correctly from the Release Details page of the report.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&quot;+strReleaseDetailsPP+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;If this is correct, please click 'Continue'. Otherwise, please click 'Stop' and process this transaction manually.&lt;/p&gt;&quot;]" in_CSS_Path="[Directory.GetCurrentDirectory + &quot;\Assets\Generic\Editable Standard Template.css&quot;]" in_FormHTMLPath="[Directory.GetCurrentDirectory + &quot;\Assets\Generic\FormRender.html&quot;]" in_FullReadOnly="True" in_ShowForm="True" in_TemplatePath="[Directory.GetCurrentDirectory + &quot;\Assets\Generic\FormCreatorTemplate.html&quot;]" in_WidthHeight="[{1200,700}]" io_Table="[out_dtReleaseDetails]">
+                    <d:Editable_DataTable out_TableHTML="{x:Null}" DisplayName="PP2 - release details" sap:VirtualizedContainerService.HintSize="382,56.8" sap2010:WorkflowViewState.IdRef="Editable_DataTable_3" in_Body="[&quot;&lt;h1&gt;Release Details&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please clarify that the relevant information has been extracted correctly from the Release Details page of the report.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&quot;+strReleaseDetailsPP+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;If this is correct, please click 'Continue'. Otherwise, please click 'Stop' and process this transaction manually.&lt;/p&gt;&quot;]" in_CSS_Path="[Directory.GetCurrentDirectory + &quot;\Assets\Generic\Editable Standard Template.css&quot;]" in_FormHTMLPath="[Directory.GetCurrentDirectory + &quot;\Assets\Generic\FormRender.html&quot;]" in_FullReadOnly="True" in_ShowForm="True" in_TemplatePath="[Directory.GetCurrentDirectory + &quot;\Assets\Generic\FormCreatorTemplate.html&quot;]" in_WidthHeight="[{1200,700}]" io_Table="[out_dtReleaseDetails]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </d:Editable_DataTable>
-                    <InvokeMethod DisplayName="Start timer - PP2 release details" sap:VirtualizedContainerService.HintSize="434,76.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_21" MethodName="Start">
+                    <InvokeMethod DisplayName="Start timer - PP2 release details" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="InvokeMethod_21" MethodName="Start">
                       <InvokeMethod.TargetObject>
                         <InArgument x:TypeArguments="sd1:Stopwatch">[g_swProcessingTimer]</InArgument>
                       </InvokeMethod.TargetObject>
@@ -4339,7 +4113,7 @@ out_dtReleaseDetails.Select("[ParameterCode]='7444' AND [LimitValue]='0.5' AND [
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="UWW Release Details" sap:VirtualizedContainerService.HintSize="581.6,49.6" sap2010:WorkflowViewState.IdRef="Sequence_45">
+            <Sequence DisplayName="UWW Release Details" sap:VirtualizedContainerService.HintSize="484,49.6" sap2010:WorkflowViewState.IdRef="Sequence_45">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="boolRowsPresent" />
               </Sequence.Variables>
@@ -4381,7 +4155,7 @@ out_dtReleaseDetails.Select("[ParameterCode]='7444' AND [LimitValue]='0.5' AND [
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
