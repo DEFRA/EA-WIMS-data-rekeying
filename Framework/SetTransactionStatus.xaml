@@ -246,7 +246,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed" sap:VirtualizedContainerService.HintSize="502,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_7" Value="[&quot;Completed&quot;]" />
-                                <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="502,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_9" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
+                                <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="502,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_9" Value="[Now]" />
                                 <If Condition="[g_TransactionItem(&quot;UWWTR_Permit?&quot;).ToString=&quot;Y&quot;]" DisplayName="If UWWTR_Permit? = Y" sap:VirtualizedContainerService.HintSize="502,499.6" sap2010:WorkflowViewState.IdRef="If_12">
                                   <If.Then>
                                     <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,246.8" sap2010:WorkflowViewState.IdRef="Sequence_50">
@@ -448,7 +448,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed (invalid)" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[&quot;Invalid&quot;]" />
                                     <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;E&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - exception reason" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[in_BusinessException.Message]" />
-                                    <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
+                                    <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[Now]" />
                                   </Sequence>
                                 </ActivityAction>
                               </ueab:ExcelApplicationCard.Body>
@@ -601,7 +601,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;D&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - completed (invalid)" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_4" Value="[&quot;Incomplete&quot;]" />
                                     <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;E&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - exception reason" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteCellX_5" Value="[&quot;System Exception - clear fields to retry&quot;]" />
-                                    <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_6" Value="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
+                                    <ueab:WriteCellX Cell="[Excel.Sheet(g_Config(&quot;WorklistSheetName&quot;).ToString).Cell(&quot;J&quot;+g_TransactionItem(&quot;rowID&quot;).ToString)]" DisplayName="Write Cell - actioned date" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteCellX_6" Value="[Now]" />
                                   </Sequence>
                                 </ActivityAction>
                               </ueab:ExcelApplicationCard.Body>

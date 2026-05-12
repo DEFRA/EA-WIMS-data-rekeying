@@ -152,7 +152,7 @@
                 <OutArgument x:TypeArguments="x:Object">[g_Config("IsDev")]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:Object">[False]</InArgument>
+                <InArgument x:TypeArguments="x:Object">[True]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>
@@ -171,8 +171,8 @@
           <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolConfidential">True</InArgument>
           <InArgument x:TypeArguments="s:String[]" x:Key="in_arrAddress">[{"line 1","line 2","line 3","line 4","line 5"}]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_strPostcode">AA11 1AA</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strAreaCode">Not Mapped</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strSubAreaCode">Not Mapped</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strAreaCode">Z</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strSubAreaCode">99</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_strLocalAuthorityCode">AA</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_strGridReference">SP0000100001</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_strRegion">Midlands</InArgument>

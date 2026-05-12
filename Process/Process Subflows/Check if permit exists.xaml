@@ -119,19 +119,19 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Check if permit exists" sap:VirtualizedContainerService.HintSize="1451.6000000000001,2776.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Check if permit exists" sap:VirtualizedContainerService.HintSize="1451.6000000000001,2740" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Check if permit exists" sap:VirtualizedContainerService.HintSize="518,2753.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="8724687f-189a-496c-964e-3bf5636dea45" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Check if permit exists" sap:VirtualizedContainerService.HintSize="518,2716.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="8724687f-189a-496c-964e-3bf5636dea45" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Search permit number" sap:VirtualizedContainerService.HintSize="484,2592" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Search permit number" sap:VirtualizedContainerService.HintSize="484,2555.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strRecordCount" />
               <Variable x:TypeArguments="x:Int32" Name="intRecordCount" />
@@ -231,7 +231,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Throw DisplayName="Throw BRE - record exists" Exception="[new BusinessRuleException(strRecordCount+&quot; records returned for permit number &quot;+in_strPermitNumber)]" sap:VirtualizedContainerService.HintSize="382,114.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  <Throw DisplayName="Throw BRE - record exists" Exception="[new BusinessRuleException(intRecordCount.ToString+&quot; records returned for permit number &quot;+in_strPermitNumber)]" sap:VirtualizedContainerService.HintSize="382,114.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -254,7 +254,7 @@
                 <uix:TargetAnchorable DesignTimeRectangle="44, 404, 58, 58" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Close the'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Close the current screen.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Close the current screen.' role='push button' check:text='Close the current screen.' /&gt;" Guid="118a1e57-d67d-48cf-9a42-a96306ce81ec" InformativeScreenshot="f0d019d4865f50775bd991629e347e73.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press escape to Home Page" sap:VirtualizedContainerService.HintSize="450,260.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="WindowMessages" ScopeIdentifier="8724687f-189a-496c-964e-3bf5636dea45" Shortcuts="[d(hk)][k(Esc)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press escape to Home Page" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="WindowMessages" ScopeIdentifier="8724687f-189a-496c-964e-3bf5636dea45" Shortcuts="[d(hk)][k(Esc)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>

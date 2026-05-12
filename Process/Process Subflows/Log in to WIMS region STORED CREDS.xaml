@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Log_in_to_WIMS_region" this:Log_in_to_WIMS_region.in_strRegion="Midlands" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:d="clr-namespace:DRACOE_Credentials_64;assembly=DRACOE.Credentials.64" xmlns:d1="clr-namespace:DRACOE_PopUps_64;assembly=DRACOE.PopUps.64" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/credentials" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System.Private.CoreLib" xmlns:sn="clr-namespace:System.Net;assembly=System.Net.Primitives" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Log_in_to_WIMS_region" this:Log_in_to_WIMS_region.in_strRegion="Midlands" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:d="clr-namespace:DRACOE_PopUps_64;assembly=DRACOE.PopUps.64" xmlns:d1="clr-namespace:DRACOE_Credentials_64;assembly=DRACOE.Credentials.64" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/credentials" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System.Private.CoreLib" xmlns:sn="clr-namespace:System.Net;assembly=System.Net.Primitives" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_strRegion" Type="InArgument(x:String)" />
   </x:Members>
@@ -149,7 +149,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Log_in_to_WIMS_region" sap:VirtualizedContainerService.HintSize="1451.6000000000001,8483.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Log_in_to_WIMS_region" sap:VirtualizedContainerService.HintSize="1451.6000000000001,10380.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strRegionSuffix" />
       <Variable x:TypeArguments="x:String" Name="strURL" />
@@ -194,7 +194,7 @@
       <Switch.Default>
         <Throw DisplayName="Throw BRE - unrecognised region" Exception="[new BusinessRuleException(&quot;Region unrecognised for login: &quot;+in_strRegion)]" sap:VirtualizedContainerService.HintSize="334,91.2" sap2010:WorkflowViewState.IdRef="Throw_2" />
       </Switch.Default>
-      <Assign x:Key="Midlands" DisplayName="Midlands suffix" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign x:Key="Midlands" DisplayName="Midlands suffix" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strRegionSuffix]</OutArgument>
         </Assign.To>
@@ -202,7 +202,7 @@
           <InArgument x:TypeArguments="x:String">MD</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign x:Key="Anglian" DisplayName="Anglian suffix" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign x:Key="Anglian" DisplayName="Anglian suffix" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strRegionSuffix]</OutArgument>
         </Assign.To>
@@ -210,7 +210,7 @@
           <InArgument x:TypeArguments="x:String">AN</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign x:Key="South West" DisplayName="South west suffix" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign x:Key="South West" DisplayName="South west suffix" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strRegionSuffix]</OutArgument>
         </Assign.To>
@@ -218,7 +218,7 @@
           <InArgument x:TypeArguments="x:String">SW</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign x:Key="Southern" DisplayName="Southern suffix" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign x:Key="Southern" DisplayName="Southern suffix" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strRegionSuffix]</OutArgument>
         </Assign.To>
@@ -226,7 +226,7 @@
           <InArgument x:TypeArguments="x:String">SO</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign x:Key="Thames" DisplayName="Thames suffix" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign x:Key="Thames" DisplayName="Thames suffix" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_6">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strRegionSuffix]</OutArgument>
         </Assign.To>
@@ -234,7 +234,7 @@
           <InArgument x:TypeArguments="x:String">TH</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign x:Key="North East" DisplayName="North East suffix" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign x:Key="North East" DisplayName="North East suffix" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_7">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strRegionSuffix]</OutArgument>
         </Assign.To>
@@ -339,7 +339,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <If Condition="[boolCloseExistingWIMS]" DisplayName="Close existing WIMS browser?" sap:VirtualizedContainerService.HintSize="1210,696.4" sap2010:WorkflowViewState.IdRef="If_5">
+    <If Condition="[boolCloseExistingWIMS]" DisplayName="Close existing WIMS browser?" sap:VirtualizedContainerService.HintSize="1210,1248.8" sap2010:WorkflowViewState.IdRef="If_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -347,18 +347,78 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,434.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="490,987.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message - closing WIMS" sap:VirtualizedContainerService.HintSize="382,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Closing other WIMS region window&quot;]" />
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Close WIMS - Invoke Workflow File (Close WIMS.xaml)" sap:VirtualizedContainerService.HintSize="382,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\Process Subflows\Close WIMS.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <scg:Dictionary x:TypeArguments="x:String, Argument" />
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
+          <ui:LogMessage DisplayName="Log Message - closing WIMS" sap:VirtualizedContainerService.HintSize="456,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Closing other WIMS region window&quot;]" />
+          <TryCatch DisplayName="Try Catch - close WIMS" sap:VirtualizedContainerService.HintSize="456,751.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch.Try>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Close WIMS - Invoke Workflow File (Close WIMS.xaml)" sap:VirtualizedContainerService.HintSize="334,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\Process Subflows\Close WIMS.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,562.8" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Warn user and kill edge" sap:VirtualizedContainerService.HintSize="416,491.6" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="382,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,825.6" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <InvokeMethod DisplayName="Stop timer - kill edge" sap:VirtualizedContainerService.HintSize="382,168.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_8" MethodName="Stop">
+                            <InvokeMethod.TargetObject>
+                              <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                            </InvokeMethod.TargetObject>
+                          </InvokeMethod>
+                          <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Kill edge for new WIMS window" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Exception.css&quot;]" IN_ErrorMessage="The stop button was pressed at prompt to Force-Close WIMS" IN_PopupMessage="&lt;p&gt;The robot has encountered a problem whilst trying to close unused WIMS region windows. Once you close this pop-up, the robot will force-close all Edge browser windows and continue processing. Please ensure that any important information is saved or easily returned to before dismissing this pop-up.&lt;/p&gt;" IN_PopupTitle="Force-closing WIMS" IN_WidthHeight="[{500,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_3" />
+                          <InvokeMethod DisplayName="Start timer - kill edge" sap:VirtualizedContainerService.HintSize="382,159.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_9" MethodName="Start">
+                            <InvokeMethod.TargetObject>
+                              <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                            </InvokeMethod.TargetObject>
+                          </InvokeMethod>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <ui:LogMessage DisplayName="Log message - failed to close WIMS" sap:VirtualizedContainerService.HintSize="382,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Warn" Message="[&quot;Failed to close WIMS gracefully. Killing Edge process then proceeding. Exception: &quot;+Exception.Message]" />
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="KillAllProcesses - Invoke Workflow File (Framework\KillAllProcesses.xaml)" sap:VirtualizedContainerService.HintSize="382,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
         </Sequence>
       </If.Then>
       <If.Else>
@@ -371,9 +431,9 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[boolOpenNewWIMS]" DisplayName="If new WIMS instance required" sap:VirtualizedContainerService.HintSize="1210,6196.4" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[boolOpenNewWIMS]" DisplayName="If new WIMS instance required" sap:VirtualizedContainerService.HintSize="1210,7541.6" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1176,5638.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1176,6984" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -381,13 +441,13 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message - opening WIMS" sap:VirtualizedContainerService.HintSize="1142,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Opening WIMS - &quot;+in_strRegion]" />
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge - open WIMS region" sap:VirtualizedContainerService.HintSize="1142,5403.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" OutUiElement="[g_browserWIMS]" ScopeGuid="5c7d9a5f-ef06-4b2b-9fee-c24a56f22191" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge - open WIMS region" sap:VirtualizedContainerService.HintSize="1142,6748.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" OutUiElement="[g_browserWIMS]" ScopeGuid="5c7d9a5f-ef06-4b2b-9fee-c24a56f22191" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Attempt log in" sap:VirtualizedContainerService.HintSize="1108,5162" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                <Sequence DisplayName="Attempt log in" sap:VirtualizedContainerService.HintSize="1108,6507.2" sap2010:WorkflowViewState.IdRef="Sequence_17">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sn:NetworkCredential" Name="credsWIMS" />
                     <Variable x:TypeArguments="x:Boolean" Name="boolLogInSuccess" />
@@ -398,9 +458,9 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InterruptibleDoWhile sap2010:Annotation.AnnotationText="Max 3 attempts" Condition="[not boolLogInSuccess]" CurrentIndex="[intAttempts]" DisplayName="Do While - attempt log in" sap:VirtualizedContainerService.HintSize="1074,4671.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="3">
+                  <ui:InterruptibleDoWhile sap2010:Annotation.AnnotationText="Max 3 attempts" Condition="[not boolLogInSuccess]" CurrentIndex="[intAttempts]" DisplayName="Do While - attempt log in" sap:VirtualizedContainerService.HintSize="1074,5080.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="3">
                     <ui:InterruptibleDoWhile.Body>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1040,4493.2" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1040,4902.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -411,7 +471,7 @@
                             <InArgument x:TypeArguments="ui:UiElement">[g_browserWIMS]</InArgument>
                           </InvokeMethod.TargetObject>
                         </InvokeMethod>
-                        <d:Get_Credential DisplayName="Get WIMS credentials for region" sap:VirtualizedContainerService.HintSize="1006,280.4" IN_strRequestMessage="[&quot;Please enter your username and password for &quot;+in_strRegion+&quot; WIMS login. These credentials will be stored locally on your device and the robot will use them for log-in going forward.&quot;]" sap2010:WorkflowViewState.IdRef="Get_Credential_1" in_strCredentialName="[&quot;WIMScreds_&quot;+strRegionSuffix]" in_strRequestTitle="[&quot;Enter WIMS &quot;+in_strRegion+&quot; credentials.&quot;]" out_credNetworkCredential="[credsWIMS]" />
+                        <d1:Get_Credential DisplayName="Get WIMS credentials for region" sap:VirtualizedContainerService.HintSize="1006,280.4" IN_strRequestMessage="[&quot;Please enter your username and password for &quot;+in_strRegion+&quot; WIMS login. These credentials will be stored locally on your device and the robot will use them for log-in going forward.&quot;]" sap2010:WorkflowViewState.IdRef="Get_Credential_1" in_strCredentialName="[&quot;WIMScreds_&quot;+strRegionSuffix]" in_strRequestTitle="[&quot;Enter WIMS &quot;+in_strRegion+&quot; credentials.&quot;]" out_credNetworkCredential="[credsWIMS]" />
                         <If Condition="[intAttempts&lt;&gt;0]" DisplayName="If not first attempt" sap:VirtualizedContainerService.HintSize="1006,1012" sap2010:WorkflowViewState.IdRef="If_10">
                           <If.Then>
                             <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="546,750.4" sap2010:WorkflowViewState.IdRef="Sequence_30">
@@ -483,18 +543,32 @@
                             <uix:TargetAnchorable DesignTimeRectangle="556, 858, 510, 47" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'password text Password'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='Password' role='password text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='Password' role='password text' /&gt;" Guid="6c5cb7f2-2205-4647-8329-ee37a89651e6" InformativeScreenshot="dd799c3e478ad964cc5b8d59e0e7b9b5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSANP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NTypeInto.Target>
                         </uix:NTypeInto>
+                        <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press shift-tab back to Password" sap:VirtualizedContainerService.HintSize="1006,267.6" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="WindowMessages" ScopeIdentifier="5c7d9a5f-ef06-4b2b-9fee-c24a56f22191" Shortcuts="[d(hk)][d(shift)][k(Tab)][u(shift)][u(hk)]" Version="V3">
+                          <uix:NKeyboardShortcuts.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NKeyboardShortcuts.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NKeyboardShortcuts>
                         <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="1006,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5c7d9a5f-ef06-4b2b-9fee-c24a56f22191" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable DesignTimeRectangle="1049, 1005, 177, 83" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Login'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='Login' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='Login' role='push button' check:text='Login' /&gt;" Guid="62f31120-44ed-4a8a-8e39-c5727f4a7943" InformativeScreenshot="67e84aa99fb61e65c7325352dec7bd02.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSANP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NClick.Target>
                         </uix:NClick>
-                        <uix:NCheckState sap2010:Annotation.AnnotationText="This is an attempt to dismiss both &quot;invalid log-in&quot; and the nearly expired password warning." DisplayName="Check App State - pop-up" sap:VirtualizedContainerService.HintSize="1006,440.4" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="5c7d9a5f-ef06-4b2b-9fee-c24a56f22191" Timeout="3" Version="V3">
+                        <uix:NCheckState sap2010:Annotation.AnnotationText="This is an attempt to dismiss both &quot;invalid log-in&quot; and the nearly expired password warning." DisplayName="Check App State - pop-up" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="1006,582" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="5c7d9a5f-ef06-4b2b-9fee-c24a56f22191" Timeout="3" Version="V3">
                           <uix:NCheckState.IfExists>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Close pop-up" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5c7d9a5f-ef06-4b2b-9fee-c24a56f22191" Version="V3">
-                              <uix:NClick.Target>
-                                <uix:TargetAnchorable DesignTimeRectangle="2197, 1212, 16, 14" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'push button'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java cls='ToolBar' role='tool bar' /&gt;&lt;java role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java cls='ToolBar' role='tool bar' /&gt;&lt;java role='push button' /&gt;" Guid="07879f3c-bda9-4eff-9196-2478b5340297" InformativeScreenshot="5543b0622860b00709c67d6fb3e0063c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSANP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                              </uix:NClick.Target>
-                            </uix:NClick>
+                            <ui:BlockUserInput TimeoutMS="{x:Null}" BlockType="All" DisplayName="BlockUserInput - close pop-up" sap:VirtualizedContainerService.HintSize="435.6,286" sap2010:WorkflowViewState.IdRef="BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True">
+                              <ui:BlockUserInput.Body>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Close pop-up" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5c7d9a5f-ef06-4b2b-9fee-c24a56f22191" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable DesignTimeRectangle="2197, 1212, 16, 14" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'push button'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java cls='ToolBar' role='tool bar' /&gt;&lt;java role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java cls='ToolBar' role='tool bar' /&gt;&lt;java role='push button' /&gt;" Guid="07879f3c-bda9-4eff-9196-2478b5340297" InformativeScreenshot="5543b0622860b00709c67d6fb3e0063c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSANP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </ui:BlockUserInput.Body>
+                            </ui:BlockUserInput>
                           </uix:NCheckState.IfExists>
                           <uix:NCheckState.Target>
                             <uix:TargetAnchorable DesignTimeRectangle="1521, 1195, 698, 152" DesignTimeScaleFactor="1" FriendlyName="'Info invalid'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java cls='ToolBar' role='tool bar' /&gt;&lt;java role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Login' role='internal frame' /&gt;&lt;java name='Info*' role='internal frame' check:text='Info invalid user name or password - please try again' /&gt;" Guid="288c4145-d3ed-4404-ad0d-b7bca7ca63bb" InformativeScreenshot="5170f888a12472ee649639e4bcc4cc58.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSANP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -544,7 +618,7 @@
                                         <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                                       </InvokeMethod.TargetObject>
                                     </InvokeMethod>
-                                    <d1:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="User prompt - update credentials?" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed when attempting to log in to WIMS" IN_PopupMessage="[&quot;&lt;h1&gt;Log in failure&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Attempting to log in to WIMS &quot;+in_strRegion+&quot; has failed after &quot;+(intAttempts+1).ToString+&quot; attempts of a maximum 3.&lt;br&gt;&quot;+&#xA;&quot;If you would like the robot to update your stored credentials and retry, please click 'Continue'. Otherwise, please click 'Stop' and seek assistance.&lt;/p&gt;&quot;]" IN_PopupTitle="Log in failure" IN_WidthHeight="[{500,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_2" />
+                                    <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="User prompt - update credentials?" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed when attempting to log in to WIMS" IN_PopupMessage="[&quot;&lt;h1&gt;Log in failure&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Attempting to log in to WIMS &quot;+in_strRegion+&quot; has failed after &quot;+(intAttempts+1).ToString+&quot; attempts of a maximum 3.&lt;br&gt;&quot;+&#xA;&quot;If you would like the robot to update your stored credentials and retry, please click 'Continue'. Otherwise, please click 'Stop' and seek assistance.&lt;/p&gt;&quot;]" IN_PopupTitle="Log in failure" IN_WidthHeight="[{500,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_2" />
                                     <InvokeMethod DisplayName="Start timer - log in failure" sap:VirtualizedContainerService.HintSize="382,168.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_7" MethodName="Start">
                                       <InvokeMethod.TargetObject>
                                         <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
@@ -594,15 +668,37 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InterruptibleDoWhile>
-                  <If Condition="[not boolLogInSuccess]" DisplayName="If log in unsuccessful after 3 attempts" sap:VirtualizedContainerService.HintSize="1074,428.8" sap2010:WorkflowViewState.IdRef="If_7">
+                  <If Condition="[not boolLogInSuccess]" DisplayName="If log in unsuccessful after 3 attempts" sap:VirtualizedContainerService.HintSize="1074,1364.8" sap2010:WorkflowViewState.IdRef="If_7">
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="485.6,1110.4" sap2010:WorkflowViewState.IdRef="Sequence_21">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Throw DisplayName="Throw BRE - log in failed" Exception="[new BusinessRuleException(&quot;Log in prompt still present after maximum attempted log ins. User should ensure they click 'Login' before dismissing the robot pop-up.&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="451.6,284.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw DisplayName="Throw BRE - log in failed" Exception="[new BusinessRuleException(&quot;Log in prompt still present after maximum attempted log ins. User should ensure they click 'Login' before dismissing the robot pop-up.&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                        </ui:CommentOut>
+                        <InvokeMethod DisplayName="Stop timer - log in failure max attempts" sap:VirtualizedContainerService.HintSize="451.6,168.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_10" MethodName="Stop">
+                          <InvokeMethod.TargetObject>
+                            <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                          </InvokeMethod.TargetObject>
+                        </InvokeMethod>
+                        <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="User prompt - log in manually" sap:VirtualizedContainerService.HintSize="451.6,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at prompt to manually log in to WIMS" IN_PopupMessage="[&quot;&lt;h1&gt;Repeated log in failure&lt;/h1&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;Attempting automated log in to WIMS &quot;+in_strRegion+&quot; has failed after the maximum 3 attempts.&lt;br&gt;&quot;+&#xD;&#xA;&quot;To proceed, please manually log in to WIMS and then click 'Continue' on this pop-up. Otherwise, please click 'Stop' to end the robot's processing here.&lt;/p&gt;&quot;]" IN_PopupTitle="Log in failure" IN_WidthHeight="[{500,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_4" />
+                        <InvokeMethod DisplayName="Start timer - log in failure max attempts" sap:VirtualizedContainerService.HintSize="451.6,159.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_11" MethodName="Start">
+                          <InvokeMethod.TargetObject>
+                            <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                          </InvokeMethod.TargetObject>
+                        </InvokeMethod>
                       </Sequence>
                     </If.Then>
                     <If.Else>

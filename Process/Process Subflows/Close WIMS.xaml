@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Close_WIMS" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Close_WIMS_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Close_WIMS" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Close_WIMS_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -90,19 +90,19 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Close_WIMS" sap:VirtualizedContainerService.HintSize="1451.6000000000001,668.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Close_WIMS" sap:VirtualizedContainerService.HintSize="1451.6000000000001,780.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Parallel sap2010:Annotation.AnnotationText="Quirk of the Use App activity means that UiPath can't find the Leave Page pop-up when it's within the same scope. Hence, we attach a separate IE window.&#xA;If you do these sequentially, it takes around 16 seconds. Not sure why there's a long gap between leaving the Edge scope and moving to the IE scope but parallelism seems to solve the issue. &#xA;" DisplayName="Close WIMS tab and dismiss warning." sap:VirtualizedContainerService.HintSize="1042,645.6" sap2010:WorkflowViewState.IdRef="Parallel_2">
+    <Parallel sap2010:Annotation.AnnotationText="Quirk of the Use App activity means that UiPath can't find the Leave Page pop-up when it's within the same scope. Hence, we attach a separate IE window.&#xA;If you do these sequentially, it takes around 16 seconds. Not sure why there's a long gap between leaving the Edge scope and moving to the IE scope but parallelism seems to solve the issue. &#xA;" DisplayName="Close WIMS tab and dismiss warning." sap:VirtualizedContainerService.HintSize="1077.6,757.2" sap2010:WorkflowViewState.IdRef="Parallel_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard sap2010:Annotation.AnnotationText="Slightly unintuitively, the Close Window property is set to Never. I would normally set it to Always and not bother with the Close Tab activity but the pop-up throws that off (I think because it can't execute that until all activities inside the scope are executed, and the pop-up doesn't appear until an attempt has been made to close the browser)." AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - close WIMS" sap:VirtualizedContainerService.HintSize="474,498" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="995b4836-a5a5-41f3-93bb-a567b67f4858" Timeout="5" Version="V2">
+      <uix:NApplicationCard sap2010:Annotation.AnnotationText="Slightly unintuitively, the Close Window property is set to Never. I would normally set it to Always and not bother with the Close Tab activity but the pop-up throws that off (I think because it can't execute that until all activities inside the scope are executed, and the pop-up doesn't appear until an attempt has been made to close the browser)." AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - close WIMS" sap:VirtualizedContainerService.HintSize="474,626" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="995b4836-a5a5-41f3-93bb-a567b67f4858" Timeout="5" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -120,17 +120,21 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </uix:NApplicationCard>
-      <uix:NApplicationCard sap2010:Annotation.AnnotationText="Open Window property is set to Never on this, otherwise you end up with a new Edge tab." AttachMode="ByInstance" DisplayName="Use Application: Windows Internet Explorer" sap:VirtualizedContainerService.HintSize="474,498" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="18e5b487-adb0-498b-8f51-2fdcdbc73529" Timeout="5" Version="V2">
+      <uix:NApplicationCard sap2010:Annotation.AnnotationText="Open Window property is set to Never on this, otherwise you end up with a new Edge tab." AttachMode="ByInstance" DisplayName="Use Application: Windows Internet Explorer - click Leave dialog" sap:VirtualizedContainerService.HintSize="509.6,626" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="18e5b487-adb0-498b-8f51-2fdcdbc73529" Timeout="5" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Leave" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="18e5b487-adb0-498b-8f51-2fdcdbc73529" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="146, 404, 728, 74" DesignTimeScaleFactor="2.5" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd aaname='Windows Internet Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Leave this page' cls='Button' title='&amp;amp;Leave this page' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Windows Internet Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Leave this page' cls='Button' title='&amp;amp;Leave this page' check:text='unchecked' /&gt;" Guid="2924de8c-0093-4c4e-8efc-b7db55145729" InformativeScreenshot="4d911bba74de3fafa3682816937ff34c.png" ScopeSelectorArgument="&lt;wnd app='iexplore.exe' cls='#32770' title='Windows Internet Explorer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
+            <ui:BlockUserInput TimeoutMS="{x:Null}" BlockType="All" DisplayName="Block User Input - click leave" sap:VirtualizedContainerService.HintSize="435.6,286" sap2010:WorkflowViewState.IdRef="BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True">
+              <ui:BlockUserInput.Body>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Leave" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="18e5b487-adb0-498b-8f51-2fdcdbc73529" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="146, 404, 728, 74" DesignTimeScaleFactor="2.5" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd aaname='Windows Internet Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Leave this page' cls='Button' title='&amp;amp;Leave this page' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Windows Internet Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Leave this page' cls='Button' title='&amp;amp;Leave this page' check:text='unchecked' /&gt;" Guid="2924de8c-0093-4c4e-8efc-b7db55145729" InformativeScreenshot="4d911bba74de3fafa3682816937ff34c.png" ScopeSelectorArgument="&lt;wnd app='iexplore.exe' cls='#32770' title='Windows Internet Explorer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+              </ui:BlockUserInput.Body>
+            </ui:BlockUserInput>
           </ActivityAction>
         </uix:NApplicationCard.Body>
         <uix:NApplicationCard.TargetApp>

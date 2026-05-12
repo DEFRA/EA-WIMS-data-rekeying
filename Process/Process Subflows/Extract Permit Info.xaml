@@ -159,7 +159,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Extract_Permit_Info" sap:VirtualizedContainerService.HintSize="1451.6000000000001,1783.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extract_Permit_Info" sap:VirtualizedContainerService.HintSize="1032.8,2884.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtOrgAddressDetails" />
       <Variable x:TypeArguments="x:String" Name="strRegionPP" />
@@ -174,12 +174,12 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <InvokeMethod DisplayName="Bring PowerBI to foreground" sap:VirtualizedContainerService.HintSize="552,56.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="BringToForeground">
+    <InvokeMethod DisplayName="Bring PowerBI to foreground" sap:VirtualizedContainerService.HintSize="736,56.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="BringToForeground">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="ui:UiElement">[g_browserPowerBi]</InArgument>
       </InvokeMethod.TargetObject>
     </InvokeMethod>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - extract power bi info" sap:VirtualizedContainerService.HintSize="552,1622.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserPowerBi]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - extract power bi info" sap:VirtualizedContainerService.HintSize="736,2804.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserPowerBi]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -190,7 +190,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Extract power bi info" sap:VirtualizedContainerService.HintSize="518,1484.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Extract power bi info" sap:VirtualizedContainerService.HintSize="702,2643.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="boolRowsRemaining" />
               <Variable x:TypeArguments="x:Int32" Name="intRowIndex" />
@@ -202,14 +202,14 @@
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message - extracting report info" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Extracting report info for permit &quot;+g_TransactionItem(&quot;ReSP_ID&quot;).ToString]">
+            <ui:LogMessage DisplayName="Log Message - extracting report info" sap:VirtualizedContainerService.HintSize="668,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Extracting report info for permit &quot;+g_TransactionItem(&quot;ReSP_ID&quot;).ToString]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <Assign DisplayName="Initialise output dictionary" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Assign_21">
+            <Assign DisplayName="Initialise output dictionary" sap:VirtualizedContainerService.HintSize="668,56.8" sap2010:WorkflowViewState.IdRef="Assign_21">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[out_dictPermitDetails]</OutArgument>
               </Assign.To>
@@ -217,7 +217,7 @@
                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[new Dictionary(of String, String)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Sequence DisplayName="Summary page" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_27">
+            <Sequence DisplayName="Summary page" sap:VirtualizedContainerService.HintSize="668,56.8" sap2010:WorkflowViewState.IdRef="Sequence_27">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strRegion" />
               </Sequence.Variables>
@@ -514,7 +514,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Org Details" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_120">
+            <Sequence DisplayName="Org Details" sap:VirtualizedContainerService.HintSize="668,1215.6" sap2010:WorkflowViewState.IdRef="Sequence_120">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtOrgAddressDetailsFiltered" />
                 <Variable x:TypeArguments="sd:DataRow[]" Name="arrRegisteredAddresses" />
@@ -522,10 +522,10 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Organisation Details'" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Organisation Details'" sap:VirtualizedContainerService.HintSize="634,56.8" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/9cd0b313b1cb00b701c4?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="196, 676, 362, 65" DesignTimeScaleFactor="2.5" ElementType="Text" FriendlyName="'Organisation Details'" FullSelectorArgument="&lt;webctrl aaname='Organisation Details' class='itemName' parentid='content' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Organisation Details' class='itemName' parentid='content' tag='SPAN' type='' check:innerText='Organisation Details' /&gt;" Guid="4714107b-c181-4595-bc32-0a825685ef57" InformativeScreenshot="7b4a70a60bc6bb82ef0e6d0fbc2e47c7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
@@ -535,7 +535,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <Sequence DisplayName="Get top table" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="Sequence_123">
+              <Sequence DisplayName="Get top table" sap:VirtualizedContainerService.HintSize="634,56.8" sap2010:WorkflowViewState.IdRef="Sequence_123">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="sd:EnumerableRowCollection(sd:DataRow)" Name="rowsNonEmpty" />
                 </Sequence.Variables>
@@ -840,7 +840,7 @@
                   </If.Else>
                 </If>
               </Sequence>
-              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtOrgAddressDetails]" DisplayName="Extract Table Data - org details" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='customer name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='premise'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='address'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='address type'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='building number'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='visual-container' idx='11' /&gt;&lt;webctrl tag='transform' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='visual-modern' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='visual-container' idx='11' /&gt;&lt;webctrl tag='transform' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='visual-modern' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='visual-container' idx='11' /&gt;&lt;webctrl tag='transform' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='visual-modern' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='5' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='visual-container' idx='11' /&gt;&lt;webctrl tag='transform' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='visual-modern' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='6' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='visual-container' idx='11' /&gt;&lt;webctrl tag='transform' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='visual-modern' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='7' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column4' attr='fulltext'&gt;&lt;webctrl tag='visual-container' idx='11' /&gt;&lt;webctrl tag='transform' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='visual-modern' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="NExtractData_9" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
+              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtOrgAddressDetails]" DisplayName="Extract Table Data - org details" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='customer name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='premise'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='address'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='address type'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='building number'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='visual-container' idx='11' /&gt;&lt;webctrl tag='transform' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='visual-modern' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='visual-container' idx='11' /&gt;&lt;webctrl tag='transform' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='visual-modern' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='visual-container' idx='11' /&gt;&lt;webctrl tag='transform' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='visual-modern' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='5' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='visual-container' idx='11' /&gt;&lt;webctrl tag='transform' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='visual-modern' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='6' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='visual-container' idx='11' /&gt;&lt;webctrl tag='transform' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='visual-modern' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='7' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column4' attr='fulltext'&gt;&lt;webctrl tag='visual-container' idx='11' /&gt;&lt;webctrl tag='transform' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='visual-modern' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="634,56.8" sap2010:WorkflowViewState.IdRef="NExtractData_9" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
                 <uix:NExtractData.Target>
                   <uix:TargetAnchorable DesignTimeRectangle="661, 521, 0, 0" DesignTimeScaleFactor="2.5" FriendlyName="'Press Enter'" FullSelectorArgument="&lt;webctrl tag='VISUAL-CONTAINER-REPEAT' /&gt;" Guid="8e4604e9-5b7b-4a7f-aa85-be83b3b7034f" InformativeScreenshot="88e47d1bc61ee268d09f5cbd5be35cf6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Organisation Details - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NExtractData.Target>
@@ -850,7 +850,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NExtractData>
-              <Sequence DisplayName="Compare names" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="Sequence_122">
+              <Sequence DisplayName="Compare names" sap:VirtualizedContainerService.HintSize="634,56.8" sap2010:WorkflowViewState.IdRef="Sequence_122">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="s:String[]" Name="arrTopTableNames" />
                   <Variable x:TypeArguments="s:String[]" Name="arrBottomTableNames" />
@@ -930,7 +930,7 @@
                   </If.Else>
                 </If>
               </Sequence>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dtOrgDetails]" DisplayName="For Each Org" sap:VirtualizedContainerService.HintSize="450,56.8" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dtOrgDetails]" DisplayName="For Each Org" sap:VirtualizedContainerService.HintSize="634,845.2" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
@@ -944,7 +944,7 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           <av:Point x:Key="ShapeLocation">275,35</av:Point>
                           <av:Size x:Key="ShapeSize">50,50</av:Size>
                           <av:PointCollection x:Key="ConnectorLocation">300,85 300,105</av:PointCollection>
@@ -976,7 +976,7 @@
                                 <OutArgument x:TypeArguments="x:Object">[CurrentRow("Address")]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="x:Object">[Strings.Join({arrRegisteredAddresses(0)("building number").ToString,arrRegisteredAddresses(0)("premise").ToString,arrRegisteredAddresses(0)("address").ToString}.Where(function(x) not String.IsNullOrEmpty(x.Trim)).ToArray,",")]</InArgument>
+                                <InArgument x:TypeArguments="x:String">[Strings.Join({(arrRegisteredAddresses(0)("building number").ToString+" "+arrRegisteredAddresses(0)("premise").ToString).Trim,arrRegisteredAddresses(0)("address").ToString}.Where(function(x) not String.IsNullOrEmpty(x.Trim)).ToArray,",")]</InArgument>
                               </Assign.Value>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1022,19 +1022,19 @@
                                         <OutArgument x:TypeArguments="scg:List(x:String)">[listAddressSelection]</OutArgument>
                                       </ui:AssignOperation.To>
                                       <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="scg:List(x:String)">[dtAddressSelection.AsEnumerable.Select(function(x) x("building number").ToString+" | "+x("premise").ToString+" | "+x("address").ToString).ToList]</InArgument>
+                                        <InArgument x:TypeArguments="scg:List(x:String)">[dtAddressSelection.AsEnumerable.Select(function(x) (x("building number").ToString+" "+x("premise").ToString).Trim+" | "+x("address").ToString).ToList]</InArgument>
                                       </ui:AssignOperation.Value>
                                     </ui:AssignOperation>
                                   </scg:List>
                                 </ui:MultipleAssign.AssignOperations>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                     <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:MultipleAssign>
-                              <InvokeMethod DisplayName="Stop timer - select address" sap:VirtualizedContainerService.HintSize="479.6,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_39" MethodName="Stop">
+                              <InvokeMethod DisplayName="Stop timer - select address" sap:VirtualizedContainerService.HintSize="479.6,85.2" sap2010:WorkflowViewState.IdRef="InvokeMethod_39" MethodName="Stop">
                                 <InvokeMethod.TargetObject>
                                   <InArgument x:TypeArguments="sd1:Stopwatch">[g_swProcessingTimer]</InArgument>
                                 </InvokeMethod.TargetObject>
@@ -1044,7 +1044,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </InvokeMethod>
-                              <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" FormFieldsOutputData="{x:Null}" IconPath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="df5dfef4-0aa4-4e3b-bfe0-aa2b77595120" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[boolDismissed]" DisplayName="Select address" EnableAccessibility="False" FormHeight="800" FormSchema="%[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;{{data.PopupMessage}}&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;Select Address&quot;,&quot;optionsLabelPosition&quot;:&quot;right&quot;,&quot;description&quot;:&quot;Building Number | Premise | Address&quot;,&quot;inline&quot;:false,&quot;tableView&quot;:false,&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;1&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;selectAddress&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Container&quot;,&quot;customClass&quot;:&quot;box_continue&quot;,&quot;key&quot;:&quot;container1&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Stop&quot;,&quot;theme&quot;:&quot;danger&quot;,&quot;leftIcon&quot;:&quot;fa fa-close&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;no&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false},{&quot;label&quot;:&quot;Continue&quot;,&quot;theme&quot;:&quot;success&quot;,&quot;leftIcon&quot;:&quot;fa fa-check&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;continue&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false}]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;1642693326066&quot;,&quot;Name&quot;:&quot;Standard&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {\n                      font-family : Calibri !important;\n                    }table, .btn, .form-control {\n                      font-size : 20px !important;\n                     }h1 {\n                      font-size : 42px !important;\n                    }h2 {\n                      font-size : 36px !important;\n                    }h3 {\n                      font-size : 30px !important;\n                    }h4 {\n                      font-size : 24px !important;\n                    }h5 {\n                      font-size : 20px !important;\n                    }h6 {\n                      font-size : 18px !important;\n                    }body {\n      background:  #ffffff !important;\n      font-size : 20px !important;\n      font-family : Calibri !important;\n      color : #000000 !important\n    } .panel-default {\n                        background:   !important;\n                        border-color :   !important;\n                      }\n                 .panel-default &gt; .panel-heading {\n                        background-color:  !important;\n                        color : #000000 !important\n                      }.btn-primary {\n                          background:  #ffffff !important;\n                          border-color:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-primary:hover {\n                          background:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-default {\n                        background:   !important;\n                        border-color:   !important;\n                        color:   !important;\n                      } .btn-default:hover {\n                        background:   !important;\n                        color:   !important;\n                      } &quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:true,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="Select Address" FormWidth="600" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="479.6,175.2" sap2010:WorkflowViewState.IdRef="FormActivity_9" IsReadOnly="False" LocalCSSFilePath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[strButtonSelected]" StartAsMinimized="False">
+                              <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" FormFieldsOutputData="{x:Null}" IconPath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="df5dfef4-0aa4-4e3b-bfe0-aa2b77595120" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[boolDismissed]" DisplayName="Select address" EnableAccessibility="False" FormHeight="800" FormSchema="%[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;{{data.PopupMessage}}&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;Select Address&quot;,&quot;optionsLabelPosition&quot;:&quot;right&quot;,&quot;description&quot;:&quot;Building Number &amp; Premise | Address&quot;,&quot;inline&quot;:false,&quot;tableView&quot;:false,&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;1&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;selectAddress&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Container&quot;,&quot;customClass&quot;:&quot;box_continue&quot;,&quot;key&quot;:&quot;container1&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Stop&quot;,&quot;theme&quot;:&quot;danger&quot;,&quot;leftIcon&quot;:&quot;fa fa-close&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;no&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false},{&quot;label&quot;:&quot;Continue&quot;,&quot;theme&quot;:&quot;success&quot;,&quot;leftIcon&quot;:&quot;fa fa-check&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;continue&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false}]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;1642693326066&quot;,&quot;Name&quot;:&quot;Standard&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {\n                      font-family : Calibri !important;\n                    }table, .btn, .form-control {\n                      font-size : 20px !important;\n                     }h1 {\n                      font-size : 42px !important;\n                    }h2 {\n                      font-size : 36px !important;\n                    }h3 {\n                      font-size : 30px !important;\n                    }h4 {\n                      font-size : 24px !important;\n                    }h5 {\n                      font-size : 20px !important;\n                    }h6 {\n                      font-size : 18px !important;\n                    }body {\n      background:  #ffffff !important;\n      font-size : 20px !important;\n      font-family : Calibri !important;\n      color : #000000 !important\n    } .panel-default {\n                        background:   !important;\n                        border-color :   !important;\n                      }\n                 .panel-default &gt; .panel-heading {\n                        background-color:  !important;\n                        color : #000000 !important\n                      }.btn-primary {\n                          background:  #ffffff !important;\n                          border-color:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-primary:hover {\n                          background:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-default {\n                        background:   !important;\n                        border-color:   !important;\n                        color:   !important;\n                      } .btn-default:hover {\n                        background:   !important;\n                        color:   !important;\n                      } &quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:true,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="Select Address" FormWidth="600" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="479.6,175.2" sap2010:WorkflowViewState.IdRef="FormActivity_9" IsReadOnly="False" LocalCSSFilePath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[strButtonSelected]" StartAsMinimized="False">
                                 <ufa:FormActivity.Body>
                                   <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
                                 </ufa:FormActivity.Body>
@@ -1064,7 +1064,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ufa:FormActivity>
-                              <InvokeMethod DisplayName="Start timer - select address" sap:VirtualizedContainerService.HintSize="479.6,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_38" MethodName="Start">
+                              <InvokeMethod DisplayName="Start timer - select address" sap:VirtualizedContainerService.HintSize="479.6,85.2" sap2010:WorkflowViewState.IdRef="InvokeMethod_38" MethodName="Start">
                                 <InvokeMethod.TargetObject>
                                   <InArgument x:TypeArguments="sd1:Stopwatch">[g_swProcessingTimer]</InArgument>
                                 </InvokeMethod.TargetObject>
@@ -1074,7 +1074,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </InvokeMethod>
-                              <If Condition="[boolDismissed or strButtonSelected=&quot;no&quot;]" DisplayName="Form dismissed?" sap:VirtualizedContainerService.HintSize="479.6,56.8" sap2010:WorkflowViewState.IdRef="If_39">
+                              <If Condition="[boolDismissed or strButtonSelected=&quot;no&quot;]" DisplayName="Form dismissed?" sap:VirtualizedContainerService.HintSize="479.6,85.2" sap2010:WorkflowViewState.IdRef="If_39">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -1117,7 +1117,7 @@
                                 </Assign.Value>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                     <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -1151,7 +1151,7 @@
                                 <OutArgument x:TypeArguments="x:Object">[CurrentRow("Address")]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="x:Object">[Strings.Join({dtOrgAddressDetailsFiltered(0)("building number").ToString,dtOrgAddressDetailsFiltered(0)("premise").ToString,dtOrgAddressDetailsFiltered(0)("address").ToString}.Where(function(x) not String.IsNullOrEmpty(x.Trim)).ToArray,",")]</InArgument>
+                                <InArgument x:TypeArguments="x:String">[Strings.Join({(dtOrgAddressDetailsFiltered(0)("building number").ToString+" "+dtOrgAddressDetailsFiltered(0)("premise").ToString).Trim,dtOrgAddressDetailsFiltered(0)("address").ToString}.Where(function(x) not String.IsNullOrEmpty(x.Trim)).ToArray,",")]</InArgument>
                               </Assign.Value>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1226,11 +1226,11 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
-              <If Condition="[CBool(g_Config(&quot;PausePoint2&quot;))]" DisplayName="Pause Point 2? - org details" sap:VirtualizedContainerService.HintSize="450,188.8" sap2010:WorkflowViewState.IdRef="If_37">
+              <If Condition="[CBool(g_Config(&quot;PausePoint2&quot;))]" DisplayName="Pause Point 2? - org details" sap:VirtualizedContainerService.HintSize="634,49.6" sap2010:WorkflowViewState.IdRef="If_37">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -1308,7 +1308,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="668,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_5">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_107">
                   <Flowchart DisplayName="Org Details OLD" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Flowchart_2">
@@ -1953,7 +1953,7 @@
                 </Sequence>
               </ui:CommentOut.Body>
             </ui:CommentOut>
-            <Sequence DisplayName="Responsibilities" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
+            <Sequence DisplayName="Responsibilities" sap:VirtualizedContainerService.HintSize="668,56.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strRole" />
               </Sequence.Variables>
@@ -2046,7 +2046,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Maintain discharge sites" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <Sequence DisplayName="Maintain discharge sites" sap:VirtualizedContainerService.HintSize="668,56.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strGridRef" />
                 <Variable x:TypeArguments="x:String" Name="strConfidential" />
@@ -2477,7 +2477,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Create Permit" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
+            <Sequence DisplayName="Create Permit" sap:VirtualizedContainerService.HintSize="668,56.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strIssueDate" />
                 <Variable x:TypeArguments="x:String" Name="strEffectiveDate" />
@@ -2817,7 +2817,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Outlets" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
+            <Sequence DisplayName="Outlets" sap:VirtualizedContainerService.HintSize="668,56.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strOutlet" />
               </Sequence.Variables>
@@ -3296,7 +3296,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Releases" sap:VirtualizedContainerService.HintSize="484,56.8" sap2010:WorkflowViewState.IdRef="Sequence_40">
+            <Sequence DisplayName="Releases" sap:VirtualizedContainerService.HintSize="450,598" sap2010:WorkflowViewState.IdRef="Sequence_40">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtDischargeTypes" />
               </Sequence.Variables>
@@ -3655,7 +3655,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Release details" sap:VirtualizedContainerService.HintSize="484,805.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
+            <Sequence DisplayName="Release details" sap:VirtualizedContainerService.HintSize="668,805.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtReleaseDetailsExtract" />
               </Sequence.Variables>
@@ -4113,7 +4113,7 @@ out_dtReleaseDetails.Select("[ParameterCode]='7444' AND [LimitValue]='0.5' AND [
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="UWW Release Details" sap:VirtualizedContainerService.HintSize="484,49.6" sap2010:WorkflowViewState.IdRef="Sequence_45">
+            <Sequence DisplayName="UWW Release Details" sap:VirtualizedContainerService.HintSize="668,49.6" sap2010:WorkflowViewState.IdRef="Sequence_45">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="boolRowsPresent" />
               </Sequence.Variables>

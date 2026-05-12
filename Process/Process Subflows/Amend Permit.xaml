@@ -141,7 +141,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Amend_Permit" sap:VirtualizedContainerService.HintSize="1451.6000000000001,9730" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Amend_Permit" sap:VirtualizedContainerService.HintSize="1451.6000000000001,9772.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strOrgID" />
       <Variable x:TypeArguments="x:String" Name="strPartyID" />
@@ -152,13 +152,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - amend permit" sap:VirtualizedContainerService.HintSize="706,9706.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="829a254e-a7e2-47f8-8c6d-3166d72a1e97" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - amend permit" sap:VirtualizedContainerService.HintSize="706,9749.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="829a254e-a7e2-47f8-8c6d-3166d72a1e97" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Amend permit" sap:VirtualizedContainerService.HintSize="672,9545.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Amend permit" sap:VirtualizedContainerService.HintSize="672,9588" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="intOrgIndex" />
               <Variable x:TypeArguments="x:Boolean" Name="boolPartyRowFound" />
@@ -262,13 +262,13 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intOrgIndex]" DataTable="[in_dtOrgDetails]" DisplayName="For Each Org" sap:VirtualizedContainerService.HintSize="638,6834.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intOrgIndex]" DataTable="[in_dtOrgDetails]" DisplayName="For Each Org" sap:VirtualizedContainerService.HintSize="638,6875.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="604,6636.4" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="604,6677.2" sap2010:WorkflowViewState.IdRef="Sequence_35">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -465,18 +465,22 @@
                         <uix:TargetAnchorable DesignTimeRectangle="109, 404, 57, 58" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Save any'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Save any pending changes permanently in the database.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Save any pending changes permanently in the database.' role='push button' check:text='Save any pending changes permanently in the database.' /&gt;" Guid="a6636719-08b2-41f7-a011-8f449a01aaef" InformativeScreenshot="be2cc65cecf4c5fc0af948ec9fd7e3b0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK' - pick person" sap:VirtualizedContainerService.HintSize="570,190" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="829a254e-a7e2-47f8-8c6d-3166d72a1e97" Version="V3">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="1844, 1331, 82, 50" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'OK ALT O'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Message Please pick a person within*' role='internal frame' /&gt;&lt;java name='Please pick a person within*' role='option pane' /&gt;&lt;java name='OK ALT O' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Message Please pick a person within &amp;#xD;&amp;#xA;ZZ TEST IGNORE' role='internal frame' /&gt;&lt;java name='Please pick a person within &amp;#xD;&amp;#xA;ZZ TEST IGNORE' role='option pane' /&gt;&lt;java name='OK ALT O' role='push button' check:text='OK ALT O' /&gt;" Guid="3f17cd7b-8bdd-4e46-a66b-51948f317252" ImageBase64="" InformativeScreenshot="4d1f2725400dcb6e43c60b11f71dff5e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NClick.Target>
-                    </uix:NClick>
-                    <ui:RepeatNumberOfTimesX DisplayName="Repeat Number of Times - check all party rows for matching ID" sap:VirtualizedContainerService.HintSize="570,1378" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_6" NumberOfTimes="14" StartAt="1">
+                    <ui:BlockUserInput TimeoutMS="{x:Null}" BlockType="All" DisplayName="Block User Input - click pick person" sap:VirtualizedContainerService.HintSize="570,318" sap2010:WorkflowViewState.IdRef="BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True">
+                      <ui:BlockUserInput.Body>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK' - pick person" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_25" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="829a254e-a7e2-47f8-8c6d-3166d72a1e97" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="1844, 1331, 82, 50" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'OK ALT O'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Message Please pick a person within*' role='internal frame' /&gt;&lt;java name='Please pick a person within*' role='option pane' /&gt;&lt;java name='OK ALT O' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Message Please pick a person within &amp;#xD;&amp;#xA;ZZ TEST IGNORE' role='internal frame' /&gt;&lt;java name='Please pick a person within &amp;#xD;&amp;#xA;ZZ TEST IGNORE' role='option pane' /&gt;&lt;java name='OK ALT O' role='push button' check:text='OK ALT O' /&gt;" Guid="3f17cd7b-8bdd-4e46-a66b-51948f317252" ImageBase64="" InformativeScreenshot="4d1f2725400dcb6e43c60b11f71dff5e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </ui:BlockUserInput.Body>
+                    </ui:BlockUserInput>
+                    <ui:RepeatNumberOfTimesX DisplayName="Repeat Number of Times - check all party rows for matching ID" sap:VirtualizedContainerService.HintSize="570,1319.2" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_6" NumberOfTimes="14" StartAt="1">
                       <ui:RepeatNumberOfTimesX.Body>
                         <ActivityAction x:TypeArguments="x:Int32">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItem" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Scan through rows until matching party id found" sap:VirtualizedContainerService.HintSize="536,1178.4" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                          <Sequence DisplayName="Scan through rows until matching party id found" sap:VirtualizedContainerService.HintSize="536,1119.6" sap2010:WorkflowViewState.IdRef="Sequence_25">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="strRowPartyID" />
                               <Variable x:TypeArguments="x:String" Default="1" Name="strRow" />
@@ -500,7 +504,7 @@
                                 <uix:TargetAnchorable DesignTimeRectangle="72, 689, 189, 47" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'text Enter'" FullSelectorArgument="[string.Format(&quot;&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='selparty' role='internal frame' /&gt;&lt;java name='Enter value for : RESP_PARTY_ID' role='text' idx='{0}' /&gt;&quot;, strRow)]" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='selparty' role='internal frame' /&gt;&lt;java name='Enter value for : RESP_PARTY_ID' role='text' /&gt;" Guid="8464b04a-eebb-4a19-81d1-d904738dea0a" ImageBase64="" InformativeScreenshot="5db5b4164c7f54c4ba601bbc14ef02b4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NGetText.Target>
                             </uix:NGetText>
-                            <If Condition="[strCurrentPartyID.Trim=strPartyID]" DisplayName="If current row matches input party id" sap:VirtualizedContainerService.HintSize="502,477.2" sap2010:WorkflowViewState.IdRef="If_11">
+                            <If Condition="[strCurrentPartyID.Trim=strPartyID]" DisplayName="If current row matches input party id" sap:VirtualizedContainerService.HintSize="502,418.4" sap2010:WorkflowViewState.IdRef="If_11">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -526,7 +530,7 @@
                                 </Sequence>
                               </If.Then>
                               <If.Else>
-                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,83.6" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -585,7 +589,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[CBool(g_Config(&quot;PausePoint11&quot;))]" DisplayName="Pause Point 11? - party id row selection" sap:VirtualizedContainerService.HintSize="570,85.2" sap2010:WorkflowViewState.IdRef="If_12">
+                    <If Condition="[CBool(g_Config(&quot;PausePoint11&quot;))]" DisplayName="Pause Point 11? - party id row selection" sap:VirtualizedContainerService.HintSize="570,56.8" sap2010:WorkflowViewState.IdRef="If_12">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -656,12 +660,12 @@
                 </ActivityAction>
               </ui:ForEachRow.Body>
             </ui:ForEachRow>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close' - clear/quit permit" sap:VirtualizedContainerService.HintSize="570,190" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="829a254e-a7e2-47f8-8c6d-3166d72a1e97" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close' - clear/quit permit" sap:VirtualizedContainerService.HintSize="638,190" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="829a254e-a7e2-47f8-8c6d-3166d72a1e97" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="44, 404, 58, 58" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Close the'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Close the current screen.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Amend Permit Information' role='internal frame' /&gt;&lt;java name='Close the current screen.' role='push button' check:text='Close the current screen.' /&gt;" Guid="118a1e57-d67d-48cf-9a42-a96306ce81ec" InformativeScreenshot="f0d019d4865f50775bd991629e347e73.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <If Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="Is dev? - Amend permit" sap:VirtualizedContainerService.HintSize="570,56.8" sap2010:WorkflowViewState.IdRef="If_13">
+            <If Condition="[CBool(g_Config(&quot;IsDev&quot;))]" DisplayName="Is dev? - Amend permit" sap:VirtualizedContainerService.HintSize="638,56.8" sap2010:WorkflowViewState.IdRef="If_13">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -701,7 +705,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press escape to Home Page" sap:VirtualizedContainerService.HintSize="570,224" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_10" InteractionMode="WindowMessages" ScopeIdentifier="829a254e-a7e2-47f8-8c6d-3166d72a1e97" Shortcuts="[d(hk)][k(Esc)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press escape to Home Page" sap:VirtualizedContainerService.HintSize="638,224" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_10" InteractionMode="WindowMessages" ScopeIdentifier="829a254e-a7e2-47f8-8c6d-3166d72a1e97" Shortcuts="[d(hk)][k(Esc)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>
