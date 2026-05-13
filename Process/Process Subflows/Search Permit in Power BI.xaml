@@ -139,7 +139,7 @@
                 <OutArgument x:TypeArguments="x:String">[strPermit]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[g_TransactionItem("ReSP_ID").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String">[g_TransactionItem("ReSP_ID").ToString.Trim]</InArgument>
               </Assign.Value>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">

@@ -155,7 +155,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="1050,684.84" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="1468.8000000000002,658.84" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dictPermitDetails" />
       <Variable x:TypeArguments="ui:UiElement" Name="uiHomePage" />
@@ -411,7 +411,7 @@
                                           <av:PointCollection x:Key="ConnectorLocation">300,1045 300,1080</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Format Org/Party Address" sap:VirtualizedContainerService.HintSize="673.6,2158" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                      <Sequence DisplayName="Format Org/Party Address" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_47">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="strAddressWithoutPostcode" />
                                           <Variable x:TypeArguments="s:String[]" Name="arrAddressParts" />
@@ -470,7 +470,7 @@
                                             <InArgument x:TypeArguments="s:String[]">[{"","","",""}]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <Switch x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="There are 4 address lines available to populate (excluding Postcode) on Org creation. Address Line 2 is an essential field for some WIMS regions (or is dictated by certain unknown WIMS logic). Business preference is that Address Line 4 is populated where possible.&#xD;&#xA;&#xD;&#xA;As such, we set address lines in this priority order:&#xD;&#xA;1 &amp; 2, 4, 3&#xD;&#xA;&#xD;&#xA;Address Lines 1 and 2 will always be populated, even if the returned address only has 1 line, in which case a hyphen is added as a placeholder for Address Line 2.&#xD;&#xA;&#xD;&#xA;Address Line 3 is only populated when there are at least 4 address lines returned.&#xD;&#xA;&#xD;&#xA;Address Line 4 is populated if there are at least 3 address lines available. If there are 4 or more address lines available, the 4th and beyond are concatenated into Address line 4." DisplayName="Switch - number of address parts" Expression="[arrAddressParts.Length]" sap:VirtualizedContainerService.HintSize="639.6,730" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                                        <Switch x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="There are 4 address lines available to populate (excluding Postcode) on Org creation. Address Line 2 is an essential field for some WIMS regions (or is dictated by certain unknown WIMS logic). Business preference is that Address Line 4 is populated where possible.&#xA;&#xA;As such, we set address lines in this priority order:&#xA;1 &amp; 2, 4, 3&#xA;&#xA;Address Lines 1 and 2 will always be populated, even if the returned address only has 1 line, in which case a hyphen is added as a placeholder for Address Line 2.&#xA;&#xA;Address Line 3 is only populated when there are at least 4 address lines returned.&#xA;&#xA;Address Line 4 is populated if there are at least 3 address lines available. If there are 4 or more address lines available, the 4th and beyond are concatenated into Address line 4." DisplayName="Switch - number of address parts" Expression="[arrAddressParts.Length]" sap:VirtualizedContainerService.HintSize="639.6,730" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                                           <Switch.Default>
                                             <ui:MultipleAssign sap2010:Annotation.AnnotationText="If &gt;4 lines, remaining text concatenated into line 4" DisplayName="All address lines occupied" sap:VirtualizedContainerService.HintSize="479.6,242.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
                                               <ui:MultipleAssign.AssignOperations>
@@ -938,7 +938,7 @@
                                                                                                           <av:PointCollection x:Key="ConnectorLocation">400,2865 400,2910</av:PointCollection>
                                                                                                         </scg:Dictionary>
                                                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                                                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intOutletIndex]" DataTable="[dtOutlets]" DisplayName="For Each Outlet" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                                                                                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intOutletIndex]" DataTable="[dtOutlets]" DisplayName="For Each Outlet" sap:VirtualizedContainerService.HintSize="586,2540.4" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                                                                                                         <ui:ForEachRow.Body>
                                                                                                           <ActivityAction x:TypeArguments="sd:DataRow">
                                                                                                             <ActivityAction.Argument>
@@ -966,7 +966,7 @@
                                                                                                                         <OutArgument x:TypeArguments="x:String">[strOrgNames]</OutArgument>
                                                                                                                       </ui:AssignOperation.To>
                                                                                                                       <ui:AssignOperation.Value>
-                                                                                                                        <InArgument x:TypeArguments="x:String">[String.Join(",",dtOrgDetails.AsEnumerable.Select(function(x) x("Name").ToString).ToArray)]</InArgument>
+                                                                                                                        <InArgument x:TypeArguments="x:String">[String.Join(", ",dtOrgDetails.AsEnumerable.Select(function(x) x("Name").ToString).ToArray)]</InArgument>
                                                                                                                       </ui:AssignOperation.Value>
                                                                                                                     </ui:AssignOperation>
                                                                                                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -1204,9 +1204,10 @@
                                                                                           <av:Point x:Key="ShapeLocation">405,2285</av:Point>
                                                                                           <av:Size x:Key="ShapeSize">110,70</av:Size>
                                                                                           <av:PointCollection x:Key="ConnectorLocation">460,2355 460,2385</av:PointCollection>
+                                                                                          <av:Point x:Key="AnnotationLocation">480,2220</av:Point>
                                                                                         </scg:Dictionary>
                                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                                      <Sequence sap2010:Annotation.AnnotationText="Dev note: if Discharge Site creation starts causing exceptions, the sequence here may need to be updated to use the Switch logic of the earlier &quot;Format Org Address&quot; sequence instead of the iterative method currently here." DisplayName="Format Discharge Site address" sap:VirtualizedContainerService.HintSize="604,1327.6" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                                                                      <Sequence sap2010:Annotation.AnnotationText="Dev note: if Discharge Site creation starts causing exceptions, the sequence here may need to be updated to use the Switch logic of the earlier &quot;Format Org Address&quot; sequence instead of the iterative method currently here." DisplayName="Format Discharge Site address" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_43">
                                                                                         <Sequence.Variables>
                                                                                           <Variable x:TypeArguments="x:String" Name="strAddressWithoutPostcode" />
                                                                                           <Variable x:TypeArguments="s:String[]" Name="arrAddressParts" />
@@ -1345,6 +1346,7 @@
                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strSubAreaCode">[dictPermitDetails("SubAreaCode")]</InArgument>
                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strLocalAuthorityCode">[dictPermitDetails("LocalAuthorityCode")]</InArgument>
                                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_strGridReference">[dictPermitDetails("GridReference")]</InArgument>
+                                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_strRegion">[dictPermitDetails("Region")]</InArgument>
                                                                                             </ui:InvokeWorkflowFile.Arguments>
                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1382,12 +1384,12 @@
                                                               <av:PointCollection x:Key="ConnectorLocation">440,1585 440,1605</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Party Name Sheet - Invoke Workflow File (Process\Process Subflows\Update Party Name Sheet.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Process\Process Subflows\Update Party Name Sheet.xaml">
+                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Party Name Sheet - Invoke Workflow File (Process\Process Subflows\Update Party Name Sheet.xaml)" sap:VirtualizedContainerService.HintSize="338,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Process\Process Subflows\Update Party Name Sheet.xaml">
                                                             <ui:InvokeWorkflowFile.Arguments>
                                                               <OutArgument x:TypeArguments="x:String" x:Key="out_strPTK">[strPartyID]</OutArgument>
                                                               <InArgument x:TypeArguments="x:Object" x:Key="in_strOrgName">[strOrgName]</InArgument>
                                                               <InArgument x:TypeArguments="x:Object" x:Key="in_strRegion">[dictPermitDetails("Region")]</InArgument>
-                                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtPTK">[in_dtPTK]</InArgument>
+                                                              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtPTK">[in_dtPTK]</InOutArgument>
                                                             </ui:InvokeWorkflowFile.Arguments>
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">

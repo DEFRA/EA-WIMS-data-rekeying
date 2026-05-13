@@ -462,19 +462,19 @@
                     <ActivityFunc x:TypeArguments="x:Boolean" />
                   </ui:RetryScope.Condition>
                 </ui:RetryScope>
-                <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="536,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_7" MethodName="Stop">
+                <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="578,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_7" MethodName="Stop">
                   <InvokeMethod.TargetObject>
                     <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                   </InvokeMethod.TargetObject>
                 </InvokeMethod>
-                <d:LogTransaction IN_boolUnattended="{x:Null}" sap:VirtualizedContainerService.HintSize="536,56.8" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="[g_intExitPoint]" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strOutcome="Business Exception" IN_strOutcomeNotes="[in_BusinessException.Message]" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]" sap2010:WorkflowViewState.IdRef="LogTransaction_2">
+                <d:LogTransaction IN_boolUnattended="{x:Null}" sap:VirtualizedContainerService.HintSize="578,56.8" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="[g_intExitPoint]" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strOutcome="Business Exception" IN_strOutcomeNotes="[in_BusinessException.Message]" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]" sap2010:WorkflowViewState.IdRef="LogTransaction_2">
                   <d:LogTransaction.IN_strMiscNotes>
                     <InArgument x:TypeArguments="x:String">
                       <Literal x:TypeArguments="x:String" DisplayName="Literal&lt;String&gt;" Value="" />
                     </InArgument>
                   </d:LogTransaction.IN_strMiscNotes>
                 </d:LogTransaction>
-                <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="536,798.4" sap2010:WorkflowViewState.IdRef="If_8">
+                <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="578,1103.6" sap2010:WorkflowViewState.IdRef="If_8">
                   <If.Then>
                     <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_29">
                       <sap:WorkflowViewStateService.ViewState>
@@ -485,20 +485,61 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,545.6" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="524,850.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <d:Log_Case DisplayName="Log Case - Local file" sap:VirtualizedContainerService.HintSize="382,56.8" IN_dateCaseEndTime="[Now]" IN_dateCaseStartTime="[in_dateCaseStartTime]" IN_dateCaseTotalTime="[(Now - in_dateCaseStartTime).ToString]" IN_strCaseID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) Not String.IsNullOrEmpty(s)))]" IN_strFilePath="[in_strWorkLogFilepath]" IN_strOutcome="Business Exception" IN_strOutcomeMessage="[in_BusinessException.Message]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strWorkpackageName="[g_Config(&quot;BusinessProcessName&quot;).ToString]" sap2010:WorkflowViewState.IdRef="Log_Case_2" in_dblCaseProcessingTime="[Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)]">
+                      <d:Log_Case DisplayName="Log Case - Local file" sap:VirtualizedContainerService.HintSize="490,56.8" IN_dateCaseEndTime="[Now]" IN_dateCaseStartTime="[in_dateCaseStartTime]" IN_dateCaseTotalTime="[(Now - in_dateCaseStartTime).ToString]" IN_strCaseID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) Not String.IsNullOrEmpty(s)))]" IN_strFilePath="[in_strWorkLogFilepath]" IN_strOutcome="Business Exception" IN_strOutcomeMessage="[in_BusinessException.Message]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strWorkpackageName="[g_Config(&quot;BusinessProcessName&quot;).ToString]" sap2010:WorkflowViewState.IdRef="Log_Case_2" in_dblCaseProcessingTime="[Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)]">
                         <d:Log_Case.IN_strNotes>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
                           </InArgument>
                         </d:Log_Case.IN_strNotes>
                       </d:Log_Case>
-                      <d1:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Business Exception Form" sap:VirtualizedContainerService.HintSize="382,428.8" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Exception.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Business Exception Encountered&lt;/h1&gt;&lt;P&gt;A Business Exception has occured during processing of '&quot;+in_BusinessException.Source+&quot;'.&lt;BR&gt;&lt;BR&gt; Error Message: &quot;+in_BusinessException.Message+&quot;&lt;BR&gt;&lt;BR&gt;More details can be found within: &quot;+in_strWorkLogFilepath+&quot;&lt;/P&gt;&lt;BR&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{850,450}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+                      <TryCatch DisplayName="Try Catch - BRE form" sap:VirtualizedContainerService.HintSize="490,734" sap2010:WorkflowViewState.IdRef="TryCatch_16">
+                        <TryCatch.Try>
+                          <d1:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Business Exception Form" sap:VirtualizedContainerService.HintSize="334,405.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Exception.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Business Exception Encountered&lt;/h1&gt;&lt;P&gt;A Business Exception has occured during processing of '&quot;+in_BusinessException.Source+&quot;'.&lt;BR&gt;&lt;BR&gt; Error Message: &quot;+in_BusinessException.Message+&quot;&lt;BR&gt;&lt;BR&gt;More details can be found within: &quot;+in_strWorkLogFilepath+&quot;&lt;/P&gt;&lt;BR&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{850,450}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,545.2" sap2010:WorkflowViewState.IdRef="Catch`1_16">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <If Condition="[exception.Message.Contains(&quot;The stop button was pressed&quot;)]" DisplayName="User dismissed form without clicking OK?" sap:VirtualizedContainerService.HintSize="450,474" sap2010:WorkflowViewState.IdRef="If_13">
+                                <If.Then>
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,226.8" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message - user dismissed BRE form" sap:VirtualizedContainerService.HintSize="382,166.8" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;User dismissed BRE form&quot;]" />
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Rethrow DisplayName="Rethrow BRE form exception" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
                     </Sequence>
                   </If.Else>
                 </If>
@@ -517,7 +558,7 @@
                   <av:Point x:Key="AnnotationLocation">530,340</av:Point>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="612,4242" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="612,4590.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="QueueRetry" />
                   <Variable x:TypeArguments="x:String" Name="ScreenshotPath" />
@@ -615,13 +656,13 @@
                     <ActivityFunc x:TypeArguments="x:Boolean" />
                   </ui:RetryScope.Condition>
                 </ui:RetryScope>
-                <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="536,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_6" MethodName="Stop">
+                <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="578,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_6" MethodName="Stop">
                   <InvokeMethod.TargetObject>
                     <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                   </InvokeMethod.TargetObject>
                 </InvokeMethod>
-                <d:LogTransaction IN_boolUnattended="{x:Null}" sap:VirtualizedContainerService.HintSize="536,56.8" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="[g_intExitPoint]" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strMiscNotes="[strLogNote]" IN_strOutcome="System Exception" IN_strOutcomeNotes="[in_SystemException.Message]" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]" sap2010:WorkflowViewState.IdRef="LogTransaction_3" />
-                <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="536,807.2" sap2010:WorkflowViewState.IdRef="If_10">
+                <d:LogTransaction IN_boolUnattended="{x:Null}" sap:VirtualizedContainerService.HintSize="578,56.8" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="[g_intExitPoint]" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strMiscNotes="[strLogNote]" IN_strOutcome="System Exception" IN_strOutcomeNotes="[in_SystemException.Message]" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]" sap2010:WorkflowViewState.IdRef="LogTransaction_3" />
+                <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="578,1112.4" sap2010:WorkflowViewState.IdRef="If_10">
                   <If.Then>
                     <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_35">
                       <sap:WorkflowViewStateService.ViewState>
@@ -632,18 +673,59 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,545.6" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="524,850.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <d:Log_Case DisplayName="Log Case - Local file" sap:VirtualizedContainerService.HintSize="382,56.8" IN_dateCaseEndTime="[Now]" IN_dateCaseStartTime="[in_dateCaseStartTime]" IN_dateCaseTotalTime="[(Now - in_dateCaseStartTime).ToString]" IN_strCaseID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strFilePath="[in_strWorkLogFilepath]" IN_strNotes="[strLogNote]" IN_strOutcome="System Exception" IN_strOutcomeMessage="[in_SystemException.Message]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strWorkpackageName="[g_Config(&quot;BusinessProcessName&quot;).ToString]" sap2010:WorkflowViewState.IdRef="Log_Case_3" in_dblCaseProcessingTime="[Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)]" />
-                      <d1:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="System Exception Form" sap:VirtualizedContainerService.HintSize="382,428.8" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Exception.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;System Exception Encountered&lt;/h1&gt;&lt;P&gt;A System Exception has occured during processing.&lt;BR&gt;&lt;BR&gt;More details can be found within: &quot;+in_strWorkLogFilepath+&quot;&lt;/P&gt;&lt;BR&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{600,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_2" />
+                      <d:Log_Case DisplayName="Log Case - Local file" sap:VirtualizedContainerService.HintSize="490,56.8" IN_dateCaseEndTime="[Now]" IN_dateCaseStartTime="[in_dateCaseStartTime]" IN_dateCaseTotalTime="[(Now - in_dateCaseStartTime).ToString]" IN_strCaseID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strFilePath="[in_strWorkLogFilepath]" IN_strNotes="[strLogNote]" IN_strOutcome="System Exception" IN_strOutcomeMessage="[in_SystemException.Message]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strWorkpackageName="[g_Config(&quot;BusinessProcessName&quot;).ToString]" sap2010:WorkflowViewState.IdRef="Log_Case_3" in_dblCaseProcessingTime="[Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)]" />
+                      <TryCatch DisplayName="Try Catch - SE form" sap:VirtualizedContainerService.HintSize="490,734" sap2010:WorkflowViewState.IdRef="TryCatch_17">
+                        <TryCatch.Try>
+                          <d1:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="System Exception Form" sap:VirtualizedContainerService.HintSize="334,405.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Exception.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;System Exception Encountered&lt;/h1&gt;&lt;P&gt;A System Exception has occured during processing.&lt;BR&gt;&lt;BR&gt;More details can be found within: &quot;+in_strWorkLogFilepath+&quot;&lt;/P&gt;&lt;BR&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{600,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_2" />
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,545.2" sap2010:WorkflowViewState.IdRef="Catch`1_17">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <If Condition="[exception.Message.Contains(&quot;The stop button was pressed&quot;)]" DisplayName="User dismissed SE form without clicking OK?" sap:VirtualizedContainerService.HintSize="450,474" sap2010:WorkflowViewState.IdRef="If_14">
+                                <If.Then>
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,226.8" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message - user dismissed SE form" sap:VirtualizedContainerService.HintSize="382,166.8" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[&quot;User dismissed SE form&quot;]" />
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Rethrow DisplayName="Rethrow SE form exception" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
                     </Sequence>
                   </If.Else>
                 </If>
-                <TryCatch sap2010:Annotation.AnnotationText="Close all applications before returning to the Initialization state and opening them again.&#xA;If applications cannot be closed, kill their respective processes." DisplayName="Try closing applications" sap:VirtualizedContainerService.HintSize="536,458.8" sap2010:WorkflowViewState.IdRef="TryCatch_15">
+                <TryCatch sap2010:Annotation.AnnotationText="Close all applications before returning to the Initialization state and opening them again.&#xA;If applications cannot be closed, kill their respective processes." DisplayName="Try closing applications" sap:VirtualizedContainerService.HintSize="578,502.4" sap2010:WorkflowViewState.IdRef="TryCatch_15">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -659,7 +741,7 @@
                     </ui:InvokeWorkflowFile>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="483.2,23.6" sap2010:WorkflowViewState.IdRef="Catch`1_15">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.6,23.6" sap2010:WorkflowViewState.IdRef="Catch`1_15">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -737,7 +819,7 @@
                     </ui:MultipleAssign>
                   </TryCatch.Finally>
                 </TryCatch>
-                <Sequence DisplayName="Evaluate Consecutive System Exceptions" sap:VirtualizedContainerService.HintSize="536,624.8" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                <Sequence DisplayName="Evaluate Consecutive System Exceptions" sap:VirtualizedContainerService.HintSize="578,624.8" sap2010:WorkflowViewState.IdRef="Sequence_40">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>

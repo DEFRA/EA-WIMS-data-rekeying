@@ -121,7 +121,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Format release details table" sap:VirtualizedContainerService.HintSize="1451.6000000000001,4396.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Format release details table" sap:VirtualizedContainerService.HintSize="1451.6000000000001,4609.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -134,13 +134,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BuildDataTable>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtReleaseDetailsExtract]" DisplayName="For Each Row in Data Table - release details extract unformatted" sap:VirtualizedContainerService.HintSize="615.6,1863.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtReleaseDetailsExtract]" DisplayName="For Each Row in Data Table - release details extract unformatted" sap:VirtualizedContainerService.HintSize="615.6,1846.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Format cells into output table" sap:VirtualizedContainerService.HintSize="513.6,1664.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Format cells into output table" sap:VirtualizedContainerService.HintSize="513.6,1648.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="s:String[]" Name="arrReleaseDetail" />
               <Variable x:TypeArguments="x:String" Name="strName" />
@@ -305,7 +305,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
-            <Flowchart DisplayName="Compliance stat code check" sap:VirtualizedContainerService.HintSize="479.6,73.2" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+            <Flowchart DisplayName="Compliance stat code check" sap:VirtualizedContainerService.HintSize="479.6,56.8" sap2010:WorkflowViewState.IdRef="Flowchart_2">
               <Flowchart.Variables>
                 <Variable x:TypeArguments="sd:DataRow[]" Name="arrParamCodes" />
               </Flowchart.Variables>
@@ -355,10 +355,7 @@
                 </FlowDecision.True>
               </FlowDecision>
               <x:Reference>__ReferenceID0</x:Reference>
-              <FlowDecision x:Name="__ReferenceID3" DisplayName="Compliance stat code missing?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
-                <FlowDecision.Condition>
-                  <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="String.IsNullOrEmpty(strComplianceStatCode)" />
-                </FlowDecision.Condition>
+              <FlowDecision x:Name="__ReferenceID3" Condition="[String.IsNullOrEmpty(strComplianceStatCode)]" DisplayName="Compliance stat code missing?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -413,9 +410,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <If Condition="[out_dtReleaseDetails.Select(&quot;ComplianceStatisticCode=''&quot;).Count&lt;&gt;0]" DisplayName="If still any empty compliance statistic codes" sap:VirtualizedContainerService.HintSize="615.6,2418.4" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[out_dtReleaseDetails.Select(&quot;ComplianceStatisticCode=''&quot;).Count&lt;&gt;0]" DisplayName="If still any empty compliance statistic codes" sap:VirtualizedContainerService.HintSize="615.6,2647.2" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="581.6,2165.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="581.6,2394.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="dtCompStatCodeUpdates" />
           </Sequence.Variables>
@@ -424,13 +421,13 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dtReleaseDetails]" DisplayName="For each data row - Add read only to all cell values" sap:VirtualizedContainerService.HintSize="547.6,617.6" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dtReleaseDetails]" DisplayName="For each data row - Add read only to all cell values" sap:VirtualizedContainerService.HintSize="547.6,732" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513.6,419.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513.6,533.6" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Int32" Name="intCellIndex" />
                   </Sequence.Variables>
@@ -439,6 +436,14 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Escape characters for HTML" sap:VirtualizedContainerService.HintSize="479.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_17">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Name")]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Object">[CurrentRow("Name").ToString.Replace("&amp;","&amp;amp;").Replace("&lt;","&amp;lt;").Replace("&gt;","&amp;gt;").Replace("""","&amp;quot;").Replace("'","&amp;#39;")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
                   <ui:MultipleAssign DisplayName="Add read only to row values (except Compliance Statistic Code)" sap:VirtualizedContainerService.HintSize="479.6,359.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
@@ -530,13 +535,13 @@
               <InArgument x:TypeArguments="sd1:Stopwatch">[g_swProcessingTimer]</InArgument>
             </InvokeMethod.TargetObject>
           </InvokeMethod>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dtReleaseDetails]" DisplayName="For each data row - Add read only to all cell values" sap:VirtualizedContainerService.HintSize="547.6,608.8" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dtReleaseDetails]" DisplayName="For each data row - remove read only to from cell values" sap:VirtualizedContainerService.HintSize="547.6,723.2" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513.6,419.2" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513.6,533.6" sap2010:WorkflowViewState.IdRef="Sequence_24">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Int32" Name="intCellIndex" />
                   </Sequence.Variables>
@@ -545,7 +550,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MultipleAssign DisplayName="Add read only to row values (except Compliance Statistic Code)" sap:VirtualizedContainerService.HintSize="479.6,359.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                  <ui:MultipleAssign DisplayName="Remove read only from all row values" sap:VirtualizedContainerService.HintSize="479.6,368" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
@@ -615,6 +620,14 @@
                       </scg:List>
                     </ui:MultipleAssign.AssignOperations>
                   </ui:MultipleAssign>
+                  <Assign DisplayName="Remove HTML escaped characters" sap:VirtualizedContainerService.HintSize="479.6,105.6" sap2010:WorkflowViewState.IdRef="Assign_18">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Name")]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Object">[CurrentRow("Name").ToString.Replace("&amp;amp;","&amp;").Replace("&amp;lt;","&lt;").Replace("&amp;gt;","&gt;").Replace("&amp;quot;","""").Replace("&amp;#39;","'")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
                 </Sequence>
               </ActivityAction>
             </ui:ForEachRow.Body>
