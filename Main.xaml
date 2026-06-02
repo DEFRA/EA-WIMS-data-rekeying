@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:d="clr-namespace:DRACOE_PopUps_64;assembly=DRACOE.PopUps.64" xmlns:d1="clr-namespace:DRACOE_Logging_64;assembly=DRACOE.Logging.64" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Diagnostics;assembly=System.Private.CoreLib" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:d="clr-namespace:DRACOE_PopUps_64;assembly=DRACOE.PopUps.64" xmlns:d1="clr-namespace:DRACOE_Logging_64;assembly=DRACOE.Logging.64" xmlns:da="clr-namespace:DRACOE_Microsoft_Graph_64.Authentication;assembly=DRACOE Microsoft Graph 64" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Diagnostics;assembly=System.Private.CoreLib" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_boolUnattended" Type="InArgument(x:Boolean)" />
   </x:Members>
@@ -67,6 +67,7 @@
       <x:String>System.Security</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>DRACOE_Microsoft_Graph_64.Authentication</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -174,7 +175,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID5}" DisplayName="Automation Template" sap:VirtualizedContainerService.HintSize="1050,684.84" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID5}" DisplayName="Automation Template" sap:VirtualizedContainerService.HintSize="1468.8000000000002,658.84" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -458,7 +459,7 @@
         <Transition DisplayName="New Transaction" sap:VirtualizedContainerService.HintSize="449.6,812.8" sap2010:WorkflowViewState.IdRef="Transition_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">589,601.8 589,711.2</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">589,601.8 589,631.8 494.6,631.8 494.6,711.2</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -680,7 +681,7 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">484.6,711.2</av:Point>
-                  <av:Size x:Key="ShapeSize">208.8,273.6</av:Size>
+                  <av:Size x:Key="ShapeSize">20,20</av:Size>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   <x:Double x:Key="StateContainerWidth">197</x:Double>
                   <x:Double x:Key="StateContainerHeight">34</x:Double>
@@ -692,14 +693,14 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <av:PointCollection x:Key="ConnectorLocation">599.44,984.8000000000001 599.44,1014.8000000000001 275.52,1014.8000000000001 275.52,623</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">495.6,731.2 495.6,761.2 275.52,761.2 275.52,623</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">27</x:Int32>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[boolLastTransaction]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Confirm that the user has finished processing all cases and has no more to add to the queue." DisplayName="End Process Confirmation" sap:VirtualizedContainerService.HintSize="647.2,1657.6" sap2010:WorkflowViewState.IdRef="State_6">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Confirm that the user has finished processing all cases and has no more to add to the queue." DisplayName="End Process Confirmation" sap:VirtualizedContainerService.HintSize="215.2,137.2" sap2010:WorkflowViewState.IdRef="State_6">
                       <State.Entry>
                         <If Condition="[CType(g_Config(&quot;AdditionalTransactionsPrompt&quot;), Boolean) AND boolSkipEndConfirmation = False AND not(Cbool(g_Config(&quot;Unattended&quot;)))]" DisplayName="Present More Transactions Prompt?" sap:VirtualizedContainerService.HintSize="601.6,1205.6" sap2010:WorkflowViewState.IdRef="If_26">
                           <If.Then>
@@ -795,9 +796,9 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.Condition>[boolContinue AND SystemException IsNot Nothing]</Transition.Condition>
                           <Transition.To>
-                            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="232,120.8" sap2010:WorkflowViewState.IdRef="State_2">
+                            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="857.2,5220" sap2010:WorkflowViewState.IdRef="State_2">
                               <State.Entry>
-                                <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="811.6,4687.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="811.6,4768" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -805,7 +806,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <TryCatch.Try>
-                                    <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="774,4430.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                    <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="774,4511.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -820,7 +821,7 @@
                                           <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <If sap2010:Annotation.AnnotationText="An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[g_Config is Nothing]" DisplayName="If first run, read local configuration file" sap:VirtualizedContainerService.HintSize="740,3886.8" sap2010:WorkflowViewState.IdRef="If_1">
+                                      <If sap2010:Annotation.AnnotationText="An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[g_Config is Nothing]" DisplayName="If first run, read local configuration file" sap:VirtualizedContainerService.HintSize="740,4054.8" sap2010:WorkflowViewState.IdRef="If_1">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -829,9 +830,11 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <If.Then>
-                                          <Sequence DisplayName="First run" sap:VirtualizedContainerService.HintSize="706,3792.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                          <Sequence DisplayName="First run" sap:VirtualizedContainerService.HintSize="706,4302" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="x:String" Name="strLookups" />
+                                              <Variable x:TypeArguments="x:String" Name="strAppID" />
+                                              <Variable x:TypeArguments="ss:SecureString" Name="sstrSecret" />
                                             </Sequence.Variables>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -839,7 +842,7 @@
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitAllSettings workflow" sap:VirtualizedContainerService.HintSize="672,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Framework\InitAllSettings.xaml">
+                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitAllSettings workflow" sap:VirtualizedContainerService.HintSize="672,177.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Framework\InitAllSettings.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolders">EA Root/WIMS data rekeying</InArgument>
                                                 <OutArgument x:TypeArguments="scg:Dictionary(x:String, sma:PSCredential)" x:Key="out_Credentials">[Credentials]</OutArgument>
@@ -1026,13 +1029,22 @@
                                             </Sequence>
                                             <ucas:ReadStorageText TimeoutMS="{x:Null}" DisplayName="Read Storage Text - lookups" FolderPath="EA Root/WIMS data rekeying" sap:VirtualizedContainerService.HintSize="672,167.6" sap2010:WorkflowViewState.IdRef="ReadStorageText_1" Path="Lookups.csv" Result="[strLookups]" StorageBucketName="WIMS data rekeying" />
                                             <ui:GenerateDataTable ColumnSeparators="{x:Null}" ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" AutoDetectTypes="False" CSVParsing="True" DataTable="[dtLookups]" DisplayName="Generate Data Table From Text - lookups" sap:VirtualizedContainerService.HintSize="672,236" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[strLookups]" UseColumnHeader="True" />
-                                            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" sap2010:Annotation.AnnotationText="As a precaution against leaving Worklist file open" DisplayName="Kill Process - Excel" sap:VirtualizedContainerService.HintSize="672,190" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="EXCEL">
+                                            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" sap2010:Annotation.AnnotationText="As a precaution against leaving Worklist file open" DisplayName="Kill Process - Excel" sap:VirtualizedContainerService.HintSize="672,198.8" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="EXCEL">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                             </ui:KillProcess>
+                                            <Sequence DisplayName="Private: Get App Reg details and Bearer Token" sap:VirtualizedContainerService.HintSize="672,531.2" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[g_Config(&quot;CredentialAssetName&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential - App Reg" FolderPath="EA Root/WIMS data rekeying" sap:VirtualizedContainerService.HintSize="416,176.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sstrSecret]" Username="[strAppID]" />
+                                              <da:Get_Bearer_Token DisplayName="Get Bearer Token" sap:VirtualizedContainerService.HintSize="416,271.6" sap2010:WorkflowViewState.IdRef="Get_Bearer_Token_1" in_strClientID="[new System.Net.NetworkCredential(&quot;&quot;,strAppID).SecurePassword]" in_strClientSecret="[sstrSecret]" in_strTenantID="[new System.Net.NetworkCredential(&quot;&quot;,g_Config(&quot;TenantID&quot;).ToString).SecurePassword]" out_strBearerToken="[g_BearerToken]" />
+                                            </Sequence>
                                           </Sequence>
                                         </If.Then>
                                         <If.Else>
@@ -1045,7 +1057,7 @@
                                           </Sequence>
                                         </If.Else>
                                       </If>
-                                      <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="740,85.2" sap2010:WorkflowViewState.IdRef="If_20">
+                                      <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="740,56.8" sap2010:WorkflowViewState.IdRef="If_20">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1072,7 +1084,7 @@
                                           </Sequence>
                                         </If.Else>
                                       </If>
-                                      <If Condition="[Cbool(g_Config(&quot;UseNetworkTool&quot;))]" DisplayName="Use Network Tool?" sap:VirtualizedContainerService.HintSize="740,85.2" sap2010:WorkflowViewState.IdRef="If_19">
+                                      <If Condition="[Cbool(g_Config(&quot;UseNetworkTool&quot;))]" DisplayName="Use Network Tool?" sap:VirtualizedContainerService.HintSize="740,56.8" sap2010:WorkflowViewState.IdRef="If_19">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1096,7 +1108,7 @@
                                           </Sequence>
                                         </If.Else>
                                       </If>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitiAllApplications workflow" sap:VirtualizedContainerService.HintSize="740,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitiAllApplications workflow" sap:VirtualizedContainerService.HintSize="740,168.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                         </ui:InvokeWorkflowFile.Arguments>
@@ -1590,7 +1602,7 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <av:PointCollection x:Key="ConnectorLocation">599.44,984.8000000000001 599.44,1007.96 733.4000000000001,1007.96 733.4000000000001,557.96 703.4000000000001,557.96</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">495.6,731.2 495.6,761.2 733.4000000000001,761.2 733.4000000000001,557.96 703.4000000000001,557.96</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">44</x:Int32>
                     </scg:Dictionary>
@@ -1603,7 +1615,7 @@
                 <Transition sap2010:Annotation.AnnotationText="Business Rule Exception" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="658,1433.6" sap2010:WorkflowViewState.IdRef="Transition_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:PointCollection x:Key="ConnectorLocation">599.44,984.8000000000001 599.44,1005.08 733.4000000000001,1005.08 733.4000000000001,525.08 703.4000000000001,525.08</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">495.6,731.2 495.6,761.2 733.4000000000001,761.2 733.4000000000001,525.08 703.4000000000001,525.08</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">20</x:Int32>
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1619,7 +1631,7 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <av:PointCollection x:Key="ConnectorLocation">599.44,984.8000000000001 599.44,1007.2 735,1007.2 735,347.2 705,347.2</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">495.6,731.2 495.6,761.2 735,761.2 735,347.2 705,347.2</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">36</x:Int32>
                     </scg:Dictionary>

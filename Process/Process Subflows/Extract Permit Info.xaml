@@ -2087,7 +2087,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Maintain discharge sites" sap:VirtualizedContainerService.HintSize="668,56.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <Sequence DisplayName="Maintain discharge sites" sap:VirtualizedContainerService.HintSize="581.6,2473.2" sap2010:WorkflowViewState.IdRef="Sequence_29">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strGridRef" />
                 <Variable x:TypeArguments="x:String" Name="strConfidential" />
@@ -2110,17 +2110,17 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Maintain Discharge Sites'" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Maintain Discharge Sites'" sap:VirtualizedContainerService.HintSize="547.6,56.8" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/958e70993482cf0dfefc?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="196, 976, 429, 65" DesignTimeScaleFactor="2.5" ElementType="Text" FriendlyName="'Maintain Discharge Sites'" FullSelectorArgument="&lt;webctrl aaname='Maintain Discharge Sites' class='itemName' parentid='content' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Maintain Discharge Sites' class='itemName' parentid='content' tag='SPAN' type='' check:innerText='Maintain Discharge Sites' /&gt;" Guid="be9fad54-45a1-4cb2-8a4c-241dff7b6c84" InformativeScreenshot="02a3be5fb0bd30da15431d5c753cc0b1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Responsibilities - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleInnerText" DisplayName="Get National Grid Reference" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_5" Result="[strGridRef]" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleInnerText" DisplayName="Get National Grid Reference" sap:VirtualizedContainerService.HintSize="547.6,56.8" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_5" Result="[strGridRef]" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
                 <uix:NGetAttributeGeneric.Target>
                   <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/bc09aebeba7da20450a7?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="902, 1015, 440, 184" DesignTimeScaleFactor="2.5" ElementType="CheckBox" FriendlyName="'Row SelectionNational'" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='DIV' visibleinnertext='Row Selection*National Grid Reference*Select Row*' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='DIV' visibleinnertext='Row Selection&amp;#xA;National Grid Reference&amp;#xA;Select Row*' type='' class='interactive-grid innerContainer' aaname='                                                                                                ' check:text='Row SelectionNational Grid Reference &amp;#xA;                        &amp;#xA;                            Select' /&gt;" Guid="f14bb77b-9ba1-4e94-8b38-62cca1077a0e" InformativeScreenshot="6ca2d325242663a06dfd222063194205.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Maintain Discharge Sites - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NGetAttributeGeneric.Target>
               </uix:NGetAttributeGeneric>
-              <Assign DisplayName="Extract grid reference" sap:VirtualizedContainerService.HintSize="547.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign DisplayName="Extract grid reference" sap:VirtualizedContainerService.HintSize="547.6,56.8" sap2010:WorkflowViewState.IdRef="Assign_12">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[out_dictPermitDetails("GridReference")]</OutArgument>
                 </Assign.To>
@@ -2133,12 +2133,12 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleInnerText" DisplayName="Get 'National security/commerical in confidence'" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_6" Result="[strConfidential]" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleInnerText" DisplayName="Get 'National security/commerical in confidence'" sap:VirtualizedContainerService.HintSize="547.6,56.8" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_6" Result="[strConfidential]" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
                 <uix:NGetAttributeGeneric.Target>
                   <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/bc09aebeba7da20450a7?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="1605, 1015, 640, 169" DesignTimeScaleFactor="2.5" ElementType="CheckBox" FriendlyName="'Row SelectionNational'" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='DIV' visibleinnertext='Row Selection*National security/Commercial in confidence*Select Row*' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='DIV' visibleinnertext='Row Selection&amp;#xA;National security/Commercial in confidence&amp;#xA;Select Row*' type='' class='interactive-grid innerContainer' aaname='                                                                                                ' check:text='Row SelectionNational security/Commercial in confidence &amp;#xA;                        &amp;#xA;                 ' /&gt;" Guid="b0cdda09-61cb-40fb-8f9f-375b82579534" InformativeScreenshot="c5ffd2a1307c2424dd2df1f00c334277.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Maintain Discharge Sites - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NGetAttributeGeneric.Target>
               </uix:NGetAttributeGeneric>
-              <Assign DisplayName="Extract confidentiality" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="Assign_13">
+              <Assign DisplayName="Extract confidentiality" sap:VirtualizedContainerService.HintSize="547.6,56.8" sap2010:WorkflowViewState.IdRef="Assign_13">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[out_dictPermitDetails("Confidential")]</OutArgument>
                 </Assign.To>
@@ -2146,12 +2146,12 @@
                   <InArgument x:TypeArguments="x:String">[Regex.Split(strConfidential,"(?m)^").Last.ToString.Trim]</InArgument>
                 </Assign.Value>
               </Assign>
-              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleInnerText" DisplayName="Get asset property code" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_7" Result="[strAssetPropertyCode]" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleInnerText" DisplayName="Get asset property code" sap:VirtualizedContainerService.HintSize="547.6,56.8" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_7" Result="[strAssetPropertyCode]" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
                 <uix:NGetAttributeGeneric.Target>
                   <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/bc09aebeba7da20450a7?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="2897, 1003, 730, 47" DesignTimeScaleFactor="2.5" ElementType="CheckBox" FriendlyName="'Select RowDomestic'" FullSelectorArgument="&lt;webctrl aria-role='grid' parentid='pvExplorationHost' tag='DIV' visibleinnertext='Row Selection*Asset Property*Asset Property Code*' /&gt;&lt;webctrl aria-role='row' parentid='pvExplorationHost' tag='DIV' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' type='' class='' tag='DIV' aaname='' check:innerText='Select Row&amp;#xD;&amp;#xA;Domestic activities&amp;#xD;&amp;#xA;Not Mapped' /&gt;" Guid="cc1afd77-ef92-47f9-bb42-d22b976341d8" ImageBase64="" InformativeScreenshot="f0ce3c3b53fa223498bef4d34d7f531b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Maintain Discharge Sites - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NGetAttributeGeneric.Target>
               </uix:NGetAttributeGeneric>
-              <Assign DisplayName="Extract asset property code" sap:VirtualizedContainerService.HintSize="547.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_14">
+              <Assign DisplayName="Extract asset property code" sap:VirtualizedContainerService.HintSize="547.6,56.8" sap2010:WorkflowViewState.IdRef="Assign_14">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[out_dictPermitDetails("AssetPropertyCode")]</OutArgument>
                 </Assign.To>
@@ -2164,7 +2164,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <Assign DisplayName="Default asset property code if not mapped or blank" sap:VirtualizedContainerService.HintSize="547.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_51">
+              <Assign DisplayName="Default asset property code if not mapped or blank" sap:VirtualizedContainerService.HintSize="547.6,56.8" sap2010:WorkflowViewState.IdRef="Assign_51">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[out_dictPermitDetails("AssetPropertyCode")]</OutArgument>
                 </Assign.To>
@@ -2177,7 +2177,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <uix:NGetAttributeGeneric x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Assuming one row in table (or just get first row).&#xA;&#xA;.pbix file shows that this is sourced from a different query so may be different from address in Organisation/Personnel sheets." Attribute="visibleInnerText" DisplayName="Get address" sap:VirtualizedContainerService.HintSize="547.6,244.8" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_8" Result="[strDischargeAddress]" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Assuming one row in table (or just get first row).&#xA;&#xA;.pbix file shows that this is sourced from a different query so may be different from address in Organisation/Personnel sheets." Attribute="visibleInnerText" DisplayName="Get address" sap:VirtualizedContainerService.HintSize="547.6,216.4" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_8" Result="[strDischargeAddress]" ScopeIdentifier="7370c6dd-6289-414f-9e59-add3aaf2afbf" Version="V3">
                 <uix:NGetAttributeGeneric.Target>
                   <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/groups/me/reports/e11c60a7-d45c-4d2e-95e9-466834600b21/bc09aebeba7da20450a7?ctid=770a2450-0227-4c62-90c7-4e38537f1102&amp;experience=power-bi" DesignTimeRectangle="902, 1391, 2101, 47" DesignTimeScaleFactor="2.5" ElementType="CheckBox" FriendlyName="'Select RowHOME'" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='DIV' visibleinnertext='Row Selection*Premise*Street*City*County*Postcode*Country*Locality*' /&gt;&lt;webctrl aria-role='row' tag='DIV' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='grid' tag='DIV' visibleinnertext='Row Selection&amp;#xA;Premise&amp;#xA;Street&amp;#xA;City&amp;#xA;County&amp;#xA;Postcode&amp;#xA;Country&amp;#xA;Locality*' /&gt;&lt;webctrl aria-role='row' tag='DIV' type='' class='row ' aaname='' check:text='Select RowHOME FARM HOUSEHOME FARM LEICESTERSHIRE  CASTLE DONNINGTON' /&gt;" Guid="1972695e-282e-41bb-a6d6-bc1a56d4b24d" InformativeScreenshot="5038bcbadded1eeb0161af7be52ff8dc.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Maintain Discharge Sites - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NGetAttributeGeneric.Target>
@@ -2187,7 +2187,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NGetAttributeGeneric>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="547.6,85.2" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="547.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_7">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,196.8" sap2010:WorkflowViewState.IdRef="Sequence_145">
                     <sap:WorkflowViewStateService.ViewState>
@@ -2219,7 +2219,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <ui:MultipleAssign sap2010:Annotation.AnnotationText="Split on line breaks, store each relevant part, add to array and remove blanks then join on comma delimiter." DisplayName="Extract discharge site address" sap:VirtualizedContainerService.HintSize="547.6,412.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_44">
+              <ui:MultipleAssign sap2010:Annotation.AnnotationText="Split on line breaks, store each relevant part, add to array and remove blanks then join on comma delimiter." DisplayName="Extract discharge site address" sap:VirtualizedContainerService.HintSize="547.6,118" sap2010:WorkflowViewState.IdRef="MultipleAssign_44">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_116">
@@ -2452,7 +2452,7 @@
                   <InArgument x:TypeArguments="x:String">[Regex.Split(strLocalAuthority,"(?m)^").Last.ToString.Trim]</InArgument>
                 </Assign.Value>
               </Assign>
-              <If Condition="[CBool(g_Config(&quot;PausePoint2&quot;))]" DisplayName="Pause Point 2  - maintain discharge sites?" sap:VirtualizedContainerService.HintSize="547.6,648.4" sap2010:WorkflowViewState.IdRef="If_19">
+              <If Condition="[CBool(g_Config(&quot;PausePoint2&quot;))]" DisplayName="Pause Point 2  - maintain discharge sites?" sap:VirtualizedContainerService.HintSize="547.6,589.6" sap2010:WorkflowViewState.IdRef="If_19">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -2508,7 +2508,7 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,83.6" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_68">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
