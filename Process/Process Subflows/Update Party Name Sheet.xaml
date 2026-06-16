@@ -3,6 +3,7 @@
     <x:Property Name="out_strPTK" Type="OutArgument(x:String)" />
     <x:Property Name="in_strOrgName" Type="InArgument(x:Object)" />
     <x:Property Name="in_strRegion" Type="InArgument(x:Object)" />
+    <x:Property sap2010:Annotation.AnnotationText="I/O so that used PTKs are retained for transactions with multiple organisations." Name="io_dtPTK" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <this:Update_Party_Name_Sheet.in_strOrgName>
     <InArgument x:TypeArguments="x:Object" />
@@ -122,9 +123,8 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Update_Party_Name_Sheet" sap:VirtualizedContainerService.HintSize="1451.6000000000001,3260.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Reading of PTK sheet happens during GetTransactionData for speed (less idling when transaction is already in progress)." DisplayName="Update_Party_Name_Sheet" sap:VirtualizedContainerService.HintSize="1451.6000000000001,3435.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="dtPTK" />
       <Variable x:TypeArguments="x:String" Name="strRowRef" />
       <Variable x:TypeArguments="x:Int32" Name="intIndex" />
       <Variable x:TypeArguments="sd:DataRow[]" Name="arrEmptyRows" />
@@ -132,42 +132,95 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - updating party name sheet" sap:VirtualizedContainerService.HintSize="512,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Updating party name sheet&quot;]" />
-    <ueab:ExcelProcessScopeX LaunchTimeout="{x:Null}" DisplayAlerts="False" DisplayName="Excel Process Scope - update party name sheet - write to row" ExistingProcessAction="None" FileConflictResolution="ThrowException" sap:VirtualizedContainerService.HintSize="512,601.6" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" LaunchMethod="Application" MacroSettings="DisableAll" ProcessMode="ReuseIfExists" ShowExcelWindow="False">
-      <ueab:ExcelProcessScopeX.Body>
-        <ActivityAction x:TypeArguments="ui:IExcelProcess">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
-          </ActivityAction.Argument>
-          <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File - update party name sheet - read range" sap:VirtualizedContainerService.HintSize="478,482.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadFormatting="RawValue" ResizeWindow="None" WorkbookPath="[g_Config(&quot;WorkListLocation&quot;).ToString]">
-            <ueab:ExcelApplicationCard.Body>
-              <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                </ActivityAction.Argument>
-                <ueab:ReadRangeX sap2010:Annotation.AnnotationText="Finite rows for speed" DisplayName="Read Range - ptk" sap:VirtualizedContainerService.HintSize="444,204.8" sap2010:WorkflowViewState.IdRef="ReadRangeX_3" Range="[Excel.Sheet(&quot;PTK_Spreadsheet&quot;).Range(&quot;A1:E450&quot;)]" SaveTo="[dtPTK]" VisibleOnly="False">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ueab:ReadRangeX>
+    <ui:LogMessage DisplayName="Log Message - updating party name sheet" sap:VirtualizedContainerService.HintSize="544,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Updating party name sheet&quot;]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="544,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="588,830.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:RetryScope DisplayName="Retry Scope - read PTK sheet" sap:VirtualizedContainerService.HintSize="554,770.4" sap2010:WorkflowViewState.IdRef="RetryScope_2">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <ueab:ExcelProcessScopeX DisplayAlerts="False" DisplayName="Excel Process Scope - update party name sheet - read PTK" ExistingProcessAction="None" FileConflictResolution="ThrowException" sap:VirtualizedContainerService.HintSize="512,569.6" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_3" LaunchMethod="Automation" LaunchTimeout="10" MacroSettings="DisableAll" ProcessMode="ReuseIfExists" ShowExcelWindow="False">
+                  <ueab:ExcelProcessScopeX.Body>
+                    <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                      </ActivityAction.Argument>
+                      <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File - update party name sheet - read range" sap:VirtualizedContainerService.HintSize="478,482.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadFormatting="RawValue" ResizeWindow="None" WorkbookPath="[g_Config(&quot;WorkListLocation&quot;).ToString]">
+                        <ueab:ExcelApplicationCard.Body>
+                          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                            </ActivityAction.Argument>
+                            <ueab:ReadRangeX sap2010:Annotation.AnnotationText="Finite rows for speed" DisplayName="Read Range - ptk" sap:VirtualizedContainerService.HintSize="444,204.8" sap2010:WorkflowViewState.IdRef="ReadRangeX_3" Range="[Excel.Sheet(g_Config(&quot;PTKSheetName&quot;).ToString).Range(&quot;A1:E450&quot;)]" SaveTo="[io_dtPTK]" VisibleOnly="False">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ueab:ReadRangeX>
+                          </ActivityAction>
+                        </ueab:ExcelApplicationCard.Body>
+                      </ueab:ExcelApplicationCard>
+                    </ActivityAction>
+                  </ueab:ExcelProcessScopeX.Body>
+                </ueab:ExcelProcessScopeX>
               </ActivityAction>
-            </ueab:ExcelApplicationCard.Body>
-          </ueab:ExcelApplicationCard>
-        </ActivityAction>
-      </ueab:ExcelProcessScopeX.Body>
-    </ueab:ExcelProcessScopeX>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="rowID" DataTable="[dtPTK]" DisplayName="Add Data Column - rowID" sap:VirtualizedContainerService.HintSize="512,222" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intIndex]" DataTable="[dtPTK]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="512,334" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean" />
+            </ui:RetryScope.Condition>
+          </ui:RetryScope>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <If sap2010:Annotation.AnnotationText="Not sure how, but for multiple orgs we can still have a rowID column after the first iteration even though we remove it again in this workflow. We put this here as a safety measure." Condition="[not io_dtPTK.Columns.Contains(&quot;rowID&quot;)]" DisplayName="If rowID column not added yet" sap:VirtualizedContainerService.HintSize="544,732.4" sap2010:WorkflowViewState.IdRef="If_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,273.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="rowID" DataTable="[io_dtPTK]" DisplayName="Add Data Column - rowID" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,226.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message - already has rowID column" sap:VirtualizedContainerService.HintSize="382,166.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Parties data table already has a rowID column.&quot;]" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intIndex]" DataTable="[io_dtPTK]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="544,334" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Assign sap2010:Annotation.AnnotationText="Add 2 to account for Excel non-zero indexing and header row" DisplayName="Assign row id" sap:VirtualizedContainerService.HintSize="434,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign sap2010:Annotation.AnnotationText="Add 2 to account for Excel non-zero indexing and header row" DisplayName="Assign row id" sap:VirtualizedContainerService.HintSize="434,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Object">[CurrentRow("rowID")]</OutArgument>
             </Assign.To>
@@ -183,12 +236,12 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <Assign sap2010:Annotation.AnnotationText="Is Item Array empty once you exclude first and last values (PTK and rowID, respectively)" DisplayName="Filter empty rows (exc. first column)" sap:VirtualizedContainerService.HintSize="512,159.2" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="Is Item Array empty once you exclude first and last values (PTK and rowID, respectively)" DisplayName="Filter empty rows (exc. first column)" sap:VirtualizedContainerService.HintSize="544,159.2" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataRow[]">[arrEmptyRows]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="sd:DataRow[]">[dtPTK.AsEnumerable.Where(function(x) x.ItemArray.Skip(1).SkipLast(1).All(function(y) String.IsNullOrEmpty(y.ToString.Trim))).ToArray]</InArgument>
+        <InArgument x:TypeArguments="sd:DataRow[]">[io_dtPTK.AsEnumerable.Where(function(x) x.ItemArray.Skip(1).SkipLast(1).All(function(y) String.IsNullOrEmpty(y.ToString.Trim))).ToArray]</InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -196,7 +249,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If Condition="[arrEmptyRows.Length=0]" DisplayName="If no rows returned" sap:VirtualizedContainerService.HintSize="512,436" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[arrEmptyRows.Length=0]" DisplayName="If no rows returned" sap:VirtualizedContainerService.HintSize="544,436" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -223,12 +276,12 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:MultipleAssign DisplayName="Store row reference and update row values" sap:VirtualizedContainerService.HintSize="512,336.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Store row reference and update row values" sap:VirtualizedContainerService.HintSize="544,336.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="sd:DataTable">[dtPTK]</OutArgument>
+              <OutArgument x:TypeArguments="sd:DataTable">[io_dtPTK]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="sd:DataTable">[arrEmptyRows.CopyToDataTable]</InArgument>
@@ -239,12 +292,12 @@
               <OutArgument x:TypeArguments="x:String">[strRowRef]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[dtPTK(0)("rowID").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[io_dtPTK(0)("rowID").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dtPTK(0)("Party_name")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[io_dtPTK(0)("Party_name")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[in_strOrgName]</InArgument>
@@ -252,7 +305,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dtPTK(0)("Region")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[io_dtPTK(0)("Region")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[in_strRegion]</InArgument>
@@ -260,7 +313,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dtPTK(0)("Permit_number_(WIMS_ID_ONLY)")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[io_dtPTK(0)("Permit_number_(WIMS_ID_ONLY)")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[g_TransactionItem("ReSP_ID").ToString]</InArgument>
@@ -268,7 +321,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[dtPTK(0)("User")]</OutArgument>
+              <OutArgument x:TypeArguments="x:Object">[io_dtPTK(0)("User")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[g_Config("ActionedByName").ToString]</InArgument>
@@ -279,32 +332,41 @@
               <OutArgument x:TypeArguments="x:String">[out_strPTK]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[dtPTK(0)("PTK_number").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[io_dtPTK(0)("PTK_number").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="rowID" DataTable="[dtPTK]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="512,222" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
-    <ueab:ExcelProcessScopeX LaunchTimeout="{x:Null}" DisplayAlerts="False" DisplayName="Excel Process Scope - update party name sheet - write to row" ExistingProcessAction="None" FileConflictResolution="ThrowException" sap:VirtualizedContainerService.HintSize="512,583.6" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2" LaunchMethod="Application" MacroSettings="DisableAll" ProcessMode="ReuseIfExists" ShowExcelWindow="False">
-      <ueab:ExcelProcessScopeX.Body>
-        <ActivityAction x:TypeArguments="ui:IExcelProcess">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
-          </ActivityAction.Argument>
-          <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File - update party name sheet - write to row" sap:VirtualizedContainerService.HintSize="468,464.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ReadFormatting="RawValue" ResizeWindow="None" UseTemplate="True" WorkbookPath="[g_Config(&quot;WorkListLocation&quot;).ToString]">
-            <ueab:ExcelApplicationCard.Body>
-              <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="rowID" DataTable="[io_dtPTK]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="544,222" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
+    <ui:RetryScope DisplayName="Retry Scope - update party name sheet" sap:VirtualizedContainerService.HintSize="544,761.2" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <ueab:ExcelProcessScopeX DisplayAlerts="False" DisplayName="Excel Process Scope - update party name sheet - write to row" ExistingProcessAction="None" FileConflictResolution="ThrowException" sap:VirtualizedContainerService.HintSize="502,551.6" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2" LaunchMethod="Automation" LaunchTimeout="10" MacroSettings="DisableAll" ProcessMode="ReuseIfExists" ShowExcelWindow="False">
+            <ueab:ExcelProcessScopeX.Body>
+              <ActivityAction x:TypeArguments="ui:IExcelProcess">
                 <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                  <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
                 </ActivityAction.Argument>
-                <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;PTK_Spreadsheet&quot;).Range(&quot;A&quot;+strRowRef+&quot;:I&quot;+strRowRef)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="434,163.6" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False" Source="[dtPTK.Rows(0).Table]" />
+                <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File - update party name sheet - write to row" sap:VirtualizedContainerService.HintSize="468,464.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ReadFormatting="RawValue" ResizeWindow="None" UseTemplate="True" WorkbookPath="[g_Config(&quot;WorkListLocation&quot;).ToString]">
+                  <ueab:ExcelApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                      </ActivityAction.Argument>
+                      <ueab:WriteRangeX Destination="[Excel.Sheet(g_Config(&quot;PTKSheetName&quot;).ToString).Range(&quot;A&quot;+strRowRef+&quot;:I&quot;+strRowRef)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="434,163.6" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False" Source="[io_dtPTK.Rows(0).Table]" />
+                    </ActivityAction>
+                  </ueab:ExcelApplicationCard.Body>
+                </ueab:ExcelApplicationCard>
               </ActivityAction>
-            </ueab:ExcelApplicationCard.Body>
-          </ueab:ExcelApplicationCard>
+            </ueab:ExcelProcessScopeX.Body>
+          </ueab:ExcelProcessScopeX>
         </ActivityAction>
-      </ueab:ExcelProcessScopeX.Body>
-    </ueab:ExcelProcessScopeX>
-    <ui:LogMessage DisplayName="Log Message - assigning PTK number" sap:VirtualizedContainerService.HintSize="512,166.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Assigning party ID &quot;+out_strPTK+&quot; to permit &quot;+g_TransactionItem(&quot;ReSP_ID&quot;).ToString]" />
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+    <ui:LogMessage DisplayName="Log Message - assigning PTK number" sap:VirtualizedContainerService.HintSize="544,166.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Assigning party ID &quot;+out_strPTK+&quot; to permit &quot;+g_TransactionItem(&quot;ReSP_ID&quot;).ToString]" />
   </Sequence>
 </Activity>

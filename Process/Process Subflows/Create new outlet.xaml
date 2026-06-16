@@ -5,6 +5,10 @@
     <x:Property Name="in_strEnvironmentCode" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="Only required for Pause Point" Name="in_strTotalOutlets" Type="InArgument(x:String)" />
     <x:Property Name="out_uiOutletRef" Type="OutArgument(ui:UiElement)" />
+    <x:Property sap2010:Annotation.AnnotationText="Only required as reference for Outlet Type selection." Name="in_strDischargeType" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Only required as reference for Outlet Type selection." Name="in_strOrgName" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Only required as reference for Outlet Type selection." Name="in_strActivityDescriptions" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Only required as reference for Outlet Type selection." Name="in_strRASCs" Type="InArgument(x:String)" />
   </x:Members>
   <this:Create_new_outlet.in_strReference>
     <InArgument x:TypeArguments="x:String" />
@@ -15,6 +19,12 @@
   <this:Create_new_outlet.in_strEnvironmentCode>
     <InArgument x:TypeArguments="x:String" />
   </this:Create_new_outlet.in_strEnvironmentCode>
+  <this:Create_new_outlet.in_strDischargeType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Create_new_outlet.in_strDischargeType>
+  <this:Create_new_outlet.in_strOrgName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Create_new_outlet.in_strOrgName>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -144,19 +154,19 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_new_outlet" sap:VirtualizedContainerService.HintSize="1451.6000000000001,5738.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_new_outlet" sap:VirtualizedContainerService.HintSize="1451.6000000000001,6102.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new outlet" sap:VirtualizedContainerService.HintSize="562,5715.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - create new outlet" sap:VirtualizedContainerService.HintSize="562,6079.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserWIMS]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Create new outlet" sap:VirtualizedContainerService.HintSize="528,5554" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Create new outlet" sap:VirtualizedContainerService.HintSize="528,5918" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -182,11 +192,49 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type 'Type'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="494,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Text="D" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="461, 989, 71, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'T'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Discharge type - List of Values available Required' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Discharge type - List of Values available Required' role='text' /&gt;" Guid="9e81129b-9fff-48cf-9100-54f1721e3b54" InformativeScreenshot="f2ae253a694aa487dc31cb93f33e597a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press Ctrl+L for outlet type lookup" sap:VirtualizedContainerService.HintSize="494,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" InteractionMode="WindowMessages" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Shortcuts="[d(hk)][d(ctrl)]l[u(ctrl)][u(hk)]" Version="V3">
+              <uix:NKeyboardShortcuts.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NKeyboardShortcuts.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <InvokeMethod DisplayName="Stop timer - outlet type selection" sap:VirtualizedContainerService.HintSize="494,171.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_5" MethodName="Stop">
+              <InvokeMethod.TargetObject>
+                <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+              </InvokeMethod.TargetObject>
+            </InvokeMethod>
+            <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="User Prompt - Select outlet type" sap:VirtualizedContainerService.HintSize="494,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Outlet Type selection." IN_PopupMessage="[&quot;&lt;h1&gt;Select Outlet Type&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please select the most appropriate Outlet Type code for this outlet from the lookup window in WIMS&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Org name:&lt;/strong&gt;&amp;ensp;&quot;+in_strOrgName+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Ref:&lt;/strong&gt;&amp;ensp;&quot;+in_strReference+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Discharge Type:&lt;/strong&gt;&amp;ensp;&quot;+in_strDischargeType+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Activity Descriptions (all Releases):&lt;/strong&gt;&lt;br&gt;&quot;+&#xA;in_strActivityDescriptions+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Regulated Activity Sub Classes (all Releases)&lt;/strong&gt;&lt;br&gt;&quot;+&#xA;in_strRASCs+&quot;&lt;/p&gt;&quot;+&#xA;&quot;Once you have determined this, please click 'OK' on the lookup window and then click 'Continue' on this pop-up.&lt;br&gt;&quot;+&#xA;&quot;Please &lt;strong&gt;do not&lt;/strong&gt; tab through to other fields in the Outlets form as this can disrupt the robot's data entry.&lt;br&gt;&quot;+&#xA;&quot;If you are unsure or if there is another issue, please click 'Stop' on this pop-up and process the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Select Outlet type" IN_WidthHeight="[{500,600}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_3" />
+            <InvokeMethod DisplayName="Start timer - outlet type selection" sap:VirtualizedContainerService.HintSize="494,171.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_6" MethodName="Start">
+              <InvokeMethod.TargetObject>
+                <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+              </InvokeMethod.TargetObject>
+            </InvokeMethod>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="494,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type 'Type'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,244" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Text="D" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="461, 989, 71, 47" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'T'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Discharge type - List of Values available Required' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Discharge type - List of Values available Required' role='text' /&gt;" Guid="9e81129b-9fff-48cf-9100-54f1721e3b54" InformativeScreenshot="f2ae253a694aa487dc31cb93f33e597a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press tab to NGR" sap:VirtualizedContainerService.HintSize="494,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="WindowMessages" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Shortcuts="[d(hk)][k(Tab)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -255,7 +303,7 @@
                       <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                     </InvokeMethod.TargetObject>
                   </InvokeMethod>
-                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="PP8" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Pause Point 8" IN_PopupMessage="[&quot;&lt;h1&gt;New Outlet&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please verify that the data entered for this new outlet record is correct.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Reference:&lt;/strong&gt;&amp;ensp;&quot;+in_strReference+&quot; (of &quot;+in_strTotalOutlets+&quot;)&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Type:&lt;/strong&gt;&amp;ensp;D (user to correct later)&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;NGR:&lt;/strong&gt;&amp;ensp;&quot;+in_strGridReference+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Environment Code:&lt;/strong&gt;&amp;ensp;&quot;+in_strEnvironmentCode+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;If this data has been entered correctly, please click 'Continue'. Otherwise, please click 'Stop' and process the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Pause Point 8" IN_WidthHeight="[{500,600}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="PP8" sap:VirtualizedContainerService.HintSize="382,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Pause Point 8" IN_PopupMessage="[&quot;&lt;h1&gt;New Outlet&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;Please verify that the data entered for this new outlet record is correct.&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&lt;strong&gt;Reference:&lt;/strong&gt;&amp;ensp;&quot;+in_strReference+&quot; (of &quot;+in_strTotalOutlets+&quot;)&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;NGR:&lt;/strong&gt;&amp;ensp;&quot;+in_strGridReference+&quot;&lt;br&gt;&quot;+&#xA;&quot;&lt;strong&gt;Environment Code:&lt;/strong&gt;&amp;ensp;&quot;+in_strEnvironmentCode+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;If this data has been entered correctly, please click 'Continue'. Otherwise, please click 'Stop' and process the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Pause Point 8" IN_WidthHeight="[{500,600}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
                   <InvokeMethod DisplayName="Start timer - PP8" sap:VirtualizedContainerService.HintSize="382,159.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Start">
                     <InvokeMethod.TargetObject>
                       <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
@@ -278,7 +326,7 @@
                 <uix:TargetAnchorable DesignTimeRectangle="109, 404, 57, 58" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Save any'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Save any pending changes permanently in the database.' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Save any pending changes permanently in the database.' role='push button' check:text='Save any pending changes permanently in the database.' /&gt;" Guid="45d86694-369d-4a9e-b986-d2ff11360fdb" InformativeScreenshot="0341ae7c13732e0f49c80ac092513558.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NCheckState DisplayName="Check App State - are you sure pop-up" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,1126.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Timeout="0.5" Version="V3">
+            <uix:NCheckState DisplayName="Check App State - are you sure pop-up" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,1086.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Timeout="0.5" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="User prompt - are you sure?" sap:VirtualizedContainerService.HintSize="450,835.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
@@ -291,7 +339,7 @@
                       <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                     </InvokeMethod.TargetObject>
                   </InvokeMethod>
-                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Generic PopUp" sap:VirtualizedContainerService.HintSize="416,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Outlet creation warning" IN_PopupMessage="[&quot;&lt;h1&gt;Outlet Creation Warning&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;WIMS has prompted a warning in response to the robot's attempt to create a new Outlet. Please consult this message.&lt;br&gt;&quot;+&#xA;&quot;If the message can be dismissed, please do so, then click 'Continue' on this pop-up so that the robot may proceed.&lt;br&gt;&quot;+&#xA;&quot;If the message requires further investigation, please click 'Stop' and complete the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Outlet creation warning" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_2" />
+                  <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="User prompt - eastings/northings warning" sap:VirtualizedContainerService.HintSize="416,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Outlet creation warning" IN_PopupMessage="[&quot;&lt;h1&gt;Outlet Creation Warning&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;WIMS has prompted a warning in response to the robot's attempt to create a new Outlet. Please consult this message.&lt;br&gt;&quot;+&#xA;&quot;If the message can be dismissed, please do so, then click 'Continue' on this pop-up so that the robot may proceed.&lt;br&gt;&quot;+&#xA;&quot;If the message requires further investigation, please click 'Stop' and complete the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Outlet creation warning" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_2" />
                   <InvokeMethod DisplayName="Start timer - are you sure" sap:VirtualizedContainerService.HintSize="416,164.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="Start">
                     <InvokeMethod.TargetObject>
                       <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
@@ -309,37 +357,20 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK' - transaction complete pop-up" sap:VirtualizedContainerService.HintSize="494,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="1829, 1288, 82, 50" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'OK ALT O'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Info Transaction complete - record(s) applied and saved' role='internal frame' /&gt;&lt;java name='Transaction complete - record(s) applied and saved' role='option pane' /&gt;&lt;java name='OK ALT O' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Info Transaction complete - record(s) applied and saved' role='internal frame' /&gt;&lt;java name='Transaction complete - record(s) applied and saved' role='option pane' /&gt;&lt;java name='OK ALT O' role='push button' check:text='OK ALT O' /&gt;" Guid="85519f8e-0d83-4ff0-9cda-3d131a939796" InformativeScreenshot="980438926bb2d1e41ac9a8ca808e2697.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press keyboard shortcuts AGAIN to Next Block" sap:VirtualizedContainerService.HintSize="494,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" InteractionMode="WindowMessages" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Shortcuts="" ShortcutsArgument="%[d(hk)][d(alt)]bn[u(alt)][u(hk)]" Version="V3">
+            <ui:BlockUserInput TimeoutMS="{x:Null}" BlockType="All" DisplayName="Block User Input - click ok on transaction complete pop-up (outlet)" sap:VirtualizedContainerService.HintSize="494,318" sap2010:WorkflowViewState.IdRef="BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True">
+              <ui:BlockUserInput.Body>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK' - transaction complete pop-up (outlet)" sap:VirtualizedContainerService.HintSize="337.2,158" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="1829, 1288, 82, 50" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'OK ALT O'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Info Transaction complete - record(s) applied and saved' role='internal frame' /&gt;&lt;java name='Transaction complete - record(s) applied and saved' role='option pane' /&gt;&lt;java name='OK ALT O' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Outlets And Releases' role='internal frame' /&gt;&lt;java name='Info Transaction complete - record(s) applied and saved' role='internal frame' /&gt;&lt;java name='Transaction complete - record(s) applied and saved' role='option pane' /&gt;&lt;java name='OK ALT O' role='push button' check:text='OK ALT O' /&gt;" Guid="85519f8e-0d83-4ff0-9cda-3d131a939796" InformativeScreenshot="980438926bb2d1e41ac9a8ca808e2697.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+              </ui:BlockUserInput.Body>
+            </ui:BlockUserInput>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0.2" DisplayName="Press keyboard shortcuts AGAIN to Next Block" sap:VirtualizedContainerService.HintSize="494,224" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" InteractionMode="WindowMessages" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Shortcuts="" ShortcutsArgument="%[d(hk)][d(alt)]bn[u(alt)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="28, 287, 3685, 1965" DesignTimeScaleFactor="2.5" FriendlyName="'Login RMILLER01md'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java cls='FormDesktopContainer' role='desktop pane' check:fulltext='Login RMILLER01md *********** Cancel Login Login Edit MOTD entry Edit MOTD entry Create new MOTD' /&gt;" Guid="3616c782-f7fa-45e1-85bc-22b818a20580" ImageBase64="" InformativeScreenshot="c3b673f2e1cb7b8e2463e27d53046039.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>
             </uix:NKeyboardShortcuts>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="494,532.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,431.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Block' - to releases" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="273, 287, 83, 46" DesignTimeScaleFactor="1" FriendlyName="'Block ALT B'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' check:text='Block ALT B' /&gt;" Guid="92ba9777-f0a0-4f4a-b363-7148592fb768" InformativeScreenshot="86ec292d1711359164438f5c0ba99506.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next' - to releases" sap:VirtualizedContainerService.HintSize="382,181.2" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1a08e8a6-3fed-49ea-bf18-69b0159ba076" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="276, 377, 124, 42" DesignTimeScaleFactor="1" FriendlyName="'Next mnemonic N'" FullSelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' /&gt;&lt;java name='Next mnemonic N' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SunAwtFrame' /&gt;&lt;java name='Block ALT B' role='menu' /&gt;&lt;java name='Next mnemonic N' role='menu item' check:text='Next mnemonic N' /&gt;" Guid="39e7fad0-7f6e-4ff0-9cc4-95fcee853937" InformativeScreenshot="bc83e8e25254455a89680ebd69daa88a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FormsStart 12c WIMSMDP' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                </Sequence>
-              </ui:CommentOut.Body>
-            </ui:CommentOut>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

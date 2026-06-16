@@ -4,13 +4,14 @@
   "description": "Enter data into WIMS regional databases from Power BI.",
   "main": "Main.xaml",
   "dependencies": {
-    "DRACOE.Logging.64": "[1.0.9]",
-    "DRACOE.Microsoft.Graph.64": "[1.0.48]",
+    "DRACOE.Credentials.64": "[1.0.2]",
+    "DRACOE.Logging.64": "[1.0.17]",
+    "DRACOE.Microsoft.Graph.64": "[1.0.54]",
     "DRACOE.PopUps.64": "[1.0.9]",
     "OfficeSamurai.FuzzyWuzzy.Activities": "[1.0.1]",
     "UiPath.Excel.Activities": "[2.23.5]",
     "UiPath.Mail.Activities": "[1.23.11]",
-    "UiPath.System.Activities": "[24.10.4]",
+    "UiPath.System.Activities": "[24.10.8]",
     "UiPath.Testing.Activities": "[23.10.1]",
     "UiPath.UIAutomation.Activities": "[23.10.13]",
     "UiPath.WebAPI.Activities": "[2.3.2]"
@@ -19,7 +20,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "24.10.15.0",
-  "projectVersion": "1.0.1",
+  "projectVersion": "1.0.2",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -181,6 +182,69 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Process\\Process Subflows\\tc01 Close WIMS.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "01b51f63-7595-4961-952e-409a54480763",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Log in to WIMS region STORED CREDS.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "b309d84d-bd4a-4cdb-a97e-c9c7d4fffc97",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Framework\\tc01 GetTransactionData.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "f38272bb-15e9-4c83-b37b-9471a890e341",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Create New Permit.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "74f8efcd-61cc-41c8-826d-79f172d3f8b5",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Init next outlet.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "863b03cf-67b5-4bd5-8ba9-89a8945d01ae",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Framework\\tc01 InitAllApplications.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "afac2961-d70f-4889-8c86-0a3efc0992a7",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Format release details table.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "1f9cd804-4c1f-4855-9c69-288e9a4e85f7",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Framework\\t01 SetTransactionStatus.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "4c2620d9-efa6-4371-9e1c-964563783c24",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Search Permit in Power BI.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "3308de0c-c75c-483c-b9ee-26f26a06d0cf",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Process\\Process Subflows\\tc01 Update Party Name List.xaml"
       }
     ],
     "saveToCloud": false

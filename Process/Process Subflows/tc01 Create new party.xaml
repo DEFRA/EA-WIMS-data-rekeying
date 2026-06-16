@@ -154,7 +154,7 @@
                 <OutArgument x:TypeArguments="x:Object">[g_Config("IsDev")]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:Object">[True]</InArgument>
+                <InArgument x:TypeArguments="x:Object">[False]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>
@@ -169,8 +169,8 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create new party - Invoke Workflow File (Process\Process Subflows\Create new party.xaml)" sap:VirtualizedContainerService.HintSize="416,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Process Subflows\Create new party.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strPartyName">eagareg</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strPartyID">ZZZ12345</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strPartyName">ZZ TEST IGNORE 2</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strPartyID">ZZZ99977</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_strPostcode">AA11 1AA</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_strTelephone">0123</InArgument>
           <InArgument x:TypeArguments="s:String[]" x:Key="in_arrAddress">[{"LINE 1","LINE 2","LINE 3","LINE 4"}]</InArgument>
