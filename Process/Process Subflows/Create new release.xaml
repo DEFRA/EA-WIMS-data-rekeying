@@ -7,6 +7,10 @@
     <x:Property Name="in_strFlowCode" Type="InArgument(x:String)" />
     <x:Property Name="in_strDescription" Type="InArgument(x:String)" />
     <x:Property Name="out_uiReleases" Type="OutArgument(ui:UiElement)" />
+    <x:Property sap2010:Annotation.AnnotationText="Only used for pop-up reference." Name="in_strOrgNames" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Only used for pop-up reference." Name="in_strDischargeSiteAddress" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Only used for pop-up reference." Name="in_strOutletDischargeType" Type="InArgument(x:String)" />
+    <x:Property Name="in_strRegulatedActivitySubClass" Type="InArgument(x:String)" />
   </x:Members>
   <this:Create_new_release.in_strName>
     <InArgument x:TypeArguments="x:String" />
@@ -26,6 +30,18 @@
   <this:Create_new_release.in_strDescription>
     <InArgument x:TypeArguments="x:String" />
   </this:Create_new_release.in_strDescription>
+  <this:Create_new_release.in_strOrgNames>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Create_new_release.in_strOrgNames>
+  <this:Create_new_release.in_strDischargeSiteAddress>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Create_new_release.in_strDischargeSiteAddress>
+  <this:Create_new_release.in_strOutletDischargeType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Create_new_release.in_strOutletDischargeType>
+  <this:Create_new_release.in_strRegulatedActivitySubClass>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Create_new_release.in_strRegulatedActivitySubClass>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -154,6 +170,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Create_new_release" sap:VirtualizedContainerService.HintSize="1451.6000000000001,8154" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -214,7 +231,7 @@
                 <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
               </InvokeMethod.TargetObject>
             </InvokeMethod>
-            <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="User Prompt - Select discharge type" sap:VirtualizedContainerService.HintSize="450,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Discharge Type selection." IN_PopupMessage="[&quot;&lt;h1&gt;Select Discharge Type&lt;/h1&gt;&quot;+&#xA;&quot;&lt;p&gt;The following discharge types were extracted from the report:&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;&quot;+in_strDischargeTypes+&quot;&lt;/p&gt;&quot;+&#xA;&quot;&lt;p&gt;Please select the most appropriate discharge type code from the lookup menu in WIMS.&lt;br&gt;&quot;+ &#xA;&quot;Once you have determined this, please click 'OK' on the lookup window and then click 'Continue' on this pop-up.&lt;br&gt;&quot;+&#xA;&quot;Please &lt;strong&gt;do not&lt;/strong&gt; tab through to other fields in the Releases form as this can disrupt the robot's data entry.&lt;br&gt;&quot;+&#xA;&quot;If you are unsure or if there is another issue, please click 'Stop' on this pop-up and process the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Select discharge type" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
+            <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="User Prompt - Select discharge type" sap:VirtualizedContainerService.HintSize="450,437.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed at Discharge Type selection." IN_PopupMessage="[&quot;&lt;h1&gt;Select Discharge Type&lt;/h1&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;The following discharge types were extracted from the report:&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;&quot;+in_strDischargeTypes+&quot;&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;Additional information that may help in your selection:&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Permit number:&lt;/strong&gt;&amp;ensp;&quot;+g_TransactionItem(&quot;ReSP_ID&quot;).ToString+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Org name(s):&lt;/strong&gt;&amp;ensp;&quot;+in_strOrgNames+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Discharge Site Address:&lt;/strong&gt;&amp;ensp;&quot;+in_strDischargeSiteAddress+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Outlet Discharge Type:&lt;/strong&gt;&amp;ensp;&quot;+in_strOutletDischargeType+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;&lt;strong&gt;Regulated Activity Sub Class:&lt;/strong&gt;&amp;ensp;&quot;+in_strRegulatedActivitySubClass+&quot;&lt;/p&gt;&quot;+&#xD;&#xA;&quot;&lt;p&gt;Please select the most appropriate discharge type code from the lookup menu in WIMS.&lt;br&gt;&quot;+ &#xD;&#xA;&quot;Once you have determined this, please click 'OK' on the lookup window and then click 'Continue' on this pop-up.&lt;br&gt;&quot;+&#xD;&#xA;&quot;Please &lt;strong&gt;do not&lt;/strong&gt; tab through to other fields in the Releases form as this can disrupt the robot's data entry.&lt;br&gt;&quot;+&#xD;&#xA;&quot;If you are unsure or if there is another issue, please click 'Stop' on this pop-up and process the rest of this transaction manually.&lt;/p&gt;&quot;]" IN_PopupTitle="Select discharge type" IN_WidthHeight="[{600,800}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
             <InvokeMethod DisplayName="Start timer - discharge type selection" sap:VirtualizedContainerService.HintSize="450,171.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="Start">
               <InvokeMethod.TargetObject>
                 <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
