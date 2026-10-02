@@ -104,7 +104,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Search_Permit_in_Power_BI" sap:VirtualizedContainerService.HintSize="1451.6000000000001,2535.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Search_Permit_in_Power_BI" sap:VirtualizedContainerService.HintSize="1451.6000000000001,3552.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="EPR/JB3498VV" Name="strPermit" />
     </Sequence.Variables>
@@ -113,20 +113,22 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <InvokeMethod DisplayName="BringToForeground - Power BI" sap:VirtualizedContainerService.HintSize="562,168" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="BringToForeground">
+    <InvokeMethod DisplayName="BringToForeground - Power BI" sap:VirtualizedContainerService.HintSize="562,168.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="BringToForeground">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="ui:UiElement">[g_browserPowerBi]</InArgument>
       </InvokeMethod.TargetObject>
     </InvokeMethod>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - search Power BI" sap:VirtualizedContainerService.HintSize="562,2344.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserPowerBi]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f979613c-66f3-4c66-b87b-904f5d7d62a8" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - search Power BI" sap:VirtualizedContainerService.HintSize="562,3360.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[g_browserPowerBi]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f979613c-66f3-4c66-b87b-904f5d7d62a8" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Search Power BI" sap:VirtualizedContainerService.HintSize="528,2183.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Search Power BI" sap:VirtualizedContainerService.HintSize="528,3199.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strPermitVersion" />
+              <Variable x:TypeArguments="x:String" Name="strPermitTyped" />
+              <Variable x:TypeArguments="ui:UiElement" Name="uiSearchBox" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -194,11 +196,56 @@
                 </Sequence>
               </If.Else>
             </If>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type permit number" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="494,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="f979613c-66f3-4c66-b87b-904f5d7d62a8" Text="[strPermit]" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/13.0.27792.40/cvSandboxPack.cshtml?locale=en-GB&amp;pbiglobals=1&amp;csp=ZGVmYXVsdC1zcmMgaHR0cHM6Ly9hcHAucG93ZXJiaS5jb20gZGF0YTogYmxvYjogJ3Vuc2FmZS1pbmxpbmUnICd1bnNhZmUtZXZhbCcgOw%3D%3D#669fde17-8849-4ebe-b7c6-661dac5ebc28" DesignTimeRectangle="3122, 612, 425, 95" DesignTimeScaleFactor="2.5" ElementType="InputBox" FriendlyName="'EPR/JB3498VV'" FullSelectorArgument="&lt;webctrl name='visual-sandbox' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='visual-sandbox' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='text' class='accessibility-compliant border-on-focus' aaname='' /&gt;" Guid="f3cc6b39-83f6-46c3-b315-6f01b214287d" ImageBase64="" InformativeScreenshot="a3d8b1dd73c806f36b562e6ecb621828.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
+            <ui:BlockUserInput TimeoutMS="{x:Null}" BlockType="All" DisplayName="Block User Input while searching permit number" sap:VirtualizedContainerService.HintSize="494,832.8" sap2010:WorkflowViewState.IdRef="BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True">
+              <ui:BlockUserInput.Body>
+                <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Max iterations = 3" DisplayName="Do While - confirm search box filled correctly" sap:VirtualizedContainerService.HintSize="450,672.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2" MaxIterations="3">
+                  <ui:InterruptibleDoWhile.Body>
+                    <Sequence DisplayName="Type and confirm permit number" sap:VirtualizedContainerService.HintSize="416,526.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="0.5" DisplayName="Type permit number" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,252.8" sap2010:WorkflowViewState.IdRef="NTypeInto_1" OutUiElement="[uiSearchBox]" ScopeIdentifier="f979613c-66f3-4c66-b87b-904f5d7d62a8" Text="[strPermit]" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/13.0.27792.40/cvSandboxPack.cshtml?locale=en-GB&amp;pbiglobals=1&amp;csp=ZGVmYXVsdC1zcmMgaHR0cHM6Ly9hcHAucG93ZXJiaS5jb20gZGF0YTogYmxvYjogJ3Vuc2FmZS1pbmxpbmUnICd1bnNhZmUtZXZhbCcgOw%3D%3D#669fde17-8849-4ebe-b7c6-661dac5ebc28" DesignTimeRectangle="3122, 612, 425, 95" DesignTimeScaleFactor="2.5" ElementType="InputBox" FriendlyName="'EPR/JB3498VV'" FullSelectorArgument="&lt;webctrl name='visual-sandbox' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='visual-sandbox' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='text' class='accessibility-compliant border-on-focus' aaname='' /&gt;" Guid="f3cc6b39-83f6-46c3-b315-6f01b214287d" ImageBase64="" InformativeScreenshot="a3d8b1dd73c806f36b562e6ecb621828.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                      <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute - search box text" sap:VirtualizedContainerService.HintSize="382,213.6" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" InUiElement="[uiSearchBox]" Result="[strPermitTyped]" Version="V3" />
+                    </Sequence>
+                  </ui:InterruptibleDoWhile.Body>
+                  <ui:InterruptibleDoWhile.Condition>
+                    <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="strPermitTyped.Trim&lt;&gt;strPermit.Trim" />
+                  </ui:InterruptibleDoWhile.Condition>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InterruptibleDoWhile>
+              </ui:BlockUserInput.Body>
+            </ui:BlockUserInput>
+            <If Condition="[strPermitTyped.trim&lt;&gt;strPermit.Trim]" DisplayName="If permit still not accepted by search box" sap:VirtualizedContainerService.HintSize="494,436" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw DisplayName="Throw SE - search box not accepting permit" Exception="[new System.Exception(&quot;Search box will not retain permit number after typing. 3 attempts made. Permit number: '&quot;+strPermit.Trim+&quot;' Search box text: '&quot;+strPermitTyped.Trim+&quot;'&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="494,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f979613c-66f3-4c66-b87b-904f5d7d62a8" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://app.powerbi.com/13.0.27792.40/cvSandboxPack.cshtml?locale=en-GB&amp;pbiglobals=1&amp;csp=ZGVmYXVsdC1zcmMgaHR0cHM6Ly9hcHAucG93ZXJiaS5jb20gZGF0YTogYmxvYjogJ3Vuc2FmZS1pbmxpbmUnICd1bnNhZmUtZXZhbCcgOw%3D%3D#669fde17-8849-4ebe-b7c6-661dac5ebc28" DesignTimeRectangle="3443, 617, 85, 85" DesignTimeScaleFactor="2.5" ElementType="Button" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl name='visual-sandbox' tag='IFRAME' /&gt;&lt;webctrl tag='BUTTON' visibleinnertext='Search' /&gt;" FuzzySelectorArgument="&lt;webctrl name='visual-sandbox' tag='IFRAME' /&gt;&lt;webctrl tag='BUTTON' type='' class='c-glyph search-button border-on-focus' aaname='Search' check:innerText='Search' /&gt;" Guid="f8e2887b-7f3a-4e23-85ff-268960a791af" InformativeScreenshot="1563a1b01efdcc019b19424f336b72dd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='WIMS Area Indicator - WIMS ReKey Report v0.4 prd - Power BI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
